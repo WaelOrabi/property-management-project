@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:new_project/src/features/presentation/pages/account_details.dart';
-import 'package:new_project/src/features/presentation/widgets/widget_appbar.dart';
+import 'package:project_111/src/features/presentation/pages/account_details.dart';
+import 'package:project_111/src/features/presentation/widgets/widget_appbar.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:new_project/src/features/presentation/pages/welcome.dart';
+import 'package:project_111/src/features/presentation/pages/welcome.dart';
 
 class PageViewData {
   final String title;

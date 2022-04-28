@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/src/core/utils/utils.dart';
-import 'package:new_project/src/features/presentation/pages/sign_in.dart';
+import 'package:project_111/src/core/utils/utils.dart';
+import 'package:project_111/src/features/presentation/pages/sign_in.dart';
 
 
 class Welcome extends StatelessWidget {

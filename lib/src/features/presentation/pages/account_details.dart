@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/src/features/presentation/pages/profile.dart';
-import 'package:new_project/src/features/presentation/pages/sign_in.dart';
-import 'package:new_project/src/features/presentation/widgets/widget_appbar.dart';
+import 'package:project_111/src/features/presentation/pages/profile.dart';
+
+import '../widgets/widget_appbar.dart';
 
 class AccountDetails extends StatelessWidget {
   const AccountDetails({Key? key}) : super(key: key);

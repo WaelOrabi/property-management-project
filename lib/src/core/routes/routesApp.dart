@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/src/features/presentation/pages/account_details.dart';
-import 'package:new_project/src/features/presentation/pages/page_view.dart';
-import 'package:new_project/src/features/presentation/pages/profile.dart';
+import 'package:project_111/src/features/presentation/pages/account_details.dart';
+import 'package:project_111/src/features/presentation/pages/page_view.dart';
+import 'package:project_111/src/features/presentation/pages/profile.dart';
 import '../../features/presentation/pages/welcome.dart';
-import 'package:new_project/src/features/presentation/pages/sign_in.dart';
+import 'package:project_111/src/features/presentation/pages/sign_in.dart';
 
 Map<String, WidgetBuilder> routes() {
   return {
