@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/src/core/utils/utils.dart';
-import 'package:project_111/src/features/presentation/pages/sign_in.dart';
+import 'package:project_111/features/authentication/presentation/pages/sign_in.dart';
 
 
 class Welcome extends StatelessWidget {
@@ -19,15 +18,15 @@ class Welcome extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
+             const Icon(
                 Icons.location_on,
-                color: color,
+                color: Colors.green,
                 size: 150,
               ),
               const SizedBox(height: 30),
-              Text(
+              const Text(
                 "Welcome to your app",
-                style: TextStyle(color: color, fontSize: 25),
+                style: TextStyle(color: Colors.green, fontSize: 25),
               ),
               const SizedBox(height: 30),
               const Text("This application helps you to choose your property",
@@ -38,7 +37,7 @@ class Welcome extends StatelessWidget {
                 context: context,
                 nameButton: "Log In",
                 colorText: Colors.white,
-                colorBackground: color,
+                colorBackground: Colors.green,
                 fun: () => Navigator.pushReplacementNamed(context,SingIn.routeName),
               ),
               const SizedBox(height: 30),
@@ -46,7 +45,7 @@ class Welcome extends StatelessWidget {
               buildGestureDetector(
                 context: context,
                 nameButton: "Sign Up",
-                colorText: color,
+                colorText: Colors.green,
                 colorBackground: Colors.white,
                 fun: () {},
               ),

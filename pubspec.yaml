@@ -36,13 +36,23 @@ dependencies:
   cupertino_icons: ^1.0.2
   image_picker:
   flutter_svg:
+  google_maps_flutter:
   flutter_signin_button:
   scroll_app_bar:
   rate_my_app:
   flutter_rating_bar:
   bloc:
+  modal_bottom_sheet:
+  geolocator:
+  location:
+  material_floating_search_bar:
+  geocoding:
   flutter_bloc:
-
+  advance_image_picker:
+  video_player:
+  intl:
+  camera:
+  splashscreen:
 dev_dependencies:
   flutter_test:
     sdk: flutter

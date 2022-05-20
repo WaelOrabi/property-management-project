@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/src/core/routes/routesApp.dart';
-import 'package:project_111/src/features/presentation/pages/mylistings_screen/MyListingScreen.dart';
-import 'package:project_111/src/features/presentation/pages/signup_screen/signup_screen.dart';
+import 'package:project_111/core/routes/routesApp.dart';
+
 void main(){
   runApp(MyApp());
 }

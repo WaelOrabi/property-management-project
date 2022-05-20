@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/src/features/presentation/pages/profile.dart';
+import 'package:project_111/features/authentication/presentation/pages/profile.dart';
 
-import '../widgets/widget_appbar.dart';
+import '../../../../core/widgets/widget_appbar.dart';
 
 class AccountDetails extends StatelessWidget {
   const AccountDetails({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class AccountDetails extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade100,
-        appBar: WidgetsAppBar.buildAppBar(namePage: "Account Details", fun: () =>Navigator.pushReplacementNamed(context, Profile.routeName)),
+        appBar: WidgetsAppBar.buildAppBar(namePage: "Account Details", fun: () =>Navigator.pushReplacementNamed(context, Profile.routeName),color: Colors.white),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/src/features/presentation/pages/signup_screen/components/body.dart';
+import 'package:project_111/features/authentication/presentation/pages/signup_screen/components/body.dart';
 
 class SignUpScreen extends StatelessWidget {
   static String routeName = 'SignUpScreen';

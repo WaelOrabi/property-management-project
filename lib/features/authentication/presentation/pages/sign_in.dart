@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/src/core/utils/utils.dart';
-import 'package:project_111/src/features/presentation/pages/profile.dart';
-import 'package:project_111/src/features/presentation/pages/welcome.dart';
+import 'package:project_111/features/authentication/presentation/pages/profile.dart';
+import 'package:project_111/features/authentication/presentation/pages/welcome.dart';
 
 class SingIn extends StatefulWidget {
   const SingIn({Key? key}) : super(key: key);
@@ -33,12 +32,12 @@ class _SingInState extends State<SingIn> {
                       icon: const Icon(Icons.arrow_back_ios)),
 
                   const SizedBox(height: 20),
-                  Text(
+                  const Text(
                     "Sign In",
                     style: TextStyle(
                       fontSize: 60,
                       fontWeight: FontWeight.bold,
-                      color: color,
+                      color: Colors.green,
                     ),
                   ),
                   const SizedBox(height: 80),
@@ -136,7 +135,7 @@ class _SingInState extends State<SingIn> {
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: color),
+                            color: Colors.green),
                         child: const Center(
                           child: Text(
                             'Log In',
@@ -175,7 +174,7 @@ class _SingInState extends State<SingIn> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 19,
-                                color: color),
+                                color: Colors.green),
                           ),
                         ),
                       ],

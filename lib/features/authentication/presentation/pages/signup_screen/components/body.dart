@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/src/features/presentation/pages/signup_screen/components/profile_picture.dart';
+import 'package:project_111/features/authentication/presentation/pages/signup_screen/components/profile_picture.dart';
 
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);

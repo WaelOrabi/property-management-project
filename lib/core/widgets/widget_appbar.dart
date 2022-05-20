@@ -7,11 +7,11 @@ class WidgetsAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container();
   }
-static  AppBar buildAppBar({required String namePage,required VoidCallback fun}) {
+static  AppBar buildAppBar({required String namePage,required VoidCallback fun,required Color color}) {
     return AppBar(
       toolbarHeight: 80,
       centerTitle: true,
-      backgroundColor: Colors.white,
+      backgroundColor: color,
       title: Text(
         namePage,
         style:const TextStyle(color: Colors.green, fontSize: 25),
