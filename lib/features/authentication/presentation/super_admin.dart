@@ -24,36 +24,35 @@ class _SuperAdminState extends State<SuperAdmin> {
       body: ListView.builder(
         itemCount:2 ,//user.length
         itemBuilder: (context, index) {
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children:[
-
-        const ListTile(
-        leading: CircleAvatar(
-        radius: 30,
-          backgroundImage: AssetImage('assets/images/facebook.jpg'),
-        ),
-          title: Text('User name'),
-          subtitle: Text('Email user'),
-          ),
-              DropdownButton<String>(
-                value: dropdownPermission,
-                iconSize: 20,
-                style: const TextStyle(color: Colors.black, fontSize: 16),
-                underline: Container(),
-                onChanged:(data)=>setState(() {
-                  dropdownPermission=data!;
-                }),
-                items: permissionItems.map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-              ),
-
-            ],
-        );
+        return const ListTile(
+                 leading: CircleAvatar(
+                 radius: 30,
+                   backgroundImage: AssetImage('assets/images/facebook.jpg'),
+                 ),
+                   title: Text('User name'),
+                   subtitle: Text('Email user'),
+                   );
+            //   SizedBox(
+            //     width: double.infinity/5,
+            //     child: DropdownButton<String>(
+            //       value: dropdownPermission,
+            //       iconSize: 20,
+            //       style: const TextStyle(color: Colors.black, fontSize: 16),
+            //       underline: Container(),
+            //       onChanged:(data)=>setState(() {
+            //         dropdownPermission=data!;
+            //       }),
+            //       items: permissionItems.map<DropdownMenuItem<String>>((String value) {
+            //         return DropdownMenuItem<String>(
+            //           value: value,
+            //           child: Text(value),
+            //         );
+            //       }).toList(),
+            //     ),
+            //   ),
+            //
+            // ],
+        //);
       }),
     );
   }
