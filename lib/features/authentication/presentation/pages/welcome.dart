@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_111/features/authentication/presentation/pages/sign_in.dart';
+import 'package:project_111/features/authentication/presentation/pages/signup_screen/signup_screen.dart';
 
 
 class Welcome extends StatelessWidget {
@@ -47,7 +48,7 @@ class Welcome extends StatelessWidget {
                 nameButton: "Sign Up",
                 colorText: Colors.green,
                 colorBackground: Colors.white,
-                fun: () {},
+                fun: () =>Navigator.pushReplacementNamed(context,SignUpScreen.routeName ),
               ),
             ],
           ),

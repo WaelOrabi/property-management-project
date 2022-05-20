@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:project_111/features/authentication/presentation/pages/page_view.dart';
+import 'package:project_111/features/authentication/presentation/pages/profile.dart';
 import 'package:project_111/features/properties/presentation/pages/add_property/screen/add_property.dart';
 
 
@@ -33,7 +35,7 @@ class SplashScreenState extends State<SplashScreen>
     controller.forward();
 
     Timer(Duration(seconds: 5), () {
-      Navigator.pushNamed(context, AddProperty.routeName);
+      Navigator.pushNamed(context,PagesView.routeName);
     });
   }
   @override

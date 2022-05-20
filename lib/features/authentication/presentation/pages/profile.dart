@@ -5,6 +5,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:project_111/features/authentication/presentation/pages/account_details.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
 
+import '../../../properties/presentation/pages/mylistings_screen/MyListingScreen.dart';
+
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
   static String routeName = 'Profile';
@@ -128,7 +130,7 @@ class _ProfileState extends State<Profile> {
                   nameList: "My Listing",
                   typeIcon: Icons.format_list_bulleted_sharp,
                   colorIcon: Colors.greenAccent,
-                  fun: () {}),
+                  fun: () =>MyListingScreen.routeName),
               buildListTile(
                   nameList: "My Favorites",
                   typeIcon: Icons.favorite,

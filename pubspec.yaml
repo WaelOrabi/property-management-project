@@ -53,6 +53,7 @@ dependencies:
   intl:
   camera:
   splashscreen:
+  awesome_dialog:
 dev_dependencies:
   flutter_test:
     sdk: flutter

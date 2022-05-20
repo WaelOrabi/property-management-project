@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_111/features/authentication/presentation/pages/profile.dart';
+import 'package:project_111/features/authentication/presentation/pages/signup_screen/signup_screen.dart';
 import 'package:project_111/features/authentication/presentation/pages/welcome.dart';
 
 class SingIn extends StatefulWidget {
@@ -168,8 +169,8 @@ class _SingInState extends State<SingIn> {
                           ],
                         ),
                         GestureDetector(
-                          onTap: () {},
-                          child: Text(
+                          onTap: ()=>Navigator.pushReplacementNamed(context, SignUpScreen.routeName),
+                          child:const Text(
                             "Create",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
@@ -196,14 +197,14 @@ class _SingInState extends State<SingIn> {
                       buildIconFacebookAndGoogle(
                           height: 40,
                           width: 40,
-                          linkImage: "assets/images/google-logo.png",
+                          linkImage: "assets/images/google.jpg",
                           fun: () {}),
                       const SizedBox(width: 30.0),
                       //facebook
                       buildIconFacebookAndGoogle(
                           height: 55,
                           width: 55,
-                          linkImage: "assets/images/logo-facebook.png",
+                          linkImage: "assets/images/facebook.jpg",
                           fun: () {}),
                     ],
                   ),
