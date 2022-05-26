@@ -1,0 +1,7 @@
+enum WebsocketFunctions {
+  CONNECT,
+  DISCONNECT,
+  SEND_TOKEN,
+  INITIATE_SENDING,
+  INTERRUPT_SENDING,
+}
