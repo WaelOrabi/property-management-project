@@ -13,8 +13,7 @@ class _BodyState extends State<Body> {
   TextEditingController phoneController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController passwordConfirmationController =
-      TextEditingController();
+  TextEditingController passwordConfirmationController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,6 @@ import 'package:advance_image_picker/widgets/editors/image_sticker.dart';
 import 'package:advance_image_picker/widgets/picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../varibles_and_lists/varibles_and_lists.dart';
 
 class AddPhotoAdvanceImage extends StatefulWidget {
   const AddPhotoAdvanceImage({Key? key}) : super(key: key);
@@ -17,8 +16,11 @@ class AddPhotoAdvanceImage extends StatefulWidget {
 }
 
 class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
+
+  List<ImageObject> imgObjs = [];
   @override
   Widget build(BuildContext context) {
+
     final configs = ImagePickerConfigs();
     configs.translateFunc = (name, value) => Intl.message(value, name: name);
     configs.externalImageEditors['external_image_editor_1'] = EditorParams(
