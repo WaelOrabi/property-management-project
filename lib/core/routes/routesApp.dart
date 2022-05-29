@@ -7,8 +7,10 @@ import 'package:project_111/features/authentication/presentation/pages/super_adm
 import 'package:project_111/features/authentication/presentation/pages/update_peofile.dart';
 import 'package:project_111/features/properties/presentation/pages/category/category_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/home_screen/home_screen.dart';
+import 'package:project_111/features/conversation/presntation/pages/chat.dart';
 import 'package:project_111/features/properties/presentation/pages/map_screen/map_screen.dart';
 import 'package:project_111/features/authentication/presentation/pages/splash_screen.dart';
+import 'package:project_111/features/properties/presentation/pages/real_estate_listing_details/property_listing_details.dart';
 import 'package:project_111/features/properties/presentation/pages/my_favorite/my_favorite.dart';
 import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
 import '../../features/authentication/presentation/pages/welcome.dart';
@@ -18,9 +20,15 @@ import '../../features/properties/presentation/pages/mylistings_screen/MyListing
 
 Map<String, WidgetBuilder> routes() {
   return {
+
+    "/":(context)=> PropertyListingDetails(),
+    PagesView.routeName: (context) => const PagesView(),
+    Welcome.routeName: (context) => const Welcome(),
+
     "/":(context)=>const NavigationBarHome(),
      PagesView.routeName: (context) => const PagesView(),
      Welcome.routeName: (context) => const Welcome(),
+
     SingIn.routeName: (context) => const SingIn(),
     AccountDetails.routeName: (context) => const AccountDetails(),
     Profile.routeName: (context) => const Profile(),
@@ -30,6 +38,10 @@ Map<String, WidgetBuilder> routes() {
     MapScreen.routeName:(context)=>const MapScreen(),
     SplashScreen.routeName:(context)=>SplashScreen(),
     SuperAdmin.routeName:(context)=>const SuperAdmin(),
+
+    PropertyListingDetails.routeName:(context)=>const PropertyListingDetails(),
+    Chat.routeName:(context)=>const Chat(),
+
     MyFavorite.routeName:(context)=>const MyFavorite(),
     UpdateProfile.routeName:(context)=>const UpdateProfile(),
     HomeScreen.routeName:(context)=>const HomeScreen(),

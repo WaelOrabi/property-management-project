@@ -35,7 +35,7 @@ class _BodyState extends State<Body> {
                 icon: const Icon(Icons.arrow_back_ios_outlined)),
           ),
           const Padding(
-            padding: EdgeInsets.only(left: 20, bottom: 30),
+            padding: EdgeInsets.only(left: 20, bottom: 10),
             child: Text(
               'Create new account',
               style: TextStyle(
@@ -56,7 +56,7 @@ class _BodyState extends State<Body> {
             radius: 80,
           )),
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
             child: Column(
               children: [
 
@@ -198,6 +198,27 @@ class _BodyState extends State<Body> {
                 const SizedBox(
                   height: 30,
                 ),
+                GestureDetector(
+                  child: Container(
+                    height: 40,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: Colors.green,
+                    ),
+                    child:const Center(
+                      child: Text('Sign Up',style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+
                 const Center(
                   child: Text("Or sign up using ..",
                       style: TextStyle(color: Colors.grey)),

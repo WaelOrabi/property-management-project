@@ -54,6 +54,12 @@ dependencies:
   camera:
   splashscreen:
   awesome_dialog:
+  emoji_picker_flutter:
+  flutter_keyboard_visibility:
+  equatable:
+  dartz:
+  dots_indicator:
+  dropdown_button2:
 dev_dependencies:
   flutter_test:
     sdk: flutter
