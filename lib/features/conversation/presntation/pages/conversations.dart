@@ -87,52 +87,52 @@ class _ConversationsState extends State<Conversations> {
           ),
         ),
       ),
-      bottomNavigationBar: SizedBox(
-        height: 58,
-        child: BottomNavigationBar(
-          selectedFontSize: 0.0,
-          unselectedFontSize: 0.0,
-          backgroundColor: Colors.white,
-          type: BottomNavigationBarType.fixed,
-          elevation: 0.0,
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-          selectedItemColor: Colors.green,
-          selectedIconTheme: const IconThemeData(color: Colors.green, size: 30),
-          unselectedItemColor: Colors.grey,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: IconButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushReplacementNamed(Conversations.routeName);
-                  },
-                  icon: const Icon(Icons.home)),
-              label: 'Calls',
-            ),
-           const BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-              label: 'Camera',
-            ),
-           const  BottomNavigationBarItem(
-              icon: Icon(Icons.chat),
-              label: 'Chats',
-            ),
-           const BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Chats',
-            ),
-          ],
-        ),
-      ),
+      // bottomNavigationBar: SizedBox(
+      //   height: 58,
+      //   child: BottomNavigationBar(
+      //     selectedFontSize: 0.0,
+      //     unselectedFontSize: 0.0,
+      //     backgroundColor: Colors.white,
+      //     type: BottomNavigationBarType.fixed,
+      //     elevation: 0.0,
+      //     currentIndex: _selectedIndex,
+      //     onTap: _onItemTapped,
+      //     selectedItemColor: Colors.green,
+      //     selectedIconTheme: const IconThemeData(color: Colors.green, size: 30),
+      //     unselectedItemColor: Colors.grey,
+      //     items: <BottomNavigationBarItem>[
+      //       BottomNavigationBarItem(
+      //         icon: IconButton(
+      //             onPressed: () {
+      //               Navigator.of(context)
+      //                   .pushReplacementNamed(Conversations.routeName);
+      //             },
+      //             icon: const Icon(Icons.home)),
+      //         label: 'Calls',
+      //       ),
+      //      const BottomNavigationBarItem(
+      //         icon: Icon(Icons.category),
+      //         label: 'Camera',
+      //       ),
+      //      const  BottomNavigationBarItem(
+      //         icon: Icon(Icons.chat),
+      //         label: 'Chats',
+      //       ),
+      //      const BottomNavigationBarItem(
+      //         icon: Icon(Icons.search),
+      //         label: 'Chats',
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  // void _onItemTapped(int index) {
+  //   setState(() {
+  //     _selectedIndex = index;
+  //   });
+  // }
 
   GestureDetector buildChatItem() => GestureDetector(
         onTap: () {
