@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/features/authentication/presentation/pages/signup_screen/components/profile_picture.dart';
+import 'package:project_111/features/authentication/presentation/widgets/update_profile/profile_picture.dart';
+
+import '../profile.dart';
 
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
@@ -9,7 +11,9 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  TextEditingController nameController = TextEditingController();
+
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -40,34 +44,57 @@ class _BodyState extends State<Body> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Profile_Picture(),
-            ],
-          ),
+           ),
+
+          const Center(child:CircleAvatar(
+            backgroundColor: Colors.white,
+            child: Icon(
+              Icons.person,
+              size: 100,
+              color: Colors.grey,
+            ),
+            radius: 80,
+          )),
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
             child: Column(
               children: [
+
                 TextForm(
                   prefixIcon: false,
-                  icon: Icons.person_add_alt,
+                  icon: Icons.edit,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Please Enter your Name";
+                      return "Please Enter your first Name";
                     }
                     return null;
                   },
-                  controller: nameController,
+                  controller: firstNameController,
                   keyboardType: TextInputType.name,
-                  labelText: "Name",
-                  hintText: "Enter your Name",
+                  labelText: "First Name",
+                  hintText: "Enter your First Name",
                 ),
                 const SizedBox(
                   height: 20,
                 ),
+                TextForm(
+                  prefixIcon: false,
+                  icon: Icons.edit,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Please Enter your last name";
+                    }
+                    return null;
+                  },
+                  controller: lastNameController,
+                  keyboardType: TextInputType.name,
+                  labelText: "Last Name",
+                  hintText: "Enter your Last Name",
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+
                 TextForm(
                     prefixIcon: false,
                     icon: Icons.email,
@@ -139,9 +166,44 @@ class _BodyState extends State<Body> {
                     keyboardType: TextInputType.text,
                     labelText: 'Password Confirmaton',
                     hintText: 'Enter your password confirmation'),
+
+
+                const SizedBox(height: 30),
+
+                //button of sign up
+                GestureDetector(
+                    child: Container(
+                      height: 40,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.green),
+                      child: const Center(
+                        child: Text(
+                          'Sign Up',
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+
+                      Navigator.pushReplacementNamed(context,Profile.routeName);
+
+                    }),
+
+
                 const SizedBox(
                   height: 30,
                 ),
+                const Center(
+                  child: Text("Or sign up using ..",
+                      style: TextStyle(color: Colors.grey)),
+                ),
+                const SizedBox(height: 25.0),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -160,6 +222,10 @@ class _BodyState extends State<Body> {
                     ),
                   ],
                 ),
+                const SizedBox(
+                  height: 30,
+                ),
+
               ],
             ),
           ),

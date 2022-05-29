@@ -1,5 +1,4 @@
 // ignore_for_file: camel_case_types
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
@@ -51,7 +50,7 @@ class _Profile_PictureState extends State<Profile_Picture> {
             top: 100,
             child: IconButton(
               icon:const Icon(Icons.add_a_photo),
-              color: Colors.grey.shade700,
+              color: Colors.green,
               iconSize: 30,
               onPressed: () {
                 var ad = AlertDialog(

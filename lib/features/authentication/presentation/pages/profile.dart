@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:project_111/features/authentication/presentation/pages/account_details.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
+import 'package:project_111/features/authentication/presentation/pages/update_peofile.dart';
+import 'package:project_111/features/authentication/presentation/widgets/update_profile/profile_picture.dart';
 import 'package:project_111/features/properties/presentation/pages/add_property/add_property.dart';
 import 'package:project_111/features/properties/presentation/pages/my_favorite/my_favorite.dart';
 import '../../../properties/presentation/pages/mylistings_screen/MyListingScreen.dart';
@@ -31,10 +33,12 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: WidgetsAppBar.buildAppBar(namePage: "Profile",
-            fun: (){},color: Colors.white),
-        body: _buildBody(context),
-      ),
+          appBar: WidgetsAppBar.buildAppBar(namePage: "Profile",
+              fun: (){
+            Navigator.of(context).pop();
+              },color: Colors.white),
+          body: _buildBody(context),
+        ),
     );
   }
 
@@ -46,21 +50,23 @@ class _ProfileState extends State<Profile> {
           children: [
            const SizedBox(height: 10,),
            //image_profile
-            _buildImageProfile(context),
-            const SizedBox(height: 20),
+            const Profile_Picture(),
+            const  SizedBox(height: 10,),
+            const Text("User name", style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+           const SizedBox(height: 20),
 
 
             buildListTile(
                 nameList: "My Listing",
                 typeIcon: Icons.format_list_bulleted_sharp,
                 colorIcon: Colors.greenAccent,
-                fun: () =>MyListingScreen.routeName),
+                fun: () =>Navigator.pushReplacementNamed(context,MyListingScreen.routeName)),
 
             buildListTile(
                 nameList: "My Favorites",
                 typeIcon: Icons.favorite,
                 colorIcon: Colors.red,
-                fun: () {Navigator.pushNamed(context, MyFavorite.routeName);}),
+                fun: () =>Navigator.pushReplacementNamed(context, MyFavorite.routeName)),
 
             buildListTile(
                 nameList: "Account Details",
@@ -72,18 +78,12 @@ class _ProfileState extends State<Profile> {
                 nameList: "Upgrade Account",
                 typeIcon: Icons.edit,
                 colorIcon: Colors.yellow,
-                fun: () =>Navigator.pushNamed(context, AddProperty.routeName),),
+                fun: () =>Navigator.pushReplacementNamed(context, UpdateProfile.routeName),),
 
             buildListTile(
                 nameList: "Setting",
                 typeIcon: Icons.settings,
                 colorIcon: Colors.grey,
-                fun: () {}),
-
-            buildListTile(
-                nameList: "Contact Us",
-                typeIcon: Icons.phone,
-                colorIcon: Colors.green,
                 fun: () {}),
 
             //Button of Log out
@@ -173,8 +173,7 @@ class _ProfileState extends State<Profile> {
                       ],
                     ),
                   ),
-                 const  SizedBox(height: 10,),
-                 const Text("User name", style: TextStyle(fontSize: 20),),
+
                 ],
               ),
             );

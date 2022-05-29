@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_111/features/properties/presentation/pages/add_property/select_location.dart';
+import 'package:project_111/features/properties/presentation/pages/home_screen/home_screen.dart';
 import 'package:project_111/features/properties/presentation/widgets/add_property_widget/add_photo_advance_image.dart';
 import '../../../../../core/widgets/widget_appbar.dart';
 import '../../widgets/add_property_widget/filters.dart';
@@ -39,7 +40,7 @@ final priceController = TextEditingController();
         backgroundColor: Colors.grey.shade200,
         appBar: WidgetsAppBar.buildAppBar(
           namePage: "Add Listing",
-          fun: () {},
+          fun: () =>Navigator.pushReplacementNamed(context, HomeScreen.routeName),
           color: Colors.grey.shade200,
         ),
         body: SingleChildScrollView(
