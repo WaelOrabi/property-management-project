@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:project_111/features/properties/presentation/pages/category/category_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/home_screen/home_screen.dart';
-import '../../../authentication/presentation/pages/signup_screen/signup_screen.dart';
-import '../pages/add_property/add_property.dart';
+import '../../features/authentication/presentation/pages/signup_screen/signup_screen.dart';
+import '../../features/properties/presentation/pages/add_property/add_property.dart';
 class NavigationBarHome extends StatefulWidget {
   const NavigationBarHome({Key? key}) : super(key: key);
   static String routeName='BottomNavigationBar';
@@ -20,13 +21,15 @@ class _NavigationBarHomeState extends State<NavigationBarHome> {
     setState(() {
       _selectedIndex=index;
     });
-    pageController.jumpToPage(index);
+    if (pageController.hasClients) {
+      pageController.jumpToPage(index);
+    }
   }
 
   List <Widget> screen =[
-    HomeScreen(),
-    AddProperty(),
-    SignUpScreen(),
+    const HomeScreen(),
+    const CategoryScreen(),
+   const  SignUpScreen(),
     Container(),
   ];
 
@@ -48,7 +51,8 @@ class _NavigationBarHomeState extends State<NavigationBarHome> {
       ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
+
         onTap: onTapped,
       ),
     );

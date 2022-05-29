@@ -12,13 +12,13 @@ class _FiltersState extends State<Filters> {
 
   String dropdownValuePriceRange = '<\$100K';
   String dropdownValueSquareFeet = '<100sqft';
-  String dropdownValueRentOrBuy = 'Buy';
+
   String dropdownValueBedRoom = 'notFound';
   String dropdownValueBaths = 'notFound';
   String dropdownValueNewConstruction = 'No';
   String dropdownValueCloseToPublicTransport = 'No';
 
-  List<String> rentOrBuyItems = ['Rent', 'Buy'];
+
   List<String> closeToPublicTransportItems = ['Yes', 'No'];
   List<String> newConstructionItems = ['Yes', 'No'];
   List<String> squareFeetItems = [
@@ -80,23 +80,6 @@ class _FiltersState extends State<Filters> {
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
-                              buildRowItemsOfFilters(
-                                  context: context,
-                                  titleItems: "Rent or Buy",
-                                  fontWeight: FontWeight.w500,
-                                  widthOfSizeBox: 6.6,
-                                  dropdownValue:
-                                  dropdownValueRentOrBuy,
-                                  nameListItems:
-                                  rentOrBuyItems,
-                                  fun: (data) {
-                                    setState(() {
-                                      dropdownValueRentOrBuy = data!;
-
-                                    });
-                                  }
-                              ),
-
                               buildRowItemsOfFilters(
                                   context: context,
                                   titleItems: "Price Range",

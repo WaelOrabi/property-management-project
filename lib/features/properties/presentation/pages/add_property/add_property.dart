@@ -21,16 +21,8 @@ final titleController = TextEditingController();
 final descriptionController = TextEditingController();
 final priceController = TextEditingController();
 
-  String dropdownValueCategory = 'Houses';
-  List<String> categoryItems = [
-    'Houses',
-    'Apartment',
-    'Condos',
-    'Land',
-    'Buildings',
-    'Town Houses',
-    'Recently Sold'
-  ];
+  String dropdownValueCategory = 'Buy';
+  List<String> categoryItems = ['Rent', 'Buy','Investment'];
 
 
   @override
