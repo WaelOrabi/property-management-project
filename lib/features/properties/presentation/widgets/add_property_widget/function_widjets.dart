@@ -1,8 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:project_111/features/properties/presentation/pages/add_property/varibles_and_lists/varibles_and_lists.dart';
-
+final yearBuiltController = TextEditingController();
 Row buildRowItemsOfCategory({
   required BuildContext context,
   required String titleItems,

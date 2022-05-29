@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_111/features/properties/presentation/pages/add_property/screen/select_location.dart';
-import 'package:project_111/features/properties/presentation/pages/add_property/widget/add_photo_advance_image.dart';
-import '../../../../../../core/widgets/widget_appbar.dart';
-import '../varibles_and_lists/varibles_and_lists.dart';
-import '../widget/filters.dart';
-import '../widget/function_widjets.dart';
+import 'package:project_111/features/properties/presentation/pages/add_property/select_location.dart';
+import 'package:project_111/features/properties/presentation/pages/home_screen/home_screen.dart';
+import 'package:project_111/features/properties/presentation/widgets/add_property_widget/add_photo_advance_image.dart';
+import '../../../../../core/widgets/widget_appbar.dart';
+import '../../widgets/add_property_widget/filters.dart';
+import '../../widgets/add_property_widget/function_widjets.dart';
 
 class AddProperty extends StatefulWidget {
   const AddProperty({Key? key}) : super(key: key);
@@ -16,6 +16,23 @@ class AddProperty extends StatefulWidget {
 }
 
 class _AddPropertyState extends State<AddProperty> {
+  final formKey = GlobalKey<FormState>();
+final titleController = TextEditingController();
+final descriptionController = TextEditingController();
+final priceController = TextEditingController();
+
+  String dropdownValueCategory = 'Houses';
+  List<String> categoryItems = [
+    'Houses',
+    'Apartment',
+    'Condos',
+    'Land',
+    'Buildings',
+    'Town Houses',
+    'Recently Sold'
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,7 +40,7 @@ class _AddPropertyState extends State<AddProperty> {
         backgroundColor: Colors.grey.shade200,
         appBar: WidgetsAppBar.buildAppBar(
           namePage: "Add Listing",
-          fun: () {},
+          fun: () =>Navigator.pushReplacementNamed(context, HomeScreen.routeName),
           color: Colors.grey.shade200,
         ),
         body: SingleChildScrollView(

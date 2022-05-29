@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/features/properties/presentation/pages/add_property/widget/function_widjets.dart';
-import '../varibles_and_lists/varibles_and_lists.dart';
+import 'package:project_111/features/properties/presentation/widgets/add_property_widget/function_widjets.dart';
 class Filters extends StatefulWidget {
   const Filters({Key? key}) : super(key: key);
 
@@ -10,6 +9,54 @@ class Filters extends StatefulWidget {
 
 class _FiltersState extends State<Filters> {
 
+
+  String dropdownValuePriceRange = '<\$100K';
+  String dropdownValueSquareFeet = '<100sqft';
+  String dropdownValueRentOrBuy = 'Buy';
+  String dropdownValueBedRoom = 'notFound';
+  String dropdownValueBaths = 'notFound';
+  String dropdownValueNewConstruction = 'No';
+  String dropdownValueCloseToPublicTransport = 'No';
+
+  List<String> rentOrBuyItems = ['Rent', 'Buy'];
+  List<String> closeToPublicTransportItems = ['Yes', 'No'];
+  List<String> newConstructionItems = ['Yes', 'No'];
+  List<String> squareFeetItems = [
+    '<100sqft',
+    '100sqft - 500sqft',
+    '500sqft - 1000sqft',
+    '1000sqft - 2000sqft',
+    '>2000sqft',
+  ];
+  List<String> priceRangeItems = [
+    '<\$100K',
+    '\$100K-\$500k',
+    '\$500K-\$1M',
+    '\$1M-\$5M',
+    '>\$5M',
+  ];
+  List<String> bedRoomItems = [
+    'notFound',
+    '1bd',
+    '2bd',
+    '3bd',
+    '4bd',
+    '>4bd',
+  ];
+  List<String> bathsItems = [
+    'notFound',
+    '1ba',
+    '2ba',
+    '3ba',
+    '4ba',
+    '>4ba',
+  ];
+
+
+
+
+
+  final yearBuiltController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Row(

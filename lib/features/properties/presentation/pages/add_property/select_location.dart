@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_111/features/properties/presentation/pages/map_screen/map_screen.dart';
-import '../varibles_and_lists/varibles_and_lists.dart';
-import '../widget/function_widjets.dart';
+import '../../widgets/add_property_widget/function_widjets.dart';
 
 class SelectLocation extends StatefulWidget {
   const SelectLocation({Key? key}) : super(key: key);
@@ -11,6 +10,12 @@ class SelectLocation extends StatefulWidget {
 }
 
 class _SelectLocationState extends State<SelectLocation> {
+
+
+  final governorateController = TextEditingController();
+  final regionController = TextEditingController();
+  final streetController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Row(
