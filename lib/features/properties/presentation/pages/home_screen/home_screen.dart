@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey.shade200,
+        backgroundColor: Colors.white,
         key: _key,
         drawer: const Drawer(child: Profile()),
         appBar: buildScrollAppBar(),
@@ -42,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ScrollAppBar buildScrollAppBar() {
     return ScrollAppBar(
       controller: controller,
+      elevation: 0,
       toolbarHeight: 70,
       backgroundColor: Colors.white,
       centerTitle: true,
@@ -82,6 +83,7 @@ Widget _buildBody(BuildContext context){
     return Padding(
       padding:const  EdgeInsets.only(left: 8,right: 8),
     child: SingleChildScrollView(
+      controller: controller,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

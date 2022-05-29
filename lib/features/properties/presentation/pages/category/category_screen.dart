@@ -25,6 +25,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
 
   AppBar _buildAppBar() {
     return AppBar(
+      elevation: 0.6,
       centerTitle: true,
       toolbarHeight: 70,
       backgroundColor: Colors.white,
