@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project_111/features/conversation/presntation/pages/conversations.dart';
+import 'package:project_111/features/properties/presentation/pages/category/category_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/home_screen/home_screen.dart';
-import '../../../authentication/presentation/pages/signup_screen.dart';
-import '../pages/add_property/add_property.dart';
 class NavigationBarHome extends StatefulWidget {
   const NavigationBarHome({Key? key}) : super(key: key);
   static String routeName='BottomNavigationBar';
@@ -20,21 +20,17 @@ class _NavigationBarHomeState extends State<NavigationBarHome> {
     setState(() {
       _selectedIndex=index;
     });
-    pageController.jumpToPage(index);
+    if (pageController.hasClients) {
+      pageController.jumpToPage(index);
+    }
   }
 
   List <Widget> screen =[
-    HomeScreen(),
-    AddProperty(),
-    SignUpScreen(),
+    const HomeScreen(),
+    const CategoryScreen(),
+   const  Conversations(),
     Container(),
   ];
-
-  @override
-  void dispose() {
-    pageController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +44,7 @@ class _NavigationBarHomeState extends State<NavigationBarHome> {
       ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
         onTap: onTapped,
       ),
     );
