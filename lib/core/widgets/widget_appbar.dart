@@ -7,18 +7,22 @@ class WidgetsAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container();
   }
-static  AppBar buildAppBar({required String namePage,required VoidCallback fun,required Color color}) {
+
+  static AppBar buildAppBar(
+      {required String namePage,
+      required VoidCallback fun,
+      required Color color}) {
     return AppBar(
       toolbarHeight: 80,
       centerTitle: true,
       backgroundColor: color,
       title: Text(
         namePage,
-        style:const TextStyle(color: Colors.green, fontSize: 25),
+        style: const TextStyle(color: Colors.green, fontSize: 25),
       ),
       elevation: 0,
       leading: IconButton(
-        onPressed:fun,
+        onPressed: fun,
         icon: const Icon(
           Icons.arrow_back_ios,
           color: Colors.green,
@@ -26,6 +30,4 @@ static  AppBar buildAppBar({required String namePage,required VoidCallback fun,r
       ),
     );
   }
-
-
 }

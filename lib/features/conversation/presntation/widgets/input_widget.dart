@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class InputWidget extends StatelessWidget {
+class InputWidget extends StatefulWidget {
   final TextEditingController controller;
   final bool isEmojiVisible;
   final bool isKeyboardVisible;
   final Function onBlurred;
   final ValueChanged<String> onSentMessage;
-  final focusNode = FocusNode();
   final bool iscomment;
 
   InputWidget({
@@ -19,6 +18,13 @@ class InputWidget extends StatelessWidget {
     this.iscomment = false,
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<InputWidget> createState() => _InputWidgetState();
+}
+
+class _InputWidgetState extends State<InputWidget> {
+  final focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) => Row(
@@ -35,36 +41,41 @@ class InputWidget extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    buildEmoji(),
-                    Expanded(child: buildTextField(iscomment: iscomment)),
+                   buildEmoji(),
+                    Expanded(child: buildTextField(iscomment: widget.iscomment,context:context)),
                   ],
                 ),
               ),
             ),
           ),
-          buildSend(iscomment: iscomment),
+          buildSend(iscomment: widget.iscomment),
         ],
       );
 
   Widget buildEmoji() => IconButton(
         icon: Icon(
-          isEmojiVisible
+          widget.isEmojiVisible
               ? Icons.keyboard_rounded
-              : Icons.emoji_emotions_outlined,
+              : Icons.emoji_emotions_outlined,color: Colors.white,
         ),
         onPressed: onClickedEmoji,
       );
 
-  Widget buildTextField({required bool iscomment}) => TextField(
-        cursorColor: Colors.black,
-        focusNode: focusNode,
-        controller: controller,
-        style: const TextStyle(fontSize: 16),
-        decoration:  InputDecoration.collapsed(
-          hintText: iscomment?'Add Comment':'Type your message...',
-          hintStyle: TextStyle(color: Colors.grey),
+  Widget buildTextField({required bool iscomment,required BuildContext context}) => Padding(
+    padding:  EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+    child: TextFormField(
+
+          cursorColor: Colors.black,
+          autofocus: true,
+          focusNode: focusNode,
+          controller: widget.controller,
+          style: const TextStyle(fontSize: 16),
+          decoration:  InputDecoration.collapsed(
+            hintText: iscomment?'Add Comment':'Type your message...',
+            hintStyle: const TextStyle(color: Colors.grey),
+          ),
         ),
-      );
+  );
 
   Widget buildSend({required bool iscomment}) => Container(
         margin: const EdgeInsets.symmetric(horizontal: 4),
@@ -92,12 +103,12 @@ class InputWidget extends StatelessWidget {
       );
 
   void onClickedEmoji() async {
-    if (isEmojiVisible) {
+    if (widget.isEmojiVisible) {
       focusNode.requestFocus();
-    } else if (isKeyboardVisible) {
+    } else if (widget.isKeyboardVisible) {
       await SystemChannels.textInput.invokeMethod('TextInput.hide');
       await Future.delayed(const Duration(milliseconds: 50));
     }
-    onBlurred();
+    widget.onBlurred();
   }
 }

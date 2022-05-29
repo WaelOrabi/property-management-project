@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_111/features/properties/presentation/pages/home_screen/home_screen.dart';
-import '../../../authentication/presentation/pages/signup_screen/signup_screen.dart';
+import '../../../authentication/presentation/pages/signup_screen.dart';
 import '../pages/add_property/add_property.dart';
 class NavigationBarHome extends StatefulWidget {
   const NavigationBarHome({Key? key}) : super(key: key);

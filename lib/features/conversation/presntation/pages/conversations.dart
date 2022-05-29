@@ -18,112 +18,124 @@ class _ConversationsState extends State<Conversations> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ScrollAppBar(
-        titleSpacing: 20,
-        controller: controllerAppBar,
-        elevation: 0.0,
+      appBar: buildScrollAppBar(),
+      body: buildBody(),
+      bottomNavigationBar: buildBottomNavigationBar(context),
+    );
+  }
+
+  SizedBox buildBottomNavigationBar(BuildContext context) {
+    return SizedBox(
+      height: 58,
+      child: BottomNavigationBar(
+        selectedFontSize: 0.0,
+        unselectedFontSize: 0.0,
         backgroundColor: Colors.white,
-        centerTitle: true,
-        title: Row(
-          children: const [
-            CircleAvatar(
-              radius: 25.0,
-              backgroundImage: NetworkImage(
-                  'https://cdn.pixabay.com/photo/2018/01/06/09/25/hijab-3064633_960_720.jpg'),
-              backgroundColor: Colors.transparent,
-            ),
-            SizedBox(
-              width: 15,
-            ),
-            Text(
-              'Conversations',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
+        type: BottomNavigationBarType.fixed,
+        elevation: 0.0,
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        selectedItemColor: Colors.green,
+        selectedIconTheme: const IconThemeData(color: Colors.green, size: 30),
+        unselectedItemColor: Colors.grey,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: IconButton(
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushReplacementNamed(Conversations.routeName);
+                },
+                icon: const Icon(Icons.home)),
+            label: 'Calls',
+          ),
+         const BottomNavigationBarItem(
+            icon: Icon(Icons.category),
+            label: 'Camera',
+          ),
+         const  BottomNavigationBarItem(
+            icon: Icon(Icons.chat),
+            label: 'Chats',
+          ),
+         const BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Chats',
+          ),
+        ],
       ),
-      body: Container(
-        color: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.grey[300],
-                  ),
-                  padding: const EdgeInsets.all(10),
-                  child: Row(
-                    children: const [
-                      Icon(Icons.search),
-                      SizedBox(
-                        width: 15,
+    );
+  }
+
+  Container buildBody() {
+    return Container(
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.grey[300],
+                ),
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  children: const [
+                    Icon(Icons.search),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Text('Search'),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              ListView.separated(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) => buildChatItem(),
+                  separatorBuilder: (context, index) => const SizedBox(
+                        height: 20,
                       ),
-                      Text('Search'),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                ListView.separated(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) => buildChatItem(),
-                    separatorBuilder: (context, index) => const SizedBox(
-                          height: 20,
-                        ),
-                    itemCount: 30),
-              ],
-            ),
+                  itemCount: 30),
+            ],
           ),
         ),
       ),
-      bottomNavigationBar: SizedBox(
-        height: 58,
-        child: BottomNavigationBar(
-          selectedFontSize: 0.0,
-          unselectedFontSize: 0.0,
-          backgroundColor: Colors.white,
-          type: BottomNavigationBarType.fixed,
-          elevation: 0.0,
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-          selectedItemColor: Colors.green,
-          selectedIconTheme: const IconThemeData(color: Colors.green, size: 30),
-          unselectedItemColor: Colors.grey,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: IconButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushReplacementNamed(Conversations.routeName);
-                  },
-                  icon: const Icon(Icons.home)),
-              label: 'Calls',
+    );
+  }
+
+  ScrollAppBar buildScrollAppBar() {
+    return ScrollAppBar(
+      titleSpacing: 20,
+      controller: controllerAppBar,
+      elevation: 0.0,
+      backgroundColor: Colors.white,
+      centerTitle: true,
+      title: Row(
+        children: const [
+          CircleAvatar(
+            radius: 25.0,
+            backgroundImage: NetworkImage(
+                'https://cdn.pixabay.com/photo/2018/01/06/09/25/hijab-3064633_960_720.jpg'),
+            backgroundColor: Colors.transparent,
+          ),
+          SizedBox(
+            width: 15,
+          ),
+          Text(
+            'Conversations',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.green,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
             ),
-           const BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-              label: 'Camera',
-            ),
-           const  BottomNavigationBarItem(
-              icon: Icon(Icons.chat),
-              label: 'Chats',
-            ),
-           const BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Chats',
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

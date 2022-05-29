@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:project_111/features/authentication/presentation/pages/profile.dart';
-import 'package:project_111/features/authentication/presentation/pages/signup_screen/signup_screen.dart';
+import 'package:project_111/features/authentication/presentation/pages/signup_screen.dart';
 import 'package:project_111/features/authentication/presentation/pages/welcome.dart';
+
+import '../widgets/signin_signup/button_signin_signup_update.dart';
+import '../widgets/signin_signup/iconbutton_for_signin_and_signup_with_other_apps.dart';
+import '../widgets/signin_signup/return_button.dart';
+import '../widgets/signin_signup/textformfield_signin_signup_updateProfile.dart';
 
 class SingIn extends StatefulWidget {
   const SingIn({Key? key}) : super(key: key);
@@ -28,9 +33,8 @@ class _SingInState extends State<SingIn> {
                 children: [
 
                   //Icon back to screen welcome
-                  IconButton(
-                      onPressed: () => Navigator.pushReplacementNamed(context, Welcome.routeName),
-                      icon: const Icon(Icons.arrow_back_ios)),
+                  buildReturnButton(fun: () => Navigator.pushReplacementNamed(
+                      context, Welcome.routeName),icon: const Icon(Icons.arrow_back_ios)),
 
                   const SizedBox(height: 20),
                   const Text(
@@ -49,110 +53,61 @@ class _SingInState extends State<SingIn> {
                       children: [
 
                         ////Enter Email address
-                        TextFormField(
-                          keyboardType: TextInputType.emailAddress,
-                          controller: emailController,
-                          decoration: InputDecoration(
-                            prefixIcon: const Icon(Icons.email),
-                            label: const Text(
-                              "Email",
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            hintText: "Enter your email",
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(50),
-                              borderSide: const BorderSide(color: Colors.grey),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.grey),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          validator: (value) {
-                            bool emailValid = RegExp(
-                                    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                .hasMatch(value!);
-                            if (emailValid) {
-                              return "Enter a valid email please";
-                            }
-                            return null;
-                          },
-                        ),
+                        TextForm(
+                            prefixIcon: false,
+                            icon: Icons.email,
+                            validator: (value) {
+                              bool emailValid = RegExp(
+                                  r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                  .hasMatch(value!);
+                              if (!emailValid) {
+                                return "Please re-enter your email";
+                              }
+                              if (value.isEmpty) {
+                                return "Please enter your email";
+                              }
+                              return null;
+                            },
+                            controller: emailController,
+                            keyboardType: TextInputType.emailAddress,
+                            labelText: "Enter Email",
+                            hintText: "enter email"),
 
                         const SizedBox(height: 20),
 
                         ////Enter the password
-                        TextFormField(
-                          obscureText: true,
-                          keyboardType: TextInputType.visiblePassword,
-                          controller: passwordController,
-                          decoration: InputDecoration(
-                            prefixIcon: const Icon(Icons.lock),
-                            suffixIcon: IconButton(
-                              icon: const Icon(Icons.visibility),
-                              onPressed: () {},
-                            ),
-                            label: const Text(
-                              "Password",
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            hintText: "Enter your Password",
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(50),
-                              borderSide: const BorderSide(color: Colors.grey),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.grey),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                          ),
-                          validator: (value) {
-                            bool passValid = RegExp(
-                                    "^(?=.{8,32}\$)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%^&*(),.?:{}|<>]).*")
-                                .hasMatch(value!);
-
-                            if (value.isEmpty) {
-                              return "Enter your password please";
-                            } else if (value.length < 6) {
-                              return "The password leas from 6 liters";
-                            }
-                            if (!passValid) {
-                              return "Enter valid";
-                            } else {
+                        TextForm(
+                            prefixIcon: true,
+                            icon: Icons.lock,
+                            validator: (value) {
+                              if (value!.isEmpty) return 'Please enter password';
+                              if (!isPasswordCompliant(passwordController.text)) {
+                                return 'Please re-enter password';
+                              }
                               return null;
-                            }
-                          },
-                        ),
+                            },
+                            controller: passwordController,
+                            keyboardType: TextInputType.text,
+                            labelText: "Password",
+                            hintText: 'Enter your password'),
                       ],
                     ),
                   ),
 
                   const SizedBox(height: 30),
-
-                  //button of Log in
-                  GestureDetector(
-                      child: Container(
-                        height: 40,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.green),
-                        child: const Center(
-                          child: Text(
-                            'Log In',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ),
-                      ),
-                      onTap: () {
-
-                          Navigator.pushReplacementNamed(context,Profile.routeName);
-
-                      }),
-
+                  ButtonSigninSignupProfile(
+                      context: context,
+                      height: 40,
+                      circle: 50,
+                      text: 'Log In',
+                      fun: () {
+                        Navigator.pushReplacementNamed(
+                            context, Profile.routeName);
+                      },
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      colorText: Colors.white,
+                      backGroundColor: Colors.green),
                   const SizedBox(height: 15),
 
                   //if you don't have account
@@ -164,13 +119,15 @@ class _SingInState extends State<SingIn> {
                         Row(
                           children: const [
                             Text.rich(TextSpan(children: [
-                              TextSpan(text: "Don\'t have any account? "),
+                              TextSpan(text: "Don't have any account? "),
                             ])),
                           ],
                         ),
                         GestureDetector(
-                          onTap: ()=>Navigator.pushReplacementNamed(context, SignUpScreen.routeName),
-                          child:const Text(
+                          onTap: () =>
+                              Navigator.pushReplacementNamed(
+                                  context, SignUpScreen.routeName),
+                          child: const Text(
                             "Create",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
@@ -217,24 +174,4 @@ class _SingInState extends State<SingIn> {
     );
   }
 
-
-//Icons of facebook and google under the button
-  GestureDetector buildIconFacebookAndGoogle(
-      {required double height,
-      required double width,
-      required String linkImage,
-      required Function fun}) {
-    return GestureDetector(
-      child: Container(
-        height: height,
-        width: width,
-        padding: const EdgeInsets.all(0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(100),
-        ),
-        child: Image.asset(linkImage),
-      ),
-      onTap: () => fun,
-    );
-  }
 }

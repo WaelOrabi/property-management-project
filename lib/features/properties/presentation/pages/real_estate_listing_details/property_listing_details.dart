@@ -1,5 +1,3 @@
-import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:project_111/features/conversation/presntation/pages/chat.dart';
@@ -7,7 +5,6 @@ import 'package:scroll_app_bar/scroll_app_bar.dart';
 import 'package:path/path.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
-import '../../../../conversation/presntation/widgets/input_widget.dart';
 
 class PropertyListingDetails extends StatefulWidget {
   static String routeName = 'PropertyListingDetails';
@@ -23,11 +20,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
   final controllerInputWidget = TextEditingController();
   bool isEmojiVisible = false;
   bool isKeyboardVisible = false;
-  var items = [
-    'Remove From Favorites',
-    'Add Review',
-    'Send Message'
-  ];
+  var items = ['Remove From Favorites', 'Add Review', 'Send Message'];
   final _totalDots = 5;
   double _currentPosition = 0.0;
   var controllerAppBar = ScrollController();
@@ -59,7 +52,8 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
     });
   }
 
-  late var context;
+  late BuildContext context;
+  final focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -96,10 +90,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
     );
   }
 
-  Widget buildBody(BuildContext context) =>
-      WillPopScope(
-        onWillPop: onBackPress,
-        child: SingleChildScrollView(
+  Widget buildBody(BuildContext context) => SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -169,7 +160,9 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                   fontsize: 20),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               buildExtraInfo(
                   text1: 'Baths',
                   left1: 20,
@@ -180,7 +173,9 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                   right2: 100,
                   color2: Colors.grey,
                   fontsize2: 15),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               buildExtraInfo(
                   text1: 'Rent or Buy',
                   left1: 20,
@@ -191,7 +186,9 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                   right2: 100,
                   color2: Colors.grey,
                   fontsize2: 15),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               buildExtraInfo(
                   text1: 'Bedrooms',
                   left1: 20,
@@ -202,7 +199,9 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                   right2: 100,
                   color2: Colors.grey,
                   fontsize2: 15),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               buildExtraInfo(
                   text1: 'Close to Public TransPortation',
                   left1: 20,
@@ -213,7 +212,9 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                   right2: 100,
                   color2: Colors.grey,
                   fontsize2: 15),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               buildExtraInfo(
                   text1: 'New Construction',
                   left1: 20,
@@ -224,7 +225,9 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                   right2: 100,
                   color2: Colors.grey,
                   fontsize2: 15),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               buildExtraInfo(
                   text1: 'Year Built',
                   left1: 20,
@@ -235,7 +238,9 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                   right2: 100,
                   color2: Colors.grey,
                   fontsize2: 15),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               buildExtraInfo(
                   text1: 'Square feet',
                   left1: 20,
@@ -246,199 +251,152 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                   right2: 100,
                   color2: Colors.grey,
                   fontsize2: 15),
-              SizedBox(height: 30,),
-              Divider(color: Colors.grey,),
+              const SizedBox(
+                height: 30,
+              ),
+              const Divider(
+                color: Colors.grey,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  MaterialButton(child: Row(children: [
-                    buildText('message', fontWeight: FontWeight.normal,
-                        color: Colors.black,
-                        fontsize: 15),
-                    SizedBox(width: 5,),
-                    Icon(Icons.wechat_outlined)
-                  ]), onPressed: () {
-                    print('heello');
-                    Navigator.of(context).pushNamed(Chat.routeName);
-                  },),
-                  MaterialButton(child: Row(children: [
-                    buildText('comment', fontWeight: FontWeight.normal,
-                        color: Colors.black,
-                        fontsize: 15),
-                    SizedBox(width: 5,),
-                    Icon(Icons.add_comment_outlined)
-                  ],),
-                  onPressed: ()=>showModalBottomSheet(context: context,
-                     // isDismissible: false,
-                    isScrollControlled: true,
-                    shape:RoundedRectangleBorder(borderRadius:BorderRadius.vertical(
-                      top: const Radius.circular(40.0),
-                    ), ) ,
-                      builder:(context)=>Container(
-                        height: MediaQuery.of(context).size.height * 0.90,
-
-                        child:buildSheet(),
-                      )),
+                  MaterialButton(
+                    child: Row(children: [
+                      buildText('message',
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black,
+                          fontsize: 15),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      const Icon(Icons.wechat_outlined)
+                    ]),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(Chat.routeName);
+                    },
                   ),
-                  MaterialButton(child: Row(children: [
-                    buildText('like', fontWeight: FontWeight.normal,
-                        color: Colors.black,
-                        fontsize: 15),
-                    SizedBox(width: 5,),
-                    Icon(Icons.thumb_up_off_alt_outlined)
-                  ],),
-                  onPressed: (){},
+                  MaterialButton(
+                    child: Row(
+                      children: [
+                        buildText('comment',
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black,
+                            fontsize: 15),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        const Icon(Icons.add_comment_outlined)
+                      ],
+                    ),
+                    onPressed: ()async{
+                      await buildShowModalBottomSheet(context);
+                      },
+                  ),
+                  MaterialButton(
+                    child: Row(
+                      children: [
+                        buildText('like',
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black,
+                            fontsize: 15),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        const Icon(Icons.thumb_up_off_alt_outlined)
+                      ],
+                    ),
+                    onPressed: () {},
                   ),
                 ],
               ),
-              SizedBox(height: 20,),
-              // InputWidget(
-              //   iscomment:true,
-              //   onBlurred: toggleEmojiKeyboard,
-              //   controller: controller,
-              //   isEmojiVisible: isEmojiVisible,
-              //   isKeyboardVisible: isKeyboardVisible,
-              //   onSentMessage: (message) =>
-              //       setState(() => messages.insert(0, message)),
-              // ),
-              // Offstage(
-              //   offstage: !isEmojiVisible,
-              //   child: SizedBox(
-              //     height: 300,
-              //     child:Builder(
-              //       builder: (BuildContext context) {
-              //         return  EmojiPicker(
-              //             onEmojiSelected: (Category category, Emoji emoji) {
-              //               onEmojiSelected(emoji.emoji);
-              //             },
-              //             onBackspacePressed:onBackPress,
-              //             config: const Config(
-              //                 columns: 7,
-              //                 verticalSpacing: 0,
-              //                 horizontalSpacing: 0,
-              //                 initCategory: Category.RECENT,
-              //                 bgColor: Color(0xFFF2F2F2),
-              //                 indicatorColor: Colors.blue,
-              //                 iconColor: Colors.grey,
-              //                 iconColorSelected: Colors.blue,
-              //                 progressIndicatorColor: Colors.blue,
-              //                 backspaceColor: Colors.blue,
-              //                 skinToneDialogBgColor: Colors.white,
-              //                 skinToneIndicatorColor: Colors.grey,
-              //                 enableSkinTones: true,
-              //                 showRecentsTab: true,
-              //                 recentsLimit: 28,
-              //                 noRecentsText: 'No Recents',
-              //                 noRecentsStyle:
-              //                 TextStyle(fontSize: 20, color: Colors.black26),
-              //                 tabIndicatorAnimDuration: kTabScrollDuration,
-              //                 categoryIcons: CategoryIcons(),
-              //                 buttonMode: ButtonMode.MATERIAL));
-              //       },
-              //
-              //     ),
-              //   ),
-              // ),
+              const SizedBox(
+                height: 20,
+              ),
             ],
           ),
+        );
+
+  Future<dynamic> buildShowModalBottomSheet(BuildContext context) {
+    return showModalBottomSheet(
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(50))),
+        backgroundColor: Colors.white,
+        context: context,
+        isScrollControlled: true,
+        builder: (context) => Container(
+          height: MediaQuery.of(context).size.height * 0.85,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Expanded(child: Container()),
+              Padding(
+                padding: const EdgeInsets.only(left: 10, right: 5),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Expanded(
+                        child: buildTextField(
+                            iscomment: true, context: context)),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
+
+  Widget buildSend({required bool iscomment}) => Container(
+        margin: const EdgeInsets.symmetric(horizontal: 4),
+        child: iscomment == true
+            ? TextButton(
+                onPressed: () {},
+                child: Text(
+                  'send',
+                  style: TextStyle(
+                    color: Colors.green[400],
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ))
+            : CircleAvatar(
+                backgroundColor: Colors.green,
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.mic,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {},
+                ),
+              ),
+      );
+
+
+
+  Widget buildTextField(
+          {required bool iscomment, required BuildContext context}) =>
+      Padding(
+        padding:
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        child: TextField(
+          decoration: InputDecoration(
+            suffixIcon: buildSend(iscomment: true),
+            hintText: iscomment ? 'Add Comment' : 'Type your message...',
+            hintStyle: const TextStyle(color: Colors.grey),
+            prefixIcon: Icon(Icons.keyboard_rounded),
+          ),
+          cursorColor: Colors.black,
+          autofocus: true,
+          focusNode: focusNode,
+          controller: controllerInputWidget,
+          style: const TextStyle(fontSize: 16),
         ),
       );
-  Widget makeDismissible({required Widget child})=>GestureDetector(
-    behavior: HitTestBehavior.opaque,
-    onTap: ()=>Navigator.of(context).pop(),
-    child: GestureDetector(onTap: (){},child: child,),
-  );
-  Widget buildSheet(){
-    return SingleChildScrollView(
-      child: Column(
-      children: [
-        Container(
-          height: 700,
-          child: ListView(
-            shrinkWrap: true,
-             physics: NeverScrollableScrollPhysics(),
-             children:[
-               Container(),
-              ],
-                  ),
-        ),
-        Container(
-          child: InputWidget(
-            iscomment:true,
-            onBlurred: toggleEmojiKeyboard,
-            controller: controllerInputWidget,
-            isEmojiVisible: isEmojiVisible,
-            isKeyboardVisible: isKeyboardVisible,
-            onSentMessage: (message) =>
-                setState(() => messages.insert(0, message)),
-          ),
-        ),
-        Offstage(
-          offstage: !isEmojiVisible,
-          child: SizedBox(
-            height: 300,
-            child:Builder(
-              builder: (BuildContext context) {
-                return  EmojiPicker(
-                    onEmojiSelected: (Category category, Emoji emoji) {
-                      onEmojiSelected(emoji.emoji);
-                    },
-                    onBackspacePressed:onBackPress,
-                    config: const Config(
-                        columns: 7,
-                        verticalSpacing: 0,
-                        horizontalSpacing: 0,
-                        initCategory: Category.RECENT,
-                        bgColor: Color(0xFFF2F2F2),
-                        indicatorColor: Colors.blue,
-                        iconColor: Colors.grey,
-                        iconColorSelected: Colors.blue,
-                        progressIndicatorColor: Colors.blue,
-                        backspaceColor: Colors.blue,
-                        skinToneDialogBgColor: Colors.white,
-                        skinToneIndicatorColor: Colors.grey,
-                        enableSkinTones: true,
-                        showRecentsTab: true,
-                        recentsLimit: 28,
-                        noRecentsText: 'No Recents',
-                        noRecentsStyle:
-                        TextStyle(fontSize: 20, color: Colors.black26),
-                        tabIndicatorAnimDuration: kTabScrollDuration,
-                        categoryIcons: CategoryIcons(),
-                        buttonMode: ButtonMode.MATERIAL));
-              },
 
-            ),
-          ),
-        ),
-      ],
-      ),
-    );
-  }
-  void onEmojiSelected(String emoji) =>
-      setState(() {
-        controllerInputWidget.text = controllerInputWidget.text + emoji;
-      });
 
-  Future toggleEmojiKeyboard() async {
-    if (isKeyboardVisible) {
-      return FocusScope.of(context).unfocus();
-    }
 
-    setState(() {
-      isEmojiVisible = !isEmojiVisible;
-    });
-  }
 
-  Future<bool> onBackPress() {
-    if (isEmojiVisible) {
-      toggleEmojiKeyboard();
-    } else {
-      Navigator.pop(context);
-    }
 
-    return Future.value(false);
-  }
 
   Row buildExtraInfo({required String text1,
     required String text2,

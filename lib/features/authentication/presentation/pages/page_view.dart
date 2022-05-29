@@ -15,6 +15,7 @@ class PageViewData {
 class PagesView extends StatefulWidget {
   const PagesView({Key? key}) : super(key: key);
   static String routeName = 'Pagesview';
+
   @override
   State<PagesView> createState() => _PagesViewState();
 }
@@ -71,17 +72,21 @@ class _PagesViewState extends State<PagesView> {
     // TODO: implement initState
     Timer.periodic(const Duration(seconds: 2), (timer) {
       if (_currentIndex < 6) _currentIndex++;
-      if(_controller.hasClients)
-    _controller.animateToPage(_currentIndex, duration:const Duration(microseconds: 300), curve: Curves.easeIn);
+      if (_controller.hasClients) {
+        _controller.animateToPage(_currentIndex,
+            duration: const Duration(microseconds: 300), curve: Curves.easeIn);
+      }
     });
     super.initState();
   }
-@override
+
+  @override
   void dispose() {
     // TODO: implement dispose
-  _controller.dispose();
-  super.dispose();
+    _controller.dispose();
+    super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,8 +138,10 @@ class _PagesViewState extends State<PagesView> {
             setState(() {
               _currentIndex = val;
               if (_currentIndex == 6) {
-                Future.delayed(const Duration(seconds: 2),
-                    () => Navigator.pushReplacementNamed(context, Welcome.routeName));
+                Future.delayed(
+                    const Duration(seconds: 2),
+                    () => Navigator.pushReplacementNamed(
+                        context, Welcome.routeName));
               }
             });
           },
@@ -143,27 +150,29 @@ class _PagesViewState extends State<PagesView> {
           child: Indicator(index: _currentIndex),
         ),
         Align(
-
           alignment: const Alignment(0.9, -0.85),
           child: GestureDetector(
             child: Container(
               width: 100,
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: Row(
                 children: const [
-
-                   Text(
-                    "Skip",
-                    style: TextStyle(color: Colors.white,fontSize:20,)
+                  Text("Skip",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      )),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.white,
                   ),
-                  Icon(Icons.arrow_forward_ios,color: Colors.white,),
-                
                 ],
               ),
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey.shade300)),
             ),
-            onTap: () => Navigator.pushReplacementNamed(context, Welcome.routeName),
+            onTap: () =>
+                Navigator.pushReplacementNamed(context, Welcome.routeName),
           ),
         ),
       ],

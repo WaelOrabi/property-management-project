@@ -6,13 +6,10 @@ import '../widgets/input_widget.dart';
 
 class Chat extends StatefulWidget {
   static String routeName = 'chat';
-
   const Chat({Key? key}) : super(key: key);
-
   @override
   ChatState createState() => ChatState();
 }
-
 class ChatState extends State<Chat> {
   final controllerAppBar = ScrollController();
   final messages = <String>[];
@@ -40,58 +37,66 @@ class ChatState extends State<Chat> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: buildAppBar(context),
-        body: WillPopScope(
-          onWillPop: onBackPress,
-          child: Column(
-            children: <Widget>[
-              Expanded(
-                child: Container(),
-              ),
-              InputWidget(
-                onBlurred: toggleEmojiKeyboard,
-                controller: controller,
-                isEmojiVisible: isEmojiVisible,
-                isKeyboardVisible: isKeyboardVisible,
-                onSentMessage: (message) =>
-                    setState(() => messages.insert(0, message)),
-              ),
-              Offstage(
-                offstage: !isEmojiVisible,
-                child: SizedBox(
-                  height: 300,
-                  child: EmojiPicker(
-                      onEmojiSelected: (Category category, Emoji emoji) {
-                        onEmojiSelected(emoji.emoji);
-                      },
-                      onBackspacePressed: onBackPress,
-                      config: const Config(
-                          columns: 7,
-                          verticalSpacing: 0,
-                          horizontalSpacing: 0,
-                          initCategory: Category.RECENT,
-                          bgColor: Color(0xFFF2F2F2),
-                          indicatorColor: Colors.blue,
-                          iconColor: Colors.grey,
-                          iconColorSelected: Colors.blue,
-                          progressIndicatorColor: Colors.blue,
-                          backspaceColor: Colors.blue,
-                          skinToneDialogBgColor: Colors.white,
-                          skinToneIndicatorColor: Colors.grey,
-                          enableSkinTones: true,
-                          showRecentsTab: true,
-                          recentsLimit: 28,
-                          noRecentsText: 'No Recents',
-                          noRecentsStyle:
-                              TextStyle(fontSize: 20, color: Colors.black26),
-                          tabIndicatorAnimDuration: kTabScrollDuration,
-                          categoryIcons: CategoryIcons(),
-                          buttonMode: ButtonMode.MATERIAL)),
-                ),
-              ),
-            ],
-          ),
+        body: buildBody(),
+      );
+
+  WillPopScope buildBody() {
+    return WillPopScope(
+        onWillPop: onBackPress,
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Container(),
+            ),
+            InputWidget(
+              onBlurred: toggleEmojiKeyboard,
+              controller: controller,
+              isEmojiVisible: isEmojiVisible,
+              isKeyboardVisible: isKeyboardVisible,
+              onSentMessage: (message) =>
+                  setState(() => messages.insert(0, message)),
+            ),
+            buildlistEmoji(),
+          ],
         ),
       );
+  }
+
+  Offstage buildlistEmoji() {
+    return Offstage(
+              offstage: !isEmojiVisible,
+              child: SizedBox(
+                height: 300,
+                child: EmojiPicker(
+                    onEmojiSelected: (Category category, Emoji emoji) {
+                      onEmojiSelected(emoji.emoji);
+                    },
+                    onBackspacePressed: onBackPress,
+                    config: const Config(
+                        columns: 7,
+                        verticalSpacing: 0,
+                        horizontalSpacing: 0,
+                        initCategory: Category.RECENT,
+                        bgColor: Color(0xFFF2F2F2),
+                        indicatorColor: Colors.blue,
+                        iconColor: Colors.grey,
+                        iconColorSelected: Colors.blue,
+                        progressIndicatorColor: Colors.blue,
+                        backspaceColor: Colors.blue,
+                        skinToneDialogBgColor: Colors.white,
+                        skinToneIndicatorColor: Colors.grey,
+                        enableSkinTones: true,
+                        showRecentsTab: true,
+                        recentsLimit: 28,
+                        noRecentsText: 'No Recents',
+                        noRecentsStyle:
+                            TextStyle(fontSize: 20, color: Colors.black26),
+                        tabIndicatorAnimDuration: kTabScrollDuration,
+                        categoryIcons: CategoryIcons(),
+                        buttonMode: ButtonMode.MATERIAL)),
+              ),
+            );
+  }
 
   ScrollAppBar buildAppBar(BuildContext context) {
     return ScrollAppBar(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
 import 'package:project_111/features/authentication/presentation/pages/profile.dart';
+import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
+import '../widgets/signin_signup/textformfield_signin_signup_updateProfile.dart';
 import '../widgets/update_profile/profile_picture.dart';
 
 class UpdateProfile extends StatefulWidget {
@@ -29,8 +31,6 @@ class _UpdateProfileState extends State<UpdateProfile> {
     );
   }
 
-
-
   SafeArea _buildBody(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
@@ -40,7 +40,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
           children: [
             const Center(
               child: Padding(
-                padding:EdgeInsets.only(top: 20),
+                padding: EdgeInsets.only(top: 20),
                 child: Profile_Picture(),
               ),
             ),
@@ -96,87 +96,26 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       labelText: "Phone",
                       hintText: "Enter your phone"),
                   const SizedBox(height: 30),
-
-                  //button of Update
-                  GestureDetector(
-                      child: Container(
-                        height: 50,
-                        width: MediaQuery.of(context).size.width / 2,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.green),
-                        child: const Center(
-                          child: Text(
-                            'Update',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ),
-                      ),
-                      onTap: () {
+                  ButtonSigninSignupProfile(
+                      context: context,
+                      height: 50,
+                      width: 2,
+                      circle: 50,
+                      text: 'Update',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      colorText: Colors.white,
+                      backGroundColor: Colors.green,
+                      fun: () {
                         Navigator.pushReplacementNamed(
                             context, Profile.routeName);
                       }),
+                  //button of Update
+
                 ],
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-
-  TextFormField TextForm(
-      {required FormFieldValidator<String>? validator,
-      required TextEditingController controller,
-      required TextInputType? keyboardType,
-      required String labelText,
-      required IconData icon,
-      required bool prefixIcon,
-      required String hintText}) {
-    return TextFormField(
-      cursorColor: Colors.green,
-      obscureText: false,
-      controller: controller,
-      onSaved: (newValue) {
-        controller.text = newValue!;
-      },
-      validator: validator,
-      keyboardType: keyboardType,
-      style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black),
-      decoration: InputDecoration(
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-        labelText: labelText,
-        hintText: hintText,
-        // ignore: unnecessary_null_comparison
-        prefixIcon: Icon(
-          icon,
-        ),
-        // ignore: unnecessary_null_comparison
-        suffixIcon: prefixIcon == true
-            ? const Icon(
-                Icons.visibility,
-              )
-            : null,
-        enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.grey,
-          ),
-          borderRadius: BorderRadius.all(
-            Radius.circular(50),
-          ),
-        ),
-        focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.green,
-            width: 2,
-          ),
-          borderRadius: BorderRadius.all(
-            Radius.circular(50),
-          ),
         ),
       ),
     );

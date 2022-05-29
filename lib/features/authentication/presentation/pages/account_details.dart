@@ -6,17 +6,23 @@ import '../../../../core/widgets/widget_appbar.dart';
 class AccountDetails extends StatelessWidget {
   const AccountDetails({Key? key}) : super(key: key);
   static String routeName = 'Account Details';
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade100,
-        appBar: WidgetsAppBar.buildAppBar(namePage: "Account Details", fun: () =>Navigator.pushReplacementNamed(context, Profile.routeName),color: Colors.white),
+        appBar: WidgetsAppBar.buildAppBar(
+            namePage: "Account Details",
+            fun: () =>
+                Navigator.pushReplacementNamed(context, Profile.routeName),
+            color: Colors.white),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 20),
-            const Text("PUBLIC INFO", style: TextStyle(color: Colors.grey, fontSize: 25)),
+            const Text("PUBLIC INFO",
+                style: TextStyle(color: Colors.grey, fontSize: 25)),
             const SizedBox(height: 20),
             buildContainer(
               context: context,
@@ -26,7 +32,8 @@ class AccountDetails extends StatelessWidget {
               textF2: "L.Name",
             ),
             const SizedBox(height: 20),
-            const Text("PRIVATE DETAILS", style: TextStyle(color: Colors.grey, fontSize: 25)),
+            const Text("PRIVATE DETAILS",
+                style: TextStyle(color: Colors.grey, fontSize: 25)),
             const SizedBox(height: 20),
             buildContainer(
               context: context,
@@ -69,7 +76,8 @@ class AccountDetails extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(text1, style: const TextStyle(fontSize: 15)),
-        Text(text2, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+        Text(text2,
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
       ],
     );
   }
