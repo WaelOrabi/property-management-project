@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:project_111/features/authentication/presentation/pages/page_view.dart';
 
-
 class SplashScreen extends StatefulWidget {
   static String routeName = 'SplashScreen';
 
@@ -22,13 +21,15 @@ class SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     controller =
-        AnimationController(duration: const Duration(seconds: 3), vsync: this);
-
+        AnimationController(duration:const Duration(seconds: 3), vsync: this);
     logoAnimation = Tween<double>(begin: 0, end: 1).animate(controller)
       ..addListener(() {
         setState(() {});
       });
-    Timer(const Duration(seconds: 5), () {
+
+    controller.forward();
+
+ Timer(const Duration(seconds: 5), () {
       Navigator.pushNamed(context,PagesView.routeName);
     });
   }

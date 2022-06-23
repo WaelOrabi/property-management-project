@@ -108,7 +108,7 @@ class _SingInState extends State<SingIn> {
                     text: 'Log In',
                     fun: () {
                       Navigator.pushReplacementNamed(
-                          context, NavigationBarHome.routeName);
+                          context,NavigationBarHome.routeName);
                     },
                     fontWeight: FontWeight.bold,
                     colorText: Colors.white,

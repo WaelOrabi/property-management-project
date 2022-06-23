@@ -27,7 +27,6 @@ FloatingSearchBarController floatingSearchBarController=FloatingSearchBarControl
   Future<void> getMyCurrentLocation()async{
     await LocationHelper.determineCurrentLocation();
     position=await Geolocator.getLastKnownPosition().whenComplete(() {setState(() {
-
     });});
   }
 
@@ -116,10 +115,13 @@ Future<void> goToMyCurrentLocation()async{
           ],
         ) ,
       floatingActionButton: Align(
-        alignment: Alignment.bottomLeft,
+        alignment: Alignment.bottomCenter,
         child: FloatingActionButton(
           child:const Text("Save",style: TextStyle(color: Colors.white),),
           onPressed: ()async{
+            print("====================");
+            print("My position latitude :${position!.latitude} and  position longitude: ${position!.longitude}");
+          print( "${ await _getLocationAddress(position!.latitude, position!.longitude)}");
             Navigator.of(context).pop();
           },
         ),

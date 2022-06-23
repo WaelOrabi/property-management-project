@@ -87,12 +87,14 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
                 ),
               ),
               onTap: () async {
-                final List<ImageObject>? objects = await Navigator.of(context)
-                    .push(
-                        PageRouteBuilder(pageBuilder: (context, animation, __) {
-                  return const ImagePicker(maxCount: 100);
-                }));
 
+
+                final List<ImageObject>? objects =
+                await Navigator.of(context).push(
+                    PageRouteBuilder(pageBuilder:
+                        (context, animation, __) {
+                      return const ImagePicker(maxCount: 100);
+                    }));
                 if ((objects?.length ?? 0) > 0) {
                   setState(() {
                     listImagesProperty.addAll(objects!);

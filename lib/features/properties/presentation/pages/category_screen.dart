@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../authentication/presentation/pages/profile.dart';
-import '../../widgets/category/category_widget.dart';
+import '../../../authentication/presentation/pages/profile.dart';
+import '../widgets/category/category_widget.dart';
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({Key? key}) : super(key: key);
 static String routeName='Category';

@@ -6,8 +6,8 @@ import 'package:project_111/features/authentication/presentation/pages/account_d
 import 'package:project_111/core/widgets/widget_appbar.dart';
 import 'package:project_111/features/authentication/presentation/pages/update_peofile.dart';
 import 'package:project_111/features/authentication/presentation/widgets/update_profile/profile_picture.dart';
-import 'package:project_111/features/properties/presentation/pages/my_favorite/my_favorite.dart';
-import '../../../properties/presentation/pages/mylistings_screen/MyListingScreen.dart';
+import 'package:project_111/features/properties/presentation/pages/my_favorite.dart';
+import '../../../properties/presentation/pages/MyListingScreen.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);

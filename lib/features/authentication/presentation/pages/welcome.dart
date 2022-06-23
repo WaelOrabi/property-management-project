@@ -3,6 +3,8 @@ import 'package:project_111/features/authentication/presentation/pages/sign_in.d
 import 'package:project_111/features/authentication/presentation/pages/signup_screen.dart';
 import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
 
+import '../../../properties/presentation/widgets/category/category_widget.dart';
+
 class Welcome extends StatelessWidget {
   const Welcome({Key? key}) : super(key: key);
   static String routeName = 'Welcome';
@@ -23,7 +25,7 @@ class Welcome extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Icon(
-                    Icons.location_on,
+             Icons.location_on,
                     color: Colors.green,
                     size: 150,
                   ),
@@ -33,7 +35,7 @@ class Welcome extends StatelessWidget {
                     style: TextStyle(color: Colors.green, fontSize: 25),
                   ),
                   const SizedBox(height: 30),
-                  const Text(
+                 const Text(
                       "This application helps you to choose your property",
                       style: TextStyle(color: Colors.black, fontSize: 15)),
                   const SizedBox(height: 30),
