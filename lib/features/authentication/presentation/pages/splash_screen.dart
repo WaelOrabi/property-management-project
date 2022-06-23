@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:project_111/features/authentication/presentation/pages/page_view.dart';
 import 'package:project_111/features/authentication/presentation/pages/profile.dart';
-import 'package:project_111/features/properties/presentation/pages/add_property/add_property.dart';
+import 'package:project_111/features/properties/presentation/pages/add_property.dart';
 
 
 class SplashScreen extends StatefulWidget {

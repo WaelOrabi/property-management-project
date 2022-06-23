@@ -10,31 +10,9 @@ class Filters extends StatefulWidget {
 class _FiltersState extends State<Filters> {
 
 
-  String dropdownValuePriceRange = '<\$100K';
-  String dropdownValueSquareFeet = '<100sqft';
-
   String dropdownValueBedRoom = 'notFound';
   String dropdownValueBaths = 'notFound';
-  String dropdownValueNewConstruction = 'No';
-  String dropdownValueCloseToPublicTransport = 'No';
 
-
-  List<String> closeToPublicTransportItems = ['Yes', 'No'];
-  List<String> newConstructionItems = ['Yes', 'No'];
-  List<String> squareFeetItems = [
-    '<100sqft',
-    '100sqft - 500sqft',
-    '500sqft - 1000sqft',
-    '1000sqft - 2000sqft',
-    '>2000sqft',
-  ];
-  List<String> priceRangeItems = [
-    '<\$100K',
-    '\$100K-\$500k',
-    '\$500K-\$1M',
-    '\$1M-\$5M',
-    '>\$5M',
-  ];
   List<String> bedRoomItems = [
     'notFound',
     '1bd',
@@ -80,41 +58,6 @@ class _FiltersState extends State<Filters> {
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
-                              buildRowItemsOfFilters(
-                                  context: context,
-                                  titleItems: "Price Range",
-                                  fontWeight:
-                                  FontWeight.w500,
-                                  widthOfSizeBox: 3.5,
-                                  dropdownValue:
-                                  dropdownValuePriceRange,
-                                  nameListItems:
-                                  priceRangeItems,
-                                  fun: (data) {
-                                    setState(() {
-                                      dropdownValuePriceRange = data!;
-
-                                    });
-                                  }
-                              ),
-
-                              buildRowItemsOfFilters(
-                                  context: context,
-                                  titleItems: "Square Feet",
-                                  fontWeight:
-                                  FontWeight.w500,
-                                  widthOfSizeBox: 2.5,
-                                  dropdownValue:
-                                  dropdownValueSquareFeet,
-                                  nameListItems:
-                                  squareFeetItems,
-                                  fun: (data) {
-                                    setState(() {
-                                      dropdownValueSquareFeet = data!;
-
-                                    });
-                                  }
-                              ),
 
                               buildRowItemsOfFilters(
                                   context: context,
@@ -151,60 +94,29 @@ class _FiltersState extends State<Filters> {
                                   }
                               ),
 
+
                               buildRowItemsOfFilters(
                                   context: context,
-                                  titleItems:
-                                  "New Construction",
+                                  titleItems: "Baths",
                                   fontWeight:
                                   FontWeight.w500,
-                                  widthOfSizeBox: 8,
+                                  widthOfSizeBox: 4.5,
                                   dropdownValue:
-                                  dropdownValueNewConstruction,
-                                  nameListItems:
-                                  newConstructionItems,
+                                  dropdownValueBaths,
+                                  nameListItems: bathsItems,
                                   fun: (data) {
                                     setState(() {
-                                      dropdownValueNewConstruction = data!;
+                                      dropdownValueBaths = data!;
 
                                     });
                                   }
                               ),
 
-                              buildRowOfTextFormFieldPriceAndYearBuilt(
-                                context: context,
-                                title: "Year Built",
-                                errorValidator:
-                                "Enter the year built ",
-                                hintText:
-                                "Enter the year built",
-                                controller:
-                                yearBuiltController,
-                                widthOfSizeBox: 4,
-                                fontWeight:
-                                FontWeight.w500,
 
-                              ),
 
-                              buildRowItemsOfFilters(
-                                  context: context,
-                                  titleItems:
-                                  "Close To Public Transport",
-                                  fontWeight:
-                                  FontWeight.w500,
-                                  widthOfSizeBox: 8,
-                                  dropdownValue:
-                                  dropdownValueCloseToPublicTransport,
-                                  nameListItems:
-                                  closeToPublicTransportItems,
-                                  fun: (data) {
-                                    setState(() {
-                                      dropdownValueCloseToPublicTransport = data!;
-                                    });
-                                  }
-                              ),
+
 
                               SizedBox(height: MediaQuery.of(context).size.height / 7,),
-
                               GestureDetector(
                                 child: Container(
                                   decoration: BoxDecoration(

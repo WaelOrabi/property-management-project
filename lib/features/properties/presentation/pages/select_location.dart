@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/features/properties/presentation/pages/map_screen/map_screen.dart';
-import '../../widgets/add_property_widget/function_widjets.dart';
+import 'package:project_111/features/properties/presentation/pages/map_screen.dart';
+import '../widgets/add_property_widget/function_widjets.dart';
 
 class SelectLocation extends StatefulWidget {
   const SelectLocation({Key? key}) : super(key: key);

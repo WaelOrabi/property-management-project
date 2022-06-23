@@ -1,16 +1,16 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 
-class Body extends StatefulWidget {
-  const Body({Key? key}) : super(key: key);
+class MyListingScreen extends StatefulWidget {
+  static String routeName='MyListingScreen';
+  const MyListingScreen({Key? key}) : super(key: key);
 
   @override
-  State<Body> createState() => _BodyState();
+  State<MyListingScreen> createState() => _MyListingScreenState();
 }
 
-class _BodyState extends State<Body> {
+class _MyListingScreenState extends State<MyListingScreen> {
   final controllerAppBar = ScrollController();
   double ? _ratingValue;
   @override
@@ -47,9 +47,6 @@ class _BodyState extends State<Body> {
         mainAxisSpacing: 0.0,
         childAspectRatio: 0.8,
         children: [
-         buildCard(),
-          buildCard(),
-          buildCard(),
           buildCard(),
           buildCard(),
           buildCard(),

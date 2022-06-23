@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:project_111/features/authentication/presentation/pages/profile.dart';
-import 'package:project_111/features/properties/presentation/pages/add_property/add_property.dart';
-import 'package:project_111/features/properties/presentation/pages/map_screen/map_screen.dart';
+import 'package:project_111/features/properties/presentation/pages/add_property.dart';
+import 'package:project_111/features/properties/presentation/pages/map_screen.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 
-import '../../widgets/category/category_widget.dart';
+import '../widgets/category/category_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   static String routeName = 'HomeScreen';

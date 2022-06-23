@@ -44,8 +44,6 @@ Row buildRowItemsOfCategory({
 Row buildRowOfTextFormFieldPrice(
     {required BuildContext context,
       required String title,
-      required String errorValidator,
-      required String hintText,
       required TextEditingController controller,
       required double widthOfSizeBox,
       required FontWeight fontWeight}) {
@@ -63,7 +61,7 @@ Row buildRowOfTextFormFieldPrice(
           controller: controller,
           validator: (value) {
             if (value!.isEmpty) {
-              return errorValidator;
+              return "Enter the $title";
             }
             return null;
           },
@@ -75,7 +73,7 @@ Row buildRowOfTextFormFieldPrice(
               disabledBorder: InputBorder.none,
               contentPadding:
               const EdgeInsets.only(left: 10, top: 11, right: 15),
-              hintText: hintText),
+              hintText: 'Enter the $title'),
         ),
       ),
     ],
@@ -242,7 +240,7 @@ Row buildRowItemsOfFilters({
 
 
 
-Container buildTitleAndDescription(
+Container buildDescription(
     {required BuildContext context,
       required String title,
       required String errorValidator,
