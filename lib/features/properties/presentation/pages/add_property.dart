@@ -30,7 +30,7 @@ final priceController = TextEditingController();
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade200,
-        appBar: WidgetsAppBar.buildAppBar(
+        appBar: buildAppBar(
           namePage: "Add Listing",
           fun: () =>Navigator.pushReplacementNamed(context, HomeScreen.routeName),
           color: Colors.grey.shade200,

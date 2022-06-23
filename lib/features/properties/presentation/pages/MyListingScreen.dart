@@ -36,7 +36,9 @@ class _MyListingScreenState extends State<MyListingScreen> {
             Icons.arrow_back_ios_outlined,
             color: Colors.green,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
         ),
       ),
       body: GridView.count(

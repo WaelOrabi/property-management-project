@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_111/core/widgets/sizedBox.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
 import 'package:project_111/features/authentication/presentation/pages/profile.dart';
 import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
@@ -23,7 +24,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
-      appBar: WidgetsAppBar.buildAppBar(
+      appBar:buildAppBar(
           namePage: "Update Profile",
           fun: () => Navigator.pushReplacementNamed(context, Profile.routeName),
           color: Colors.white),
@@ -62,9 +63,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                     labelText: "First Name",
                     hintText: "Enter your First Name",
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  buildSizedBox(context: context,height:60),
                   TextForm(
                     prefixIcon: false,
                     icon: Icons.edit,
@@ -79,9 +78,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                     labelText: "Last Name",
                     hintText: "Enter your Last Name",
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  buildSizedBox(context: context,height:60),
                   TextForm(
                       prefixIcon: false,
                       icon: Icons.phone,
@@ -95,7 +92,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       keyboardType: TextInputType.phone,
                       labelText: "Phone",
                       hintText: "Enter your phone"),
-                  const SizedBox(height: 30),
+                  buildSizedBox(context:context,height:20),
                   ButtonSigninSignupProfile(
                       context: context,
                       height: 50,

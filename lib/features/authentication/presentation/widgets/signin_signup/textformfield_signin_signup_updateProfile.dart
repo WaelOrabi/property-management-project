@@ -36,9 +36,7 @@ TextFormField TextForm(
       ),
       // ignore: unnecessary_null_comparison
       suffixIcon: prefixIcon == true
-          ? const Icon(
-        Icons.visibility,
-      )
+          ?  IconButton(onPressed: () { obscureText=!obscureText; }, icon:Icon(Icons.visibility))
           : null,
       enabledBorder:  OutlineInputBorder(
         borderSide: BorderSide(color: colorLineBorder),
