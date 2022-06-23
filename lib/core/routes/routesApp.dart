@@ -23,7 +23,7 @@ import '../../features/properties/presentation/pages/mylistings_screen/MyListing
 
 Map<String, WidgetBuilder> routes() {
   return {
-    "/":(context)=> const NavigationBarHome(),
+    "/":(context)=> const SplashScreen(),
     PagesView.routeName: (context) => const PagesView(),
     Welcome.routeName: (context) => const Welcome(),
     SingIn.routeName: (context) => const SingIn(),
