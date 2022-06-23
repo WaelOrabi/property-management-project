@@ -181,7 +181,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       Navigator.pushReplacementNamed(
                           context, NavigationBarHome.routeName);
                     },
-                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     colorText: Colors.white,
                     backGroundColor: Colors.green),

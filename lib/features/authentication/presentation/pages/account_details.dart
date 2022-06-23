@@ -17,35 +17,39 @@ class AccountDetails extends StatelessWidget {
             fun: () =>
                 Navigator.pushReplacementNamed(context, Profile.routeName),
             color: Colors.white),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 20),
-            const Text("PUBLIC INFO",
-                style: TextStyle(color: Colors.grey, fontSize: 25)),
-            const SizedBox(height: 20),
-            buildContainer(
-              context: context,
-              textI1: "First Name :",
-              textI2: "Last Name :",
-              textF1: "F.Name",
-              textF2: "L.Name",
-            ),
-            const SizedBox(height: 20),
-            const Text("PRIVATE DETAILS",
-                style: TextStyle(color: Colors.grey, fontSize: 25)),
-            const SizedBox(height: 20),
-            buildContainer(
-              context: context,
-              textI1: "Email Address :",
-              textI2: "Phone Number :",
-              textF1: "F.name@gmail.com",
-              textF2: "09********",
-            ),
-          ],
-        ),
+        body: buildBody(context),
       ),
     );
+  }
+
+  Column buildBody(BuildContext context) {
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 20),
+          const Text("PUBLIC INFO",
+              style: TextStyle(color: Colors.grey, fontSize: 25)),
+          const SizedBox(height: 20),
+          buildContainer(
+            context: context,
+            textI1: "First Name :",
+            textI2: "Last Name :",
+            textF1: "F.Name",
+            textF2: "L.Name",
+          ),
+          const SizedBox(height: 20),
+          const Text("PRIVATE DETAILS",
+              style: TextStyle(color: Colors.grey, fontSize: 25)),
+          const SizedBox(height: 20),
+          buildContainer(
+            context: context,
+            textI1: "Email Address :",
+            textI2: "Phone Number :",
+            textF1: "F.name@gmail.com",
+            textF2: "09********",
+          ),
+        ],
+      );
   }
 
   Container buildContainer(

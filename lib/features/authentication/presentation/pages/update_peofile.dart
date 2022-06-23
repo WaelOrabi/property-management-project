@@ -99,7 +99,6 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       width: 2,
                       circle: 50,
                       text: 'Update',
-                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                       colorText: Colors.white,
                       backGroundColor: Colors.green,

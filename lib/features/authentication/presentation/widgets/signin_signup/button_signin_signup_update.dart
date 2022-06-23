@@ -8,12 +8,12 @@ GestureDetector ButtonSigninSignupProfile({
   double width=1,
   required double circle,
   required String text,
-  required double fontSize,
+  double fontSize=20.0,
   required FontWeight fontWeight,
   required Color colorText,
   required Color backGroundColor,
   required VoidCallback fun,
-  isBorder=null,
+    isBorder=null,
 }) {
   return GestureDetector(
     child: Container(

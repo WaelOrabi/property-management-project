@@ -7,7 +7,7 @@ TextFormField TextForm(
       required TextInputType? keyboardType,
       required String labelText,
       required IconData icon,
-      double fontSize=20,
+      double fontSize=15,
       bool obscureText=false,
       FontWeight fontWeight=FontWeight.normal,
       double circle=50,
