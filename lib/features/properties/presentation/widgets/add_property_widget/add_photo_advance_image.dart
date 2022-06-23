@@ -144,6 +144,7 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
                 ),
               ),
               onTap: () async {
+
                 final List<ImageObject>? objects =
                 await Navigator.of(context).push(
                     PageRouteBuilder(pageBuilder:

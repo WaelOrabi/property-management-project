@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
 import 'package:project_111/features/authentication/presentation/pages/profile.dart';
 import 'package:project_111/features/authentication/presentation/pages/signup_screen.dart';
 import 'package:project_111/features/authentication/presentation/pages/welcome.dart';
@@ -107,7 +108,7 @@ class _SingInState extends State<SingIn> {
                     text: 'Log In',
                     fun: () {
                       Navigator.pushReplacementNamed(
-                          context, Profile.routeName);
+                          context,NavigationBarHome.routeName);
                     },
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:project_111/features/properties/presentation/pages/select_location.dart';
 import 'package:project_111/features/properties/presentation/pages/home_screen.dart';
 import 'package:project_111/features/properties/presentation/widgets/add_property_widget/add_photo_advance_image.dart';
 import '../../../../core/widgets/widget_appbar.dart';
-import '../widgets/add_property_widget/filters.dart';
 import '../widgets/add_property_widget/function_widjets.dart';
 
 class AddProperty extends StatefulWidget {
@@ -21,9 +21,12 @@ final descriptionController = TextEditingController();
 final priceController = TextEditingController();
   final spaceController = TextEditingController();
   final storeysController = TextEditingController();
+  final bedRoomController = TextEditingController();
+  final bathsController = TextEditingController();
   String dropdownValueCategory = 'Buy';
   List<String> categoryItems = ['Rent', 'Buy','Investment'];
 
+  final dateFormat= DateFormat('yyyy-MM-dd hh:mm');
 
   @override
   Widget build(BuildContext context) {
@@ -66,30 +69,6 @@ final priceController = TextEditingController();
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    buildRowOfTextFormFieldPrice(
-                      context: context,
-                      title: "price",
-                      controller: priceController,
-                      widthOfSizeBox: 3,
-                      fontWeight: FontWeight.bold,
-                    ),
-
-                    buildRowOfTextFormFieldPrice(
-                      context: context,
-                      title: "Space",
-                      controller: spaceController,
-                      widthOfSizeBox: 3,
-                      fontWeight: FontWeight.bold,
-                    ),
-
-
-                    buildRowOfTextFormFieldPrice(
-                      context: context,
-                      title: "Storeys",
-                      controller: storeysController,
-                      widthOfSizeBox: 3,
-                      fontWeight: FontWeight.bold,
-                    ),
 
                     buildRowItemsOfCategory(
                         context: context,
@@ -106,7 +85,44 @@ final priceController = TextEditingController();
                         }
                     ),
 
-                    const Filters(),
+                    buildRowOfTextFormField(
+                      context: context,
+                      title: "price",
+                      controller: priceController,
+                      widthOfSizeBox: 3,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    buildRowOfTextFormField(
+                      context: context,
+                      title: "Space",
+                      controller: spaceController,
+                      widthOfSizeBox: 3,
+                      fontWeight: FontWeight.bold,
+                    ),
+
+
+                    buildRowOfTextFormField(
+                      context: context,
+                      title: "Storeys",
+                      controller: storeysController,
+                      widthOfSizeBox: 3,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    buildRowOfTextFormField(
+                      context: context,
+                      title: "Bed Room",
+                      controller: bedRoomController,
+                      widthOfSizeBox: 3,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    buildRowOfTextFormField(
+                      context: context,
+                      title: "Baths",
+                      controller: bathsController,
+                      widthOfSizeBox: 3,
+                      fontWeight: FontWeight.bold,
+                    ),
+
                     const SelectLocation(),
                     //Add Images for property
                     const Padding(
@@ -143,6 +159,13 @@ final priceController = TextEditingController();
                       ),
                     ),
                   ),
+                  onTap: (){
+                    var date=dateFormat.format(DateTime.now());
+
+                    print(date);
+
+                  },
+
                 ),
               )
             ],
@@ -150,7 +173,4 @@ final priceController = TextEditingController();
         ),
       );
   }
-
-
-
 }
