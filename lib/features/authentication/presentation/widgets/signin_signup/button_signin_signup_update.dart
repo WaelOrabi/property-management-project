@@ -13,12 +13,14 @@ GestureDetector ButtonSigninSignupProfile({
   required Color colorText,
   required Color backGroundColor,
   required VoidCallback fun,
+  isBorder=null,
 }) {
   return GestureDetector(
     child: Container(
       height: height,
       width: MediaQuery.of(context).size.width/width,
       decoration: BoxDecoration(
+         border:isBorder!=null? Border.all():null,
           borderRadius: BorderRadius.circular(circle),
           color: backGroundColor),
       child: Center(

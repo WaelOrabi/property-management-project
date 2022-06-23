@@ -1,15 +1,12 @@
 import 'dart:async';
-import 'dart:ui';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:project_111/features/authentication/presentation/pages/page_view.dart';
-import 'package:project_111/features/authentication/presentation/pages/profile.dart';
-import 'package:project_111/features/properties/presentation/pages/add_property.dart';
 
 class SplashScreen extends StatefulWidget {
   static String routeName = 'SplashScreen';
 
   const SplashScreen({Key? key}) : super(key: key);
+
   @override
   SplashScreenState createState() => SplashScreenState();
 }
@@ -25,14 +22,14 @@ class SplashScreenState extends State<SplashScreen>
     super.initState();
     controller =
         AnimationController(duration:const Duration(seconds: 3), vsync: this);
-
     logoAnimation = Tween<double>(begin: 0, end: 1).animate(controller)
       ..addListener(() {
         setState(() {});
       });
+
     controller.forward();
 
-    Timer(const Duration(seconds: 5), () {
+ Timer(const Duration(seconds: 5), () {
       Navigator.pushNamed(context,PagesView.routeName);
     });
   }
@@ -51,7 +48,7 @@ class SplashScreenState extends State<SplashScreen>
         children: [
           // Image in the middle
           Center(
-            child: Container(
+            child: SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: Opacity(
