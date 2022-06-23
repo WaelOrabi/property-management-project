@@ -15,42 +15,46 @@ class Welcome extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         child: Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-             const Icon(
-                Icons.location_on,
-                color: Colors.green,
-                size: 150,
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                 const Icon(
+                    Icons.location_on,
+                    color: Colors.green,
+                    size: 150,
+                  ),
+                  const SizedBox(height: 30),
+                  const Text(
+                    "Welcome to your app",
+                    style: TextStyle(color: Colors.green, fontSize: 25),
+                  ),
+                  const SizedBox(height: 30),
+                  const Text("This application helps you to choose your property",
+                      style: TextStyle(color: Colors.black, fontSize: 15)),
+                  const SizedBox(height: 30),
+                  //Button Log In
+                  buildGestureDetector(
+                    context: context,
+                    nameButton: "Log In",
+                    colorText: Colors.white,
+                    colorBackground: Colors.green,
+                    fun: () => Navigator.pushReplacementNamed(context,SingIn.routeName),
+                  ),
+                  const SizedBox(height: 30),
+                  //Button Sing Up
+                  buildGestureDetector(
+                    context: context,
+                    nameButton: "Sign Up",
+                    colorText: Colors.green,
+                    colorBackground: Colors.white,
+                    fun: () =>Navigator.pushReplacementNamed(context,SignUpScreen.routeName ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 30),
-              const Text(
-                "Welcome to your app",
-                style: TextStyle(color: Colors.green, fontSize: 25),
-              ),
-              const SizedBox(height: 30),
-              const Text("This application helps you to choose your property",
-                  style: TextStyle(color: Colors.black, fontSize: 15)),
-              const SizedBox(height: 30),
-              //Button Log In
-              buildGestureDetector(
-                context: context,
-                nameButton: "Log In",
-                colorText: Colors.white,
-                colorBackground: Colors.green,
-                fun: () => Navigator.pushReplacementNamed(context,SingIn.routeName),
-              ),
-              const SizedBox(height: 30),
-              //Button Sing Up
-              buildGestureDetector(
-                context: context,
-                nameButton: "Sign Up",
-                colorText: Colors.green,
-                colorBackground: Colors.white,
-                fun: () =>Navigator.pushReplacementNamed(context,SignUpScreen.routeName ),
-              ),
-            ],
+            ),
           ),
         ),
       ),

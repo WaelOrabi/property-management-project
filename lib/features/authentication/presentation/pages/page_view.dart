@@ -14,7 +14,7 @@ class PageViewData {
 
 class PagesView extends StatefulWidget {
   const PagesView({Key? key}) : super(key: key);
-  static String routeName = 'Pagesview';
+  static String routeName = 'PagesView';
 
   @override
   State<PagesView> createState() => _PagesViewState();
