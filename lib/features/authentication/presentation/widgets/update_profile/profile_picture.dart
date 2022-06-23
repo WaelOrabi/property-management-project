@@ -33,11 +33,11 @@ class _Profile_PictureState extends State<Profile_Picture> {
         children: [
           image == null
               ? const CircleAvatar(
-                  backgroundColor: Colors.white,
+                  backgroundColor: Colors.grey,
                   child: Icon(
                     Icons.person,
                     size: 100,
-                    color: Colors.grey,
+                    color: Colors.white,
                   ),
                   radius: 150,
                 )

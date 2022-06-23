@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:project_111/core/widgets/sizedBox.dart';
+import '../../../../core/widgets/bottom_navigation_bar.dart';
 import '../widgets/signin_signup/button_signin_signup_update.dart';
 import '../widgets/signin_signup/iconbutton_for_signin_and_signup_with_other_apps.dart';
 import '../widgets/signin_signup/return_button.dart';
 import '../widgets/signin_signup/textformfield_signin_signup_updateProfile.dart';
-import 'profile.dart';
 import 'welcome.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -21,8 +22,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController phoneController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController passwordConfirmationController =
-      TextEditingController();
+  TextEditingController passwordConfirmationController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +34,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   SafeArea buildBody(BuildContext context) {
     return SafeArea(
-    child: SingleChildScrollView(
+        child: SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 40),
+            padding:
+                EdgeInsets.only(top: MediaQuery.of(context).size.height / 20),
             child: buildReturnButton(
                 fun: () =>
                     Navigator.pushReplacementNamed(context, Welcome.routeName),
@@ -61,7 +62,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           const Center(
               child: CircleAvatar(
             backgroundColor: Colors.white,
-            child: Icon(
+                child: Icon(
               Icons.person,
               size: 100,
               color: Colors.grey,
@@ -69,7 +70,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
             radius: 80,
           )),
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+            padding: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width / 30,
+                right: MediaQuery.of(context).size.width / 30,
+                top: MediaQuery.of(context).size.height / 200),
             child: Column(
               children: [
                 TextForm(
@@ -86,9 +90,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   labelText: "First Name",
                   hintText: "Enter your First Name",
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                buildSizedBox(context: context,height:60),
                 TextForm(
                   prefixIcon: false,
                   icon: Icons.edit,
@@ -103,9 +105,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   labelText: "Last Name",
                   hintText: "Enter your Last Name",
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                buildSizedBox(context:context,height: 60),
                 TextForm(
                     prefixIcon: false,
                     icon: Icons.email,
@@ -125,9 +125,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     keyboardType: TextInputType.emailAddress,
                     labelText: "Enter Email",
                     hintText: "enter email"),
-                const SizedBox(
-                  height: 20,
-                ),
+                buildSizedBox(context: context,height: 60),
                 TextForm(
                     prefixIcon: false,
                     icon: Icons.phone,
@@ -141,9 +139,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     keyboardType: TextInputType.phone,
                     labelText: "Phone",
                     hintText: "Enter your phone"),
-                const SizedBox(
-                  height: 20,
-                ),
+                buildSizedBox(context: context,height:60),
                 TextForm(
                     prefixIcon: true,
                     icon: Icons.lock,
@@ -158,9 +154,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     keyboardType: TextInputType.text,
                     labelText: "Password",
                     hintText: 'Enter your password'),
-                const SizedBox(
-                  height: 20,
-                ),
+                buildSizedBox(context: context,height: 60),
                 TextForm(
                     prefixIcon: true,
                     icon: Icons.lock,
@@ -177,28 +171,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     keyboardType: TextInputType.text,
                     labelText: 'Password Confirmaton',
                     hintText: 'Enter your password confirmation'),
-                const SizedBox(height: 30),
+                buildSizedBox(context:context,height:20),
                 ButtonSigninSignupProfile(
                     context: context,
-                    height: 40,
+                    height: 50,
                     circle: 50,
                     text: 'Sign Up',
                     fun: () {
                       Navigator.pushReplacementNamed(
-                          context, Profile.routeName);
+                          context, NavigationBarHome.routeName);
                     },
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     colorText: Colors.white,
                     backGroundColor: Colors.green),
-                const SizedBox(
-                  height: 30,
-                ),
+                buildSizedBox(context: context,height: 30),
                 const Center(
                   child: Text("Or sign up using ..",
                       style: TextStyle(color: Colors.grey)),
                 ),
-                const SizedBox(height: 25.0),
+                buildSizedBox(context: context,height: 80),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -208,9 +200,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       linkImage: "assets/images/google.jpg",
                       fun: () {},
                     ),
-                    const SizedBox(
-                      width: 30,
-                    ),
+                    buildSizedBox(
+                        context: context,width: 40),
                     buildIconFacebookAndGoogle(
                       height: 55,
                       width: 55,
@@ -219,9 +210,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
+                buildSizedBox(context: context,height: 30),
               ],
             ),
           ),
@@ -229,5 +218,4 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
     ));
   }
-
 }

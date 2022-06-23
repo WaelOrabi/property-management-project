@@ -1,6 +1,4 @@
 
-import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:project_111/features/conversation/presntation/pages/chat.dart';
@@ -327,7 +325,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
         context: context,
         isScrollControlled: true,
         builder: (context) => Container(
-          height: MediaQuery.of(context).size.height * 0.85,
+          height: MediaQuery.of(context).size.height * 0.90,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[

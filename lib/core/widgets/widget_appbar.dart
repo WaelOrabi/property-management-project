@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
-
-class WidgetsAppBar extends StatelessWidget {
-  const WidgetsAppBar({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-
-  static AppBar buildAppBar(
+ AppBar buildAppBar(
       {required String namePage,
       required VoidCallback fun,
       required Color color}) {
@@ -30,4 +21,4 @@ class WidgetsAppBar extends StatelessWidget {
       ),
     );
   }
-}
+

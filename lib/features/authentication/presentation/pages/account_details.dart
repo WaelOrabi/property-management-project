@@ -12,7 +12,7 @@ class AccountDetails extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade100,
-        appBar: WidgetsAppBar.buildAppBar(
+        appBar: buildAppBar(
             namePage: "Account Details",
             fun: () =>
                 Navigator.pushReplacementNamed(context, Profile.routeName),

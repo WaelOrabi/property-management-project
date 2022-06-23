@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
 import 'package:project_111/features/conversation/presntation/pages/chat.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 
@@ -20,7 +21,6 @@ class _ConversationsState extends State<Conversations> {
     return Scaffold(
       appBar: buildScrollAppBar(),
       body: buildBody(),
-      bottomNavigationBar: buildBottomNavigationBar(context),
     );
   }
 
