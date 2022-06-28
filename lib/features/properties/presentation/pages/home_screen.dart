@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
       actions: [
         IconButton(
             onPressed: () =>
-                Navigator.pushReplacementNamed(context, AddProperty.routeName),
+                Navigator.pushReplacementNamed(context, AddOrEditProperty.routeName),
             icon: const Icon(
               Icons.add,
               color: Colors.green,

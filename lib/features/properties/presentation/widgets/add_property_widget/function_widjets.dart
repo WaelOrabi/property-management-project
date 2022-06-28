@@ -1,7 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:project_111/core/widgets/property.dart';
 final yearBuiltController = TextEditingController();
+
+
 Row buildRowItemsOfCategory({
   required BuildContext context,
   required String titleItems,
@@ -42,9 +45,11 @@ Row buildRowItemsOfCategory({
 
 
 Row buildRowOfTextFormField(
-    {required BuildContext context,
+    {
+      required String val,
+      required BuildContext context,
       required String title,
-      required TextEditingController controller,
+      required   TextEditingController controller,
       required double widthOfSizeBox,
       required FontWeight fontWeight}) {
   return Row(
@@ -57,8 +62,9 @@ Row buildRowOfTextFormField(
       SizedBox(
         width: MediaQuery.of(context).size.width / widthOfSizeBox,
         child: TextFormField(
+          initialValue: val,
           keyboardType: TextInputType.number,
-          controller: controller,
+         controller: controller,
           validator: (value) {
             if (value!.isEmpty) {
               return "Enter the $title";
@@ -83,103 +89,13 @@ Row buildRowOfTextFormField(
 
 
 
-Theme buildThemeDatePicker(BuildContext context, Widget child) {
-  return Theme(
-    data: ThemeData.light().copyWith(
-      primaryColor:
-      Theme.of(context).accentColor,
-      accentColor:
-      Theme.of(context).primaryColor,
-      colorScheme: ColorScheme.light(
-          primary:
-          Theme.of(context).accentColor),
-      buttonTheme: ButtonThemeData(
-          textTheme: ButtonTextTheme.primary),
-    ),
-    child: child,
-  );
-}
-
-
-
-Row buildRowOfTextFormFieldSelectLocation(
-    {required BuildContext context,
-      required String title,
-      required TextEditingController controller,
-}) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      Text(
-        title,
-        style:const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-      ),
-      SizedBox(
-        width: MediaQuery.of(context).size.width / 2,
-        child: TextFormField(
-          keyboardType: TextInputType.number,
-          controller: controller,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'please enter the $title';
-            }
-            return null;
-          },
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              focusedBorder: InputBorder.none,
-              enabledBorder: InputBorder.none,
-              errorBorder: InputBorder.none,
-              disabledBorder: InputBorder.none,
-              contentPadding:
-              const EdgeInsets.only(left: 10, top: 11, right: 15),
-              hintText: 'Enter the $title'),
-        ),
-      ),
-    ],
-  );
-}
-
-
-
-Row buildRowItemsOfFilters({
-  required BuildContext context,
-  required String titleItems,
-  required double widthOfSizeBox,
-  required String dropdownValue,
-  required List<String> nameListItems,
-  required FontWeight fontWeight,
-  required Function fun,
-}) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      Text(
-        titleItems,
-        style: TextStyle(fontSize: 20, fontWeight: fontWeight),
-      ),
-      DropdownButton<String>(
-        value: dropdownValue,
-        iconSize: 20,
-        style: const TextStyle(color: Colors.black, fontSize: 16),
-        underline: Container(),
-        onChanged:(data)=>fun(data),
-        items: nameListItems.map<DropdownMenuItem<String>>((String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: Text(value),
-          );
-        }).toList(),
-      ),
-    ],
-  );
-}
-
-
 
 
 Container buildDescription(
-    {required BuildContext context,
+    {
+
+      required String val,
+      required BuildContext context,
       required String title,
       required String errorValidator,
       required String hintText,
@@ -197,8 +113,9 @@ Container buildDescription(
           style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         TextFormField(
+          initialValue:val,
           keyboardType: TextInputType.text,
-          controller: controller,
+      controller: controller,
           validator: (value) {
             if (value!.length < 4) {
               return errorValidator;

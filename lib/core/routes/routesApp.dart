@@ -22,7 +22,7 @@ import '../../features/properties/presentation/pages/MyListingScreen.dart';
 
 Map<String, WidgetBuilder> routes() {
   return {
-    "/":(context)=> const AddProperty(),
+    "/":(context)=>  AddOrEditProperty(),
     PagesView.routeName: (context) => const PagesView(),
     Welcome.routeName: (context) => const Welcome(),
     SingIn.routeName: (context) => const SingIn(),
@@ -30,8 +30,8 @@ Map<String, WidgetBuilder> routes() {
     Profile.routeName: (context) => const Profile(),
     SignUpScreen.routeName:(context)=>const SignUpScreen(),
     MyListingScreen.routeName:(context)=>const MyListingScreen(),
-    AddProperty.routeName:(context)=> const AddProperty(),
-    MapScreen.routeName:(context)=>const MapScreen(),
+    AddOrEditProperty.routeName:(context)=>  AddOrEditProperty(),
+    MapScreen.routeName:(context)=> MapScreen(),
     SplashScreen.routeName:(context)=>const SplashScreen(),
     SuperAdmin.routeName:(context)=>const SuperAdmin(),
     PropertyListingDetails.routeName:(context)=>const PropertyListingDetails(),

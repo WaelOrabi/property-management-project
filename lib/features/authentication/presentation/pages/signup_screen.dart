@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:project_111/core/widgets/sizedBox.dart';
 import '../../../../core/widgets/bottom_navigation_bar.dart';
+import '../../../../core/widgets/location_helper.dart';
 import '../widgets/signin_signup/button_signin_signup_update.dart';
 import '../widgets/signin_signup/iconbutton_for_signin_and_signup_with_other_apps.dart';
 import '../widgets/signin_signup/return_button.dart';
@@ -17,6 +19,13 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  static Position? position;
+  Future<void> getMyCurrentLocation()async{
+    await LocationHelper.determineCurrentLocation();
+     position=await Geolocator.getLastKnownPosition().whenComplete(() {setState(() {
+    });});
+  }
+
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
@@ -24,6 +33,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController passwordConfirmationController = TextEditingController();
 
+@override
+  void initState() {
+    super.initState();
+getMyCurrentLocation();
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -171,13 +185,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     keyboardType: TextInputType.text,
                     labelText: 'Password Confirmaton',
                     hintText: 'Enter your password confirmation'),
-                buildSizedBox(context:context,height:20),
+
+                buildSizedBox(context: context,height:60),
                 ButtonSigninSignupProfile(
                     context: context,
                     height: 50,
                     circle: 50,
                     text: 'Sign Up',
-                    fun: () {
+                    fun: ()async {
+                      Map<String, dynamic> mapLocationAddress=  await LocationHelper.getLocationAddress(position!.latitude,position!.longitude);
+
+                     //*****Address
+                      //mapLocationAddress['country'];
+                      //mapLocationAddress['subLocality'];
+                      //mapLocationAddress['administrativeArea'];
+                      //position!.longitude;
+                      //position!.latitude;
+
+                     //firstNameController.text;
+                     //lastNameController.text;
+                     //emailController.text;
+                     //phoneController.text;
+                     //passwordController.text;
+
                       Navigator.pushReplacementNamed(
                           context, NavigationBarHome.routeName);
                     },
