@@ -16,6 +16,7 @@ class AddPhotoAdvanceImage extends StatefulWidget {
 }
 
 class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
+  List<ImageObject> listImagesProperty = [];
 
 
   @override
@@ -26,13 +27,13 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
         title: 'external_image_editor_1',
         icon: Icons.edit_rounded,
         onEditorEvent: (
-            {required BuildContext context,
-              required File file,
-              required String title,
-              int maxWidth = 1080,
-              int maxHeight = 1920,
-              int compressQuality = 90,
-              ImagePickerConfigs? configs}) async =>
+                {required BuildContext context,
+                required File file,
+                required String title,
+                int maxWidth = 1080,
+                int maxHeight = 1920,
+                int compressQuality = 90,
+                ImagePickerConfigs? configs}) async =>
             Navigator.of(context).push(MaterialPageRoute<File>(
                 builder: (context) => ImageEdit(
                     file: file,
@@ -45,6 +46,7 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
+
           widget.listImagesProperty.isEmpty
               ? const SizedBox(
             width: 0,
@@ -66,10 +68,12 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
                   ),
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.green,
+
+                      ),
+                    );
+                  }),
+
                 ),
-              );
-            }),
-          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: GestureDetector(
@@ -98,7 +102,11 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
                     }));
                 if ((objects?.length ?? 0) > 0) {
                   setState(() {
+
                     widget.listImagesProperty.addAll(objects!);
+
+
+
                   });
                 }
               },
