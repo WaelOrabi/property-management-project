@@ -2,7 +2,53 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:project_111/core/widgets/property.dart';
-final yearBuiltController = TextEditingController();
+
+Container buildDescription(
+    {
+      required BuildContext context,
+      required String title,
+      required String errorValidator,
+      required String hintText,
+      required TextEditingController controller,
+      String? val
+    }) {
+  return Container(
+    padding: const EdgeInsets.only(left: 15, top: 10),
+    color: Colors.white,
+    width: MediaQuery.of(context).size.width,
+    height: 90,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        TextFormField(
+          initialValue: val,
+          keyboardType: TextInputType.text,
+          controller: controller,
+          validator: (value) {
+            if (value!.length < 4) {
+              return errorValidator;
+            }
+            return null;
+          },
+          decoration: InputDecoration(
+              border: InputBorder.none,
+              focusedBorder: InputBorder.none,
+              enabledBorder: InputBorder.none,
+              errorBorder: InputBorder.none,
+              disabledBorder: InputBorder.none,
+              contentPadding:
+              const EdgeInsets.only(left: 10, top: 11, right: 15),
+              hintText: hintText),
+        ),
+      ],
+    ),
+  );
+}
+
 
 
 Row buildRowItemsOfCategory({
@@ -47,6 +93,7 @@ Row buildRowItemsOfCategory({
 Row buildRowOfTextFormField(
     {
 
+      String? val,
       required BuildContext context,
       required String title,
       required   TextEditingController controller,
@@ -62,6 +109,7 @@ Row buildRowOfTextFormField(
       SizedBox(
         width: MediaQuery.of(context).size.width / widthOfSizeBox,
         child: TextFormField(
+          initialValue: val,
                 keyboardType: TextInputType.number,
          controller: controller,
           validator: (value) {
@@ -90,45 +138,4 @@ Row buildRowOfTextFormField(
 
 
 
-Container buildDescription(
-    {
-      required BuildContext context,
-      required String title,
-      required String errorValidator,
-      required String hintText,
-      required TextEditingController controller}) {
-  return Container(
-    padding: const EdgeInsets.only(left: 15, top: 10),
-    color: Colors.white,
-    width: MediaQuery.of(context).size.width,
-    height: 90,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          title,
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        TextFormField(
-              keyboardType: TextInputType.text,
-      controller: controller,
-          validator: (value) {
-            if (value!.length < 4) {
-              return errorValidator;
-            }
-            return null;
-          },
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              focusedBorder: InputBorder.none,
-              enabledBorder: InputBorder.none,
-              errorBorder: InputBorder.none,
-              disabledBorder: InputBorder.none,
-              contentPadding:
-              const EdgeInsets.only(left: 10, top: 11, right: 15),
-              hintText: hintText),
-        ),
-      ],
-    ),
-  );
-}
+

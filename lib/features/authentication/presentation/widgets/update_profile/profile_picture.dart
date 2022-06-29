@@ -4,22 +4,22 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class Profile_Picture extends StatefulWidget {
-  const Profile_Picture({Key? key}) : super(key: key);
-
+   Profile_Picture({Key? key,this.image}) : super(key: key);
+ File? image;
   @override
   State<Profile_Picture> createState() => _Profile_PictureState();
 }
 class _Profile_PictureState extends State<Profile_Picture> {
-  File? image;
+
 
   Future getImage(ImageSource src) async {
     final pickedFile = await ImagePicker().pickImage(source: src);
     setState(() {
       if (pickedFile != null) {
-        image = File(pickedFile.path);
+        widget.image = File(pickedFile.path);
       }
     });
-    return image;
+    return widget.image;
   }
 
   @override
@@ -31,7 +31,7 @@ class _Profile_PictureState extends State<Profile_Picture> {
         fit: StackFit.expand,
         clipBehavior: Clip.none,
         children: [
-          image == null
+          widget.image == null
               ? const CircleAvatar(
                   backgroundColor: Colors.grey,
                   child: Icon(
@@ -42,7 +42,7 @@ class _Profile_PictureState extends State<Profile_Picture> {
                   radius: 150,
                 )
               : CircleAvatar(
-                  backgroundImage: FileImage(image!),
+                  backgroundImage: FileImage(widget.image!),
                   radius: 130,
                 ),
           Positioned(

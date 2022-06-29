@@ -62,10 +62,10 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
               children: [
                 SizedBox(
                   width: double.infinity,
-                  child: Image.asset(
-                    join(widget.property!.image[_currentPosition.toInt()]),
-                    width: double.infinity,
-                    height: MediaQuery.of(context).size.height / 2.5,
+                  child: Image.asset(""
+                  //  join(widget.property!.image![_currentPosition.toInt()]),
+                    //width: double.infinity,
+                    //height: MediaQuery.of(context).size.height / 2.5,
                   ),
                 ),
                 buildDotsIndicator(),

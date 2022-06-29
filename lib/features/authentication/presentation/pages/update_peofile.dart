@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_111/core/widgets/sizedBox.dart';
+import 'package:project_111/core/widgets/user.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
 import 'package:project_111/features/authentication/presentation/pages/profile.dart';
 import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
@@ -8,17 +9,17 @@ import '../widgets/update_profile/profile_picture.dart';
 
 class UpdateProfile extends StatefulWidget {
   static String routeName = 'UpdateProfile';
-
-  const UpdateProfile({Key? key}) : super(key: key);
+final User? user;
+  const UpdateProfile({Key? key, this.user}) : super(key: key);
 
   @override
   State<UpdateProfile> createState() => _UpdateProfileState();
 }
 
 class _UpdateProfileState extends State<UpdateProfile> {
-  TextEditingController firstNameController = TextEditingController();
-  TextEditingController lastNameController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
+  // TextEditingController firstNameController = const UpdateProfile().user!.firstName as TextEditingController;
+  // TextEditingController lastNameController =const UpdateProfile().user!.lastName as TextEditingController ;
+  // TextEditingController phoneController = const UpdateProfile().user!.phoneNumber as TextEditingController ;
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +40,10 @@ class _UpdateProfileState extends State<UpdateProfile> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Center(
+            Center(
               child: Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: Profile_Picture(),
+                padding:const EdgeInsets.only(top: 20),
+                child: Profile_Picture(image: widget.user!.image,),
               ),
             ),
             Padding(
@@ -58,7 +59,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       }
                       return null;
                     },
-                    controller: firstNameController,
+                    val: widget.user!.firstName,
                     keyboardType: TextInputType.name,
                     labelText: "First Name",
                     hintText: "Enter your First Name",
@@ -73,7 +74,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       }
                       return null;
                     },
-                    controller: lastNameController,
+                    val: widget.user!.lastName,
                     keyboardType: TextInputType.name,
                     labelText: "Last Name",
                     hintText: "Enter your Last Name",
@@ -88,7 +89,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                         }
                         return null;
                       },
-                      controller: phoneController,
+                      val: widget.user!.phoneNumber,
                       keyboardType: TextInputType.phone,
                       labelText: "Phone",
                       hintText: "Enter your phone"),

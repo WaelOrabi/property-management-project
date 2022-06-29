@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:project_111/core/widgets/user.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 
 class MyListingScreen extends StatefulWidget {
   static String routeName='MyListingScreen';
-  const MyListingScreen({Key? key}) : super(key: key);
-
+  const MyListingScreen({Key? key,this.user}) : super(key: key);
+final User? user;
   @override
   State<MyListingScreen> createState() => _MyListingScreenState();
 }

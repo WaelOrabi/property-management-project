@@ -4,10 +4,10 @@ import 'package:project_111/core/widgets/property.dart';
 
 class User {
   int? id;
-  final String firstName;
-  final String lastName;
-  final String email;
-  final String phoneNumber;
+   String? firstName;
+   String? lastName;
+   String? email;
+   String? phoneNumber;
   String? password;
   File? image;
   List<Property>? listProperty;
@@ -15,10 +15,10 @@ class User {
 
   User(
       {this.id,
-      required this.firstName,
-      required this.lastName,
-      required this.email,
-      required this.phoneNumber,
+       this.firstName,
+       this.lastName,
+       this.email,
+       this.phoneNumber,
       this.password,
       this.image,
       this.listProperty,

@@ -60,6 +60,7 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
           children: [
             //*****Description****//
             buildDescription(
+              val: widget.isEdit==true?widget.property!.description:null,
               context: context,
               title: "Description",
               errorValidator: "please enter any description",
@@ -89,31 +90,35 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
                         });
                       }),
                   buildRowOfTextFormField(
+                    val: widget.isEdit==true?widget.property!.price:null,
                     context: context,
                     title: "price",
                     controller: priceController,
                     widthOfSizeBox: 3,
                     fontWeight: FontWeight.bold,),
                   buildRowOfTextFormField(
+                    val: widget.isEdit==true?widget.property!.space:null,
                     context: context,
                     title: "Space",
                     controller: spaceController,
                     widthOfSizeBox: 3,
                     fontWeight: FontWeight.bold,),
                   buildRowOfTextFormField(
+                    val: widget.isEdit==true?widget.property!.storeys:null,
                     context: context,
                     title: "Storeys",
                     controller: storeysController,
                     widthOfSizeBox: 3,
                     fontWeight: FontWeight.bold,),
                   buildRowOfTextFormField(
+                    val: widget.isEdit==true?widget.property!.bedRooms:null,
                     context: context,
                     title: "Bed Room",
                     controller: bedRoomController,
                     widthOfSizeBox: 3,
                     fontWeight: FontWeight.bold,),
                   buildRowOfTextFormField(
-
+                    val: widget.isEdit==true?widget.property!.baths:null,
                     context: context,
                     title: "Baths",
                     controller: bathsController,
@@ -122,7 +127,7 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
                   rowAddLocation(context),
                   _buildAddOrEditPhotosText(),
                   AddPhotoAdvanceImage(
-                    listImagesProperty: widget.imagesProperty,),
+                    listImagesProperty:widget.isEdit==true? widget.property!.image:widget.imagesProperty,),
                 ],
               ),
             ),
@@ -213,7 +218,7 @@ print(dropdownValueCategory);
                    Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => MapScreen(address: widget.address,),
+                      builder: (context) => MapScreen(address:widget.isEdit==true?widget.property!.address : widget.address,),
                     ),
                   ).then((val){
                     widget.address=val; //you get details from screen2 here
