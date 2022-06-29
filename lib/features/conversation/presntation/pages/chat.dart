@@ -1,6 +1,7 @@
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:project_111/features/conversation/presntation/widgets/message_stream_builder_chat_widget.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 import '../widgets/input_widget.dart';
 
@@ -45,9 +46,7 @@ class ChatState extends State<Chat> {
         onWillPop: onBackPress,
         child: Column(
           children: <Widget>[
-            Expanded(
-              child: Container(),
-            ),
+            MessageStreamBuilderChat(),
             InputWidget(
               onBlurred: toggleEmojiKeyboard,
               controller: controller,

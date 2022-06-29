@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:project_111/core/widgets/address.dart';
+import 'package:project_111/core/widgets/property.dart';
 import 'package:project_111/features/authentication/presentation/pages/profile.dart';
 import 'package:project_111/features/properties/presentation/pages/add_property.dart';
 import 'package:project_111/features/properties/presentation/pages/map_screen.dart';
@@ -233,7 +235,7 @@ SingleChildScrollView _buildSingleChildScrollViewInHorizontal(BuildContext conte
         ),
       ),
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>const PropertyListingDetails()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> PropertyListingDetails(property: Property(address: Address(latitude:4.2, longitude: 5.6, region: "Al Shaghour", city: "Damascus", country: "Syria"), space: "100m", baths: "2", bedRooms: "2", storeys: "2", dateAdded: "2020", description: "funtastic build", price: "1000000", image: ["assets/images/home.jpg","assets/images/google.jpg","assets/images/facebook.jpg"], category: "sale"),)));
       },
     );
   }
