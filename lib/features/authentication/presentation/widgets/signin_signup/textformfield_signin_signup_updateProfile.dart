@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 // ignore: non_constant_identifier_names
 TextFormField TextForm(
     {required FormFieldValidator<String>? validator,
-      required TextEditingController controller,
+       TextEditingController? controller,
       required TextInputType? keyboardType,
       required String labelText,
       required IconData icon,
       double fontSize=15,
+      String? val,
       bool obscureText=false,
       FontWeight fontWeight=FontWeight.normal,
       double circle=50,
@@ -16,11 +17,16 @@ TextFormField TextForm(
       required bool prefixIcon,
       required String hintText}) {
   return TextFormField(
+    initialValue: val,
     cursorColor: Colors.green,
     obscureText: obscureText,
     controller: controller,
     onSaved: (newValue) {
-      controller.text = newValue!;
+    if(val != null) {
+      val = newValue!;
+    }else{
+      controller?.text = newValue!;
+    }
     },
     validator: validator,
     keyboardType: keyboardType,

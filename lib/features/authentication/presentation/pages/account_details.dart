@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/features/authentication/presentation/pages/profile.dart';
-
+import 'package:project_111/core/widgets/user.dart';
 import '../../../../core/widgets/widget_appbar.dart';
 
 class AccountDetails extends StatelessWidget {
-  const AccountDetails({Key? key}) : super(key: key);
+  const AccountDetails({Key? key,this.user}) : super(key: key);
   static String routeName = 'Account Details';
-
+final User? user;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -27,15 +26,14 @@ class AccountDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(height: 20),
-          const Text("PUBLIC INFO",
-              style: TextStyle(color: Colors.grey, fontSize: 25)),
+          const Text("PUBLIC INFO", style: TextStyle(color: Colors.grey, fontSize: 25)),
           const SizedBox(height: 20),
           buildContainer(
             context: context,
             textI1: "First Name :",
             textI2: "Last Name :",
-            textF1: "F.Name",
-            textF2: "L.Name",
+            textF1: "${user!.firstName}",
+            textF2: "${user!.lastName}",
           ),
           const SizedBox(height: 20),
           const Text("PRIVATE DETAILS",
@@ -45,8 +43,8 @@ class AccountDetails extends StatelessWidget {
             context: context,
             textI1: "Email Address :",
             textI2: "Phone Number :",
-            textF1: "F.name@gmail.com",
-            textF2: "09********",
+            textF1: "${user!.email}",
+            textF2: "${user!.phoneNumber}",
           ),
         ],
       );

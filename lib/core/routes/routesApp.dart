@@ -27,7 +27,7 @@ Map<String, WidgetBuilder> routes() {
     Welcome.routeName: (context) => const Welcome(),
     SingIn.routeName: (context) => const SingIn(),
     AccountDetails.routeName: (context) => const AccountDetails(),
-    Profile.routeName: (context) => const Profile(),
+    Profile.routeName: (context) =>  Profile(),
     SignUpScreen.routeName:(context)=>const SignUpScreen(),
     MyListingScreen.routeName:(context)=>const MyListingScreen(),
     AddOrEditProperty.routeName:(context)=>  AddOrEditProperty(),

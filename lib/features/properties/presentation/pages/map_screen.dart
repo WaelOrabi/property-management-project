@@ -120,7 +120,6 @@ class _MapScreenState extends State<MapScreen> {
             onPressed: () async {
               var mapLocationAddress =
                   (await LocationHelper.getLocationAddress(lat!, long!));
-              print(mapLocationAddress);
               widget.address= Address(
                   latitude: lat!,
                   longitude: long!,

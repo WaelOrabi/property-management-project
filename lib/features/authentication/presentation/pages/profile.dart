@@ -1,25 +1,26 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
 import 'package:project_111/core/widgets/sizedBox.dart';
+import 'package:project_111/core/widgets/user.dart';
 import 'package:project_111/features/authentication/presentation/pages/account_details.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
+import 'package:project_111/features/authentication/presentation/pages/super_admin.dart';
 import 'package:project_111/features/authentication/presentation/pages/update_peofile.dart';
 import 'package:project_111/features/authentication/presentation/widgets/update_profile/profile_picture.dart';
 import 'package:project_111/features/properties/presentation/pages/my_favorite.dart';
 import '../../../properties/presentation/pages/MyListingScreen.dart';
 
 class Profile extends StatefulWidget {
-  const Profile({Key? key}) : super(key: key);
+  Profile({Key? key, this.user}) : super(key: key);
   static String routeName = 'Profile';
+  User? user;
 
   @override
   State<Profile> createState() => _ProfileState();
 }
 
 class _ProfileState extends State<Profile> {
-  String userName = 'User name';
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,8 @@ class _ProfileState extends State<Profile> {
         appBar: buildAppBar(
             namePage: "Profile",
             fun: () {
-              Navigator.pushReplacementNamed(context,NavigationBarHome.routeName);
+              Navigator.pushReplacementNamed(
+                  context, NavigationBarHome.routeName);
             },
             color: Colors.white),
         body: _buildBody(context),
@@ -43,10 +45,10 @@ class _ProfileState extends State<Profile> {
         children: [
           buildSizedBox(context: context, height: 60),
           //image_profile
-          const Profile_Picture(),
+           Profile_Picture(image: widget.user!.image,),
           buildSizedBox(context: context, height: 60),
-          Text(
-            userName,
+          Text('${widget.user!.firstName} ${widget.user!.lastName}'
+            ,
             style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           buildSizedBox(context: context, height: 60),
@@ -54,45 +56,43 @@ class _ProfileState extends State<Profile> {
           buildListTile(
               nameList: "My Listing",
               typeIcon: Icons.format_list_bulleted_sharp,
-              colorIcon: Colors.greenAccent,
+              colorIcon: Colors.grey,
               fun: () =>
-                  Navigator.pushNamed(context, MyListingScreen.routeName)),
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> MyListingScreen(user: widget.user,)))),
 
           buildListTile(
               nameList: "My Favorites",
               typeIcon: Icons.favorite,
-              colorIcon: Colors.red,
-              fun: () => Navigator.pushNamed(
-                  context, MyFavorite.routeName)),
+              colorIcon: Colors.grey,
+              fun: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const MyFavorite()))),
 
           buildListTile(
               nameList: "Account Details",
               typeIcon: Icons.person,
-              colorIcon: Colors.blue,
-              fun: () => Navigator.pushNamed(
-                  context, AccountDetails.routeName)),
+              colorIcon: Colors.grey,
+              fun: () =>
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AccountDetails(user:widget.user)))),
 
           buildListTile(
             nameList: "Upgrade Account",
             typeIcon: Icons.edit,
-            colorIcon: Colors.yellow,
-            fun: () => Navigator.pushNamed(
-                context, UpdateProfile.routeName),
+            colorIcon: Colors.grey,
+            fun: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>UpdateProfile(user: widget.user,))),
+          ),
+
+          buildListTile(
+            nameList: "Super Admin",
+            typeIcon: Icons.admin_panel_settings,
+            colorIcon: Colors.grey,
+            fun: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>SuperAdmin(user:widget.user))),
           ),
 
           buildListTile(
               nameList: "Setting",
               typeIcon: Icons.settings,
               colorIcon: Colors.grey,
-              fun: () {}),
-
-          buildListTile(
-              nameList: "Super Admin",
-              typeIcon: Icons.admin_panel_settings,
-              colorIcon: Colors.indigo,
-              fun: () {}),
-
-
+              fun: (){}
+          ),
           //Button of Log out
           _buildLogoutBtn(context),
         ],

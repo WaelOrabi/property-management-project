@@ -1,3 +1,4 @@
+import 'package:advance_image_picker/models/image_object.dart';
 import 'package:project_111/core/widgets/address.dart';
 
 class Property {
@@ -10,7 +11,7 @@ class Property {
   final String dateAdded;
   final String description;
   final String price;
-  final List image;
+  final List<ImageObject> image;
   final String category;
 
   Property( {

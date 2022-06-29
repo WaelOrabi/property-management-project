@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
-import 'package:project_111/features/authentication/presentation/pages/profile.dart';
+import 'package:project_111/core/widgets/property.dart';
+import 'package:project_111/core/widgets/user.dart';
+
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 class MyFavorite extends StatefulWidget {
-  const MyFavorite({Key? key}) : super(key: key);
+  const MyFavorite({Key? key,this.user,this.property}) : super(key: key);
   static String routeName = 'MyFavorite';
-
+final User? user;
+final Property? property;
   @override
   State<MyFavorite> createState() => _MyFavoriteState();
 }

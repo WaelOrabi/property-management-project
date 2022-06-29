@@ -2,11 +2,13 @@ import 'dart:ui';
 
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:project_111/core/widgets/user.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
 
 class SuperAdmin extends StatefulWidget {
   static String routeName = 'SuperAdmin';
-  const SuperAdmin({Key? key}) : super(key: key);
+  final User? user;
+  const SuperAdmin({Key? key,this.user}) : super(key: key);
   @override
   State<SuperAdmin> createState() => _SuperAdminState();
 }
