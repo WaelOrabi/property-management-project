@@ -1,11 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:project_111/features/conversation/presntation/pages/chat.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 import 'package:path/path.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-
 
 class PropertyListingDetails extends StatefulWidget {
   static String routeName = 'PropertyListingDetails';

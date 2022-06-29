@@ -22,7 +22,7 @@ import '../../features/properties/presentation/pages/MyListingScreen.dart';
 
 Map<String, WidgetBuilder> routes() {
   return {
-    "/":(context)=>  AddOrEditProperty(),
+    "/":(context)=> const Welcome(),
     PagesView.routeName: (context) => const PagesView(),
     Welcome.routeName: (context) => const Welcome(),
     SingIn.routeName: (context) => const SingIn(),

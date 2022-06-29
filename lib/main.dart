@@ -3,7 +3,7 @@ import 'package:project_111/core/routes/routesApp.dart';
 
 void main() {
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 

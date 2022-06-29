@@ -26,7 +26,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
       backgroundColor: Colors.grey.shade100,
       appBar:buildAppBar(
           namePage: "Update Profile",
-          fun: () => Navigator.pushReplacementNamed(context, Profile.routeName),
+          fun: () => Navigator.of(context).pop(),
           color: Colors.white),
       body: _buildBody(context),
     );

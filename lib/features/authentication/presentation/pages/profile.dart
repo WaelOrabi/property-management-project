@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
 import 'package:project_111/core/widgets/sizedBox.dart';
 import 'package:project_111/features/authentication/presentation/pages/account_details.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
@@ -27,7 +28,7 @@ class _ProfileState extends State<Profile> {
         appBar: buildAppBar(
             namePage: "Profile",
             fun: () {
-              Navigator.of(context).pop();
+              Navigator.pushReplacementNamed(context,NavigationBarHome.routeName);
             },
             color: Colors.white),
         body: _buildBody(context),
@@ -61,21 +62,21 @@ class _ProfileState extends State<Profile> {
               nameList: "My Favorites",
               typeIcon: Icons.favorite,
               colorIcon: Colors.red,
-              fun: () => Navigator.pushReplacementNamed(
+              fun: () => Navigator.pushNamed(
                   context, MyFavorite.routeName)),
 
           buildListTile(
               nameList: "Account Details",
               typeIcon: Icons.person,
               colorIcon: Colors.blue,
-              fun: () => Navigator.pushReplacementNamed(
+              fun: () => Navigator.pushNamed(
                   context, AccountDetails.routeName)),
 
           buildListTile(
             nameList: "Upgrade Account",
             typeIcon: Icons.edit,
             colorIcon: Colors.yellow,
-            fun: () => Navigator.pushReplacementNamed(
+            fun: () => Navigator.pushNamed(
                 context, UpdateProfile.routeName),
           ),
 
@@ -84,6 +85,13 @@ class _ProfileState extends State<Profile> {
               typeIcon: Icons.settings,
               colorIcon: Colors.grey,
               fun: () {}),
+
+          buildListTile(
+              nameList: "Super Admin",
+              typeIcon: Icons.admin_panel_settings,
+              colorIcon: Colors.indigo,
+              fun: () {}),
+
 
           //Button of Log out
           _buildLogoutBtn(context),

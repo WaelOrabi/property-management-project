@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
 import 'package:project_111/features/authentication/presentation/pages/profile.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 class MyFavorite extends StatefulWidget {
@@ -44,7 +45,9 @@ class _MyFavoriteState extends State<MyFavorite> {
           Icons.arrow_back_ios_outlined,
           color: Colors.green,
         ),
-        onPressed: ()=>Navigator.pushNamed(context, Profile.routeName),
+        onPressed: ()=>
+        Navigator.of(context).pop(),
+        //Navigator.pushReplacementNamed(context, NavigationBarHome.routeName),
       ),
     );
   }

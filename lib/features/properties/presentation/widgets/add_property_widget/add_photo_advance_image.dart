@@ -102,11 +102,7 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
                     }));
                 if ((objects?.length ?? 0) > 0) {
                   setState(() {
-
                     widget.listImagesProperty.addAll(objects!);
-
-
-
                   });
                 }
               },

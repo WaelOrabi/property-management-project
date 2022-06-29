@@ -46,7 +46,7 @@ Row buildRowItemsOfCategory({
 
 Row buildRowOfTextFormField(
     {
-      required String val,
+
       required BuildContext context,
       required String title,
       required   TextEditingController controller,
@@ -62,8 +62,7 @@ Row buildRowOfTextFormField(
       SizedBox(
         width: MediaQuery.of(context).size.width / widthOfSizeBox,
         child: TextFormField(
-          initialValue: val,
-          keyboardType: TextInputType.number,
+                keyboardType: TextInputType.number,
          controller: controller,
           validator: (value) {
             if (value!.isEmpty) {
@@ -93,8 +92,6 @@ Row buildRowOfTextFormField(
 
 Container buildDescription(
     {
-
-      required String val,
       required BuildContext context,
       required String title,
       required String errorValidator,
@@ -113,8 +110,7 @@ Container buildDescription(
           style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         TextFormField(
-          initialValue:val,
-          keyboardType: TextInputType.text,
+              keyboardType: TextInputType.text,
       controller: controller,
           validator: (value) {
             if (value!.length < 4) {

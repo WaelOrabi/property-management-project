@@ -15,7 +15,7 @@ class AccountDetails extends StatelessWidget {
         appBar: buildAppBar(
             namePage: "Account Details",
             fun: () =>
-                Navigator.pushReplacementNamed(context, Profile.routeName),
+                Navigator.of(context).pop(),
             color: Colors.white),
         body: buildBody(context),
       ),

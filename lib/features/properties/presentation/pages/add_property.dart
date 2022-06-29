@@ -60,7 +60,6 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
           children: [
             //*****Description****//
             buildDescription(
-              val: widget.isEdit==true? widget.property!.description:TextEditingController().text,
               context: context,
               title: "Description",
               errorValidator: "please enter any description",
@@ -90,35 +89,31 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
                         });
                       }),
                   buildRowOfTextFormField(
-                    val: widget.isEdit==true? widget.property!.price:TextEditingController().text,
                     context: context,
                     title: "price",
                     controller: priceController,
                     widthOfSizeBox: 3,
                     fontWeight: FontWeight.bold,),
                   buildRowOfTextFormField(
-                    val: widget.isEdit==true? widget.property!.space:TextEditingController().text,
                     context: context,
                     title: "Space",
                     controller: spaceController,
                     widthOfSizeBox: 3,
                     fontWeight: FontWeight.bold,),
                   buildRowOfTextFormField(
-                    val: widget.isEdit==true? widget.property!.storeys:TextEditingController().text,
                     context: context,
                     title: "Storeys",
                     controller: storeysController,
                     widthOfSizeBox: 3,
                     fontWeight: FontWeight.bold,),
                   buildRowOfTextFormField(
-                    val: widget.isEdit==true? widget.property!.bedRooms:TextEditingController().text,
                     context: context,
                     title: "Bed Room",
                     controller: bedRoomController,
                     widthOfSizeBox: 3,
                     fontWeight: FontWeight.bold,),
                   buildRowOfTextFormField(
-                    val: widget.isEdit==true? widget.property!.baths:TextEditingController().text,
+
                     context: context,
                     title: "Baths",
                     controller: bathsController,
