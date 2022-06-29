@@ -14,7 +14,7 @@ class Te{
     lastName: 'Alrefay',
     email: 'ayhamalrefay@gmail.com',
     phoneNumber: '0933773538',
-    image:File( '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_A0A0002AEAAAE361B9FB7B6405F17073_compressed630524931.jpg'),
+    image:File('/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg'),
     listProperty: [
       Property(
           idProperty: 2,
@@ -74,15 +74,11 @@ class Te{
         price: '23',
         image: [
           ImageObject(
-              originalPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_A0A0002AEAAAE361B9FB7B6405F17073_compressed630524931.jpg',
-              modifiedPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_A0A0002AEAAAE361B9FB7B6405F17073_compressed630524931.jpg'),
+              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
+              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
           ImageObject(
-              originalPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_4D39120F14E910E4EC7BC9418A76D540_compressed562601941.jpg',
-              modifiedPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_4D39120F14E910E4EC7BC9418A76D540_compressed562601941.jpg'),
+              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
+              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
         ],
         category: 'Rent'),
     Property(
@@ -103,15 +99,11 @@ class Te{
         price: '56',
         image: [
           ImageObject(
-              originalPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg',
-              modifiedPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg'),
+              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
+              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
           ImageObject(
-              originalPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg',
-              modifiedPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
+              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
+              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
         ],
         category: 'Buy'),
     Property(
@@ -132,15 +124,11 @@ class Te{
         price: '45',
         image: [
           ImageObject(
-              originalPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_58B26F1EDC803F77D80950087199DA29_compressed1233204856.jpg',
-              modifiedPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_58B26F1EDC803F77D80950087199DA29_compressed1233204856.jpg'),
+              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
+              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
           ImageObject(
-              originalPath:
-              ' /storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_E09865D087DB80EBD111F3F9D9AAAB04_compressed570874985.jpg',
-              modifiedPath:
-              ' /storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_E09865D087DB80EBD111F3F9D9AAAB04_compressed570874985.jpg'),
+              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
+              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
         ],
         category: 'Rent'),
     Property(
@@ -161,15 +149,11 @@ class Te{
         price: '454',
         image: [
           ImageObject(
-              originalPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_9F18DBD0CD8C338E02210ED9A97396EB_compressed1195107837.jpg',
-              modifiedPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_9F18DBD0CD8C338E02210ED9A97396EB_compressed1195107837.jpg'),
+              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
+              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
           ImageObject(
-              originalPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_7D255B72DB6B06520C0FF73EFCBEB003_compressed533085159.jpg',
-              modifiedPath:
-              '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_7D255B72DB6B06520C0FF73EFCBEB003_compressed533085159.jpg'),
+              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
+              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
         ],
         category: 'Buy'),
   ];
@@ -322,15 +306,11 @@ class Te{
            price: '56',
            image: [
              ImageObject(
-                 originalPath:
-                 '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg',
-                 modifiedPath:
-                 '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg'),
-             ImageObject(
-                 originalPath:
-                 '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg',
-                 modifiedPath:
-                 '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
+                 originalPath: '',modifiedPath:
+               '  /storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg '            ),
+  ImageObject(
+  originalPath: '',modifiedPath:
+  '  /storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg '            ),
            ],
            category: 'Buy'),
        Property(

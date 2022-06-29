@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class InputWidget extends StatefulWidget {
+ String ?x;
   final TextEditingController controller;
   final bool isEmojiVisible;
   final bool isKeyboardVisible;
@@ -69,6 +70,9 @@ class _InputWidgetState extends State<InputWidget> {
           autofocus: true,
           focusNode: focusNode,
           controller: widget.controller,
+          onChanged: (val){
+
+          },
           style: const TextStyle(fontSize: 16),
           decoration:  InputDecoration.collapsed(
             hintText: iscomment?'Add Comment':'Type your message...',
@@ -93,8 +97,8 @@ class _InputWidgetState extends State<InputWidget> {
             : CircleAvatar(
                 backgroundColor: Colors.green,
                 child: IconButton(
-                  icon: const Icon(
-                    Icons.mic,
+                  icon: Icon(
+                   widget.controller.text.isEmpty? Icons.mic:Icons.play_arrow_sharp,
                     color: Colors.black,
                   ),
                   onPressed: () {},
