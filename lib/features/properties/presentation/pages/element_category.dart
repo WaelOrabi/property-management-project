@@ -140,7 +140,7 @@ if(Te.listProperty1[i].category==widget.category)
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PropertyListingDetails()));
+                        builder: (context) =>  PropertyListingDetails(property: Te.listProperty1[0],)));
               },
             );
           })
