@@ -1,25 +1,23 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:project_111/core/widgets/property.dart';
 import 'package:project_111/features/conversation/presntation/pages/chat.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
-import 'package:path/path.dart';
-import 'package:dots_indicator/dots_indicator.dart';
-
 import '../widgets/property_details_widgets/buildShowModalBottomSheet.dart';
 
 class PropertyListingDetails extends StatefulWidget {
   final Property? property;
   static String routeName = 'PropertyListingDetails';
 
-  const PropertyListingDetails({Key? key, this.property}) : super(key: key);
+  const PropertyListingDetails({Key? key, required this.property})
+      : super(key: key);
 
   @override
   State<PropertyListingDetails> createState() => _PropertyListingDetailsState();
 }
 
 class _PropertyListingDetailsState extends State<PropertyListingDetails> {
-  double _currentPosition = 0.0;
+  final double _currentPosition = 0.0;
   ScrollController controllerAppBar = ScrollController();
   final TextEditingController messageController = TextEditingController();
   String? comment;
@@ -57,19 +55,22 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  child: Image.asset(""
-                  //  join(widget.property!.image![_currentPosition.toInt()]),
-                    //width: double.infinity,
-                    //height: MediaQuery.of(context).size.height / 2.5,
-                  ),
-                ),
-                buildDotsIndicator(),
-              ],
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 2.6,
+              child: ListView.builder(
+                physics: const ClampingScrollPhysics(),
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: widget.property!.image.length,
+                itemBuilder: (context, index) {
+                  return Image.file(
+                    File(widget.property!.image[_currentPosition.toInt()]
+                        .modifiedPath),
+                    fit: BoxFit.fill,
+                    width: MediaQuery.of(context).size.width / 1,
+                  );
+                },
+              ),
             ),
             const SizedBox(
               height: 20,
@@ -82,6 +83,11 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
             const SizedBox(
               height: 20,
             ),
+            buildText('Description',
+                left: 10,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontsize: 20),
             buildText(widget.property!.description,
                 left: 10,
                 right: 10,
@@ -220,27 +226,6 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
           ],
         ),
       );
-
-  DotsIndicator buildDotsIndicator() {
-    return DotsIndicator(
-                dotsCount: widget.property!.image.length,
-                position: _currentPosition,
-                onTap: (position) {
-                  if (position >= widget.property!.image.length) {
-                    _currentPosition = 0;
-                  }
-                  setState(() => _currentPosition = position);
-                },
-                decorator: DotsDecorator(
-                  activeColor: Colors.green,
-                  size: const Size.square(10.0),
-                  activeSize: const Size.square(10.0),
-                  activeShape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25.0),
-                  ),
-                ),
-              );
-  }
 
   Padding buildExtraInfo({required String text1, required String text2}) {
     return Padding(

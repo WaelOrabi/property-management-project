@@ -34,7 +34,7 @@ Map<String, WidgetBuilder> routes() {
     MapScreen.routeName:(context)=> MapScreen(),
     SplashScreen.routeName:(context)=>const SplashScreen(),
     SuperAdmin.routeName:(context)=>const SuperAdmin(),
-    PropertyListingDetails.routeName:(context)=> PropertyListingDetails(),
+    PropertyListingDetails.routeName:(context)=> PropertyListingDetails(property: null,),
     Chat.routeName:(context)=>const Chat(),
     MyFavorite.routeName:(context)=>const MyFavorite(),
     UpdateProfile.routeName:(context)=>const UpdateProfile(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:project_111/core/widgets/property.dart';
 import 'package:project_111/core/widgets/user.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 
@@ -12,6 +13,7 @@ final User? user;
 }
 
 class _MyListingScreenState extends State<MyListingScreen> {
+
   final controllerAppBar = ScrollController();
   double ? _ratingValue;
   @override
@@ -43,9 +45,11 @@ class _MyListingScreenState extends State<MyListingScreen> {
           },
         ),
       ),
-      body: GridView.count(
+      body: OrientationBuilder(
+         builder: (context, orientation) {
+      return GridView.count(
         controller: controllerAppBar,
-        crossAxisCount: 2,
+        crossAxisCount:orientation==Orientation.landscape? 4:2,
         primary: false,
         crossAxisSpacing: 0.0,
         mainAxisSpacing: 0.0,
@@ -57,7 +61,11 @@ class _MyListingScreenState extends State<MyListingScreen> {
           buildCard(),
           buildCard(),
           buildCard(),
+          buildCard(),
+          buildCard(),
         ],
+      );
+    }
       ),
     );
   }
