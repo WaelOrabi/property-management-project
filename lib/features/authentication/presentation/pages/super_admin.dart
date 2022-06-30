@@ -1,9 +1,10 @@
-import 'dart:ui';
 
+import 'dart:io';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:project_111/core/widgets/user.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
+import 'package:project_111/tests/tests.dart';
 
 class SuperAdmin extends StatefulWidget {
   static String routeName = 'SuperAdmin';
@@ -14,8 +15,7 @@ class SuperAdmin extends StatefulWidget {
 }
 
 class _SuperAdminState extends State<SuperAdmin> {
-  List user = ['ahmad','Ayham','wael','Ali'];
-bool isAdmin=false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,35 +30,37 @@ bool isAdmin=false;
 
   ListView buildBody() {
     return ListView.builder(
-      itemCount:user.length,
+      itemCount:Te.listUser1.length,
       itemBuilder: (BuildContext context, index) {
         // Display the list item
+        File? file=Te.listUser1[index].image;
         return Dismissible(
           key: UniqueKey(),
           direction: DismissDirection.endToStart,
             onDismissed: (_) {
             setState(() {
-              user.removeAt(index);
+              Te.listUser1.removeAt(index);
             });
           },
           child:ListTile(
-                     leading:const CircleAvatar(
+                     leading: CircleAvatar(
                        radius: 35,
-                       backgroundImage: AssetImage('assets/images/facebook.jpg'),
+                       backgroundImage: FileImage(file!),
                      ),
-                     title: Text(user[index],style: TextStyle(
-                       color: isAdmin==false?Colors.black:Colors.green
+                     title: Text('${Te.listUser1[index].firstName} ${Te.listUser1[index].lastName}',style: TextStyle(
+                       color:Te.listUser1[index].isSuperAdmin==true?Colors.blue: Te.listUser1[index].isAdmin==false?Colors.black:Colors.green
                      ),),
-                     subtitle:const Text('Email'),
+                     subtitle: Text('${Te.listUser1[index].email}'),
              trailing: IconButton(onPressed: ()=> AwesomeDialog(
                  context: context,
                  animType: AnimType.SCALE,
                  dialogType: DialogType.QUESTION,
                  title: 'ِAdmin',
-                 desc: isAdmin==false?'Do you want to set the user as admin?':'Do you want to remove admin?',
+                 desc: Te.listUser1[index].isAdmin==false?'Do you want to set the user as admin?':'Do you want to remove admin?',
                  btnOkOnPress: () {
                    setState(() {
-                     isAdmin=!isAdmin;
+                Te.listUser1[index].isAdmin==true?
+                Te.listUser1[index].isAdmin=false:Te.listUser1[index].isAdmin=true;
                    });
                  },
                )..show(), icon:const Icon(Icons.more_vert)),

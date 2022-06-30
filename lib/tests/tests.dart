@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'package:advance_image_picker/advance_image_picker.dart';
-import 'package:flutter/material.dart';
 import 'package:project_111/core/widgets/address.dart';
 import 'package:project_111/core/widgets/property.dart';
 import 'package:project_111/core/widgets/user.dart';
@@ -9,6 +7,8 @@ import 'package:project_111/core/widgets/user.dart';
 
 class Te{
   static User user=User(
+    isAdmin: true,
+    isSuperAdmin: false,
     id:1,
     firstName: 'Ayham',
     lastName: 'Alrefay',
@@ -176,6 +176,8 @@ class Te{
 
  static List<User> listUser1=[
    User(
+     isAdmin: true,
+     isSuperAdmin: true,
      id:1,
      firstName: 'Ayham',
      lastName: 'Alrefay',
@@ -222,6 +224,8 @@ class Te{
      ),
    ),
    User(
+     isAdmin: false,
+     isSuperAdmin: false,
      id:2,
      firstName: 'Abd Al kareem',
      lastName: 'Fiyad',
@@ -297,6 +301,8 @@ class Te{
      ),
    ),
    User(
+     isAdmin: false,
+     isSuperAdmin: false,
      id:3,
      firstName: 'Wael',
      lastName: 'Orabi',
@@ -372,6 +378,8 @@ class Te{
      ),
    ),
    User(
+     isAdmin: false,
+     isSuperAdmin: false,
      id:4,
      firstName: 'dad',
      lastName: 'dad',

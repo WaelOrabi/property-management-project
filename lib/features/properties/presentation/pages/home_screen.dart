@@ -1,15 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:project_111/core/widgets/address.dart';
-import 'package:project_111/core/widgets/property.dart';
 import 'package:project_111/features/authentication/presentation/pages/profile.dart';
 import 'package:project_111/features/properties/presentation/pages/add_property.dart';
+import 'package:project_111/features/properties/presentation/pages/element_category.dart';
 import 'package:project_111/features/properties/presentation/pages/map_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
 import 'package:project_111/tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
-
 import '../widgets/category/category_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -230,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
             context: context,
             linkImage: "assets/images/buy.jpg",
             nameBtn: "Buy",
-            fun: () {},
+            fun: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>const ElementCategory(category: 'Buy',)));},
             height: 6,
             width: 2.3,
           ),
@@ -241,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
             context: context,
             linkImage: "assets/images/rent.jpg",
             nameBtn: "Rent",
-            fun: () {},
+            fun: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>ElementCategory(category: 'Rent',)));},
             height: 6,
             width: 2.3,
           ),
@@ -252,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
             context: context,
             linkImage: "assets/images/Investment.jpg",
             nameBtn: "Investment",
-            fun: () {},
+            fun: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>ElementCategory(category: 'Investment',)));},
             height: 6,
             width: 2.3,
           ),
