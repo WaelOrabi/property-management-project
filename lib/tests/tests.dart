@@ -45,6 +45,267 @@ class Te{
                 '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
           ],
           category: 'Buy'),
+      Property(
+          idProperty: 2,
+          address: Address(
+            latitude: 33.51689336744682,
+            longitude: 36.26502357423305,
+            region: 'Al Mouhajrin',
+            city: ' Damascus Governorate',
+            country: 'Syria',
+          ),
+          space: '34',
+          baths: '65',
+          bedRooms: '54',
+          storeys: '445',
+          dateAdded: '2021-11-11',
+          description: 'description111222',
+          price: '56',
+          image: [
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg'),
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
+          ],
+          category: 'Buy'),
+      Property(
+          idProperty: 2,
+          address: Address(
+            latitude: 33.51689336744682,
+            longitude: 36.26502357423305,
+            region: 'Al Mouhajrin',
+            city: ' Damascus Governorate',
+            country: 'Syria',
+          ),
+          space: '34',
+          baths: '65',
+          bedRooms: '54',
+          storeys: '445',
+          dateAdded: '2021-11-11',
+          description: 'description111222',
+          price: '56',
+          image: [
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg'),
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
+          ],
+          category: 'Buy'),
+      Property(
+          idProperty: 2,
+          address: Address(
+            latitude: 33.51689336744682,
+            longitude: 36.26502357423305,
+            region: 'Al Mouhajrin',
+            city: ' Damascus Governorate',
+            country: 'Syria',
+          ),
+          space: '34',
+          baths: '65',
+          bedRooms: '54',
+          storeys: '445',
+          dateAdded: '2021-11-11',
+          description: 'description111222',
+          price: '56',
+          image: [
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg'),
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
+          ],
+          category: 'Buy'),
+      Property(
+          idProperty: 2,
+          address: Address(
+            latitude: 33.51689336744682,
+            longitude: 36.26502357423305,
+            region: 'Al Mouhajrin',
+            city: ' Damascus Governorate',
+            country: 'Syria',
+          ),
+          space: '34',
+          baths: '65',
+          bedRooms: '54',
+          storeys: '445',
+          dateAdded: '2021-11-11',
+          description: 'description111222',
+          price: '56',
+          image: [
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg'),
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
+          ],
+          category: 'Buy'),
+      Property(
+          idProperty: 2,
+          address: Address(
+            latitude: 33.51689336744682,
+            longitude: 36.26502357423305,
+            region: 'Al Mouhajrin',
+            city: ' Damascus Governorate',
+            country: 'Syria',
+          ),
+          space: '34',
+          baths: '65',
+          bedRooms: '54',
+          storeys: '445',
+          dateAdded: '2021-11-11',
+          description: 'description111222',
+          price: '56',
+          image: [
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg'),
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
+          ],
+          category: 'Buy'),
+      Property(
+          idProperty: 2,
+          address: Address(
+            latitude: 33.51689336744682,
+            longitude: 36.26502357423305,
+            region: 'Al Mouhajrin',
+            city: ' Damascus Governorate',
+            country: 'Syria',
+          ),
+          space: '34',
+          baths: '65',
+          bedRooms: '54',
+          storeys: '445',
+          dateAdded: '2021-11-11',
+          description: 'description111222',
+          price: '56',
+          image: [
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg'),
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
+          ],
+          category: 'Buy'),
+      Property(
+          idProperty: 2,
+          address: Address(
+            latitude: 33.51689336744682,
+            longitude: 36.26502357423305,
+            region: 'Al Mouhajrin',
+            city: ' Damascus Governorate',
+            country: 'Syria',
+          ),
+          space: '34',
+          baths: '65',
+          bedRooms: '54',
+          storeys: '445',
+          dateAdded: '2021-11-11',
+          description: 'description111222',
+          price: '56',
+          image: [
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg'),
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
+          ],
+          category: 'Buy'),
+      Property(
+          idProperty: 2,
+          address: Address(
+            latitude: 33.51689336744682,
+            longitude: 36.26502357423305,
+            region: 'Al Mouhajrin',
+            city: ' Damascus Governorate',
+            country: 'Syria',
+          ),
+          space: '34',
+          baths: '65',
+          bedRooms: '54',
+          storeys: '445',
+          dateAdded: '2021-11-11',
+          description: 'description111222',
+          price: '56',
+          image: [
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg'),
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
+          ],
+          category: 'Buy'),
+      Property(
+          idProperty: 2,
+          address: Address(
+            latitude: 33.51689336744682,
+            longitude: 36.26502357423305,
+            region: 'Al Mouhajrin',
+            city: ' Damascus Governorate',
+            country: 'Syria',
+          ),
+          space: '34',
+          baths: '65',
+          bedRooms: '54',
+          storeys: '445',
+          dateAdded: '2021-11-11',
+          description: 'description111222',
+          price: '56',
+          image: [
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg'),
+            ImageObject(
+                originalPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg',
+                modifiedPath:
+                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
+          ],
+          category: 'Buy'),
     ],
     address:Address(
       latitude: 33.50426786925087,

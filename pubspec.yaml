@@ -59,6 +59,7 @@ dependencies:
   equatable:
   dartz:
   dots_indicator:
+  flutter_colorful_tab:
   dropdown_button2:
 dev_dependencies:
   flutter_test:
