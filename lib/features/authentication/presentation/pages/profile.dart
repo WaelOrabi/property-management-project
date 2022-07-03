@@ -60,7 +60,7 @@ class _ProfileState extends State<Profile> {
               typeIcon: Icons.format_list_bulleted_sharp,
               colorIcon: Colors.grey,
               fun: () =>
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> MyListingScreen(user: widget.user,)))),
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> MyListingScreen(user: widget.user)))),
 
           buildListTile(
               nameList: "My Favorites",
