@@ -9,20 +9,23 @@ import '../widgets/update_profile/profile_picture.dart';
 
 class UpdateProfile extends StatefulWidget {
   static String routeName = 'UpdateProfile';
-final User? user;
-  const UpdateProfile({Key? key, this.user}) : super(key: key);
+final User user;
+  const UpdateProfile({Key? key, required this.user}) : super(key: key);
 
   @override
   State<UpdateProfile> createState() => _UpdateProfileState();
 }
 
 class _UpdateProfileState extends State<UpdateProfile> {
-  // TextEditingController firstNameController = const UpdateProfile().user!.firstName as TextEditingController;
-  // TextEditingController lastNameController =const UpdateProfile().user!.lastName as TextEditingController ;
-  // TextEditingController phoneController = const UpdateProfile().user!.phoneNumber as TextEditingController ;
-
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    firstNameController.text=widget.user.firstName!;
+    lastNameController.text=widget.user.lastName!;
+    phoneController.text=widget.user.phoneNumber!;
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar:buildAppBar(
@@ -43,73 +46,80 @@ class _UpdateProfileState extends State<UpdateProfile> {
             Center(
               child: Padding(
                 padding:const EdgeInsets.only(top: 20),
-                child: Profile_Picture(image: widget.user!.image,),
+                child: Profile_Picture(image: widget.user.image,),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
-              child: Column(
-                children: [
-                  TextForm(
-                    prefixIcon: false,
-                    icon: Icons.edit,
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Please Enter your first Name";
-                      }
-                      return null;
-                    },
-                    val: widget.user!.firstName,
-                    keyboardType: TextInputType.name,
-                    labelText: "First Name",
-                    hintText: "Enter your First Name",
-                  ),
-                  buildSizedBox(context: context,height:60),
-                  TextForm(
-                    prefixIcon: false,
-                    icon: Icons.edit,
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Please Enter your last name";
-                      }
-                      return null;
-                    },
-                    val: widget.user!.lastName,
-                    keyboardType: TextInputType.name,
-                    labelText: "Last Name",
-                    hintText: "Enter your Last Name",
-                  ),
-                  buildSizedBox(context: context,height:60),
-                  TextForm(
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    TextForm(
+                      controller: firstNameController,
                       prefixIcon: false,
-                      icon: Icons.phone,
+                      icon: Icons.edit,
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return "Please Enter your phone";
+                          return "Please Enter your first Name";
                         }
                         return null;
                       },
-                      val: widget.user!.phoneNumber,
-                      keyboardType: TextInputType.phone,
-                      labelText: "Phone",
-                      hintText: "Enter your phone"),
-                  buildSizedBox(context:context,height:20),
-                  ButtonSigninSignupProfile(
-                      context: context,
-                      height: 50,
-                      width: 2,
-                      circle: 50,
-                      text: 'Update',
-                      fontWeight: FontWeight.bold,
-                      colorText: Colors.white,
-                      backGroundColor: Colors.green,
-                      fun: () {
-                        Navigator.pushReplacementNamed(
-                            context, Profile.routeName);
-                      }),
-                  //button of Update
+                      keyboardType: TextInputType.name,
+                      labelText: "First Name",
+                      hintText: "Enter your First Name",
+                    ),
+                    buildSizedBox(context: context,height:60),
+                    TextForm(
+                      controller: lastNameController,
+                      prefixIcon: false,
+                      icon: Icons.edit,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Please Enter your last name";
+                        }
+                        return null;
+                      },
+                      keyboardType: TextInputType.name,
+                      labelText: "Last Name",
+                      hintText: "Enter your Last Name",
+                    ),
+                    buildSizedBox(context: context,height:60),
+                    TextForm(
+                      controller: phoneController,
+                        prefixIcon: false,
+                        icon: Icons.phone,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Please Enter your phone";
+                          }
+                          return null;
+                        },
+                        keyboardType: TextInputType.phone,
+                        labelText: "Phone",
+                        hintText: "Enter your phone"),
+                    buildSizedBox(context:context,height:20),
+                    ButtonSigninSignupProfile(
+                        context: context,
+                        height: 50,
+                        width: 2,
+                        circle: 50,
+                        text: 'Update',
+                        fontWeight: FontWeight.bold,
+                        colorText: Colors.white,
+                        backGroundColor: Colors.green,
+                        fun: () {
+                          if(_formKey.currentState!.validate()) {
+                            _formKey.currentState!.save();
+                            print(firstNameController.text);
+                            print(lastNameController.text);
+                            print(phoneController.text);
+                            Navigator.of(context).pop();
+                          }                       }),
+                    //button of Update
 
-                ],
+                  ],
+                ),
               ),
             ),
           ],

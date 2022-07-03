@@ -10,7 +10,7 @@ Container buildDescription(
       required String errorValidator,
       required String hintText,
       required TextEditingController controller,
-      String? val
+
     }) {
   return Container(
     padding: const EdgeInsets.only(left: 15, top: 10),
@@ -25,7 +25,7 @@ Container buildDescription(
           style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         TextFormField(
-          initialValue: val,
+
           keyboardType: TextInputType.text,
           controller: controller,
           validator: (value) {
@@ -92,8 +92,6 @@ Row buildRowItemsOfCategory({
 
 Row buildRowOfTextFormField(
     {
-
-      String? val,
       required BuildContext context,
       required String title,
       required   TextEditingController controller,
@@ -109,7 +107,6 @@ Row buildRowOfTextFormField(
       SizedBox(
         width: MediaQuery.of(context).size.width / widthOfSizeBox,
         child: TextFormField(
-          initialValue: val,
                 keyboardType: TextInputType.number,
          controller: controller,
           validator: (value) {

@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 // ignore: non_constant_identifier_names
 TextFormField TextForm(
     {required FormFieldValidator<String>? validator,
-       TextEditingController? controller,
+      required TextEditingController controller,
       required TextInputType? keyboardType,
       required String labelText,
       required IconData icon,
       double fontSize=15,
-      String? val,
       bool obscureText=false,
       FontWeight fontWeight=FontWeight.normal,
       double circle=50,
@@ -17,16 +16,12 @@ TextFormField TextForm(
       required bool prefixIcon,
       required String hintText}) {
   return TextFormField(
-    initialValue: val,
+    controller: controller,
     cursorColor: Colors.green,
     obscureText: obscureText,
-    controller: controller,
+
     onSaved: (newValue) {
-    if(val != null) {
-      val = newValue!;
-    }else{
-      controller?.text = newValue!;
-    }
+    controller.text=newValue!;
     },
     validator: validator,
     keyboardType: keyboardType,
@@ -51,6 +46,15 @@ TextFormField TextForm(
       focusedBorder:  OutlineInputBorder(
         borderSide: BorderSide(color:colorLineBorder),
         borderRadius: BorderRadius.circular(circle),
+
+      ),
+      errorBorder:OutlineInputBorder(
+        borderSide: BorderSide(color: colorLineBorder),
+        borderRadius: BorderRadius.circular(circle),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: colorLineBorder),
+        borderRadius: BorderRadius.circular(circle),
       ),
     ),
   );
@@ -66,7 +70,7 @@ bool isPasswordCompliant(String password, [int minLength = 6]) {
   bool hasLowercase = password.contains(RegExp(r'[a-z]'));
   bool hasSpecialCharacters =
   password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
-  bool hasMinLength = password.length > minLength;
+  bool hasMinLength = password.length >= minLength;
 
   return (hasDigits ||
       hasUppercase ||

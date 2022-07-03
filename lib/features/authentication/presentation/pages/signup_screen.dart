@@ -36,7 +36,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController passwordConfirmationController = TextEditingController();
-
+  final _formKey = GlobalKey<FormState>();
   @override
   void initState() {
     super.initState();
@@ -106,162 +106,177 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         .of(context)
                         .size
                         .height / 200),
-                child: Column(
-                  children: [
-                    TextForm(
-                      prefixIcon: false,
-                      icon: Icons.edit,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return "Please Enter your first Name";
-                        }
-                        return null;
-                      },
-                      controller: firstNameController,
-                      keyboardType: TextInputType.name,
-                      labelText: "First Name",
-                      hintText: "Enter your First Name",
-                    ),
-                    buildSizedBox(context: context, height: 60),
-                    TextForm(
-                      prefixIcon: false,
-                      icon: Icons.edit,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return "Please Enter your last name";
-                        }
-                        return null;
-                      },
-                      controller: lastNameController,
-                      keyboardType: TextInputType.name,
-                      labelText: "Last Name",
-                      hintText: "Enter your Last Name",
-                    ),
-                    buildSizedBox(context: context, height: 60),
-                    TextForm(
+                child: Form(
+                  key:_formKey ,
+                  child: Column(
+                    children: [
+                      TextForm(
                         prefixIcon: false,
-                        icon: Icons.email,
-                        validator: (value) {
-                          bool emailValid = RegExp(
-                              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                              .hasMatch(value!);
-                          if (!emailValid) {
-                            return "Please re-enter your email";
-                          }
-                          if (value.isEmpty) {
-                            return "Please enter your email";
-                          }
-                          return null;
-                        },
-                        controller: emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        labelText: "Enter Email",
-                        hintText: "enter email"),
-                    buildSizedBox(context: context, height: 60),
-                    TextForm(
-                        prefixIcon: false,
-                        icon: Icons.phone,
+                        icon: Icons.edit,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return "Please Enter your phone";
+                            return "Please Enter your first Name";
                           }
                           return null;
                         },
-                        controller: phoneController,
-                        keyboardType: TextInputType.phone,
-                        labelText: "Phone",
-                        hintText: "Enter your phone"),
-                    buildSizedBox(context: context, height: 60),
-                    TextForm(
-                        prefixIcon: true,
-                        icon: Icons.lock,
-                        validator: (value) {
-                          if (value!.isEmpty) return 'Please enter password';
-                          if (!isPasswordCompliant(passwordController.text)) {
-                            return 'Please re-enter password';
-                          }
-                          return null;
-                        },
-                        controller: passwordController,
-                        keyboardType: TextInputType.text,
-                        labelText: "Password",
-                        hintText: 'Enter your password'),
-                    buildSizedBox(context: context, height: 60),
-                    TextForm(
-                        prefixIcon: true,
-                        icon: Icons.lock,
+                        controller: firstNameController,
+                        keyboardType: TextInputType.name,
+                        labelText: "First Name",
+                        hintText: "Enter your First Name",
+                      ),
+                      buildSizedBox(context: context, height: 60),
+                      TextForm(
+                        prefixIcon: false,
+                        icon: Icons.edit,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Please enter password confirmaton';
-                          }
-                          if (!isPasswordCompliant(passwordController.text)) {
-                            return 'Please re-enter password confirmaton';
+                            return "Please Enter your last name";
                           }
                           return null;
                         },
-                        controller: passwordConfirmationController,
-                        keyboardType: TextInputType.text,
-                        labelText: 'Password Confirmaton',
-                        hintText: 'Enter your password confirmation'),
+                        controller: lastNameController,
+                        keyboardType: TextInputType.name,
+                        labelText: "Last Name",
+                        hintText: "Enter your Last Name",
+                      ),
+                      buildSizedBox(context: context, height: 60),
+                      TextForm(
+                          prefixIcon: false,
+                          icon: Icons.email,
+                          validator: (value) {
+                            bool emailValid = RegExp(
+                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                .hasMatch(value!);
+                            if (!emailValid) {
+                              return "Please re-enter your email";
+                            }
+                            if (value.isEmpty) {
+                              return "Please enter your email";
+                            }
+                            return null;
+                          },
+                          controller: emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          labelText: "Enter Email",
+                          hintText: "enter email"),
+                      buildSizedBox(context: context, height: 60),
+                      TextForm(
+                          prefixIcon: false,
+                          icon: Icons.phone,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Please Enter your phone";
+                            }
+                            return null;
+                          },
+                          controller: phoneController,
+                          keyboardType: TextInputType.phone,
+                          labelText: "Phone",
+                          hintText: "Enter your phone"),
+                      buildSizedBox(context: context, height: 60),
+                      TextForm(
+                          prefixIcon: true,
+                          icon: Icons.lock,
+                          validator: (value) {
+                            if (value!.isEmpty) return 'Please enter password';
+                            if (!isPasswordCompliant(passwordController.text)) {
+                              return 'Please re-enter password';
+                            }
+                            return null;
+                          },
+                          controller: passwordController,
+                          keyboardType: TextInputType.text,
+                          labelText: "Password",
+                          hintText: 'Enter your password'),
+                      buildSizedBox(context: context, height: 60),
+                      TextForm(
+                          prefixIcon: true,
+                          icon: Icons.lock,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Please enter password confirmaton';
+                            }
+                            if (!isPasswordCompliant(passwordController.text)) {
+                              return 'Please re-enter password confirmaton';
+                            }if(passwordController.text != passwordConfirmationController.text) {
+                              return 'Password does not match';
+                            }
+                            return null;
+                          },
+                          controller: passwordConfirmationController,
+                          keyboardType: TextInputType.text,
+                          labelText: 'Password Confirmaton',
+                          hintText: 'Enter your password confirmation'),
 
-                    buildSizedBox(context: context, height: 60),
-                    ButtonSigninSignupProfile(
-                        context: context,
-                        height: 50,
-                        circle: 50,
-                        text: 'Sign Up',
-                        fun: () async {
-                          Map<String,
-                              dynamic> mapLocationAddress = await LocationHelper
-                              .getLocationAddress(
-                              position!.latitude, position!.longitude);
-                          Address address = Address(latitude: position!.latitude,
-                              longitude: position!.longitude,
-                              region: mapLocationAddress["subLocality"],
-                              city: mapLocationAddress["administrativeArea"],
-                              country: mapLocationAddress["country"]);
-                          User(
-                              firstName: firstNameController.text,
-                              lastName: lastNameController.text,
-                              email: emailController.text,
-                              phoneNumber: phoneController.text,
-                              password: passwordController.text,
-                              address:address);
+                      buildSizedBox(context: context, height: 60),
+                      ButtonSigninSignupProfile(
+                          context: context,
+                          height: 50,
+                          circle: 50,
+                          text: 'Sign Up',
 
 
-                          Navigator.pushReplacementNamed(
-                              context, NavigationBarHome.routeName);
-                        },
-                        fontWeight: FontWeight.bold,
-                        colorText: Colors.white,
-                        backGroundColor: Colors.green),
-                    buildSizedBox(context: context, height: 30),
-                    const Center(
-                      child: Text("Or sign up using ..",
-                          style: TextStyle(color: Colors.grey)),
-                    ),
-                    buildSizedBox(context: context, height: 80),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        buildIconFacebookAndGoogle(
-                          height: 40,
-                          width: 40,
-                          linkImage: "assets/images/google.jpg",
-                          fun: () {},
-                        ),
-                        buildSizedBox(
-                            context: context, width: 40),
-                        buildIconFacebookAndGoogle(
-                          height: 55,
-                          width: 55,
-                          linkImage: "assets/images/facebook.jpg",
-                          fun: () {},
-                        ),
-                      ],
-                    ),
-                    buildSizedBox(context: context, height: 30),
-                  ],
+                          fun: () async {
+                            if(_formKey.currentState!.validate()) {
+                              Map<String,
+                                  dynamic> mapLocationAddress = await LocationHelper
+                                  .getLocationAddress(
+                                  position!.latitude, position!.longitude);
+                              Address address = Address(
+                                  latitude: position!.latitude,
+                                  longitude: position!.longitude,
+                                  region: mapLocationAddress["subLocality"],
+                                  city: mapLocationAddress["administrativeArea"],
+                                  country: mapLocationAddress["country"]);
+                              print(mapLocationAddress["subLocality"]);
+                              print(mapLocationAddress["administrativeArea"]);
+                              User(
+                                  firstName: firstNameController.text,
+                                  lastName: lastNameController.text,
+                                  email: emailController.text,
+                                  phoneNumber: phoneController.text,
+                                  password: passwordController.text,
+                                  address: address);
+
+
+                              Navigator.pushReplacementNamed(
+                                  context, NavigationBarHome.routeName);
+                            }
+                          },
+
+
+
+                          fontWeight: FontWeight.bold,
+                          colorText: Colors.white,
+                          backGroundColor: Colors.green),
+                      buildSizedBox(context: context, height: 30),
+                      const Center(
+                        child: Text("Or sign up using ..",
+                            style: TextStyle(color: Colors.grey)),
+                      ),
+                      buildSizedBox(context: context, height: 80),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          buildIconFacebookAndGoogle(
+                            height: 40,
+                            width: 40,
+                            linkImage: "assets/images/google.jpg",
+                            fun: () {},
+                          ),
+                          buildSizedBox(
+                              context: context, width: 40),
+                          buildIconFacebookAndGoogle(
+                            height: 55,
+                            width: 55,
+                            linkImage: "assets/images/facebook.jpg",
+                            fun: () {},
+                          ),
+                        ],
+                      ),
+                      buildSizedBox(context: context, height: 30),
+                    ],
+                  ),
                 ),
               ),
             ],

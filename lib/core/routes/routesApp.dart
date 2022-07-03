@@ -15,15 +15,20 @@ import 'package:project_111/features/authentication/presentation/pages/splash_sc
 import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
 import 'package:project_111/features/properties/presentation/pages/my_favorite.dart';
 import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
+import 'package:project_111/tests/tests.dart';
 import '../../features/authentication/presentation/pages/welcome.dart';
 import 'package:project_111/features/authentication/presentation/pages/sign_in.dart';
-import '../../features/properties/presentation/pages/add_property.dart';
+import '../../features/properties/presentation/pages/add_or_edit_property.dart';
 import '../../features/properties/presentation/pages/MyListingScreen.dart';
 import '../../features/properties/presentation/pages/search.dart';
 
 Map<String, WidgetBuilder> routes() {
   return {
+<<<<<<< HEAD
     "/":(context)=> const SingIn(),
+=======
+  "/":(context)=>const NavigationBarHome(),
+>>>>>>> b0707cdd8e03c0386b98e1fb5545e62e3de663ea
     PagesView.routeName: (context) => const PagesView(),
     Welcome.routeName: (context) => const Welcome(),
     SingIn.routeName: (context) => const SingIn(),
@@ -38,7 +43,6 @@ Map<String, WidgetBuilder> routes() {
     PropertyListingDetails.routeName:(context)=> PropertyListingDetails(property: null,),
     Chat.routeName:(context)=>const Chat(),
     MyFavorite.routeName:(context)=>const MyFavorite(),
-    UpdateProfile.routeName:(context)=>const UpdateProfile(),
     HomeScreen.routeName:(context)=>const HomeScreen(),
     NavigationBarHome.routeName:(context)=>const NavigationBarHome(),
     CategoryScreen.routeName:(context)=>const CategoryScreen(),

@@ -5,10 +5,12 @@ import 'package:project_111/core/widgets/sizedBox.dart';
 import 'package:project_111/core/widgets/user.dart';
 import 'package:project_111/features/authentication/presentation/pages/account_details.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
+import 'package:project_111/features/authentication/presentation/pages/admin.dart';
 import 'package:project_111/features/authentication/presentation/pages/super_admin.dart';
 import 'package:project_111/features/authentication/presentation/pages/update_peofile.dart';
 import 'package:project_111/features/authentication/presentation/widgets/update_profile/profile_picture.dart';
 import 'package:project_111/features/properties/presentation/pages/my_favorite.dart';
+import 'package:project_111/tests/tests.dart';
 import '../../../properties/presentation/pages/MyListingScreen.dart';
 
 class Profile extends StatefulWidget {
@@ -77,21 +79,23 @@ class _ProfileState extends State<Profile> {
             nameList: "Upgrade Account",
             typeIcon: Icons.edit,
             colorIcon: Colors.grey,
-            fun: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>UpdateProfile(user: widget.user,))),
+            fun: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>UpdateProfile(user: widget.user!,))),
           ),
 
-          buildListTile(
+          Visibility(
+            visible: Te.user.isSuperAdmin==true?true:false,
+            child: buildListTile(
             nameList: "Super Admin",
             typeIcon: Icons.admin_panel_settings,
             colorIcon: Colors.grey,
             fun: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>SuperAdmin(user:widget.user))),
-          ),
+          ),),
 
           buildListTile(
               nameList: "Setting",
               typeIcon: Icons.settings,
               colorIcon: Colors.grey,
-              fun: (){}
+            fun: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Admin())),
           ),
           //Button of Log out
           _buildLogoutBtn(context),
