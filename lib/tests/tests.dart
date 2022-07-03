@@ -8,13 +8,13 @@ import 'package:project_111/core/widgets/user.dart';
 class Te{
   static User user=User(
     isAdmin: true,
-    isSuperAdmin: false,
+    isSuperAdmin: true,
     id:1,
     firstName: 'Ayham',
     lastName: 'Alrefay',
     email: 'ayhamalrefay@gmail.com',
     phoneNumber: '0933773538',
-    image:File('/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg'),
+    image:File('/storage/emulated/0/Download/6998a32087cbd18dae752a83d787cd5a.jpg'),
     listProperty: [
       Property(
           idProperty: 2,
@@ -35,14 +35,14 @@ class Te{
           image: [
             ImageObject(
                 originalPath:
-                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg',
+                '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg',
                 modifiedPath:
-                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1732297604.jpg'),
+                '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg'),
             ImageObject(
                 originalPath:
-                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg',
+                '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg',
                 modifiedPath:
-                '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1675859964.jpg'),
+                '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg'),
           ],
           category: 'Buy'),
     ],
@@ -74,11 +74,11 @@ class Te{
         price: '23',
         image: [
           ImageObject(
-              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
-              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
+              originalPath:'/storage/emulated/0/Pictures/Screenshots/Screenshot_20220613-195432.png' ,
+              modifiedPath: '/storage/emulated/0/Pictures/Screenshots/Screenshot_20220613-195432.png' ),
           ImageObject(
-              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
-              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
+              originalPath:'/storage/emulated/0/Android/data/com.example.project_111/cache/IMG_20220611_192001_compressed1292292231.jpg' ,
+              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/IMG_20220611_192001_compressed1292292231.jpg' ),
         ],
         category: 'Rent'),
     Property(
@@ -99,11 +99,11 @@ class Te{
         price: '56',
         image: [
           ImageObject(
-              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
-              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
+              originalPath:'/storage/emulated/0/Pictures/Screenshots/Screenshot_20220613-195432.png' ,
+              modifiedPath: '/storage/emulated/0/Pictures/Screenshots/Screenshot_20220613-195432.png' ),
           ImageObject(
-              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
-              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
+              originalPath:'/storage/emulated/0/Android/data/com.example.project_111/cache/IMG_20220613_182800_compressed1054813829.jpg' ,
+              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/IMG_20220613_182800_compressed1054813829.jpg' ),
         ],
         category: 'Buy'),
     Property(
@@ -124,11 +124,11 @@ class Te{
         price: '45',
         image: [
           ImageObject(
-              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
-              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
+              originalPath:'/storage/emulated/0/Android/data/com.example.project_111/cache/IMG_20220611_192001_compressed1292292231.jpg' ,
+              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/IMG_20220611_192001_compressed1292292231.jpg' ),
           ImageObject(
-              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
-              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
+              originalPath:'/storage/emulated/0/Android/data/com.example.project_111/cache/IMG_20220611_191952_compressed1780619985.jpg' ,
+              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/IMG_20220611_191952_compressed1780619985.jpg' ),
         ],
         category: 'Rent'),
     Property(
@@ -149,11 +149,11 @@ class Te{
         price: '454',
         image: [
           ImageObject(
-              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
-              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
+              originalPath:'/storage/emulated/0/Android/data/com.example.project_111/cache/IMG_20220611_191843_compressed374963992.jpg' ,
+              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/IMG_20220611_191843_compressed374963992.jpg' ),
           ImageObject(
-              originalPath:'/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ,
-              modifiedPath: '/storage/emulated/0/DCIM/Facebook/FB_IMG_1656282818984.jpg' ),
+              originalPath:'/storage/emulated/0/Android/data/com.example.project_111/cache/IMG_20220611_191843_compressed374963992.jpg' ,
+              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/IMG_20220611_191843_compressed374963992.jpg' ),
         ],
         category: 'Buy'),
   ];
@@ -167,7 +167,7 @@ class Te{
      lastName: 'Alrefay',
      email: 'ayhamalrefay@gmail.com',
      phoneNumber: '0933773538',
-     image:File( '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_A0A0002AEAAAE361B9FB7B6405F17073_compressed630524931.jpg'),
+     image:File( '/storage/emulated/0/Download/6998a32087cbd18dae752a83d787cd5a.jpg'),
      listProperty: [
        Property(
            idProperty: 2,

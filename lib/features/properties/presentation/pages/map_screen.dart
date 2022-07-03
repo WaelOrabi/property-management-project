@@ -1,14 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:location/location.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 import 'package:project_111/core/widgets/address.dart';
 import 'package:project_111/core/widgets/location_helper.dart';
-import 'package:project_111/core/widgets/property.dart';
-import 'package:project_111/features/properties/presentation/pages/add_property.dart';
 
 class MapScreen extends StatefulWidget {
    MapScreen({Key? key, this.address}) : super(key: key);
@@ -118,8 +114,7 @@ class _MapScreenState extends State<MapScreen> {
               style: TextStyle(color: Colors.white),
             ),
             onPressed: () async {
-              var mapLocationAddress =
-                  (await LocationHelper.getLocationAddress(lat!, long!));
+              var mapLocationAddress = (await LocationHelper.getLocationAddress(lat!, long!));
               widget.address= Address(
                   latitude: lat!,
                   longitude: long!,

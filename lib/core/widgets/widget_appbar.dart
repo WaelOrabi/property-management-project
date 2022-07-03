@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
  AppBar buildAppBar(
       {required String namePage,
       required VoidCallback fun,
-      required Color color}) {
+      Color color=Colors.white}) {
     return AppBar(
       toolbarHeight: 80,
       centerTitle: true,

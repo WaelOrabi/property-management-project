@@ -1,7 +1,11 @@
 import 'dart:io';
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:project_111/core/widgets/map_widget.dart';
 import 'package:project_111/core/widgets/property.dart';
 import 'package:project_111/features/conversation/presntation/pages/chat.dart';
+import 'package:project_111/features/properties/presentation/pages/map_screen.dart';
+import 'package:project_111/tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 import '../widgets/property_details_widgets/buildShowModalBottomSheet.dart';
 
@@ -47,6 +51,72 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
           )),
       title: const Text('Property details',
           style: TextStyle(fontSize: 20, color: Colors.green)),
+      actions: [ Visibility(
+          visible: Te.user.isAdmin==true?true:false,
+          child:  IconButton(
+          onPressed: () {
+            var ad = AlertDialog(
+              title:const Text("Do you want to :"),
+              content: SizedBox(
+                height: 150,
+                child: Column(
+                  children: [
+                    const Divider(
+                      height: 10,
+                    ),
+                    Container(
+                      color: Colors.red,
+                      child: ListTile(
+                        leading:const  Icon(Icons.delete,color: Colors.white,),
+                        title:const  Text("Delete this property"),
+                        onTap: () =>AwesomeDialog(
+                            context: context,
+                            animType: AnimType.SCALE,
+                            dialogType: DialogType.QUESTION,
+                            title: 'ِDelete',
+                            desc: 'Do you want to delete this property?',
+                            btnOkOnPress: () {
+                              setState(() {
+                              Navigator.of(context).pop();
+                              });
+                            },
+                          )..show(),
+
+
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      color: Colors.orange,
+                      child: ListTile(
+                        leading:const Icon(Icons.block,color: Colors.white,),
+                        title: const Text("Block this user"),
+                        onTap: ()=> AwesomeDialog(
+                        context: context,
+                        animType: AnimType.SCALE,
+                        dialogType: DialogType.WARNING,
+                        title: 'ِBlock',
+                        desc: 'Do you want to block this user?',
+                        btnOkOnPress: () {
+                          setState(() {
+                            Navigator.of(context).pop();
+                          });
+                        },
+                      )..show(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+            showDialog(context: context, builder: (_) => ad);
+                },
+          icon: const Icon(
+            Icons.more_vert,
+            color: Colors.green,)
+          )),],
     );
   }
 
@@ -98,6 +168,8 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
             const SizedBox(
               height: 20,
             ),
+
+
             buildText('Extra info',
                 left: 10,
                 fontWeight: FontWeight.bold,
@@ -159,6 +231,13 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
               text1: 'Region',
               text2: widget.property!.address!.region,
             ),
+            const SizedBox(
+              height: 30,
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height/3,
+              width: MediaQuery.of(context).size.width,
+              child: MapWidget(latDestination: widget.property!.address!.latitude,longDestination: widget.property!.address!.longitude,),),
             const SizedBox(
               height: 30,
             ),

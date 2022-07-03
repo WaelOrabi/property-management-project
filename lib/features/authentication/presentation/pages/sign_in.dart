@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
-import 'package:project_111/features/authentication/presentation/pages/profile.dart';
 import 'package:project_111/features/authentication/presentation/pages/signup_screen.dart';
 import 'package:project_111/features/authentication/presentation/pages/welcome.dart';
-
 import '../widgets/signin_signup/button_signin_signup_update.dart';
 import '../widgets/signin_signup/iconbutton_for_signin_and_signup_with_other_apps.dart';
 import '../widgets/signin_signup/return_button.dart';
@@ -107,9 +105,11 @@ class _SingInState extends State<SingIn> {
                     circle: 50,
                     text: 'Log In',
                     fun: () {
-                      Navigator.pushReplacementNamed(
-                          context,NavigationBarHome.routeName);
-                    },
+if(_formKey.currentState!.validate()) {
+  Navigator.pushReplacementNamed(
+      context, NavigationBarHome.routeName);
+}
+},
                     fontWeight: FontWeight.bold,
                     colorText: Colors.white,
                     backGroundColor: Colors.green),
