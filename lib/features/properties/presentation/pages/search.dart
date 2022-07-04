@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
+import 'package:project_111/features/properties/presentation/pages/list_property_search.dart';
 import 'package:project_111/features/properties/presentation/widgets/add_property_widget/function_widjets.dart';
+
+import '../../../../tests/tests.dart';
 
 class Search extends StatefulWidget {
   static String routeName = 'Search';
@@ -44,16 +47,7 @@ class _SearchState extends State<Search> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(
-                      height: 30,
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      icon: const Icon(Icons.arrow_back_outlined),
-                    ),
-                    const SizedBox(
-                      height: 10,
+                      height: 50,
                     ),
                     SizedBox(
                       height: MediaQuery.of(context).size.height / 10,
@@ -156,14 +150,12 @@ class _SearchState extends State<Search> {
                     const SizedBox(
                       height: 30,
                     ),
-                    const SizedBox(
-                      child: Text(
-                        'Price',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
+                    const Text(
+                      'Price',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
                       height: 15,
@@ -223,7 +215,7 @@ class _SearchState extends State<Search> {
                         });
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Center(
@@ -234,6 +226,7 @@ class _SearchState extends State<Search> {
                           circle: 50,
                           text: 'Search',
                           fun: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder:(context)=>ListPropertySearch(listPropertySearch:Te.listPropertySearch)));
                           },
                           fontWeight: FontWeight.bold,
                           colorText: Colors.white,

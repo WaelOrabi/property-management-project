@@ -4,11 +4,11 @@ import 'package:project_111/features/authentication/presentation/pages/profile.d
 import 'package:project_111/features/properties/presentation/pages/add_or_edit_property.dart';
 import 'package:project_111/features/properties/presentation/pages/all_properties_in_map.dart';
 import 'package:project_111/features/properties/presentation/pages/element_category.dart';
-import 'package:project_111/features/properties/presentation/pages/map_screen.dart';
-import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
+import 'package:project_111/features/properties/presentation/widgets/myListing_myFavorite_homeScreen_widget/buildCard.dart';
 import 'package:project_111/tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 import '../widgets/category/category_widget.dart';
+import '../widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
 
 class HomeScreen extends StatefulWidget {
   static String routeName = 'HomeScreen';
@@ -20,13 +20,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  ScrollController controller = ScrollController();
+  ScrollController scrollController = ScrollController();
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
 
   @override
   void dispose() {
-    controller.dispose();
+    scrollController.dispose();
     super.dispose();
   }
 
@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ScrollAppBar buildScrollAppBar() {
     File? file = Te.user.image;
     return ScrollAppBar(
-      controller: controller,
+      controller: scrollController,
       elevation: 0,
       toolbarHeight: 70,
       backgroundColor: Colors.white,
@@ -90,108 +90,46 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildBody(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.only(left: 8, right: 8),
-        child: SingleChildScrollView(
-            controller: controller,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'Categories',
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                _buildSingleChildScrollViewInHorizontal(context),
-                const Padding(
-                  padding: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'All property',
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                gridView(context),
-              ],
-            )));
-  }
-
-  GridView gridView(BuildContext context) {
-    return GridView.count(
-        shrinkWrap: true,
-        crossAxisCount: 2,
-        primary: false,
-        crossAxisSpacing: 0.0,
-        mainAxisSpacing: 0.0,
-        childAspectRatio: 0.8,
-        children: List.generate(Te.listProperty1.length, (int index) {
-          return GestureDetector(
-            child: Card(
-              color: Colors.grey[200],
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Stack(
+    return OrientationBuilder(
+        builder: (context, orientation) {
+          return Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8),
+              child: SingleChildScrollView(
+                  controller: ScrollController(),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: Container(
-                          child: Image.file(
-                            File(Te.listProperty1[index].image[0].modifiedPath),
-                            fit: BoxFit.cover,
-                          ),
-                          height: 160,
-                          width: 300,
+                      const Padding(
+                        padding: EdgeInsets.only(top: 10, bottom: 10),
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Positioned(
-                          right: 10,
-                          child: IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.favorite,
-                                color: Colors.green,
-                              ))),
+                      _buildSingleChildScrollViewInHorizontal(context,orientation),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 10, bottom: 10),
+                        child: Text(
+                          'All property',
+                          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      widgetListProperty(orientation: orientation),
                     ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: Text(
-                      '${Te.listProperty1[index].price} , ${Te.listProperty1[index].category} ',
-                      style: const TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: Text(
-                      '${Te.listProperty1[index].address!.country}, ${Te.listProperty1[index].address!.region}  ',
-                      style: const TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => PropertyListingDetails(
-                            property: Te.listProperty1[index],
-                          )));
-            },
-          );
-        }));
+                  )));
+        },
+    );
+  }
+
+  GridView widgetListProperty({required Orientation orientation}) {
+    return buildGridView(
+        orientation: orientation,
+        controller: scrollController,
+        listProperty: Te.listProperty1);
   }
 
   SingleChildScrollView _buildSingleChildScrollViewInHorizontal(
-      BuildContext context) {
+      BuildContext context,Orientation orientation) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -208,8 +146,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             category: 'Buy',
                           )));
             },
-            height: 6,
-            width: 2.3,
+            height: orientation==Orientation.landscape?3:6,
+            width: orientation==Orientation.landscape?2.8:2.3,
           ),
           const SizedBox(
             width: 6,
@@ -226,8 +164,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             category: 'Rent',
                           )));
             },
-            height: 6,
-            width: 2.3,
+            height: orientation==Orientation.landscape?3:6,
+            width: orientation==Orientation.landscape?2.8:2.3,
           ),
           const SizedBox(
             width: 6,
@@ -244,8 +182,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             category: 'Investment',
                           )));
             },
-            height: 6,
-            width: 2.3,
+            height: orientation==Orientation.landscape?3:6,
+            width: orientation==Orientation.landscape?2.8:2.3,
           ),
         ],
       ),

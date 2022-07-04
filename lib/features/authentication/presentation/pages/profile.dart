@@ -66,7 +66,7 @@ class _ProfileState extends State<Profile> {
               nameList: "My Favorites",
               typeIcon: Icons.favorite,
               colorIcon: Colors.grey,
-              fun: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const MyFavorite()))),
+              fun: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> MyFavorite(listProperty:Te.user.listProperty ,)))),
 
           buildListTile(
               nameList: "Account Details",

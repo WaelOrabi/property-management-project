@@ -11,6 +11,7 @@ class User {
   String? password;
   File? image;
   List<Property>? listProperty;
+  List<Property>? listPropertyFavorite;
   Address? address;
   bool? isAdmin;
   bool? isSuperAdmin;
@@ -24,6 +25,7 @@ class User {
     this.password,
     this.image,
     this.listProperty,
+    this.listPropertyFavorite,
     this.address,
     this.isAdmin,
     this.isSuperAdmin,

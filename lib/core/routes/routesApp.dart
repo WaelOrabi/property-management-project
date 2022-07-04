@@ -24,11 +24,7 @@ import '../../features/properties/presentation/pages/search.dart';
 
 Map<String, WidgetBuilder> routes() {
   return {
-<<<<<<< HEAD
-    "/":(context)=> const SingIn(),
-=======
   "/":(context)=>const NavigationBarHome(),
->>>>>>> b0707cdd8e03c0386b98e1fb5545e62e3de663ea
     PagesView.routeName: (context) => const PagesView(),
     Welcome.routeName: (context) => const Welcome(),
     SingIn.routeName: (context) => const SingIn(),
@@ -42,7 +38,7 @@ Map<String, WidgetBuilder> routes() {
     SuperAdmin.routeName:(context)=>const SuperAdmin(),
     PropertyListingDetails.routeName:(context)=> PropertyListingDetails(property: null,),
     Chat.routeName:(context)=>const Chat(),
-    MyFavorite.routeName:(context)=>const MyFavorite(),
+    MyFavorite.routeName:(context)=>const MyFavorite(listProperty: null),
     HomeScreen.routeName:(context)=>const HomeScreen(),
     NavigationBarHome.routeName:(context)=>const NavigationBarHome(),
     CategoryScreen.routeName:(context)=>const CategoryScreen(),
