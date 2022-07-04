@@ -11,6 +11,7 @@ import '../widgets/add_property_widget/function_widjets.dart';
 import '../widgets/add_property_widget/widget_btn_Add_or_edit.dart';
 import 'map_screen.dart';
 
+// ignore: must_be_immutable
 class AddOrEditProperty extends StatefulWidget {
   AddOrEditProperty({Key? key, this.isEdit, this.property, this.address})
       : super(key: key);
