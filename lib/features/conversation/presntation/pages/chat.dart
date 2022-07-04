@@ -1,13 +1,15 @@
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
-import 'package:project_111/features/conversation/presntation/widgets/message_stream_builder_chat_widget.dart';
+import 'package:project_111/core/widgets/user.dart';
+import 'package:project_111/features/conversation/presntation/widgets/chat/message_stream_builder_chat_widget.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
-import '../widgets/input_widget.dart';
+import '../widgets/chat/input_widget.dart';
 
 class Chat extends StatefulWidget {
+ final User? user;
   static String routeName = 'chat';
-  const Chat({Key? key}) : super(key: key);
+  const Chat({Key? key, required this.user}) : super(key: key);
   @override
   ChatState createState() => ChatState();
 }
@@ -46,7 +48,7 @@ class ChatState extends State<Chat> {
         onWillPop: onBackPress,
         child: Column(
           children: <Widget>[
-            MessageStreamBuilderChat(),
+             MessageStreamBuilderChat(user: widget.user!,),
             InputWidget(
               onBlurred: toggleEmojiKeyboard,
               controller: controller,
@@ -114,10 +116,9 @@ class ChatState extends State<Chat> {
             )),
         title: Row(
           children: [
-            const CircleAvatar(
+             CircleAvatar(
               radius: 25.0,
-              backgroundImage: NetworkImage(
-                  'https://cdn.pixabay.com/photo/2018/01/06/09/25/hijab-3064633_960_720.jpg'),
+              backgroundImage:FileImage(widget.user!.image!),
               backgroundColor: Colors.transparent,
             ),
             const SizedBox(
@@ -126,18 +127,18 @@ class ChatState extends State<Chat> {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children:  [
                   Text(
-                    'Ayham',
+                    widget.user!.firstName!+widget.user!.lastName!,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.green,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'last seen on 03:12 pm',
                     style: TextStyle(color: Colors.grey, fontSize: 13),
                     maxLines: 1,
@@ -148,14 +149,6 @@ class ChatState extends State<Chat> {
             ),
           ],
         ),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon:const Icon(
-                Icons.keyboard_control,
-                color: Colors.green,
-              ))
-        ],
       );
   }
 

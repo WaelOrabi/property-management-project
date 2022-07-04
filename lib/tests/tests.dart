@@ -13,6 +13,13 @@ class Te {
     lastName: 'Alrefay',
     email: 'ayhamalrefay@gmail.com',
     phoneNumber: '0933773538',
+    messages: [
+      'hi Ayham',
+      'hi Ayham',
+      'hi Ayham',
+      'hi Ayham',
+      'hi Ayham',
+    ],
     image: File(
         '/storage/emulated/0/Pictures/Homs.jpg'),
     listProperty: [
@@ -555,6 +562,12 @@ class Te {
           ImageObject(
               originalPath: ' /storage/emulated/0/Pictures/Damascus.jpg',
               modifiedPath: ' /storage/emulated/0/Pictures/Damascus.jpg'),
+          ImageObject(
+              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+          ImageObject(
+              originalPath: ' /storage/emulated/0/Pictures/Damascus.jpg',
+              modifiedPath: ' /storage/emulated/0/Pictures/Damascus.jpg'),
         ],
         category: 'Rent'),
     Property(
@@ -574,6 +587,12 @@ class Te {
         description: 'description111222',
         price: '56',
         image: [
+          ImageObject(
+              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+          ImageObject(
+              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg  ',
+              modifiedPath: '  /storage/emulated/0/Pictures/Latakia.jpg  '),
           ImageObject(
               originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
               modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
@@ -605,6 +624,12 @@ class Te {
           ImageObject(
               originalPath: '/storage/emulated/0/Pictures/Latakia.jpg  ',
               modifiedPath: '  /storage/emulated/0/Pictures/Latakia.jpg  '),
+          ImageObject(
+              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+          ImageObject(
+              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg  ',
+              modifiedPath: '  /storage/emulated/0/Pictures/Latakia.jpg  '),
         ],
         category: 'Rent'),
     Property(
@@ -630,6 +655,12 @@ class Te {
           ImageObject(
               originalPath: ' /storage/emulated/0/Pictures/Damascus.jpg',
               modifiedPath: ' /storage/emulated/0/Pictures/Damascus.jpg'),
+          ImageObject(
+              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+          ImageObject(
+              originalPath: ' /storage/emulated/0/Pictures/Damascus.jpg',
+              modifiedPath: ' /storage/emulated/0/Pictures/Damascus.jpg'),
         ],
         category: 'Buy'),
   ];
@@ -643,6 +674,13 @@ class Te {
       lastName: 'Alrefay',
       email: 'ayhamalrefay@gmail.com',
       phoneNumber: '0933773538',
+      messages: [
+        'hi Ayham',
+        'hi Ayham',
+        'hi Ayham',
+        'hi Ayham',
+        'hi Ayham',
+      ],
       image: File(
           '/storage/emulated/0/Pictures/Hama.jpg'),
       listProperty: [
@@ -672,6 +710,7 @@ class Te {
             ],
             category: 'Buy'),
       ],
+      sendTime: '01:05',
       address: Address(
         latitude: 33.50426786925087,
         longitude: 36.31582662463188,
@@ -688,8 +727,16 @@ class Te {
       lastName: 'Fiyad',
       email: 'abdfy@gmail.com',
       phoneNumber: '093343243234',
+      sendTime: '03:15',
+      messages: [
+        'hi Ayham',
+        'hi Ayham',
+        'hi Ayham',
+        'hi Ayham',
+        'hi Ayham',
+      ],
       image: File(
-     ' /storage/emulated/0/Pictures/Latakia.jpg ' ),     listProperty: [
+  '/storage/emulated/0/Pictures/Hama.jpg'),     listProperty: [
        Property(
             idProperty: 2,
             address: Address(

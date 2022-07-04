@@ -120,191 +120,226 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
     );
   }
 
-  Widget buildBody(BuildContext context) => SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 2.6,
-              child: ListView.builder(
-                physics: const ClampingScrollPhysics(),
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: widget.property!.image.length,
-                itemBuilder: (context, index) {
-                  return Image.file(
-                    File(widget.property!.image[_currentPosition.toInt()]
-                        .modifiedPath),
-                    fit: BoxFit.fill,
-                    width: MediaQuery.of(context).size.width / 1,
-                  );
+  Widget buildBody(BuildContext context) =>OrientationBuilder(builder: (context, orientation) {
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          SizedBox(
+            height:  orientation == Orientation.landscape ? MediaQuery
+                .of(context)
+                .size
+                .height / 1.6 : MediaQuery
+                .of(context)
+                .size
+                .height / 2.9,
+            child: ListView.builder(
+              physics: const ClampingScrollPhysics(),
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: widget.property!.image.length,
+              itemBuilder: (context, index) {
+               return Padding(
+                 padding: const EdgeInsets.only(left: 5,right: 5),
+                 child: Container(
+                    width:orientation == Orientation.landscape ? MediaQuery
+                        .of(context)
+                        .size
+                        .width / 2 : MediaQuery
+                        .of(context)
+                        .size
+                        .width / 1.1,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: FileImage(
+                              File(
+                                  widget.property!.image[_currentPosition.toInt()]
+                                      .modifiedPath),
+                            ),
+                            fit: BoxFit.fill),
+                        //   border: Border.all(color: Colors.blue, width: 10 ),
+                        borderRadius: BorderRadius.circular(10)),
+                  ),
+               );
+              },
+            ),
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          buildText(widget.property!.category,
+              left: 10,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontsize: 20),
+          const SizedBox(
+            height: 20,
+          ),
+          buildText('Description',
+              left: 10,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontsize: 20),
+          buildText(widget.property!.description,
+              left: 10,
+              right: 10,
+              fontWeight: FontWeight.normal,
+              color: Colors.grey,
+              fontsize: 15,
+              maxLines: null),
+          const SizedBox(
+            height: 20,
+          ),
+
+
+          buildText('Extra info',
+              left: 10,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontsize: 20),
+          const SizedBox(
+            height: 20,
+          ),
+          buildExtraInfo(
+            text1: 'Price',
+            text2: widget.property!.price,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          buildExtraInfo(
+            text1: 'Space',
+            text2: widget.property!.space,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          buildExtraInfo(
+            text1: 'Storeys',
+            text2: widget.property!.storeys,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          buildExtraInfo(
+            text1: 'Bed Room',
+            text2: widget.property!.bedRooms,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          buildExtraInfo(
+            text1: 'Baths',
+            text2: widget.property!.baths,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          buildExtraInfo(
+            text1: 'Country',
+            text2: widget.property!.address!.country,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          buildExtraInfo(
+            text1: 'City',
+            text2: widget.property!.address!.city,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          buildExtraInfo(
+            text1: 'Region',
+            text2: widget.property!.address!.region,
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Container(
+            height:orientation == Orientation.landscape ? MediaQuery
+                .of(context)
+                .size
+                .height / 1.6 : MediaQuery
+                .of(context)
+                .size
+                .height / 3,
+            width: MediaQuery
+                .of(context)
+                .size
+                .width,
+            child: MapWidget(latDestination: widget.property!.address!.latitude,
+              longDestination: widget.property!.address!.longitude,),),
+          const SizedBox(
+            height: 30,
+          ),
+          const Divider(
+            color: Colors.grey,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              MaterialButton(
+                child: Row(children: [
+                  buildText('message',
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black,
+                      fontsize: 15),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  const Icon(Icons.wechat_outlined)
+                ]),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder:(context)=>Chat(user:Te.user,)));
                 },
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            buildText(widget.property!.category,
-                left: 10,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontsize: 20),
-            const SizedBox(
-              height: 20,
-            ),
-            buildText('Description',
-                left: 10,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontsize: 20),
-            buildText(widget.property!.description,
-                left: 10,
-                right: 10,
-                fontWeight: FontWeight.normal,
-                color: Colors.grey,
-                fontsize: 15,
-                maxLines: null),
-            const SizedBox(
-              height: 20,
-            ),
-
-
-            buildText('Extra info',
-                left: 10,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontsize: 20),
-            const SizedBox(
-              height: 20,
-            ),
-            buildExtraInfo(
-              text1: 'Price',
-              text2: widget.property!.price,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            buildExtraInfo(
-              text1: 'Space',
-              text2: widget.property!.space,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            buildExtraInfo(
-              text1: 'Storeys',
-              text2: widget.property!.storeys,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            buildExtraInfo(
-              text1: 'Bed Room',
-              text2: widget.property!.bedRooms,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            buildExtraInfo(
-              text1: 'Baths',
-              text2: widget.property!.baths,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            buildExtraInfo(
-              text1: 'Country',
-              text2: widget.property!.address!.country,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            buildExtraInfo(
-              text1: 'City',
-              text2: widget.property!.address!.city,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            buildExtraInfo(
-              text1: 'Region',
-              text2: widget.property!.address!.region,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height/3,
-              width: MediaQuery.of(context).size.width,
-              child: MapWidget(latDestination: widget.property!.address!.latitude,longDestination: widget.property!.address!.longitude,),),
-            const SizedBox(
-              height: 30,
-            ),
-            const Divider(
-              color: Colors.grey,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                MaterialButton(
-                  child: Row(children: [
-                    buildText('message',
+              MaterialButton(
+                child: Row(
+                  children: [
+                    buildText('comment',
                         fontWeight: FontWeight.normal,
                         color: Colors.black,
                         fontsize: 15),
                     const SizedBox(
                       width: 5,
                     ),
-                    const Icon(Icons.wechat_outlined)
-                  ]),
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(Chat.routeName);
-                  },
+                    const Icon(Icons.add_comment_outlined)
+                  ],
                 ),
-                MaterialButton(
-                  child: Row(
-                    children: [
-                      buildText('comment',
-                          fontWeight: FontWeight.normal,
-                          color: Colors.black,
-                          fontsize: 15),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      const Icon(Icons.add_comment_outlined)
-                    ],
-                  ),
-                  onPressed: () async {
-                    await buildShowModalBottomSheet(
-                        context: context,
-                        messageController: messageController,
-                        comment: comment);
-                  },
+                onPressed: () async {
+                  await buildShowModalBottomSheet(
+                      context: context,
+                      messageController: messageController,
+                      comment: comment);
+                },
+              ),
+              MaterialButton(
+                child: Row(
+                  children: [
+                    buildText('like',
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black,
+                        fontsize: 15),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    const Icon(Icons.thumb_up_off_alt_outlined)
+                  ],
                 ),
-                MaterialButton(
-                  child: Row(
-                    children: [
-                      buildText('like',
-                          fontWeight: FontWeight.normal,
-                          color: Colors.black,
-                          fontsize: 15),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      const Icon(Icons.thumb_up_off_alt_outlined)
-                    ],
-                  ),
-                  onPressed: () {},
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-          ],
-        ),
-      );
+                onPressed: () {},
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+        ],
+      ),
+    );
+  }
+  );
 
   Padding buildExtraInfo({required String text1, required String text2}) {
     return Padding(

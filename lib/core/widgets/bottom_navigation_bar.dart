@@ -3,6 +3,7 @@ import 'package:project_111/features/conversation/presntation/pages/conversation
 import 'package:project_111/features/properties/presentation/pages/category_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/home_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/search.dart';
+import 'package:project_111/tests/tests.dart';
 class NavigationBarHome extends StatefulWidget {
   const NavigationBarHome({Key? key}) : super(key: key);
   static String routeName='BottomNavigationBar';
@@ -29,7 +30,7 @@ class _NavigationBarHomeState extends State<NavigationBarHome> {
   List <Widget> screen =[
     const HomeScreen(),
     const CategoryScreen(),
-   const  Conversations(),
+     Conversations(useres: Te.listUser1,),
     const Search(),
   ];
 

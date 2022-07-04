@@ -1,12 +1,16 @@
+
 import 'package:flutter/material.dart';
-import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
+import 'package:project_111/core/widgets/user.dart';
 import 'package:project_111/features/conversation/presntation/pages/chat.dart';
+import 'package:project_111/features/conversation/presntation/widgets/conversation/conversation_items_widget.dart';
+import 'package:project_111/tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 
 class Conversations extends StatefulWidget {
   static String routeName = 'Conversation';
+    final List<User>? useres;
 
-  const Conversations({Key? key}) : super(key: key);
+  const Conversations({Key? key,required this.useres}) : super(key: key);
 
   @override
   State<Conversations> createState() => _ConversationsState();
@@ -14,6 +18,7 @@ class Conversations extends StatefulWidget {
 
 class _ConversationsState extends State<Conversations> {
   final controllerAppBar = ScrollController();
+   TextEditingController searchController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,33 +35,17 @@ class _ConversationsState extends State<Conversations> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.grey[300],
-                ),
-                padding: const EdgeInsets.all(10),
-                child: Row(
-                  children: const [
-                    Icon(Icons.search),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Text('Search'),
-                  ],
-                ),
-              ),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
               ListView.separated(
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  itemBuilder: (context, index) => buildChatItem(),
+                  itemBuilder: (context, index) => buildChatItem(user: widget.useres![index],context:context),
                   separatorBuilder: (context, index) => const SizedBox(
                         height: 20,
                       ),
-                  itemCount: 30),
+                  itemCount: widget.useres!.length),
             ],
           ),
         ),
@@ -68,21 +57,20 @@ class _ConversationsState extends State<Conversations> {
     return ScrollAppBar(
       titleSpacing: 20,
       controller: controllerAppBar,
-      elevation: 0.0,
+      elevation: 5.0,
       backgroundColor: Colors.white,
       centerTitle: true,
       title: Row(
-        children: const [
+        children:  [
           CircleAvatar(
             radius: 25.0,
-            backgroundImage: NetworkImage(
-                'https://cdn.pixabay.com/photo/2018/01/06/09/25/hijab-3064633_960_720.jpg'),
+            backgroundImage: FileImage(Te.user.image!),
             backgroundColor: Colors.transparent,
           ),
-          SizedBox(
+          const SizedBox(
             width: 15,
           ),
-          Text(
+          const Text(
             'Conversations',
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -96,79 +84,4 @@ class _ConversationsState extends State<Conversations> {
     );
   }
 
-  GestureDetector buildChatItem() => GestureDetector(
-        onTap: () {
-          Navigator.of(context).pushNamed(Chat.routeName);
-        },
-        child: Row(
-          children: [
-            Stack(
-              children: const [
-                CircleAvatar(
-                  radius: 30.0,
-                  backgroundImage: NetworkImage(
-                      'https://cdn.pixabay.com/photo/2018/01/06/09/25/hijab-3064633_960_720.jpg'),
-                  backgroundColor: Colors.transparent,
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.only(top: 45, start: 40),
-                  child: CircleAvatar(
-                    radius: 7.0,
-                    backgroundColor: Colors.green,
-                  ),
-                )
-              ],
-            ),
-            const SizedBox(
-              width: 20,
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                   Row(
-                     children: [
-
-                       Text(
-                        'Ayham ',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                  ),
-                       Spacer(),
-                       Text('02:00 pm'),
-                     ],
-                   ),
-
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Row(
-                    children: [
-                      const Expanded(
-                          child: Text(
-                        'hello Ayham hello Ayham hello Ayham hello Ayhamhello Ayhamhello Ayham hello Ayham hello Ayham',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      )),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Container(
-                          child: Center(child: Text('5',style: TextStyle(color: Colors.white),)),
-                          width: 20,
-                          height: 20,
-                          decoration: const BoxDecoration(
-                            color: Colors.green,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      );
 }
