@@ -6,10 +6,10 @@ import 'package:project_111/core/widgets/property.dart';
 import 'package:project_111/features/properties/presentation/widgets/add_property_widget/add_photo_advance_image.dart';
 import '../../../../core/widgets/address.dart';
 import '../../../../core/widgets/widget_appbar.dart';
-import '../widgets/add_property_widget/add_row_location.dart';
 import '../widgets/add_property_widget/build_add_or_edit_photos_text.dart';
 import '../widgets/add_property_widget/function_widjets.dart';
 import '../widgets/add_property_widget/widget_btn_Add_or_edit.dart';
+import 'map_screen.dart';
 
 class AddOrEditProperty extends StatefulWidget {
   AddOrEditProperty({Key? key, this.isEdit, this.property, this.address})
@@ -137,8 +137,8 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
                     widthOfSizeBox: 3,
                     fontWeight: FontWeight.bold,
                   ),
-                  rowAddLocation(context, widget.address!),
-                  buildAddOrEditPhotosText(widget.isEdit!),
+                  rowAddLocation(context),
+                  buildAddOrEditPhotosText(widget.isEdit==true?true:false),
                   AddPhotoAdvanceImage(
                       listImagesProperty: widget.imagesProperty),
                 ],
@@ -147,7 +147,7 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
             const SizedBox(height: 6),
 
             widgetBtnAddOrEdit(
-              widget.isEdit!,
+              widget.isEdit==true?true:false,
               () {
                 Property pro = Property(
                     address: widget.address,
@@ -188,6 +188,36 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
           ],
         ),
       ),
+    );
+  }
+  Row rowAddLocation(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        const Text(
+          "Location",
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+            width: MediaQuery.of(context).size.width / 2.3,
+            child: TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MapScreen(
+                        address: widget.address,
+                      ),
+                    ),
+                  ).then((val) {
+                    widget.address = val; //you get details from screen2 here
+                  });
+                },
+                child: const Text(
+                  "Add location",
+                  style: TextStyle(color: Colors.black, fontSize: 16),
+                )))
+      ],
     );
   }
 }
