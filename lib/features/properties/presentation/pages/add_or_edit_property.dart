@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
 import 'package:project_111/core/widgets/property.dart';
-import 'package:project_111/features/properties/presentation/pages/map_screen.dart';
-import 'package:project_111/features/properties/presentation/pages/home_screen.dart';
 import 'package:project_111/features/properties/presentation/widgets/add_property_widget/add_photo_advance_image.dart';
 import '../../../../core/widgets/address.dart';
 import '../../../../core/widgets/widget_appbar.dart';
+import '../widgets/add_property_widget/build_add_or_edit_photos_text.dart';
 import '../widgets/add_property_widget/function_widjets.dart';
+import '../widgets/add_property_widget/widget_btn_Add_or_edit.dart';
+import 'map_screen.dart';
 
 class AddOrEditProperty extends StatefulWidget {
   AddOrEditProperty({Key? key, this.isEdit, this.property, this.address})
@@ -37,34 +38,31 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
   String dropdownValueCategory = 'Buy';
   List<String> categoryItems = ['Rent', 'Buy', 'Investment'];
 
-@override
+  @override
   void initState() {
-    // TODO: implement initState
-  if(widget.isEdit==true){
-    priceController.text =  widget.property!.price ;
-    storeysController.text = widget.property!.storeys;
-    spaceController.text =  widget.property!.space ;
-    descriptionController.text = widget.property!.description ;
-    bedRoomController.text = widget.property!.bedRooms;
-    bathsController.text = widget.property!.baths ;
-    widget.imagesProperty.addAll(widget.property!.image);
-    widget.address=widget.property!.address;
-    dropdownValueCategory=widget.property!.category;
-  }
-
+    if (widget.isEdit == true) {
+      priceController.text = widget.property!.price;
+      storeysController.text = widget.property!.storeys;
+      spaceController.text = widget.property!.space;
+      descriptionController.text = widget.property!.description;
+      bedRoomController.text = widget.property!.bedRooms;
+      bathsController.text = widget.property!.baths;
+      widget.imagesProperty.addAll(widget.property!.image);
+      widget.address = widget.property!.address;
+      dropdownValueCategory = widget.property!.category;
+    }
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-
-   return SafeArea(
+    return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade200,
         appBar: buildAppBar(
           namePage: widget.isEdit == true ? "Edit Property" : "Add Property",
-          fun: () =>
-              Navigator.pushReplacementNamed(context, NavigationBarHome.routeName),
+          fun: () => Navigator.pushReplacementNamed(
+              context, NavigationBarHome.routeName),
           color: Colors.grey.shade200,
         ),
         body: _buildBody(context),
@@ -78,7 +76,6 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
         key: formKey,
         child: Column(
           children: [
-            //*****Description****//
             buildDescription(
               context: context,
               title: "Description",
@@ -86,10 +83,7 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
               hintText: "Write here..",
               controller: descriptionController,
             ),
-
             const SizedBox(height: 6),
-
-            //*********//
             Container(
               color: Colors.white,
               padding: const EdgeInsets.only(left: 15, top: 10),
@@ -144,86 +138,58 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
                     fontWeight: FontWeight.bold,
                   ),
                   rowAddLocation(context),
-                  _buildAddOrEditPhotosText(),
+                  buildAddOrEditPhotosText(widget.isEdit==true?true:false),
                   AddPhotoAdvanceImage(
-                    listImagesProperty:widget.imagesProperty
-                    // widget.isEdit == true
-                    //     ? widget.imagesProperty + widget.property!.image
-                    //     : widget.imagesProperty,
-                  ),
+                      listImagesProperty: widget.imagesProperty),
                 ],
               ),
             ),
             const SizedBox(height: 6),
-            containerBtnAddOrEdit()
+
+            widgetBtnAddOrEdit(
+              widget.isEdit==true?true:false,
+              () {
+                Property pro = Property(
+                    address: widget.address,
+                    space: spaceController.text,
+                    baths: bathsController.text,
+                    bedRooms: bedRoomController.text,
+                    storeys: storeysController.text,
+                    dateAdded: widget.dataAdded,
+                    description: descriptionController.text,
+                    price: priceController.text,
+                    image: widget.imagesProperty,
+                    category: dropdownValueCategory);
+
+                print(dropdownValueCategory);
+                print("*********************");
+                print("${pro.address!.city}\n,"
+                    "${pro.address!.country}\n,"
+                    "${pro.address!.region}\n,"
+                    "${pro.address!.latitude}\n,"
+                    "${pro.address!.longitude}\n,"
+                    "${pro.baths}\n,"
+                    "${pro.bedRooms}\n,"
+                    "${pro.space}\n,"
+                    "${pro.description}\n,"
+                    "${pro.image.length}\n,"
+                    "${pro.dateAdded}");
+
+                print("*********************");
+
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NavigationBarHome(),
+                  ),
+                );
+              },
+            )
           ],
         ),
       ),
     );
   }
-
-  Container containerBtnAddOrEdit() {
-    return Container(
-      color: Colors.white,
-      height: 60,
-      child: GestureDetector(
-        child: Container(
-          margin: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10), color: Colors.green),
-          child: Center(
-            child: Text(
-              widget.isEdit == true ? "Edit Property" : "Add Property",
-              style: const TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          ),
-        ),
-        onTap: () {
-          Property pro = Property(
-              address: widget.address,
-              space: spaceController.text,
-              baths: bathsController.text,
-              bedRooms: bedRoomController.text,
-              storeys: storeysController.text,
-              dateAdded: widget.dataAdded,
-              description: descriptionController.text,
-              price: priceController.text,
-              image: widget.imagesProperty,
-              category: dropdownValueCategory);
-
-          print(dropdownValueCategory);
-          print("*********************");
-          print("${pro.address!.city}\n,"
-              "${pro.address!.country}\n,"
-              "${pro.address!.region}\n,"
-              "${pro.address!.latitude}\n,"
-              "${pro.address!.longitude}\n,"
-              "${pro.baths}\n,"
-              "${pro.bedRooms}\n,"
-              "${pro.space}\n,"
-              "${pro.description}\n,"
-              "${pro.image.length}\n,"
-              "${pro.dateAdded}");
-
-          print("*********************");
-
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const NavigationBarHome()));
-        },
-      ),
-    );
-  }
-
-  Padding _buildAddOrEditPhotosText() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8, bottom: 8),
-      child: Text(
-        widget.isEdit == true ? "Edit Photos" : "Add Photos",
-        style: const TextStyle(
-            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
-      ),
-    );
-  }
-
   Row rowAddLocation(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -240,9 +206,7 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => MapScreen(
-                        address: widget.isEdit == true
-                            ? widget.property!.address
-                            : widget.address,
+                        address: widget.address,
                       ),
                     ),
                   ).then((val) {
