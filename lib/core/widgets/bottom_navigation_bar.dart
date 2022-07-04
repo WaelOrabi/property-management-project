@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project_111/features/conversation/presntation/pages/conversations.dart';
-import 'package:project_111/features/properties/presentation/pages/category_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/home_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/search.dart';
 class NavigationBarHome extends StatefulWidget {
@@ -28,7 +27,7 @@ class _NavigationBarHomeState extends State<NavigationBarHome> {
 
   List <Widget> screen =[
     const HomeScreen(),
-    const CategoryScreen(),
+    Container(),
    const  Conversations(),
     const Search(),
   ];

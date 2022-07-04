@@ -20,16 +20,16 @@ class _MyListingScreenState extends State<MyListingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildScrollAppBar(context),
-      body: buildBody(),
+      body: buildBody(context:context),
     );
   }
 
-  OrientationBuilder buildBody() {
+  OrientationBuilder buildBody({required BuildContext context}) {
     return OrientationBuilder(builder: (context, orientation) {
       return buildGridView(
           orientation: orientation,
           controller: scrollController,
-          listProperty: widget.user!.listProperty);
+          listProperty: widget.user!.listProperty, context:context,delete:true);
     });
   }
 

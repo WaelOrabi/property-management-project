@@ -3,7 +3,6 @@ import 'package:project_111/features/authentication/presentation/pages/sign_in.d
 import 'package:project_111/features/authentication/presentation/pages/signup_screen.dart';
 import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
 
-import '../../../properties/presentation/widgets/category/category_widget.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({Key? key}) : super(key: key);

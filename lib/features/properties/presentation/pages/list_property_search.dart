@@ -28,7 +28,7 @@ class _ListPropertySearchState extends State<ListPropertySearch> {
                     }, icon: const Icon(Icons.arrow_back_outlined,color: Colors.green,)),
                   ),
                   const SizedBox(height: 40,),
-                  buildBody(orientation),
+                  buildBody(orientation,context),
                 ],
               ),
             );}
@@ -36,10 +36,10 @@ class _ListPropertySearchState extends State<ListPropertySearch> {
           )),
     );
   }
-   GridView buildBody(Orientation orientation) {
+   GridView buildBody(Orientation orientation,BuildContext context) {
     return buildGridView(
           orientation: orientation,
           controller: scrollController,
-          listProperty: widget.listPropertySearch);
+          listProperty: widget.listPropertySearch, context:context);
   }
 }
