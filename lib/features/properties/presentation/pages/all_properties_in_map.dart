@@ -31,7 +31,7 @@ class _AllPropertiesInMapState extends State<AllPropertiesInMap> {
                 widget.listProperty[i].address!.longitude,
               ),
               infoWindow:
-                  InfoWindow(title: '${widget.listProperty[i].description}'),
+                  InfoWindow(title: ''),
               icon: BitmapDescriptor.defaultMarkerWithHue(
                   BitmapDescriptor.hueRed),
               onTap: () {

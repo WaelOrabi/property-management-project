@@ -15,7 +15,7 @@ import 'package:project_111/features/properties/presentation/pages/my_favorite.d
 import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
 import '../../features/authentication/presentation/pages/welcome.dart';
 import 'package:project_111/features/authentication/presentation/pages/sign_in.dart';
-import '../../features/properties/presentation/pages/add_or_edit_property.dart';
+import '../../features/properties/presentation/pages/add_or_update_property.dart';
 import '../../features/properties/presentation/pages/MyListingScreen.dart';
 
 Map<String, WidgetBuilder> routes() {
@@ -28,7 +28,7 @@ Map<String, WidgetBuilder> routes() {
     Profile.routeName: (context) =>  Profile(),
     SignUpScreen.routeName:(context)=>const SignUpScreen(),
     MyListingScreen.routeName:(context)=>const MyListingScreen(),
-    AddOrEditProperty.routeName:(context)=>  AddOrEditProperty(),
+    AddOrUpdateProperty.routeName:(context)=>  AddOrUpdateProperty(),
     MapScreen.routeName:(context)=> MapScreen(),
     SplashScreen.routeName:(context)=>const SplashScreen(),
     SuperAdmin.routeName:(context)=>const SuperAdmin(),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-widgetBtnAddOrEdit(bool isEdit, VoidCallback fun) {
+widgetBtnAddOrUpdate({required bool isUpdate,required VoidCallback fun}) {
   return Container(
     color: Colors.white,
     height: 60,
@@ -11,7 +11,7 @@ widgetBtnAddOrEdit(bool isEdit, VoidCallback fun) {
               borderRadius: BorderRadius.circular(10), color: Colors.green),
           child: Center(
             child: Text(
-              isEdit == true ? "Edit Property" : "Add Property",
+              isUpdate == true ? "Update Property" : "Add Property",
               style: const TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),

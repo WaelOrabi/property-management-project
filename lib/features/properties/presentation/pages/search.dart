@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
 import 'package:project_111/features/properties/presentation/pages/list_property_search.dart';
-import 'package:project_111/features/properties/presentation/widgets/add_property_widget/function_widjets.dart';
 
 import '../../../../tests/tests.dart';
+import '../widgets/add_or_update_property_widget/function_widjets.dart';
 
 class Search extends StatefulWidget {
   static String routeName = 'Search';

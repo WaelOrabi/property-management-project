@@ -3,31 +3,31 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
 import 'package:project_111/core/widgets/property.dart';
-import 'package:project_111/features/properties/presentation/widgets/add_property_widget/add_photo_advance_image.dart';
 import '../../../../core/widgets/address.dart';
 import '../../../../core/widgets/widget_appbar.dart';
-import '../widgets/add_property_widget/build_add_or_edit_photos_text.dart';
-import '../widgets/add_property_widget/function_widjets.dart';
-import '../widgets/add_property_widget/widget_btn_Add_or_edit.dart';
+import '../widgets/add_or_update_property_widget/add_photo_advance_image.dart';
+import '../widgets/add_or_update_property_widget/build_add_or_edit_photos_text.dart';
+import '../widgets/add_or_update_property_widget/function_widjets.dart';
+import '../widgets/add_or_update_property_widget/widget_btn_Add_or_edit.dart';
 import 'map_screen.dart';
 
-class AddOrEditProperty extends StatefulWidget {
-  AddOrEditProperty({Key? key, this.isEdit, this.property, this.address})
+class AddOrUpdateProperty extends StatefulWidget {
+  AddOrUpdateProperty({Key? key, this.isUpdate, this.property, this.address})
       : super(key: key);
   static String routeName = 'AddListing';
 
   final Property? property;
-  bool? isEdit;
+  bool? isUpdate;
 
   late Address? address;
   List<ImageObject> imagesProperty = [];
   var dataAdded = DateFormat('yyyy-MM-dd hh:mm').format(DateTime.now());
 
   @override
-  State<AddOrEditProperty> createState() => _AddOrEditPropertyState();
+  State<AddOrUpdateProperty> createState() => _AddOrUpdatePropertyState();
 }
 
-class _AddOrEditPropertyState extends State<AddOrEditProperty> {
+class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
   final formKey = GlobalKey<FormState>();
   final descriptionController = TextEditingController();
   final priceController = TextEditingController();
@@ -40,7 +40,7 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
 
   @override
   void initState() {
-    if (widget.isEdit == true) {
+    if (widget.isUpdate == true) {
       priceController.text = widget.property!.price;
       storeysController.text = widget.property!.storeys;
       spaceController.text = widget.property!.space;
@@ -60,7 +60,7 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
       child: Scaffold(
         backgroundColor: Colors.grey.shade200,
         appBar: buildAppBar(
-          namePage: widget.isEdit == true ? "Edit Property" : "Add Property",
+          namePage: widget.isUpdate == true ? "Update Property" : "Add Property",
           fun: () => Navigator.pushReplacementNamed(
               context, NavigationBarHome.routeName),
           color: Colors.grey.shade200,
@@ -138,7 +138,7 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
                     fontWeight: FontWeight.bold,
                   ),
                   rowAddLocation(context),
-                  buildAddOrEditPhotosText(widget.isEdit==true?true:false),
+                  buildAddOrUpdatePhotosText(isUpdate: widget.isUpdate==true?true:false),
                   AddPhotoAdvanceImage(
                       listImagesProperty: widget.imagesProperty),
                 ],
@@ -146,9 +146,9 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
             ),
             const SizedBox(height: 6),
 
-            widgetBtnAddOrEdit(
-              widget.isEdit==true?true:false,
-              () {
+            widgetBtnAddOrUpdate(
+              isUpdate: widget.isUpdate==true?true:false,
+              fun: () {
                 Property pro = Property(
                     address: widget.address,
                     space: spaceController.text,
@@ -213,8 +213,8 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
                     widget.address = val; //you get details from screen2 here
                   });
                 },
-                child: const Text(
-                  "Add location",
+                child:  Text(
+                widget.isUpdate==true?"Update location"  :"Add location",
                   style: TextStyle(color: Colors.black, fontSize: 16),
                 )))
       ],

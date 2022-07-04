@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:project_111/core/widgets/property.dart';
-import 'package:project_111/features/properties/presentation/pages/add_or_edit_property.dart';
+import 'package:project_111/features/properties/presentation/pages/add_or_update_property.dart';
 import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
 import 'package:project_111/tests/tests.dart';
 
@@ -120,8 +120,8 @@ class _BuildCardState extends State<BuildCard> {
                                                       context,
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              AddOrEditProperty(
-                                                                isEdit: true,
+                                                              AddOrUpdateProperty(
+                                                                isUpdate: true,
                                                                 property:
                                                                     Te.listProperty1[
                                                                         0],

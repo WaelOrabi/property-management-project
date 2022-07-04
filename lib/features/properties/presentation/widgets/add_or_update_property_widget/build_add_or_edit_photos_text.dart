@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-buildAddOrEditPhotosText(bool isEdit) {
+buildAddOrUpdatePhotosText({required bool isUpdate}) {
   return Padding(
     padding: const EdgeInsets.only(top: 8, bottom: 8),
     child: Text(
-      isEdit == true ? "Edit Photos" : "Add Photos",
+      isUpdate == true ? "Update Photos" : "Add Photos",
       style: const TextStyle(
           color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
     ),

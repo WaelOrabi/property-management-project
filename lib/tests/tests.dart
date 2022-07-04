@@ -433,10 +433,10 @@ class Te {
   ];
   static List<Property> listProperty1 = [
     Property(
-        idProperty: 2,
+        idProperty: 1,
         address: Address(
-          latitude: 33.51689336744682,
-          longitude: 36.26502357423305,
+          latitude: 33.61689336744682,
+          longitude: 36.46502357423305,
           region: 'Al Mouhajrin',
           city: ' Damascus ',
           country: 'Syria',
@@ -446,7 +446,7 @@ class Te {
         bedRooms: '54',
         storeys: '445',
         dateAdded: '2021-11-11',
-        description: 'description111222',
+        description: 'description11p7534789543sdnajl1222',
         price: '56',
         image: [
           ImageObject(
@@ -460,8 +460,8 @@ class Te {
     Property(
         idProperty: 2,
         address: Address(
-          latitude: 33.51689336744682,
-          longitude: 36.26502357423305,
+          latitude: 33.81689336744682,
+          longitude: 35.26502357423305,
           region: 'Al Mouhajrin',
           city: ' Damascus ',
           country: 'Syria',
@@ -471,7 +471,7 @@ class Te {
         bedRooms: '54',
         storeys: '445',
         dateAdded: '2021-11-11',
-        description: 'description111222',
+        description: 'description1dskgj;fdsldf11222',
         price: '56',
         image: [
           ImageObject(
@@ -481,11 +481,11 @@ class Te {
               originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_1B6B618A64CFE64C7167A9976333F714_compressed909174491.jpg',
               modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_1B6B618A64CFE64C7167A9976333F714_compressed909174491.jpg'),
         ],
-        category: 'Buy'),
+        category: 'Rent'),
     Property(
-        idProperty: 2,
+        idProperty: 3,
         address: Address(
-          latitude: 33.51689336744682,
+          latitude: 34.51689336744682,
           longitude: 36.26502357423305,
           region: 'Al Mouhajrin',
           city: ' Damascus ',
@@ -496,7 +496,7 @@ class Te {
         bedRooms: '54',
         storeys: '445',
         dateAdded: '2021-11-11',
-        description: 'description111222',
+        description: 'descriptdskfd;nfdn4ppresigh40rgusgsion111222',
         price: '56',
         image: [
           ImageObject(
@@ -506,9 +506,9 @@ class Te {
               originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg',
               modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg'),
         ],
-        category: 'Buy'),
+        category: 'Rent'),
     Property(
-        idProperty: 2,
+        idProperty: 4,
         address: Address(
           latitude: 33.51689336744682,
           longitude: 36.26502357423305,
@@ -521,7 +521,7 @@ class Te {
         bedRooms: '54',
         storeys: '445',
         dateAdded: '2021-11-11',
-        description: 'description111222',
+        description: 'descriaaaaaaaaaaaaaaaaaaaaaaaaaaaption111222',
         price: '56',
         image: [
           ImageObject(
