@@ -16,7 +16,7 @@ Container buildDescription(
     padding: const EdgeInsets.only(left: 15, top: 10),
     color: Colors.white,
     width: MediaQuery.of(context).size.width,
-    height: 90,
+    height: 100,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -28,6 +28,8 @@ Container buildDescription(
 
           keyboardType: TextInputType.text,
           controller: controller,
+          minLines: 2,
+          maxLines: 2,
           validator: (value) {
             if (value!.length < 4) {
               return errorValidator;

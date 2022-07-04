@@ -49,42 +49,38 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
         children: [
           widget.listImagesProperty.isEmpty
               ? const SizedBox(
-                  width: 0,
-                  height: 0,
-                )
+            width: 0,
+            height: 0,
+          )
               : Row(
-                  children:
-                      List.generate(widget.listImagesProperty.length, (index) {
-                    final image = widget.listImagesProperty[index];
-                    return Stack(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.all(6),
-                          width: MediaQuery.of(context).size.width / 4,
-                          height: MediaQuery.of(context).size.width / 4,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: FileImage(File(
-                                image.modifiedPath,
-                              )),
-                              fit: BoxFit.cover,
-                            ),
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.green,
-                          ),
-                        ),
-                        IconButton(
-                            onPressed: () {
-                              setState(() {
-                                widget.listImagesProperty
-                                    .remove(widget.listImagesProperty[index]);
-                              });
-                            },
-                            icon: const Icon(Icons.dangerous_outlined))
-                      ],
-                    );
-                  }),
-                ),
+            children: List.generate(widget.listImagesProperty.length, (index) {
+              final image = widget.listImagesProperty[index];
+              return Stack(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(6),
+                    width: MediaQuery.of(context).size.width / 4,
+                    height: MediaQuery.of(context).size.width / 4,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: FileImage(File(
+                          image.modifiedPath,
+                        )),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.green,
+                    ),
+                  ),
+                  IconButton(onPressed: (){
+                    setState(() {
+                      widget.listImagesProperty.remove(widget.listImagesProperty[index]);
+                    });
+                  }, icon:const Icon(Icons.dangerous_outlined,color: Colors.white,) )
+                ],
+              );
+            }),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: GestureDetector(
@@ -103,26 +99,25 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
                 ),
               ),
               onTap: () async {
-                final List<ImageObject>? objects = await Navigator.of(context)
-                    .push(
-                        PageRouteBuilder(pageBuilder: (context, animation, __) {
-                  return const ImagePicker(maxCount: 100);
-                }));
+                final List<ImageObject>? objects =
+                await Navigator.of(context).push(
+                    PageRouteBuilder(pageBuilder:
+                        (context, animation, __) {
+                      return const ImagePicker(maxCount: 100);
+                    }));
                 if ((objects?.length ?? 0) > 0) {
                   setState(() {
                     widget.listImagesProperty.addAll(objects!);
-                    print("***************");
-                    print("***************uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-                    print(widget.listImagesProperty[0].modifiedPath);
-                    print(widget.listImagesProperty[1].modifiedPath);
-                    print(widget.listImagesProperty[2].modifiedPath);
-                    print(widget.listImagesProperty[3].modifiedPath);
-                    print(widget.listImagesProperty[4].modifiedPath);
-                    print(widget.listImagesProperty[5].modifiedPath);
-                    print(widget.listImagesProperty[6].modifiedPath);
-                    print(widget.listImagesProperty[7].modifiedPath);
-                    print("***************");
-                    print("***************uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+                    // print("***************");
+                    // print("***************uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+                    // print(widget.listImagesProperty[0].modifiedPath);
+                    // print(widget.listImagesProperty[1].modifiedPath);
+                    // print(widget.listImagesProperty[2].modifiedPath);
+                    // print(widget.listImagesProperty[3].modifiedPath);
+                    // print(widget.listImagesProperty[4].modifiedPath);
+                    //
+                    // print("***************");
+                    // // print("***************uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
                   });
                 }
               },

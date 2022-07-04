@@ -1,6 +1,7 @@
 import 'package:advance_image_picker/models/image_object.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
 import 'package:project_111/core/widgets/property.dart';
 import 'package:project_111/features/properties/presentation/pages/map_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/home_screen.dart';
@@ -36,25 +37,34 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
   String dropdownValueCategory = 'Buy';
   List<String> categoryItems = ['Rent', 'Buy', 'Investment'];
 
+@override
+  void initState() {
+    // TODO: implement initState
+  if(widget.isEdit==true){
+    priceController.text =  widget.property!.price ;
+    storeysController.text = widget.property!.storeys;
+    spaceController.text =  widget.property!.space ;
+    descriptionController.text = widget.property!.description ;
+    bedRoomController.text = widget.property!.bedRooms;
+    bathsController.text = widget.property!.baths ;
+    widget.imagesProperty.addAll(widget.property!.image);
+    widget.address=widget.property!.address;
+    dropdownValueCategory=widget.property!.category;
+  }
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    priceController.text = widget.isEdit == true ? widget.property!.price : '';
-    storeysController.text =
-        widget.isEdit == true ? widget.property!.storeys : '';
-    spaceController.text = widget.isEdit == true ? widget.property!.space : '';
-    descriptionController.text =
-        widget.isEdit == true ? widget.property!.description : '';
-    bedRoomController.text =
-        widget.isEdit == true ? widget.property!.bedRooms : '';
-    bathsController.text = widget.isEdit == true ? widget.property!.baths : '';
 
-    return SafeArea(
+   return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey.shade200,
         appBar: buildAppBar(
           namePage: widget.isEdit == true ? "Edit Property" : "Add Property",
           fun: () =>
-              Navigator.pushReplacementNamed(context, HomeScreen.routeName),
+              Navigator.pushReplacementNamed(context, NavigationBarHome.routeName),
           color: Colors.grey.shade200,
         ),
         body: _buildBody(context),
@@ -91,9 +101,7 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
                       titleItems: "Category",
                       fontWeight: FontWeight.bold,
                       widthOfSizeBox: 3.2,
-                      dropdownValue: widget.isEdit == true
-                          ? widget.property!.category
-                          : dropdownValueCategory,
+                      dropdownValue: dropdownValueCategory,
                       nameListItems: categoryItems,
                       fun: (data) {
                         setState(() {
@@ -138,9 +146,10 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
                   rowAddLocation(context),
                   _buildAddOrEditPhotosText(),
                   AddPhotoAdvanceImage(
-                    listImagesProperty: widget.isEdit == true
-                        ? widget.imagesProperty + widget.property!.image
-                        : widget.imagesProperty,
+                    listImagesProperty:widget.imagesProperty
+                    // widget.isEdit == true
+                    //     ? widget.imagesProperty + widget.property!.image
+                    //     : widget.imagesProperty,
                   ),
                 ],
               ),
@@ -193,8 +202,12 @@ class _AddOrEditPropertyState extends State<AddOrEditProperty> {
               "${pro.bedRooms}\n,"
               "${pro.space}\n,"
               "${pro.description}\n,"
+              "${pro.image.length}\n,"
               "${pro.dateAdded}");
+
           print("*********************");
+
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const NavigationBarHome()));
         },
       ),
     );

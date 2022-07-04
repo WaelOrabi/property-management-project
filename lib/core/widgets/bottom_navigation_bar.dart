@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project_111/features/conversation/presntation/pages/conversations.dart';
-import 'package:project_111/features/properties/presentation/pages/category_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/home_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/search.dart';
 import 'package:project_111/tests/tests.dart';
@@ -29,7 +28,6 @@ class _NavigationBarHomeState extends State<NavigationBarHome> {
 
   List <Widget> screen =[
     const HomeScreen(),
-    const CategoryScreen(),
      Conversations(useres: Te.listUser1,),
     const Search(),
   ];
