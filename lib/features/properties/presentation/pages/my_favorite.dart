@@ -17,13 +17,23 @@ class _MyFavoriteState extends State<MyFavorite> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:buildAppBar(namePage: 'My Favorite', fun: ()=>Navigator.of(context).pop()),
-      body:OrientationBuilder(
-          builder: (context, orientation) {
-            return buildGridView(
-                orientation: orientation,
-                controller: scrollController,
-                listProperty: widget.listProperty, context: context);
-          }
+      body: widget.listProperty!.isEmpty
+          ? const Center(
+        child: Text(
+          "There are not any properties",
+          style: TextStyle(fontSize: 20),
+        ),
+      )
+          : Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: OrientationBuilder(
+            builder: (context, orientation) {
+              return buildGridView(
+                  orientation: orientation,
+                  controller: scrollController,
+                  listProperty: widget.listProperty, context: context);
+            }
+        ),
       ),
     );
   }
