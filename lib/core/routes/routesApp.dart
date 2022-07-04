@@ -33,10 +33,10 @@ Map<String, WidgetBuilder> routes() {
     SplashScreen.routeName:(context)=>const SplashScreen(),
     SuperAdmin.routeName:(context)=>const SuperAdmin(),
     PropertyListingDetails.routeName:(context)=> PropertyListingDetails(property: null,),
-    Chat.routeName:(context)=>const Chat(),
+    Chat.routeName:(context)=>const Chat(user: null,),
     MyFavorite.routeName:(context)=>const MyFavorite(listProperty: null),
     HomeScreen.routeName:(context)=>const HomeScreen(),
     NavigationBarHome.routeName:(context)=>const NavigationBarHome(),
-    Conversations.routeName:(context)=>const Conversations(),
+    Conversations.routeName:(context)=>const Conversations(useres: null,),
   };
 }

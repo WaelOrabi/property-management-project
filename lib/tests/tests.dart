@@ -13,8 +13,7 @@ class Te {
     lastName: 'Alrefay',
     email: 'ayhamalrefay@gmail.com',
     phoneNumber: '0933773538',
-    image: File(
-        '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_7E1EB7B8AA0A7FABFAC203C1A6137CF0_compressed1883771032.jpg'),
+    image: File('/storage/emulated/0/Pictures/Homs.jpg'),
     listProperty: [
       Property(
           idProperty: 2,
@@ -34,11 +33,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_A5DC8E9E6DBA812B6712E33B565E2F11_compressed2078732055.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_A5DC8E9E6DBA812B6712E33B565E2F11_compressed2078732055.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_69639202EE85EFA5B812FD7F16DD0806_compressed2043302628.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_69639202EE85EFA5B812FD7F16DD0806_compressed2043302628.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg ',
+                modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg '),
           ],
           category: 'Buy'),
       Property(
@@ -59,11 +58,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_8B3B7BE218651DECB476C67887EA0B10_compressed1102317137.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_8B3B7BE218651DECB476C67887EA0B10_compressed1102317137.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_1B6B618A64CFE64C7167A9976333F714_compressed909174491.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_1B6B618A64CFE64C7167A9976333F714_compressed909174491.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -84,11 +83,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_9F9D047C3591B09FD59752FB3B4A1608_compressed822778935.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_9F9D047C3591B09FD59752FB3B4A1608_compressed822778935.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -109,15 +108,14 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12142-_0FD5A278D3BECE20B0B6543861AAFDD3_compressed385760924.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12142-_0FD5A278D3BECE20B0B6543861AAFDD3_compressed385760924.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
           ],
           category: 'Buy'),
     ],
-
     listPropertyFavorite: [
       Property(
           idProperty: 2,
@@ -137,11 +135,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_03319962B1C27B93E9EFE77649031F2E_compressed971672072.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_03319962B1C27B93E9EFE77649031F2E_compressed971672072.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_7D255B72DB6B06520C0FF73EFCBEB003_compressed970376841.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_7D255B72DB6B06520C0FF73EFCBEB003_compressed970376841.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -162,11 +160,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_A24708A5260E5649332A0D6E21E7033E_compressed66548609.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_A24708A5260E5649332A0D6E21E7033E_compressed66548609.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_A0A0002AEAAAE361B9FB7B6405F17073_compressed1643451173.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_A0A0002AEAAAE361B9FB7B6405F17073_compressed1643451173.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -187,11 +185,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1515115830.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1515115830.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1515996224.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1515996224.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -212,11 +210,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_4D39120F14E910E4EC7BC9418A76D540_compressed471264703.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_4D39120F14E910E4EC7BC9418A76D540_compressed471264703.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_E09865D087DB80EBD111F3F9D9AAAB04_compressed1283329199.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_E09865D087DB80EBD111F3F9D9AAAB04_compressed1283329199.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
           ],
           category: 'Buy'),
     ],
@@ -248,11 +246,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_03319962B1C27B93E9EFE77649031F2E_compressed971672072.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_03319962B1C27B93E9EFE77649031F2E_compressed971672072.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_7D255B72DB6B06520C0FF73EFCBEB003_compressed970376841.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_7D255B72DB6B06520C0FF73EFCBEB003_compressed970376841.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -273,11 +271,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_A24708A5260E5649332A0D6E21E7033E_compressed66548609.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_A24708A5260E5649332A0D6E21E7033E_compressed66548609.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_A0A0002AEAAAE361B9FB7B6405F17073_compressed1643451173.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_A0A0002AEAAAE361B9FB7B6405F17073_compressed1643451173.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -298,11 +296,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1515115830.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_56FB98E782972415FBC3B5E6D58C95DE_compressed1515115830.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1515996224.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_8AA7B1CC325BB0737E8651E376340AD9_compressed1515996224.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -323,111 +321,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_4D39120F14E910E4EC7BC9418A76D540_compressed471264703.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_4D39120F14E910E4EC7BC9418A76D540_compressed471264703.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_E09865D087DB80EBD111F3F9D9AAAB04_compressed1283329199.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_E09865D087DB80EBD111F3F9D9AAAB04_compressed1283329199.jpg'),
-        ],
-        category: 'Buy'),
-    Property(
-        idProperty: 2,
-        address: Address(
-          latitude: 33.51689336744682,
-          longitude: 36.26502357423305,
-          region: 'Al Mouhajrin',
-          city: ' Damascus ',
-          country: 'Syria',
-        ),
-        space: '34',
-        baths: '65',
-        bedRooms: '54',
-        storeys: '445',
-        dateAdded: '2021-11-11',
-        description: 'description111222',
-        price: '56',
-        image: [
-          ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_A5DC8E9E6DBA812B6712E33B565E2F11_compressed2078732055.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_A5DC8E9E6DBA812B6712E33B565E2F11_compressed2078732055.jpg'),
-          ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_69639202EE85EFA5B812FD7F16DD0806_compressed2043302628.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_69639202EE85EFA5B812FD7F16DD0806_compressed2043302628.jpg'),
-        ],
-        category: 'Buy'),
-    Property(
-        idProperty: 2,
-        address: Address(
-          latitude: 33.51689336744682,
-          longitude: 36.26502357423305,
-          region: 'Al Mouhajrin',
-          city: ' Damascus ',
-          country: 'Syria',
-        ),
-        space: '34',
-        baths: '65',
-        bedRooms: '54',
-        storeys: '445',
-        dateAdded: '2021-11-11',
-        description: 'description111222',
-        price: '56',
-        image: [
-          ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_8B3B7BE218651DECB476C67887EA0B10_compressed1102317137.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_8B3B7BE218651DECB476C67887EA0B10_compressed1102317137.jpg'),
-          ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_1B6B618A64CFE64C7167A9976333F714_compressed909174491.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_1B6B618A64CFE64C7167A9976333F714_compressed909174491.jpg'),
-        ],
-        category: 'Buy'),
-    Property(
-        idProperty: 2,
-        address: Address(
-          latitude: 33.51689336744682,
-          longitude: 36.26502357423305,
-          region: 'Al Mouhajrin',
-          city: ' Damascus ',
-          country: 'Syria',
-        ),
-        space: '34',
-        baths: '65',
-        bedRooms: '54',
-        storeys: '445',
-        dateAdded: '2021-11-11',
-        description: 'description111222',
-        price: '56',
-        image: [
-          ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_9F9D047C3591B09FD59752FB3B4A1608_compressed822778935.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_9F9D047C3591B09FD59752FB3B4A1608_compressed822778935.jpg'),
-          ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg'),
-        ],
-        category: 'Buy'),
-    Property(
-        idProperty: 2,
-        address: Address(
-          latitude: 33.51689336744682,
-          longitude: 36.26502357423305,
-          region: 'Al Mouhajrin',
-          city: ' Damascus ',
-          country: 'Syria',
-        ),
-        space: '34',
-        baths: '65',
-        bedRooms: '54',
-        storeys: '445',
-        dateAdded: '2021-11-11',
-        description: 'description111222',
-        price: '56',
-        image: [
-          ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg'),
-          ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12142-_0FD5A278D3BECE20B0B6543861AAFDD3_compressed385760924.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12142-_0FD5A278D3BECE20B0B6543861AAFDD3_compressed385760924.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
         ],
         category: 'Buy'),
   ];
@@ -450,11 +348,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_A5DC8E9E6DBA812B6712E33B565E2F11_compressed2078732055.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_A5DC8E9E6DBA812B6712E33B565E2F11_compressed2078732055.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_69639202EE85EFA5B812FD7F16DD0806_compressed2043302628.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_69639202EE85EFA5B812FD7F16DD0806_compressed2043302628.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -475,11 +373,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_8B3B7BE218651DECB476C67887EA0B10_compressed1102317137.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_8B3B7BE218651DECB476C67887EA0B10_compressed1102317137.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_1B6B618A64CFE64C7167A9976333F714_compressed909174491.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_1B6B618A64CFE64C7167A9976333F714_compressed909174491.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
         ],
         category: 'Rent'),
     Property(
@@ -500,11 +398,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_9F9D047C3591B09FD59752FB3B4A1608_compressed822778935.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_9F9D047C3591B09FD59752FB3B4A1608_compressed822778935.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
         ],
         category: 'Rent'),
     Property(
@@ -525,11 +423,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12142-_0FD5A278D3BECE20B0B6543861AAFDD3_compressed385760924.jpg',
-              modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12142-_0FD5A278D3BECE20B0B6543861AAFDD3_compressed385760924.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
         ],
         category: 'Buy'),
   ];
@@ -543,8 +441,16 @@ class Te {
       lastName: 'Alrefay',
       email: 'ayhamalrefay@gmail.com',
       phoneNumber: '0933773538',
-      image: File(
-          '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_4D39120F14E910E4EC7BC9418A76D540_compressed471264703.jpg'),
+      messages: [
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+      ],
+      sendTime: '02:15',
+      image: File('/storage/emulated/0/Pictures/Damascus.jpg'),
       listProperty: [
         Property(
             idProperty: 2,
@@ -564,11 +470,86 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_9F9D047C3591B09FD59752FB3B4A1608_compressed822778935.jpg',
-                  modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_9F9D047C3591B09FD59752FB3B4A1608_compressed822778935.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg',
-                  modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+            ],
+            category: 'Buy'),
+        Property(
+            idProperty: 2,
+            address: Address(
+              latitude: 33.51689336744682,
+              longitude: 36.26502357423305,
+              region: 'Al Mouhajrin',
+              city: ' Damascus ',
+              country: 'Syria',
+            ),
+            space: '34',
+            baths: '65',
+            bedRooms: '54',
+            storeys: '445',
+            dateAdded: '2021-11-11',
+            description: 'description111222',
+            price: '56',
+            image: [
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+            ],
+            category: 'Buy'),
+        Property(
+            idProperty: 2,
+            address: Address(
+              latitude: 33.51689336744682,
+              longitude: 36.26502357423305,
+              region: 'Al Mouhajrin',
+              city: ' Damascus ',
+              country: 'Syria',
+            ),
+            space: '34',
+            baths: '65',
+            bedRooms: '54',
+            storeys: '445',
+            dateAdded: '2021-11-11',
+            description: 'description111222',
+            price: '56',
+            image: [
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+            ],
+            category: 'Buy'),
+        Property(
+            idProperty: 2,
+            address: Address(
+              latitude: 33.51689336744682,
+              longitude: 36.26502357423305,
+              region: 'Al Mouhajrin',
+              city: ' Damascus ',
+              country: 'Syria',
+            ),
+            space: '34',
+            baths: '65',
+            bedRooms: '54',
+            storeys: '445',
+            dateAdded: '2021-11-11',
+            description: 'description111222',
+            price: '56',
+            image: [
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
             ],
             category: 'Buy'),
       ],
@@ -586,86 +567,119 @@ class Te {
       id: 2,
       firstName: 'Abd Al kareem',
       lastName: 'Fiyad',
+      sendTime: '05:10',
       email: 'abdfy@gmail.com',
       phoneNumber: '093343243234',
-      image: File(
-     '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12072-_E09865D087DB80EBD111F3F9D9AAAB04_compressed1283329199.jpg' ),
+      messages: [
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+      ],
+      image: File('/storage/emulated/0/Pictures/Damascus.jpg'),
       listProperty: [
-      Property(
-          idProperty: 2,
-          address: Address(
-            latitude: 33.51689336744682,
-            longitude: 36.26502357423305,
-            region: 'Al Mouhajrin',
-            city: ' Damascus ',
-            country: 'Syria',
-          ),
-          space: '34',
-          baths: '65',
-          bedRooms: '54',
-          storeys: '445',
-          dateAdded: '2021-11-11',
-          description: 'description111222',
-          price: '56',
-          image: [
-            ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_8B3B7BE218651DECB476C67887EA0B10_compressed1102317137.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_8B3B7BE218651DECB476C67887EA0B10_compressed1102317137.jpg'),
-            ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_1B6B618A64CFE64C7167A9976333F714_compressed909174491.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_1B6B618A64CFE64C7167A9976333F714_compressed909174491.jpg'),
-          ],
-          category: 'Buy'),
-      Property(
-          idProperty: 2,
-          address: Address(
-            latitude: 33.51689336744682,
-            longitude: 36.26502357423305,
-            region: 'Al Mouhajrin',
-            city: ' Damascus ',
-            country: 'Syria',
-          ),
-          space: '34',
-          baths: '65',
-          bedRooms: '54',
-          storeys: '445',
-          dateAdded: '2021-11-11',
-          description: 'description111222',
-          price: '56',
-          image: [
-            ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_9F9D047C3591B09FD59752FB3B4A1608_compressed822778935.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_9F9D047C3591B09FD59752FB3B4A1608_compressed822778935.jpg'),
-            ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg'),
-          ],
-          category: 'Buy'),
-      Property(
-          idProperty: 2,
-          address: Address(
-            latitude: 33.51689336744682,
-            longitude: 36.26502357423305,
-            region: 'Al Mouhajrin',
-            city: ' Damascus ',
-            country: 'Syria',
-          ),
-          space: '34',
-          baths: '65',
-          bedRooms: '54',
-          storeys: '445',
-          dateAdded: '2021-11-11',
-          description: 'description111222',
-          price: '56',
-          image: [
-            ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12212-_96EE50B8A82C5E8280A772569BE7E926_compressed1094262150.jpg'),
-            ImageObject(
-                originalPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12142-_0FD5A278D3BECE20B0B6543861AAFDD3_compressed385760924.jpg',
-                modifiedPath: '/storage/emulated/0/Android/data/com.example.project_111/cache/magazine-unlock-01-2.3.12142-_0FD5A278D3BECE20B0B6543861AAFDD3_compressed385760924.jpg'),
-          ],
-          category: 'Buy'),
+        Property(
+            idProperty: 2,
+            address: Address(
+              latitude: 33.51689336744682,
+              longitude: 36.26502357423305,
+              region: 'Al Mouhajrin',
+              city: ' Damascus ',
+              country: 'Syria',
+            ),
+            space: '34',
+            baths: '65',
+            bedRooms: '54',
+            storeys: '445',
+            dateAdded: '2021-11-11',
+            description: 'description111222',
+            price: '56',
+            image: [
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+            ],
+            category: 'Buy'),
+        Property(
+            idProperty: 2,
+            address: Address(
+              latitude: 33.51689336744682,
+              longitude: 36.26502357423305,
+              region: 'Al Mouhajrin',
+              city: ' Damascus ',
+              country: 'Syria',
+            ),
+            space: '34',
+            baths: '65',
+            bedRooms: '54',
+            storeys: '445',
+            dateAdded: '2021-11-11',
+            description: 'description111222',
+            price: '56',
+            image: [
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+            ],
+            category: 'Buy'),
+        Property(
+            idProperty: 2,
+            address: Address(
+              latitude: 33.51689336744682,
+              longitude: 36.26502357423305,
+              region: 'Al Mouhajrin',
+              city: ' Damascus ',
+              country: 'Syria',
+            ),
+            space: '34',
+            baths: '65',
+            bedRooms: '54',
+            storeys: '445',
+            dateAdded: '2021-11-11',
+            description: 'description111222',
+            price: '56',
+            image: [
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+            ],
+            category: 'Buy'),
+        Property(
+            idProperty: 2,
+            address: Address(
+              latitude: 33.51689336744682,
+              longitude: 36.26502357423305,
+              region: 'Al Mouhajrin',
+              city: ' Damascus ',
+              country: 'Syria',
+            ),
+            space: '34',
+            baths: '65',
+            bedRooms: '54',
+            storeys: '445',
+            dateAdded: '2021-11-11',
+            description: 'description111222',
+            price: '56',
+            image: [
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+              ImageObject(
+                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+            ],
+            category: 'Buy'),
       ],
       address: Address(
         latitude: 33.556982562518726,

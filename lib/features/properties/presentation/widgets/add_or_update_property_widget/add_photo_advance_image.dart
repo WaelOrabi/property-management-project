@@ -115,11 +115,9 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
                     // print(widget.listImagesProperty[2].modifiedPath);
                     // print(widget.listImagesProperty[3].modifiedPath);
                     // print(widget.listImagesProperty[4].modifiedPath);
-                    // print(widget.listImagesProperty[5].modifiedPath);
-                    // print(widget.listImagesProperty[6].modifiedPath);
-                    // print(widget.listImagesProperty[7].modifiedPath);
+                    //
                     // print("***************");
-                    // print("***************uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+                    // // print("***************uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
                   });
                 }
               },
