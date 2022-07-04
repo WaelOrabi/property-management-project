@@ -21,7 +21,8 @@ class PropertyListingDetails extends StatefulWidget {
 }
 
 class _PropertyListingDetailsState extends State<PropertyListingDetails> {
-  final double _currentPosition = 0.0;
+   double currentPosition = 0.0;
+   int index1=0;
   ScrollController controllerAppBar = ScrollController();
   final TextEditingController messageController = TextEditingController();
   String? comment;
@@ -140,6 +141,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
               scrollDirection: Axis.horizontal,
               itemCount: widget.property!.image.length,
               itemBuilder: (context, index) {
+                index1=index;
                return Padding(
                  padding: const EdgeInsets.only(left: 5,right: 5),
                  child: Container(
@@ -154,7 +156,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                         image: DecorationImage(
                             image: FileImage(
                               File(
-                                  widget.property!.image[_currentPosition.toInt()]
+                                  widget.property!.image[currentPosition.toInt()]
                                       .modifiedPath),
                             ),
                             fit: BoxFit.fill),
@@ -166,7 +168,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
             ),
           ),
           const SizedBox(
-            height: 50,
+            height: 40,
           ),
           buildText(widget.property!.category,
               left: 10,
@@ -174,7 +176,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
               color: Colors.black,
               fontsize: 20),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
           buildText('Description',
               left: 10,
@@ -189,7 +191,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
               fontsize: 15,
               maxLines: null),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
 
 
@@ -199,56 +201,56 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
               color: Colors.black,
               fontsize: 20),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
           buildExtraInfo(
             text1: 'Price',
             text2: widget.property!.price,
           ),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
           buildExtraInfo(
             text1: 'Space',
             text2: widget.property!.space,
           ),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
           buildExtraInfo(
             text1: 'Storeys',
             text2: widget.property!.storeys,
           ),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
           buildExtraInfo(
             text1: 'Bed Room',
             text2: widget.property!.bedRooms,
           ),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
           buildExtraInfo(
             text1: 'Baths',
             text2: widget.property!.baths,
           ),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
           buildExtraInfo(
             text1: 'Country',
             text2: widget.property!.address!.country,
           ),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
           buildExtraInfo(
             text1: 'City',
             text2: widget.property!.address!.city,
           ),
           const SizedBox(
-            height: 20,
+            height:15,
           ),
           buildExtraInfo(
             text1: 'Region',

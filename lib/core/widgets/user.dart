@@ -12,26 +12,28 @@ class User {
   File? image;
   List<Property>? listProperty;
   List<Property>? listPropertyFavorite;
-  List<String>?messages;
-  String ? sendTime;
+
   Address? address;
   bool? isAdmin;
   bool? isSuperAdmin;
-
+  List<String>?messages;
+  String ? sendTime;
   User({
+    this.sendTime,
+    this.messages,
     this.id,
     this.firstName,
     this.lastName,
     this.email,
     this.phoneNumber,
     this.password,
-    this.sendTime,
+
     this.image,
     this.listProperty,
     this.listPropertyFavorite,
     this.address,
     this.isAdmin,
     this.isSuperAdmin,
-    this.messages,
+
   });
 }

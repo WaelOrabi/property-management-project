@@ -38,7 +38,6 @@ class _NavigationBarHomeState extends State<NavigationBarHome> {
       body:screen[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(items:const <BottomNavigationBarItem> [
         BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.category),label: 'Category'),
         BottomNavigationBarItem(icon: Icon(Icons.message),label: 'Message'),
         BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search'),
       ],

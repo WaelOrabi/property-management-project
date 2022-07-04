@@ -13,8 +13,8 @@ class Te {
     lastName: 'Alrefay',
     email: 'ayhamalrefay@gmail.com',
     phoneNumber: '0933773538',
-    image: File(
-    '/storage/emulated/0/Pictures/Homs.jpg'),    listProperty: [
+    image: File('/storage/emulated/0/Pictures/Homs.jpg'),
+    listProperty: [
       Property(
           idProperty: 2,
           address: Address(
@@ -33,13 +33,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg ' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Damascus.jpg '),
+                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg ' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Latakia.jpg '),
+                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg ',
+                modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg '),
           ],
           category: 'Buy'),
       Property(
@@ -60,13 +58,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Damascus.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Latakia.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -87,13 +83,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Homs.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Homs.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Hama.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Hama.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -114,17 +108,14 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Homs.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Homs.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Hama.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Hama.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
           ],
           category: 'Buy'),
     ],
-
     listPropertyFavorite: [
       Property(
           idProperty: 2,
@@ -144,13 +135,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Damascus.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Latakia.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -171,13 +160,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Damascus.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Latakia.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -198,13 +185,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Homs.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Homs.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Hama.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Hama.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -225,13 +210,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Homs.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Homs.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Hama.jpg' ,
-                modifiedPath:
-                '/storage/emulated/0/Pictures/Hama.jpg'),
+                originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
           ],
           category: 'Buy'),
     ],
@@ -263,13 +246,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Damascus.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Latakia.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -290,13 +271,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Damascus.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Latakia.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -317,13 +296,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Homs.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Homs.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Hama.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Hama.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -344,13 +321,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Homs.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Homs.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Hama.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Hama.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
         ],
         category: 'Buy'),
   ];
@@ -373,13 +348,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Damascus.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Latakia.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -400,13 +373,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Damascus.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Latakia.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -427,13 +398,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Homs.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Homs.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Hama.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Hama.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -454,13 +423,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Homs.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Homs.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Hama.jpg' ,
-              modifiedPath:
-              '/storage/emulated/0/Pictures/Hama.jpg'),
+              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
         ],
         category: 'Buy'),
   ];
@@ -474,8 +441,17 @@ class Te {
       lastName: 'Alrefay',
       email: 'ayhamalrefay@gmail.com',
       phoneNumber: '0933773538',
-      image: File(
-  '/storage/emulated/0/Pictures/Damascus.jpg'),       listProperty: [
+      messages: [
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+      ],
+      sendTime: '02:15',
+      image: File('/storage/emulated/0/Pictures/Damascus.jpg'),
+      listProperty: [
         Property(
             idProperty: 2,
             address: Address(
@@ -494,13 +470,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Damascus.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Latakia.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
             ],
             category: 'Buy'),
         Property(
@@ -521,13 +495,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Damascus.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Latakia.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
             ],
             category: 'Buy'),
         Property(
@@ -548,13 +520,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Homs.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Hama.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
             ],
             category: 'Buy'),
         Property(
@@ -575,13 +545,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Homs.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Hama.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
             ],
             category: 'Buy'),
       ],
@@ -599,10 +567,19 @@ class Te {
       id: 2,
       firstName: 'Abd Al kareem',
       lastName: 'Fiyad',
+      sendTime: '05:10',
       email: 'abdfy@gmail.com',
       phoneNumber: '093343243234',
-      image: File(
-  '/storage/emulated/0/Pictures/Damascus.jpg'),      listProperty: [
+      messages: [
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+        'hi ayham',
+      ],
+      image: File('/storage/emulated/0/Pictures/Damascus.jpg'),
+      listProperty: [
         Property(
             idProperty: 2,
             address: Address(
@@ -621,13 +598,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Damascus.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Latakia.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
             ],
             category: 'Buy'),
         Property(
@@ -648,13 +623,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Damascus.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Latakia.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
             ],
             category: 'Buy'),
         Property(
@@ -675,13 +648,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Homs.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Hama.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
             ],
             category: 'Buy'),
         Property(
@@ -702,13 +673,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Homs.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg' ,
-                  modifiedPath:
-                  '/storage/emulated/0/Pictures/Hama.jpg'),
+                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
+                  modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
             ],
             category: 'Buy'),
       ],

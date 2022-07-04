@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:project_111/core/widgets/user.dart';
 import 'package:project_111/features/conversation/presntation/pages/chat.dart';
 
-GestureDetector buildChatItem({required User user,required BuildContext context}) {
+GestureDetector buildChatItem({required User ? user,required BuildContext context}) {
   return GestureDetector(
     onTap: () {
       Navigator.of(context).push(MaterialPageRoute(builder:(context)=>Chat(user:user)));
@@ -14,7 +14,7 @@ GestureDetector buildChatItem({required User user,required BuildContext context}
           children:  [
             CircleAvatar(
               radius: 30.0,
-              backgroundImage: FileImage(user.image!),
+              backgroundImage: FileImage(user!.image!),
               backgroundColor: Colors.transparent,
             ),
             const Padding(
