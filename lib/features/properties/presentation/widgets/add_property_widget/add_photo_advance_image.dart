@@ -55,22 +55,31 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
               : Row(
             children: List.generate(widget.listImagesProperty.length, (index) {
               final image = widget.listImagesProperty[index];
-              return Container(
-                margin: const EdgeInsets.all(6),
-                width: MediaQuery.of(context).size.width / 4,
-                height: MediaQuery.of(context).size.width / 4,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: FileImage(File(
-                      image.modifiedPath,
-                    )),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.green,
-
+              return Stack(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(6),
+                    width: MediaQuery.of(context).size.width / 4,
+                    height: MediaQuery.of(context).size.width / 4,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: FileImage(File(
+                          image.modifiedPath,
+                        )),
+                        fit: BoxFit.cover,
                       ),
-                    );
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.green,
+
+                          ),
+                        ),
+                  IconButton(onPressed: (){
+                    setState(() {
+                      widget.listImagesProperty.remove(widget.listImagesProperty[index]);
+                    });
+                  }, icon:const Icon(Icons.dangerous_outlined) )
+                ],
+              );
                   }),
 
                 ),

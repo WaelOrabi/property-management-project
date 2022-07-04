@@ -4,7 +4,6 @@ import 'package:project_111/features/authentication/presentation/pages/profile.d
 import 'package:project_111/features/properties/presentation/pages/add_or_edit_property.dart';
 import 'package:project_111/features/properties/presentation/pages/all_properties_in_map.dart';
 import 'package:project_111/features/properties/presentation/pages/element_category.dart';
-import 'package:project_111/features/properties/presentation/pages/map_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
 import 'package:project_111/tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
@@ -22,7 +21,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   ScrollController controller = ScrollController();
   final GlobalKey<ScaffoldState> _key = GlobalKey();
-
 
   @override
   void dispose() {
@@ -79,8 +77,11 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.green,
             )),
         IconButton(
-            onPressed: () =>
-            Navigator.push(context,MaterialPageRoute(builder: (context)=>AllPropertiesInMap(listProperty: Te.listProperty1))),
+            onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        AllPropertiesInMap(listProperty: Te.listProperty1))),
             icon: const Icon(
               Icons.map,
               color: Colors.green,
@@ -119,13 +120,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
   GridView gridView(BuildContext context) {
     return GridView.count(
-        shrinkWrap: true,
-        crossAxisCount: 2,
-        primary: false,
-        crossAxisSpacing: 0.0,
-        mainAxisSpacing: 0.0,
-        childAspectRatio: 0.8,
-        children: List.generate(Te.listProperty1.length, (int index) {
+      shrinkWrap: true,
+      crossAxisCount: 2,
+      primary: false,
+      crossAxisSpacing: 0.0,
+      mainAxisSpacing: 0.0,
+      childAspectRatio: 0.8,
+      children: List.generate(
+        Te.listProperty1.length,
+        (int index) {
           return GestureDetector(
             child: Card(
               color: Colors.grey[200],
@@ -136,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Align(
                         alignment: Alignment.topCenter,
-                        child: Container(
+                        child: SizedBox(
                           child: Image.file(
                             File(Te.listProperty1[index].image[0].modifiedPath),
                             fit: BoxFit.cover,
@@ -187,7 +190,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           )));
             },
           );
-        }));
+        },
+      ),
+    );
   }
 
   SingleChildScrollView _buildSingleChildScrollViewInHorizontal(
@@ -200,16 +205,18 @@ class _HomeScreenState extends State<HomeScreen> {
             context: context,
             linkImage: "assets/images/buy.jpg",
             nameBtn: "Buy",
-            fun: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const ElementCategory(
-                            category: 'Buy',
-                          )));
-            },
             height: 6,
             width: 2.3,
+            fun: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ElementCategory(
+                    category: 'Buy',
+                  ),
+                ),
+              );
+            },
           ),
           const SizedBox(
             width: 6,
@@ -218,16 +225,18 @@ class _HomeScreenState extends State<HomeScreen> {
             context: context,
             linkImage: "assets/images/rent.jpg",
             nameBtn: "Rent",
-            fun: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>const ElementCategory(
-                            category: 'Rent',
-                          )));
-            },
             height: 6,
             width: 2.3,
+            fun: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ElementCategory(
+                    category: 'Rent',
+                  ),
+                ),
+              );
+            },
           ),
           const SizedBox(
             width: 6,
@@ -236,16 +245,18 @@ class _HomeScreenState extends State<HomeScreen> {
             context: context,
             linkImage: "assets/images/Investment.jpg",
             nameBtn: "Investment",
-            fun: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>const ElementCategory(
-                            category: 'Investment',
-                          )));
-            },
             height: 6,
             width: 2.3,
+            fun: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ElementCategory(
+                    category: 'Investment',
+                  ),
+                ),
+              );
+            },
           ),
         ],
       ),
