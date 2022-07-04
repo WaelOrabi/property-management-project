@@ -9,7 +9,7 @@ import 'package:scroll_app_bar/scroll_app_bar.dart';
 class MyFavorite extends StatefulWidget {
   const MyFavorite({Key? key,required this.listProperty}) : super(key: key);
   static String routeName = 'MyFavorite';
-final List<Property>? listProperty;
+  final List<Property>? listProperty;
   @override
   State<MyFavorite> createState() => _MyFavoriteState();
 }
@@ -20,7 +20,7 @@ class _MyFavoriteState extends State<MyFavorite> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildScrollAppBar(context),
-      body: buildBody(),
+      body: buildBody(context:  context),
     );
   }
 
@@ -48,19 +48,19 @@ class _MyFavoriteState extends State<MyFavorite> {
           color: Colors.green,
         ),
         onPressed: ()=>
-        Navigator.of(context).pop(),
+            Navigator.of(context).pop(),
       ),
     );
   }
 
 
-  OrientationBuilder buildBody() {
+  OrientationBuilder buildBody({required BuildContext context}) {
     return OrientationBuilder(
         builder: (context, orientation) {
           return buildGridView(
               orientation: orientation,
               controller: scrollController,
-              listProperty: widget.listProperty);
+              listProperty: widget.listProperty, context: context);
         }
     );
   }

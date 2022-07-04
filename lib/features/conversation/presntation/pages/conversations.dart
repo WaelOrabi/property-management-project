@@ -14,8 +14,6 @@ class Conversations extends StatefulWidget {
 
 class _ConversationsState extends State<Conversations> {
   final controllerAppBar = ScrollController();
-  int _selectedIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,48 +21,6 @@ class _ConversationsState extends State<Conversations> {
       body: buildBody(),
     );
   }
-
-  SizedBox buildBottomNavigationBar(BuildContext context) {
-    return SizedBox(
-      height: 58,
-      child: BottomNavigationBar(
-        selectedFontSize: 0.0,
-        unselectedFontSize: 0.0,
-        backgroundColor: Colors.white,
-        type: BottomNavigationBarType.fixed,
-        elevation: 0.0,
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: Colors.green,
-        selectedIconTheme: const IconThemeData(color: Colors.green, size: 30),
-        unselectedItemColor: Colors.grey,
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.of(context)
-                      .pushReplacementNamed(Conversations.routeName);
-                },
-                icon: const Icon(Icons.home)),
-            label: 'Calls',
-          ),
-         const BottomNavigationBarItem(
-            icon: Icon(Icons.category),
-            label: 'Camera',
-          ),
-         const  BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Chats',
-          ),
-         const BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Chats',
-          ),
-        ],
-      ),
-    );
-  }
-
   Container buildBody() {
     return Container(
       color: Colors.white,
@@ -140,12 +96,6 @@ class _ConversationsState extends State<Conversations> {
     );
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   GestureDetector buildChatItem() => GestureDetector(
         onTap: () {
           Navigator.of(context).pushNamed(Chat.routeName);
@@ -176,12 +126,20 @@ class _ConversationsState extends State<Conversations> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Ayham ',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                   Row(
+                     children: [
+
+                       Text(
+                        'Ayham ',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                   ),
+                       Spacer(),
+                       Text('02:00 pm'),
+                     ],
+                   ),
+
                   const SizedBox(
                     height: 5,
                   ),
@@ -196,15 +154,15 @@ class _ConversationsState extends State<Conversations> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Container(
-                          width: 7,
-                          height: 7,
+                          child: Center(child: Text('5',style: TextStyle(color: Colors.white),)),
+                          width: 20,
+                          height: 20,
                           decoration: const BoxDecoration(
-                            color: Colors.grey,
+                            color: Colors.green,
                             shape: BoxShape.circle,
                           ),
                         ),
                       ),
-                      const Text('02:00 pm')
                     ],
                   ),
                 ],

@@ -114,18 +114,20 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                         ),
                       ),
-                      widgetListProperty(orientation: orientation),
+                      widgetListProperty(orientation: orientation,context:  context),
                     ],
                   )));
         },
     );
   }
 
-  GridView widgetListProperty({required Orientation orientation}) {
+  GridView widgetListProperty({required Orientation orientation,required BuildContext context}) {
     return buildGridView(
         orientation: orientation,
         controller: scrollController,
-        listProperty: Te.listProperty1);
+        listProperty: Te.listProperty1,
+    context: context
+    );
   }
 
   SingleChildScrollView _buildSingleChildScrollViewInHorizontal(
