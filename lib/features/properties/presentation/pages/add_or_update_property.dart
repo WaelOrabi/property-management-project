@@ -12,14 +12,14 @@ import '../widgets/add_or_update_property_widget/widget_btn_Add_or_edit.dart';
 import 'map_screen.dart';
 
 class AddOrUpdateProperty extends StatefulWidget {
-  AddOrUpdateProperty({Key? key, this.isUpdate, this.property, this.address})
+  AddOrUpdateProperty({Key? key, this.isUpdate, this.property,required this.address})
       : super(key: key);
   static String routeName = 'AddListing';
 
   final Property? property;
   bool? isUpdate;
 
-  late Address? address;
+  late Address address;
   List<ImageObject> imagesProperty = [];
   var dataAdded = DateFormat('yyyy-MM-dd hh:mm').format(DateTime.now());
 
@@ -163,11 +163,11 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
 
                 print(dropdownValueCategory);
                 print("*********************");
-                print("${pro.address!.city}\n,"
-                    "${pro.address!.country}\n,"
-                    "${pro.address!.region}\n,"
-                    "${pro.address!.latitude}\n,"
-                    "${pro.address!.longitude}\n,"
+                print("${pro.address.city}\n,"
+                    "${pro.address.country}\n,"
+                    "${pro.address.region}\n,"
+                    "${pro.address.latitude}\n,"
+                    "${pro.address.longitude}\n,"
                     "${pro.baths}\n,"
                     "${pro.bedRooms}\n,"
                     "${pro.space}\n,"

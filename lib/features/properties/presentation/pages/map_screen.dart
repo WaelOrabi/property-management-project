@@ -121,6 +121,9 @@ class _MapScreenState extends State<MapScreen> {
                   region: mapLocationAddress["subLocality"],
                   city: mapLocationAddress["administrativeArea"],
                   country: mapLocationAddress["country"]);
+print(lat);
+print(long);
+print(mapLocationAddress["subLocality"]);
 
               Navigator.pop(context, widget.address);
             },

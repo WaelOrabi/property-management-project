@@ -102,7 +102,7 @@ if(Te.listProperty1[i].category==widget.category)
                     Padding(
                       padding: const EdgeInsets.only(left: 8),
                       child: Text(
-                        '${list[index].address!.country}, ${list[index].address!.region}  ',
+                        '${list[index].address.country}, ${list[index].address.region}  ',
                         style: const TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,

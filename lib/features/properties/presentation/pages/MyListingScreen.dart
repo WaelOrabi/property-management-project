@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_111/core/widgets/user.dart';
+import 'package:project_111/core/widgets/widget_appbar.dart';
 import 'package:project_111/features/properties/presentation/widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 
@@ -19,7 +20,7 @@ class _MyListingScreenState extends State<MyListingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildScrollAppBar(context),
+      appBar: buildAppBar(namePage: "My Listing", fun: ()=>Navigator.of(context).pop()),
       body: buildBody(context:context),
     );
   }
@@ -33,22 +34,5 @@ class _MyListingScreenState extends State<MyListingScreen> {
     });
   }
 
-  ScrollAppBar buildScrollAppBar(BuildContext context) {
-    return ScrollAppBar(
-      controller: scrollController,
-      iconTheme: const IconThemeData(color: Color(0xFF444D68)),
-      elevation: 1.0,
-      backgroundColor: Colors.white,
-      centerTitle: true,
-      title: const Text(
-        'My Listings',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          color: Colors.green,
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
-  }
+
 }

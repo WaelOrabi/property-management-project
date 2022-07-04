@@ -27,8 +27,8 @@ class _AllPropertiesInMapState extends State<AllPropertiesInMap> {
           Marker(
               markerId: MarkerId('${widget.listProperty[i].idProperty}'),
               position: LatLng(
-                widget.listProperty[i].address!.latitude,
-                widget.listProperty[i].address!.longitude,
+                widget.listProperty[i].address.latitude,
+                widget.listProperty[i].address.longitude,
               ),
               infoWindow:
                   InfoWindow(title: ''),
@@ -63,8 +63,8 @@ class _AllPropertiesInMapState extends State<AllPropertiesInMap> {
       initialCameraPosition: CameraPosition(
         bearing: 0.0,
         tilt: 0.0,
-        target: LatLng(widget.listProperty[0].address!.latitude,
-            widget.listProperty[0].address!.longitude),
+        target: LatLng(widget.listProperty[0].address.latitude,
+            widget.listProperty[0].address.longitude),
         zoom: 12,
       ),
       onMapCreated: (GoogleMapController controller) {

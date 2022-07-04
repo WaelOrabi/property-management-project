@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../pages/element_category.dart';
 
 Widget buildCategory({

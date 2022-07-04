@@ -3,7 +3,7 @@ import 'package:project_111/core/widgets/address.dart';
 
 class Property {
   final int? idProperty;
-  final Address? address;
+  final Address address;
   final String space;
   final String baths;
   final String bedRooms;

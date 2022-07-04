@@ -1,11 +1,9 @@
 import 'dart:io';
-
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:project_111/core/widgets/property.dart';
 import 'package:project_111/features/properties/presentation/pages/add_or_update_property.dart';
 import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
-import 'package:project_111/tests/tests.dart';
 
 class BuildCard extends StatefulWidget {
   final Property property;
@@ -55,7 +53,7 @@ class _BuildCardState extends State<BuildCard> {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: orientation == Orientation.landscape ? 200 : 150,
+                    height: orientation == Orientation.landscape ? 180 : 145,
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: FileImage(
@@ -122,9 +120,8 @@ class _BuildCardState extends State<BuildCard> {
                                                           builder: (context) =>
                                                               AddOrUpdateProperty(
                                                                 isUpdate: true,
-                                                                property:
-                                                                    Te.listProperty1[
-                                                                        0],
+                                                                property:widget.property,
+                                                                address: widget.property.address,
                                                               )))),
                                         ),
                                       ],
@@ -171,14 +168,14 @@ class _BuildCardState extends State<BuildCard> {
                     Row(
                       children: [
                         Text(
-                          property.address!.country + ',',
+                          property.address.country + ',',
                           style: const TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
                               fontSize: 16),
                         ),
                         Text(
-                          property.address!.city,
+                          property.address.city,
                           style: const TextStyle(
                               color: Colors.black, fontSize: 16),
                         ),

@@ -21,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
   ScrollController scrollController = ScrollController();
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-
   @override
   void dispose() {
     scrollController.dispose();
@@ -77,8 +76,11 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.green,
             )),
         IconButton(
-            onPressed: () =>
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>AllPropertiesInMap(listProperty: Te.listProperty1))),
+            onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        AllPropertiesInMap(listProperty: Te.listProperty1))),
             icon: const Icon(
               Icons.map,
               color: Colors.green,
@@ -101,32 +103,33 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: EdgeInsets.only(top: 10, bottom: 10),
                       child: Text(
                         'Categories',
-                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    buildCategories(context,orientation),
+                    buildCategories(context, orientation),
                     const Padding(
                       padding: EdgeInsets.only(top: 10, bottom: 10),
                       child: Text(
                         'All property',
-                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    widgetListProperty(orientation: orientation, context: context),
+                    widgetListProperty(
+                        orientation: orientation, context: context),
                   ],
                 )));
       },
     );
   }
 
-  GridView widgetListProperty({required Orientation orientation,required BuildContext context}) {
+  GridView widgetListProperty(
+      {required Orientation orientation, required BuildContext context}) {
     return buildGridView(
         orientation: orientation,
         controller: scrollController,
         listProperty: Te.listProperty1,
-    context: context
-    );
+        context: context);
   }
-
-
 }
