@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/core/widgets/property.dart';
+import 'package:project_111/core/paramaters.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
 import 'package:project_111/features/properties/presentation/widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
 

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:project_111/core/widgets/property.dart';
+import 'package:project_111/core/paramaters.dart';
 import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
 
 class AllPropertiesInMap extends StatefulWidget {

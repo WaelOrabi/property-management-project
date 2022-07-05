@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:project_111/core/paramaters.dart';
 import 'package:project_111/core/widgets/map_widget.dart';
-import 'package:project_111/core/widgets/property.dart';
 import 'package:project_111/features/conversation/presntation/pages/chat.dart';
 import 'package:project_111/tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';

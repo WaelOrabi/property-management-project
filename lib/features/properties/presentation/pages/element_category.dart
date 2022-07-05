@@ -1,9 +1,7 @@
-import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:project_111/core/widgets/property.dart';
+import 'package:project_111/core/paramaters.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
-import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
 import '../../../../core/widgets/bottom_navigation_bar.dart';
 import '../../../../tests/tests.dart';
 import '../widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';

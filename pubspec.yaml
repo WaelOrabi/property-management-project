@@ -39,6 +39,7 @@ dependencies:
   google_maps_flutter:
   flutter_signin_button:
   scroll_app_bar:
+  elegant_notification:
   flutter_rating_bar:
   bloc:
   modal_bottom_sheet:

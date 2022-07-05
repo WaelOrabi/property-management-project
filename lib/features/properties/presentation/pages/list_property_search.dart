@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_111/core/paramaters.dart';
 import 'package:project_111/features/properties/presentation/widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
-import '../../../../core/widgets/property.dart';
 
 class ListPropertySearch extends StatefulWidget {
  final List<Property> ? listPropertySearch;

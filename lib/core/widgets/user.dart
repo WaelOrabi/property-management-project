@@ -1,6 +1,7 @@
 import 'dart:io';
+import 'package:project_111/core/paramaters.dart';
 import 'package:project_111/core/widgets/address.dart';
-import 'package:project_111/core/widgets/property.dart';
+
 
 class User {
   int? id;

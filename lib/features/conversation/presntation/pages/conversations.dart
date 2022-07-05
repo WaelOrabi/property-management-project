@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:project_111/core/widgets/user.dart';
-import 'package:project_111/features/conversation/presntation/pages/chat.dart';
 import 'package:project_111/features/conversation/presntation/widgets/conversation/conversation_items_widget.dart';
 import 'package:project_111/tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
@@ -27,30 +26,28 @@ class _ConversationsState extends State<Conversations> {
     );
   }
   Container buildBody() {
-    return Container(
-      color: Colors.white,
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 20,
-              ),
-              ListView.separated(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) => buildChatItem(user: widget.useres![index],context:context),
-                  separatorBuilder: (context, index) => const SizedBox(
+    return  Container(
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: SingleChildScrollView(
+              controller: controllerAppBar,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ListView.separated(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) => buildChatItem(user: widget.useres![index],context:context),
+                      separatorBuilder: (context, index) => const SizedBox(
                         height: 20,
                       ),
-                  itemCount: widget.useres!.length),
-            ],
+                      itemCount: widget.useres!.length),
+                ],
+              ),
+            ),
           ),
-        ),
-      ),
-    );
+        );
   }
 
   ScrollAppBar buildScrollAppBar() {
