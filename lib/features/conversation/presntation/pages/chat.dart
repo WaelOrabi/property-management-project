@@ -14,7 +14,7 @@ class Chat extends StatefulWidget {
   ChatState createState() => ChatState();
 }
 class ChatState extends State<Chat> {
-  final controllerAppBar = ScrollController();
+  final ScrollController controllerAppBar = ScrollController();
   final messages = <String>[];
   final controller = TextEditingController();
   bool isEmojiVisible = false;
@@ -43,24 +43,26 @@ class ChatState extends State<Chat> {
         body: buildBody(),
       );
 
-  WillPopScope buildBody() {
-    return WillPopScope(
-        onWillPop: onBackPress,
-        child: Column(
-          children: <Widget>[
-             MessageStreamBuilderChat(user: widget.user!,),
-            InputWidget(
-              onBlurred: toggleEmojiKeyboard,
-              controller: controller,
-              isEmojiVisible: isEmojiVisible,
-              isKeyboardVisible: isKeyboardVisible,
-              onSentMessage: (message) =>
-                  setState(() => messages.insert(0, message)),
-            ),
-            buildlistEmoji(),
-          ],
+  SingleChildScrollView buildBody() {
+    return SingleChildScrollView(
+      child: WillPopScope(
+          onWillPop: onBackPress,
+          child: Column(
+            children: <Widget>[
+               MessageStreamBuilderChat(user: widget.user!),
+              InputWidget(
+                onBlurred: toggleEmojiKeyboard,
+                controller: controller,
+                isEmojiVisible: isEmojiVisible,
+                isKeyboardVisible: isKeyboardVisible,
+                onSentMessage: (message) =>
+                    setState(() => messages.insert(0, message)),
+              ),
+              buildlistEmoji(),
+            ],
+          ),
         ),
-      );
+    );
   }
 
   Offstage buildlistEmoji() {
@@ -99,10 +101,9 @@ class ChatState extends State<Chat> {
             );
   }
 
-  ScrollAppBar buildAppBar(BuildContext context) {
-    return ScrollAppBar(
+  AppBar buildAppBar(BuildContext context) {
+    return AppBar(
         titleSpacing: 20,
-        controller: controllerAppBar,
         elevation: 0.0,
         backgroundColor: Colors.white,
         centerTitle: true,

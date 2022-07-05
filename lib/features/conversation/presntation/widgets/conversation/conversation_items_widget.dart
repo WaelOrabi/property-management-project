@@ -10,21 +10,10 @@ GestureDetector buildChatItem({required User ? user,required BuildContext contex
     },
     child: Row(
       children: [
-        Stack(
-          children:  [
-            CircleAvatar(
-              radius: 30.0,
-              backgroundImage: FileImage(user!.image!),
-              backgroundColor: Colors.transparent,
-            ),
-            const Padding(
-              padding: EdgeInsetsDirectional.only(top: 45, start: 40),
-              child: CircleAvatar(
-                radius: 7.0,
-                backgroundColor: Colors.green,
-              ),
-            )
-          ],
+        CircleAvatar(
+          radius: 30.0,
+          backgroundImage: FileImage(user!.image!),
+          backgroundColor: Colors.transparent,
         ),
         const SizedBox(
           width: 20,
@@ -37,13 +26,13 @@ GestureDetector buildChatItem({required User ? user,required BuildContext contex
                 children: [
 
                   Text(
-                    user.firstName! + user.lastName!,
+                    user.firstName!+' ' + user.lastName!,
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 16),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(user.sendTime!),
                 ],
               ),
@@ -62,7 +51,7 @@ GestureDetector buildChatItem({required User ? user,required BuildContext contex
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Container(
-                      child: Center(child: Text('${user.messages!.length}', style: TextStyle(
+                      child: Center(child: Text('${user.messages!.length}', style: const TextStyle(
                           color: Colors.white),)),
                       width: 20,
                       height: 20,

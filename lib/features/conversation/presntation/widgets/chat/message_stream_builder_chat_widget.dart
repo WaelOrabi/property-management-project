@@ -9,13 +9,21 @@ class MessageStreamBuilderChat extends StatelessWidget {
   Widget build(BuildContext context) {
     List<MessageLineChat> messageWidgets=user.messages!.map((message) {
       return MessageLineChat(text: message,sender: user.firstName!,isMe: false,);
-    }).cast<MessageLineChat>().toList();
+    }).toList();
 
-    return Expanded(
-      child: ListView(
-        reverse: true,
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-        children: messageWidgets,
+    return Container(
+      color: Colors.white,
+      height: MediaQuery.of(context).size.height,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 35),
+        child: ListView(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          primary: false,
+          reverse: true,
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          children: messageWidgets,
+        ),
       ),
     );
   }

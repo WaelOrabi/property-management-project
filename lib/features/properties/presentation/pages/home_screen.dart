@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:project_111/features/authentication/presentation/pages/profile.dart';
-import 'package:project_111/features/properties/presentation/pages/add_or_edit_property.dart';
+import 'package:project_111/features/properties/presentation/pages/add_or_update_property.dart';
 import 'package:project_111/features/properties/presentation/pages/all_properties_in_map.dart';
 import 'package:project_111/tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
@@ -20,7 +20,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   ScrollController scrollController = ScrollController();
   final GlobalKey<ScaffoldState> _key = GlobalKey();
-
 
   @override
   void dispose() {
@@ -71,14 +70,17 @@ class _HomeScreenState extends State<HomeScreen> {
       actions: [
         IconButton(
             onPressed: () => Navigator.pushReplacementNamed(
-                context, AddOrEditProperty.routeName),
+                context, AddOrUpdateProperty.routeName),
             icon: const Icon(
               Icons.add,
               color: Colors.green,
             )),
         IconButton(
-            onPressed: () =>
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>AllPropertiesInMap(listProperty: Te.listProperty1))),
+            onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        AllPropertiesInMap(listProperty: Te.listProperty1))),
             icon: const Icon(
               Icons.map,
               color: Colors.green,
@@ -101,32 +103,33 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: EdgeInsets.only(top: 10, bottom: 10),
                       child: Text(
                         'Categories',
-                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    buildCategories(context,orientation),
+                    buildCategories(context, orientation),
                     const Padding(
                       padding: EdgeInsets.only(top: 10, bottom: 10),
                       child: Text(
                         'All property',
-                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    widgetListProperty(orientation: orientation, context: context),
+                    widgetListProperty(
+                        orientation: orientation, context: context),
                   ],
                 )));
       },
     );
   }
 
-  GridView widgetListProperty({required Orientation orientation,required BuildContext context}) {
+  GridView widgetListProperty(
+      {required Orientation orientation, required BuildContext context}) {
     return buildGridView(
         orientation: orientation,
         controller: scrollController,
         listProperty: Te.listProperty1,
-    context: context
-    );
+        context: context);
   }
-
-
 }

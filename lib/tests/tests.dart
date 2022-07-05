@@ -1,10 +1,30 @@
 import 'dart:io';
 import 'package:advance_image_picker/advance_image_picker.dart';
+import 'package:project_111/core/paramaters.dart';
 import 'package:project_111/core/widgets/address.dart';
-import 'package:project_111/core/widgets/property.dart';
+
 import 'package:project_111/core/widgets/user.dart';
 
 class Te {
+  static List<NotificationParametersMessage> notificationMessage =[
+  NotificationParametersMessage(
+  firstName: 'abd',
+  lastName: 'Al Karaem',
+  image: File('/storage/emulated/0/Pictures/Homs.jpg'),
+  idProperty: 1,
+  message: 'hi wael'),
+  NotificationParametersMessage(
+      firstName: 'abd',
+      lastName: 'Al Karaem',
+  image: File('/storage/emulated/0/Pictures/Homs.jpg'),
+  idProperty: 3,
+  message: 'hi wael'),
+    NotificationParametersMessage(
+        firstName: 'abd',
+        lastName: 'Al Karaem',
+        image: File('/storage/emulated/0/Pictures/Homs.jpg'),
+        idProperty: 3),
+  ];
   static User user = User(
     isAdmin: true,
     isSuperAdmin: true,
@@ -442,8 +462,6 @@ class Te {
       email: 'ayhamalrefay@gmail.com',
       phoneNumber: '0933773538',
       messages: [
-        'hi ayham',
-        'hi ayham',
         'hi ayham',
         'hi ayham',
         'hi ayham',

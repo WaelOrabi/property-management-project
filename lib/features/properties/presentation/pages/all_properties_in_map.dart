@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:project_111/core/widgets/property.dart';
+import 'package:project_111/core/paramaters.dart';
 import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
 
 class AllPropertiesInMap extends StatefulWidget {
@@ -27,11 +27,11 @@ class _AllPropertiesInMapState extends State<AllPropertiesInMap> {
           Marker(
               markerId: MarkerId('${widget.listProperty[i].idProperty}'),
               position: LatLng(
-                widget.listProperty[i].address!.latitude,
-                widget.listProperty[i].address!.longitude,
+                widget.listProperty[i].address.latitude,
+                widget.listProperty[i].address.longitude,
               ),
               infoWindow:
-                  InfoWindow(title: '${widget.listProperty[i].description}'),
+                  InfoWindow(title: ''),
               icon: BitmapDescriptor.defaultMarkerWithHue(
                   BitmapDescriptor.hueRed),
               onTap: () {
@@ -63,8 +63,8 @@ class _AllPropertiesInMapState extends State<AllPropertiesInMap> {
       initialCameraPosition: CameraPosition(
         bearing: 0.0,
         tilt: 0.0,
-        target: LatLng(widget.listProperty[0].address!.latitude,
-            widget.listProperty[0].address!.longitude),
+        target: LatLng(widget.listProperty[0].address.latitude,
+            widget.listProperty[0].address.longitude),
         zoom: 12,
       ),
       onMapCreated: (GoogleMapController controller) {

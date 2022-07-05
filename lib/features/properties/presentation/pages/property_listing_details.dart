@@ -1,16 +1,15 @@
 import 'dart:io';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:project_111/core/paramaters.dart';
 import 'package:project_111/core/widgets/map_widget.dart';
-import 'package:project_111/core/widgets/property.dart';
 import 'package:project_111/features/conversation/presntation/pages/chat.dart';
-import 'package:project_111/features/properties/presentation/pages/map_screen.dart';
 import 'package:project_111/tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 import '../widgets/property_details_widgets/buildShowModalBottomSheet.dart';
 
 class PropertyListingDetails extends StatefulWidget {
-  final Property? property;
+  final Property property;
   static String routeName = 'PropertyListingDetails';
 
   const PropertyListingDetails({Key? key, required this.property})
@@ -139,7 +138,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
               physics: const ClampingScrollPhysics(),
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              itemCount: widget.property!.image.length,
+              itemCount: widget.property.image.length,
               itemBuilder: (context, index) {
                 index1=index;
                return Padding(
@@ -156,8 +155,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                         image: DecorationImage(
                             image: FileImage(
                               File(
-                                  widget.property!.image[currentPosition.toInt()]
-                                      .modifiedPath),
+                                  widget.property.image[index].modifiedPath),
                             ),
                             fit: BoxFit.fill),
                         //   border: Border.all(color: Colors.blue, width: 10 ),
@@ -170,11 +168,11 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
           const SizedBox(
             height: 40,
           ),
-          buildText(widget.property!.category,
+          buildText(widget.property.category,
               left: 10,
               fontWeight: FontWeight.bold,
               color: Colors.black,
-              fontsize: 20),
+              fontSize: 20),
           const SizedBox(
             height: 15,
           ),
@@ -182,13 +180,13 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
               left: 10,
               fontWeight: FontWeight.bold,
               color: Colors.black,
-              fontsize: 20),
-          buildText(widget.property!.description,
+              fontSize: 20),
+          buildText(widget.property.description,
               left: 10,
               right: 10,
               fontWeight: FontWeight.normal,
               color: Colors.grey,
-              fontsize: 15,
+              fontSize: 15,
               maxLines: null),
           const SizedBox(
             height: 15,
@@ -199,62 +197,62 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
               left: 10,
               fontWeight: FontWeight.bold,
               color: Colors.black,
-              fontsize: 20),
+              fontSize: 20),
           const SizedBox(
             height: 15,
           ),
           buildExtraInfo(
             text1: 'Price',
-            text2: widget.property!.price,
+            text2: widget.property.price,
           ),
           const SizedBox(
             height: 15,
           ),
           buildExtraInfo(
             text1: 'Space',
-            text2: widget.property!.space,
+            text2: widget.property.space,
           ),
           const SizedBox(
             height: 15,
           ),
           buildExtraInfo(
             text1: 'Storeys',
-            text2: widget.property!.storeys,
+            text2: widget.property.storeys,
           ),
           const SizedBox(
             height: 15,
           ),
           buildExtraInfo(
             text1: 'Bed Room',
-            text2: widget.property!.bedRooms,
+            text2: widget.property.bedRooms,
           ),
           const SizedBox(
             height: 15,
           ),
           buildExtraInfo(
             text1: 'Baths',
-            text2: widget.property!.baths,
+            text2: widget.property.baths,
           ),
           const SizedBox(
             height: 15,
           ),
           buildExtraInfo(
             text1: 'Country',
-            text2: widget.property!.address!.country,
+            text2: widget.property.address.country,
           ),
           const SizedBox(
             height: 15,
           ),
           buildExtraInfo(
             text1: 'City',
-            text2: widget.property!.address!.city,
+            text2: widget.property.address.city,
           ),
           const SizedBox(
             height:15,
           ),
           buildExtraInfo(
             text1: 'Region',
-            text2: widget.property!.address!.region,
+            text2: widget.property.address.region,
           ),
           const SizedBox(
             height: 30,
@@ -271,8 +269,8 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                 .of(context)
                 .size
                 .width,
-            child: MapWidget(latDestination: widget.property!.address!.latitude,
-              longDestination: widget.property!.address!.longitude,),),
+            child: MapWidget(latDestination: widget.property.address.latitude,
+              longDestination: widget.property.address.longitude,),),
           const SizedBox(
             height: 30,
           ),
@@ -287,7 +285,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                   buildText('message',
                       fontWeight: FontWeight.normal,
                       color: Colors.black,
-                      fontsize: 15),
+                      fontSize: 15),
                   const SizedBox(
                     width: 5,
                   ),
@@ -303,7 +301,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                     buildText('comment',
                         fontWeight: FontWeight.normal,
                         color: Colors.black,
-                        fontsize: 15),
+                        fontSize: 15),
                     const SizedBox(
                       width: 5,
                     ),
@@ -323,7 +321,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                     buildText('like',
                         fontWeight: FontWeight.normal,
                         color: Colors.black,
-                        fontsize: 15),
+                        fontSize: 15),
                     const SizedBox(
                       width: 5,
                     ),
@@ -349,10 +347,10 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
       child: Row(
         children: [
           buildText(text1,
-              fontsize: 20, fontWeight: FontWeight.bold, color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
           const Spacer(),
           buildText(text2,
-              fontsize: 15, fontWeight: FontWeight.bold, color: Colors.grey),
+              fontSize: 15, fontWeight: FontWeight.bold, color: Colors.grey),
         ],
       ),
     );
@@ -365,7 +363,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
       double bottom = 0.0,
       required FontWeight fontWeight,
       required Color color,
-      required double fontsize,
+      required double fontSize,
       int? maxLines = 1}) {
     return Padding(
       padding:
@@ -373,7 +371,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
       child: Text(
         text,
         style:
-            TextStyle(color: color, fontWeight: fontWeight, fontSize: fontsize),
+            TextStyle(color: color, fontWeight: fontWeight, fontSize: fontSize),
         maxLines: maxLines,
       ),
     );
