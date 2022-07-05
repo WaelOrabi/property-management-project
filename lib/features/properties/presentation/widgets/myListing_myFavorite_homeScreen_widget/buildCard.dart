@@ -42,9 +42,9 @@ class _BuildCardState extends State<BuildCard> {
               builder: (context) =>
                   PropertyListingDetails(property: property)));
         },
-        child: Card(
-          elevation: 10,
-          shadowColor: Colors.grey[200],
+        child: Container(
+          //elevation: 10,
+         // shadowColor: Colors.grey[200],
           color: Colors.grey[200],
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,7 +139,7 @@ class _BuildCardState extends State<BuildCard> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8, top: 4),
+                padding: const EdgeInsets.only(left: 8, top: 4,right: 6),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
