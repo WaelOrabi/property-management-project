@@ -1,18 +1,19 @@
-import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
-import 'package:project_111/core/widgets/sizedBox.dart';
-import 'package:project_111/core/widgets/user.dart';
-import 'package:project_111/features/authentication/presentation/pages/account_details.dart';
-import 'package:project_111/core/widgets/widget_appbar.dart';
-import 'package:project_111/features/authentication/presentation/pages/admin.dart';
-import 'package:project_111/features/authentication/presentation/pages/super_admin.dart';
-import 'package:project_111/features/authentication/presentation/pages/update_peofile.dart';
-import 'package:project_111/features/authentication/presentation/widgets/update_profile/profile_picture.dart';
-import 'package:project_111/features/properties/presentation/pages/my_favorite.dart';
-import 'package:project_111/tests/tests.dart';
+import '../../../../core/widgets/bottom_navigation_bar.dart';
+import '../../../../core/widgets/sizedBox.dart';
+import '../../../../core/paramaters.dart';
+import 'account_details.dart';
+import '../../../../core/widgets/widget_appbar.dart';
+import 'admin.dart';
+import 'super_admin.dart';
+import 'update_peofile.dart';
+import '../widgets/update_profile/profile_picture.dart';
+import '../../../properties/presentation/pages/my_favorite.dart';
+import '../../../../tests/tests.dart';
 import '../../../properties/presentation/pages/MyListingScreen.dart';
 
+// ignore: must_be_immutable
 class Profile extends StatefulWidget {
   Profile({Key? key, this.user}) : super(key: key);
   static String routeName = 'Profile';
@@ -95,7 +96,7 @@ class _ProfileState extends State<Profile> {
               nameList: "Setting",
               typeIcon: Icons.settings,
               colorIcon: Colors.grey,
-            fun: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Admin())),
+            fun: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const Admin())),
           ),
           //Button of Log out
           _buildLogoutBtn(context),

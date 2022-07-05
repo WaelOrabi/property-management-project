@@ -1,9 +1,8 @@
 import 'package:advance_image_picker/models/image_object.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:project_111/core/paramaters.dart';
-import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
-import '../../../../core/widgets/address.dart';
+import '../../../../core/paramaters.dart';
+import '../../../../core/widgets/bottom_navigation_bar.dart';
 import '../../../../core/widgets/widget_appbar.dart';
 import '../widgets/add_or_update_property_widget/add_photo_advance_image.dart';
 import '../widgets/add_or_update_property_widget/build_add_or_edit_photos_text.dart';
@@ -11,17 +10,16 @@ import '../widgets/add_or_update_property_widget/function_widjets.dart';
 import '../widgets/add_or_update_property_widget/widget_btn_Add_or_edit.dart';
 import 'map_screen.dart';
 
-
+// ignore: must_be_immutable
 class AddOrUpdateProperty extends StatefulWidget {
-  AddOrUpdateProperty({Key? key, this.isUpdate, this.property,required this.address})
-
+  AddOrUpdateProperty({Key? key, this.isUpdate, this.property, this.address})
       : super(key: key);
   static String routeName = 'AddListing';
 
   final Property? property;
   bool? isUpdate;
 
-  late Address address;
+  late Address? address;
   List<ImageObject> imagesProperty = [];
   var dataAdded = DateFormat('yyyy-MM-dd hh:mm').format(DateTime.now());
 
@@ -62,7 +60,8 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
       child: Scaffold(
         backgroundColor: Colors.grey.shade200,
         appBar: buildAppBar(
-          namePage: widget.isUpdate == true ? "Update Property" : "Add Property",
+          namePage:
+              widget.isUpdate == true ? "Update Property" : "Add Property",
           fun: () => Navigator.pushReplacementNamed(
               context, NavigationBarHome.routeName),
           color: Colors.grey.shade200,
@@ -140,19 +139,19 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
                     fontWeight: FontWeight.bold,
                   ),
                   rowAddLocation(context),
-                  buildAddOrUpdatePhotosText(isUpdate: widget.isUpdate==true?true:false),
+                  buildAddOrUpdatePhotosText(
+                      isUpdate: widget.isUpdate == true ? true : false),
                   AddPhotoAdvanceImage(
                       listImagesProperty: widget.imagesProperty),
                 ],
               ),
             ),
             const SizedBox(height: 6),
-
             widgetBtnAddOrUpdate(
-              isUpdate: widget.isUpdate==true?true:false,
+              isUpdate: widget.isUpdate == true ? true : false,
               fun: () {
                 Property pro = Property(
-                    address: widget.address,
+                    address: widget.address!,
                     space: spaceController.text,
                     baths: bathsController.text,
                     bedRooms: bedRoomController.text,
@@ -162,22 +161,6 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
                     price: priceController.text,
                     image: widget.imagesProperty,
                     category: dropdownValueCategory);
-
-                print(dropdownValueCategory);
-                print("*********************");
-                print("${pro.address.city}\n,"
-                    "${pro.address.country}\n,"
-                    "${pro.address.region}\n,"
-                    "${pro.address.latitude}\n,"
-                    "${pro.address.longitude}\n,"
-                    "${pro.baths}\n,"
-                    "${pro.bedRooms}\n,"
-                    "${pro.space}\n,"
-                    "${pro.description}\n,"
-                    "${pro.image.length}\n,"
-                    "${pro.dateAdded}");
-
-                print("*********************");
 
                 Navigator.pushReplacement(
                   context,
@@ -192,6 +175,7 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
       ),
     );
   }
+
   Row rowAddLocation(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -215,9 +199,9 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
                     widget.address = val; //you get details from screen2 here
                   });
                 },
-                child:  Text(
-                widget.isUpdate==true?"Update location"  :"Add location",
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                child: Text(
+                  widget.isUpdate == true ? "Update location" : "Add location",
+                  style: const TextStyle(color: Colors.black, fontSize: 16),
                 )))
       ],
     );

@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'package:advance_image_picker/models/image_object.dart';
-import 'package:project_111/core/widgets/address.dart';
 
 class Property {
   final int? idProperty;
@@ -36,16 +34,31 @@ class NotificationParametersMessage {
   final String lastName;
   final File image;
   final int idProperty;
-  final String ? message;
+  final String? message;
 
   NotificationParametersMessage(
-      {required this.firstName,required this.lastName,
+      {required this.firstName,
+      required this.lastName,
       required this.image,
       required this.idProperty,
-       this.message});
+      this.message});
 }
 
+class Address {
+  final double latitude;
+  final double longitude;
+  final String region;
+  final String city;
+  final String country;
 
+  Address({
+    required this.latitude,
+    required this.longitude,
+    required this.region,
+    required this.city,
+    required this.country,
+  });
+}
 
 class SearchParameters {
   final String typeProperty;
@@ -62,4 +75,39 @@ class SearchParameters {
       required this.room,
       required this.storey,
       required this.space});
+}
+
+class User {
+  int? id;
+  String? firstName;
+  String? lastName;
+  String? email;
+  String? phoneNumber;
+  String? password;
+  File? image;
+  List<Property>? listProperty;
+  List<Property>? listPropertyFavorite;
+
+  Address? address;
+  bool? isAdmin;
+  bool? isSuperAdmin;
+  List<String>? messages;
+  String? sendTime;
+
+  User({
+    this.sendTime,
+    this.messages,
+    this.id,
+    this.firstName,
+    this.lastName,
+    this.email,
+    this.phoneNumber,
+    this.password,
+    this.image,
+    this.listProperty,
+    this.listPropertyFavorite,
+    this.address,
+    this.isAdmin,
+    this.isSuperAdmin,
+  });
 }

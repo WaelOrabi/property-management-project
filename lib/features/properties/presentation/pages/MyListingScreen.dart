@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/core/widgets/user.dart';
-import 'package:project_111/core/widgets/widget_appbar.dart';
-import 'package:project_111/features/properties/presentation/widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
+import '../../../../core/paramaters.dart';
+import '../../../../core/widgets/widget_appbar.dart';
+import '../widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
 
 class MyListingScreen extends StatefulWidget {
   static String routeName = 'MyListingScreen';

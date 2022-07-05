@@ -13,7 +13,7 @@ GestureDetector ButtonSigninSignupProfile({
   required Color colorText,
   required Color backGroundColor,
   required VoidCallback fun,
-    isBorder=null,
+    isBorder,
 }) {
   return GestureDetector(
     child: Container(

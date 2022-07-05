@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/features/authentication/presentation/pages/sign_in.dart';
-import 'package:project_111/features/authentication/presentation/pages/signup_screen.dart';
-import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
+import 'sign_in.dart';
+import 'signup_screen.dart';
+import '../widgets/signin_signup/button_signin_signup_update.dart';
 
 
 class Welcome extends StatelessWidget {

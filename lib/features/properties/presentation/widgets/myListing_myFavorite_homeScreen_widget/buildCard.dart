@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:project_111/core/paramaters.dart';
-import 'package:project_111/features/properties/presentation/pages/add_or_update_property.dart';
-import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
+import '../../../../../core/paramaters.dart';
+import '../../pages/add_or_update_property.dart';
+import '../../pages/property_listing_details.dart';
 
 class BuildCard extends StatefulWidget {
   final Property property;
@@ -152,7 +152,7 @@ class _BuildCardState extends State<BuildCard> {
                               fontWeight: FontWeight.bold,
                               fontSize: 16),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Text(
                           property.category,
                           style: const TextStyle(
@@ -162,7 +162,7 @@ class _BuildCardState extends State<BuildCard> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 8,
                     ),
                     Row(

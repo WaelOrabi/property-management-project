@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/core/widgets/sizedBox.dart';
-import 'package:project_111/core/widgets/user.dart';
-import 'package:project_111/core/widgets/widget_appbar.dart';
-import 'package:project_111/features/authentication/presentation/pages/profile.dart';
-import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
+import '../../../../core/paramaters.dart';
+import '../../../../core/widgets/sizedBox.dart';
+import '../../../../core/widgets/widget_appbar.dart';
+import '../widgets/signin_signup/button_signin_signup_update.dart';
 import '../widgets/signin_signup/textformfield_signin_signup_updateProfile.dart';
 import '../widgets/update_profile/profile_picture.dart';
 
@@ -111,9 +110,6 @@ class _UpdateProfileState extends State<UpdateProfile> {
                         fun: () {
                           if(_formKey.currentState!.validate()) {
                             _formKey.currentState!.save();
-                            print(firstNameController.text);
-                            print(lastNameController.text);
-                            print(phoneController.text);
                             Navigator.of(context).pop();
                           }                       }),
                     //button of Update

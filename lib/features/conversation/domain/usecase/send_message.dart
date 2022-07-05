@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:project_111/core/error/failures.dart';
-import 'package:project_111/features/conversation/domain/repositories/messages_repositories.dart';
+import '../../../../core/error/failures.dart';
+import '../repositories/messages_repositories.dart';
 
 import '../entities/message.dart';
 

@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
-import 'package:project_111/core/widgets/address.dart';
-import 'package:project_111/core/widgets/location_helper.dart';
+import '../../../../core/paramaters.dart';
+import '../../../../core/widgets/location_helper.dart';
 
+// ignore: must_be_immutable
 class MapScreen extends StatefulWidget {
-   MapScreen({Key? key, this.address}) : super(key: key);
+  MapScreen({Key? key, this.address}) : super(key: key);
   static String routeName = 'MapScreen';
-Address? address;
+  Address? address;
 
   @override
   State<MapScreen> createState() => _MapScreenState();
@@ -97,11 +98,9 @@ class _MapScreenState extends State<MapScreen> {
           children: [
             position != null
                 ? buildMap()
-                : Center(
-                    child: Container(
-                      child: const CircularProgressIndicator(
-                        color: Colors.green,
-                      ),
+                : const Center(
+                    child: CircularProgressIndicator(
+                      color: Colors.green,
                     ),
                   ),
           ],
@@ -114,17 +113,14 @@ class _MapScreenState extends State<MapScreen> {
               style: TextStyle(color: Colors.white),
             ),
             onPressed: () async {
-              var mapLocationAddress = (await LocationHelper.getLocationAddress(lat!, long!));
-              widget.address= Address(
+              var mapLocationAddress =
+                  (await LocationHelper.getLocationAddress(lat!, long!));
+              widget.address = Address(
                   latitude: lat!,
                   longitude: long!,
                   region: mapLocationAddress["subLocality"],
                   city: mapLocationAddress["administrativeArea"],
                   country: mapLocationAddress["country"]);
-print(lat);
-print(long);
-print(mapLocationAddress["subLocality"]);
-
               Navigator.pop(context, widget.address);
             },
           ),

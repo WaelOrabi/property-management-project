@@ -2,11 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:project_111/core/paramaters.dart';
-import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
+import '../../../../core/paramaters.dart';
+import 'property_listing_details.dart';
 
+// ignore: must_be_immutable
 class AllPropertiesInMap extends StatefulWidget {
-  AllPropertiesInMap({Key? key, required this.listProperty}) : super(key: key);
+  AllPropertiesInMap({required this.listProperty, Key? key}) : super(key: key);
 
   List<Property> listProperty;
 
@@ -16,7 +17,7 @@ class AllPropertiesInMap extends StatefulWidget {
 
 class _AllPropertiesInMapState extends State<AllPropertiesInMap> {
   Completer<GoogleMapController> mapController = Completer();
-  List<Marker> _markers = [];
+  final List<Marker> _markers = [];
   List<Marker> list = [];
 
   @override
@@ -31,7 +32,7 @@ class _AllPropertiesInMapState extends State<AllPropertiesInMap> {
                 widget.listProperty[i].address.longitude,
               ),
               infoWindow:
-                  InfoWindow(title: ''),
+                  const InfoWindow(title: ''),
               icon: BitmapDescriptor.defaultMarkerWithHue(
                   BitmapDescriptor.hueRed),
               onTap: () {
@@ -58,7 +59,6 @@ class _AllPropertiesInMapState extends State<AllPropertiesInMap> {
       zoomControlsEnabled: true,
       myLocationEnabled: true,
       onCameraMove: (CameraPosition cameraPosition) {
-        print(cameraPosition.zoom);
       },
       initialCameraPosition: CameraPosition(
         bearing: 0.0,

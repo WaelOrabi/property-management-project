@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:project_111/core/paramaters.dart';
-import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
-import 'package:project_111/core/widgets/widget_appbar.dart';
+import '../../../../core/paramaters.dart';
+import '../../../../core/widgets/bottom_navigation_bar.dart';
+import '../../../../core/widgets/widget_appbar.dart';
 
 
 import '../widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';

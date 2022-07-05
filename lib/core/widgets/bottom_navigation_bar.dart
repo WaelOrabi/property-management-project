@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/features/conversation/presntation/pages/conversations.dart';
-import 'package:project_111/features/properties/presentation/pages/home_screen.dart';
-import 'package:project_111/features/properties/presentation/pages/notification.dart';
-import 'package:project_111/features/properties/presentation/pages/search.dart';
-import 'package:project_111/tests/tests.dart';
+import '../../features/conversation/presntation/pages/conversations.dart';
+import '../../features/properties/presentation/pages/home_screen.dart';
+import '../../features/properties/presentation/pages/notification.dart';
+import '../../features/properties/presentation/pages/search.dart';
+import '../../tests/tests.dart';
 class NavigationBarHome extends StatefulWidget {
   const NavigationBarHome({Key? key}) : super(key: key);
   static String routeName='BottomNavigationBar';
@@ -13,7 +13,6 @@ class NavigationBarHome extends StatefulWidget {
 }
 
 class _NavigationBarHomeState extends State<NavigationBarHome> {
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
   int _selectedIndex=0;
   PageController pageController=PageController();
 
@@ -29,7 +28,7 @@ class _NavigationBarHomeState extends State<NavigationBarHome> {
 
   List <Widget> screen =[
     const HomeScreen(),
-   PageNotification(),
+   const PageNotification(),
      Conversations(useres: Te.listUser1,),
     const Search(),
   ];

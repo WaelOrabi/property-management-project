@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/core/widgets/user.dart';
+import '../../../../core/paramaters.dart';
 import '../../../../core/widgets/widget_appbar.dart';
 
 class AccountDetails extends StatelessWidget {

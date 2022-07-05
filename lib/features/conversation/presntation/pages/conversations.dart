@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:project_111/core/widgets/user.dart';
-import 'package:project_111/features/conversation/presntation/widgets/conversation/conversation_items_widget.dart';
-import 'package:project_111/tests/tests.dart';
+import '../../../../core/paramaters.dart';
+import '../widgets/conversation/conversation_items_widget.dart';
+import '../../../../tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 
 class Conversations extends StatefulWidget {

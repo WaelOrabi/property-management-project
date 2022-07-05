@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
-import 'package:project_111/tests/tests.dart';
+import 'property_listing_details.dart';
+import '../../../../tests/tests.dart';
 
 class PageNotification extends StatefulWidget {
   static String routeName = 'PageNotification';

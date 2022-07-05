@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
+// ignore: must_be_immutable
 class Profile_Picture extends StatefulWidget {
    Profile_Picture({Key? key,this.image}) : super(key: key);
  File? image;

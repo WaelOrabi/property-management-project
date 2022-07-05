@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapWidget extends StatefulWidget {
-  MapWidget(
+  const MapWidget(
       {Key? key, required this.latDestination, required this.longDestination})
       : super(key: key);
   final double latDestination;
@@ -23,9 +23,7 @@ class _MapWidgetState extends State<MapWidget> {
       myLocationButtonEnabled: true,
       zoomControlsEnabled: true,
       myLocationEnabled: true,
-      onCameraMove: (CameraPosition cameraPosition) {
-        print(cameraPosition.zoom);
-      },
+      onCameraMove: (CameraPosition cameraPosition) {},
       initialCameraPosition: CameraPosition(
         bearing: 0.0,
         tilt: 0.0,

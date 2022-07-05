@@ -1,10 +1,6 @@
 import 'dart:io';
 import 'package:advance_image_picker/advance_image_picker.dart';
-import 'package:project_111/core/paramaters.dart';
-import 'package:project_111/core/widgets/address.dart';
-
-import 'package:project_111/core/widgets/user.dart';
-
+import '../core/paramaters.dart';
 class Te {
   static List<NotificationParametersMessage> notificationMessage =[
   NotificationParametersMessage(
@@ -34,6 +30,12 @@ class Te {
     email: 'ayhamalrefay@gmail.com',
     phoneNumber: '0933773538',
     image: File('/storage/emulated/0/Pictures/Homs.jpg'),
+    messages: [
+      'hi ayham',
+      'hi ayham',
+      'hi ayham',
+      'hi ayham',
+    ],
     listProperty: [
       Property(
           idProperty: 2,

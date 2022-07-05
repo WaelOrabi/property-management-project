@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:project_111/core/widgets/address.dart';
-import 'package:project_111/core/widgets/sizedBox.dart';
-import 'package:project_111/core/widgets/user.dart';
+import '../../../../core/paramaters.dart';
+import '../../../../core/widgets/sizedBox.dart';
 import '../../../../core/widgets/bottom_navigation_bar.dart';
 import '../../../../core/widgets/location_helper.dart';
 import '../widgets/signin_signup/button_signin_signup_update.dart';
@@ -228,8 +227,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   region: mapLocationAddress["subLocality"],
                                   city: mapLocationAddress["administrativeArea"],
                                   country: mapLocationAddress["country"]);
-                              print(mapLocationAddress["subLocality"]);
-                              print(mapLocationAddress["administrativeArea"]);
                               User(
                                   firstName: firstNameController.text,
                                   lastName: lastNameController.text,

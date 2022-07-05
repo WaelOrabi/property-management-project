@@ -1,12 +1,12 @@
 
 import 'package:flutter/material.dart';
-import 'package:project_111/core/widgets/user.dart';
-import 'package:project_111/features/conversation/presntation/pages/chat.dart';
+import '../../../../../core/paramaters.dart';
+import '../../pages/chat.dart';
 
 GestureDetector buildChatItem({required User ? user,required BuildContext context}) {
   return GestureDetector(
     onTap: () {
-      Navigator.of(context).push(MaterialPageRoute(builder:(context)=>Chat(user:user)));
+      Navigator.of(context).push(MaterialPageRoute(builder:(context)=>Chat(user:user!)));
     },
     child: Row(
       children: [

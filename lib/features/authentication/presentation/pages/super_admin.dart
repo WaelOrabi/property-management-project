@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:project_111/core/widgets/user.dart';
-import 'package:project_111/core/widgets/widget_appbar.dart';
-import 'package:project_111/tests/tests.dart';
+import '../../../../core/paramaters.dart';
+import '../../../../core/widgets/widget_appbar.dart';
+import '../../../../tests/tests.dart';
 
 class SuperAdmin extends StatefulWidget {
   static String routeName = 'SuperAdmin';

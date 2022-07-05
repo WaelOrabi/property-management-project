@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/core/paramaters.dart';
-import 'package:project_111/features/properties/presentation/widgets/myListing_myFavorite_homeScreen_widget/buildCard.dart';
+import '../../../../../core/paramaters.dart';
+import 'buildCard.dart';
 
 GridView buildGridView(
     {required Orientation orientation,

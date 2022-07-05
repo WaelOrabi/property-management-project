@@ -1,8 +1,6 @@
-import 'dart:ui';
 
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:project_111/core/widgets/widget_appbar.dart';
+import '../../../../core/widgets/widget_appbar.dart';
 
 class Admin extends StatefulWidget {
   static String routeName = 'Admin';
@@ -43,7 +41,7 @@ class _AdminState extends State<Admin> {
               radius: 35,
               backgroundImage: AssetImage('assets/images/facebook.jpg'),
             ),
-            title: Text(user[index],style: TextStyle(
+            title: Text(user[index],style: const TextStyle(
                 color:Colors.black,
             ),),
             subtitle:const Text('Email'),
