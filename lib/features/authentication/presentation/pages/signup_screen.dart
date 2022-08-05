@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import '../../../../core/paramaters.dart';
-import '../../../../core/widgets/sizedBox.dart';
 import '../../../../core/widgets/bottom_navigation_bar.dart';
 import '../../../../core/widgets/location_helper.dart';
 import '../widgets/signin_signup/button_signin_signup_update.dart';
-import '../widgets/signin_signup/iconbutton_for_signin_and_signup_with_other_apps.dart';
 import '../widgets/signin_signup/return_button.dart';
 import '../widgets/signin_signup/textformfield_signin_signup_updateProfile.dart';
 import 'welcome.dart';
@@ -45,7 +42,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: buildBody(context),
     );
   }
@@ -104,7 +101,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     top: MediaQuery
                         .of(context)
                         .size
-                        .height / 200),
+                        .height / 30),
                 child: Form(
                   key:_formKey ,
                   child: Column(
@@ -123,7 +120,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         labelText: "First Name",
                         hintText: "Enter your First Name",
                       ),
-                      buildSizedBox(context: context, height: 60),
+                      SizedBox(height: MediaQuery.of(context).size.height/60,),
                       TextForm(
                         prefixIcon: false,
                         icon: Icons.edit,
@@ -138,7 +135,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         labelText: "Last Name",
                         hintText: "Enter your Last Name",
                       ),
-                      buildSizedBox(context: context, height: 60),
+                      SizedBox(height: MediaQuery.of(context).size.height/60,),
                       TextForm(
                           prefixIcon: false,
                           icon: Icons.email,
@@ -158,7 +155,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           keyboardType: TextInputType.emailAddress,
                           labelText: "Enter Email",
                           hintText: "enter email"),
-                      buildSizedBox(context: context, height: 60),
+                      SizedBox(height: MediaQuery.of(context).size.height/60,),
                       TextForm(
                           prefixIcon: false,
                           icon: Icons.phone,
@@ -172,7 +169,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           keyboardType: TextInputType.phone,
                           labelText: "Phone",
                           hintText: "Enter your phone"),
-                      buildSizedBox(context: context, height: 60),
+                      SizedBox(height: MediaQuery.of(context).size.height/60,),
                       TextForm(
                           prefixIcon: true,
                           icon: Icons.lock,
@@ -187,7 +184,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           keyboardType: TextInputType.text,
                           labelText: "Password",
                           hintText: 'Enter your password'),
-                      buildSizedBox(context: context, height: 60),
+                      SizedBox(height: MediaQuery.of(context).size.height/60,),
                       TextForm(
                           prefixIcon: true,
                           icon: Icons.lock,
@@ -207,33 +204,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           labelText: 'Password Confirmaton',
                           hintText: 'Enter your password confirmation'),
 
-                      buildSizedBox(context: context, height: 60),
+                      SizedBox(height: MediaQuery.of(context).size.height/20,),
                       ButtonSigninSignupProfile(
                           context: context,
-                          height: 50,
-                          circle: 50,
                           text: 'Sign Up',
-
-
                           fun: () async {
                             if(_formKey.currentState!.validate()) {
-                              Map<String,
-                                  dynamic> mapLocationAddress = await LocationHelper
-                                  .getLocationAddress(
-                                  position!.latitude, position!.longitude);
-                              Address address = Address(
-                                  latitude: position!.latitude,
-                                  longitude: position!.longitude,
-                                  region: mapLocationAddress["subLocality"],
-                                  city: mapLocationAddress["administrativeArea"],
-                                  country: mapLocationAddress["country"]);
-                              User(
-                                  firstName: firstNameController.text,
-                                  lastName: lastNameController.text,
-                                  email: emailController.text,
-                                  phoneNumber: phoneController.text,
-                                  password: passwordController.text,
-                                  address: address);
+                              // Map<String,
+                              //     dynamic> mapLocationAddress = await LocationHelper
+                              //     .getLocationAddress(
+                              //     position!.latitude, position!.longitude);
+                              // Address address = Address(
+                              //     latitude: position!.latitude,
+                              //     longitude: position!.longitude,
+                              //     region: mapLocationAddress["subLocality"],
+                              //     city: mapLocationAddress["administrativeArea"],
+                              //     country: mapLocationAddress["country"]);
+                              // User(
+                              //     firstName: firstNameController.text,
+                              //     lastName: lastNameController.text,
+                              //     email: emailController.text,
+                              //     phoneNumber: phoneController.text,
+                              //     password: passwordController.text,
+                              //     address: address);
 
 
                               Navigator.pushReplacementNamed(
@@ -246,32 +239,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           fontWeight: FontWeight.bold,
                           colorText: Colors.white,
                           backGroundColor: Colors.green),
-                      buildSizedBox(context: context, height: 30),
-                      const Center(
-                        child: Text("Or sign up using ..",
-                            style: TextStyle(color: Colors.grey)),
-                      ),
-                      buildSizedBox(context: context, height: 80),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          buildIconFacebookAndGoogle(
-                            height: 40,
-                            width: 40,
-                            linkImage: "assets/images/google.jpg",
-                            fun: () {},
-                          ),
-                          buildSizedBox(
-                              context: context, width: 40),
-                          buildIconFacebookAndGoogle(
-                            height: 55,
-                            width: 55,
-                            linkImage: "assets/images/facebook.jpg",
-                            fun: () {},
-                          ),
-                        ],
-                      ),
-                      buildSizedBox(context: context, height: 30),
+                      SizedBox(height: MediaQuery.of(context).size.height/20,),
                     ],
                   ),
                 ),

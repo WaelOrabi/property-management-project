@@ -58,13 +58,13 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey.shade200,
+        backgroundColor:Theme.of(context).backgroundColor,
         appBar: buildAppBar(
           namePage:
               widget.isUpdate == true ? "Update Property" : "Add Property",
           fun: () => Navigator.pushReplacementNamed(
               context, NavigationBarHome.routeName),
-          color: Colors.grey.shade200,
+
         ),
         body: _buildBody(context),
       ),
@@ -86,7 +86,6 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
             ),
             const SizedBox(height: 6),
             Container(
-              color: Colors.white,
               padding: const EdgeInsets.only(left: 15, top: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

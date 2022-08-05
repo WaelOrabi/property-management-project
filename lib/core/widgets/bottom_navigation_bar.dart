@@ -37,16 +37,20 @@ class _NavigationBarHomeState extends State<NavigationBarHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       body:screen[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(items:const <BottomNavigationBarItem> [
-        BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
-        BottomNavigationBarItem(icon:Icon(Icons.notifications_none_outlined),label: 'Notifications'),
-        BottomNavigationBarItem(icon: Icon(Icons.message),label: 'Message'),
-        BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search'),
-      ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.grey,
-        onTap: onTapped,
+      bottomNavigationBar: Theme(
+
+        data:Theme.of(context).copyWith(
+          // sets the background color of the `BottomNavigationBar`
+            canvasColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor),
+        child: BottomNavigationBar(items:const <BottomNavigationBarItem> [
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
+          BottomNavigationBarItem(icon:Icon(Icons.notifications_none_outlined),label: 'Notifications'),
+          BottomNavigationBarItem(icon: Icon(Icons.message),label: 'Message'),
+          BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search'),
+        ],
+          currentIndex: _selectedIndex,
+          onTap: onTapped,
+        ),
       ),
     );
   }

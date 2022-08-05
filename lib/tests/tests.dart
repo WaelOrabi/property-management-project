@@ -1,25 +1,20 @@
 import 'dart:io';
 import 'package:advance_image_picker/advance_image_picker.dart';
-import '../core/paramaters.dart';
+import 'package:project_111/core/paramaters.dart';
 class Te {
   static List<NotificationParametersMessage> notificationMessage =[
-  NotificationParametersMessage(
-  firstName: 'abd',
-  lastName: 'Al Karaem',
-  image: File('/storage/emulated/0/Pictures/Homs.jpg'),
-  idProperty: 1,
-  message: 'hi wael'),
-  NotificationParametersMessage(
-      firstName: 'abd',
-      lastName: 'Al Karaem',
-  image: File('/storage/emulated/0/Pictures/Homs.jpg'),
-  idProperty: 3,
-  message: 'hi wael'),
     NotificationParametersMessage(
         firstName: 'abd',
         lastName: 'Al Karaem',
-        image: File('/storage/emulated/0/Pictures/Homs.jpg'),
-        idProperty: 3),
+        image: File('/storage/emulated/0/Pictures/1612315397060567-1.png'),
+        idProperty: 1,
+        message: 'hi wael'),
+    NotificationParametersMessage(
+        firstName: 'abd',
+        lastName: 'Al Karaem',
+        image: File('/storage/emulated/0/Android/data/com.example.project_111/cache/2268_compressed4846294729807657481.jpg'),
+        idProperty: 3,
+        message: 'hi wael'),
   ];
   static User user = User(
     isAdmin: true,
@@ -29,13 +24,13 @@ class Te {
     lastName: 'Alrefay',
     email: 'ayhamalrefay@gmail.com',
     phoneNumber: '0933773538',
-    image: File('/storage/emulated/0/Pictures/Homs.jpg'),
     messages: [
       'hi ayham',
       'hi ayham',
       'hi ayham',
       'hi ayham',
     ],
+    image: File('/storage/emulated/0/Android/data/com.example.project_111/cache/2268_compressed4846294729807657481.jpg'),
     listProperty: [
       Property(
           idProperty: 2,
@@ -55,11 +50,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+                originalPath: '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg',
+                modifiedPath: '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg ',
-                modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg '),
+                originalPath: '/storage/emulated/0/Download/dalaman_villa_1.jpg',
+                modifiedPath: '/storage/emulated/0/Download/dalaman_villa_1.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -80,11 +75,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+                originalPath: '/storage/emulated/0/Download/2357-5.jpg',
+                modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+                originalPath: '/storage/emulated/0/Download/2357-8.jpg',
+                modifiedPath: '/storage/emulated/0/Download/2357-8.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -105,11 +100,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+                originalPath: '/storage/emulated/0/Download/2357-6.jpg',
+                modifiedPath: '/storage/emulated/0/Download/2357-6.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+                originalPath: '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg',
+                modifiedPath: '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -130,11 +125,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+                originalPath: '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg',
+                modifiedPath: '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+                originalPath: '/storage/emulated/0/Download/2357-5.jpg',
+                modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
           ],
           category: 'Buy'),
     ],
@@ -157,11 +152,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+                originalPath: '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg',
+                modifiedPath: '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+                originalPath: '/storage/emulated/0/Download/dalaman_villa_1.jpg',
+                modifiedPath: '/storage/emulated/0/Download/dalaman_villa_1.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -182,11 +177,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+                originalPath: '/storage/emulated/0/Download/2357-5.jpg',
+                modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+                originalPath: '/storage/emulated/0/Download/2357-8.jpg',
+                modifiedPath: '/storage/emulated/0/Download/2357-8.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -207,11 +202,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+                originalPath: '/storage/emulated/0/Download/2357-6.jpg',
+                modifiedPath: '/storage/emulated/0/Download/2357-6.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+                originalPath: '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg',
+                modifiedPath: '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg'),
           ],
           category: 'Buy'),
       Property(
@@ -232,11 +227,11 @@ class Te {
           price: '56',
           image: [
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+                originalPath: '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg',
+                modifiedPath: '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg'),
             ImageObject(
-                originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
-                modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+                originalPath: '/storage/emulated/0/Download/2357-5.jpg',
+                modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
           ],
           category: 'Buy'),
     ],
@@ -268,11 +263,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+              originalPath: '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg',
+              modifiedPath: '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+              originalPath: '/storage/emulated/0/Download/dalaman_villa_1.jpg',
+              modifiedPath: '/storage/emulated/0/Download/dalaman_villa_1.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -293,11 +288,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+              originalPath: '/storage/emulated/0/Download/2357-5.jpg',
+              modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+              originalPath: '/storage/emulated/0/Download/2357-8.jpg',
+              modifiedPath: '/storage/emulated/0/Download/2357-8.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -318,11 +313,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+              originalPath: '/storage/emulated/0/Download/2357-6.jpg',
+              modifiedPath: '/storage/emulated/0/Download/2357-6.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+              originalPath: '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg',
+              modifiedPath: '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -343,11 +338,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+              originalPath: '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg',
+              modifiedPath: '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+              originalPath: '/storage/emulated/0/Download/2357-5.jpg',
+              modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
         ],
         category: 'Buy'),
   ];
@@ -370,11 +365,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+              originalPath: '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg',
+              modifiedPath: '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+              originalPath: '/storage/emulated/0/Download/dalaman_villa_1.jpg',
+              modifiedPath: '/storage/emulated/0/Download/dalaman_villa_1.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -395,11 +390,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+              originalPath: '/storage/emulated/0/Download/2357-5.jpg',
+              modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+              originalPath: '/storage/emulated/0/Download/2357-8.jpg',
+              modifiedPath: '/storage/emulated/0/Download/2357-8.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -420,11 +415,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+              originalPath: '/storage/emulated/0/Download/2357-6.jpg',
+              modifiedPath: '/storage/emulated/0/Download/2357-6.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+              originalPath: '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg',
+              modifiedPath: '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg'),
         ],
         category: 'Buy'),
     Property(
@@ -445,11 +440,11 @@ class Te {
         price: '56',
         image: [
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+              originalPath: '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg',
+              modifiedPath: '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg'),
           ImageObject(
-              originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
-              modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+              originalPath: '/storage/emulated/0/Download/2357-5.jpg',
+              modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
         ],
         category: 'Buy'),
   ];
@@ -470,7 +465,7 @@ class Te {
         'hi ayham',
       ],
       sendTime: '02:15',
-      image: File('/storage/emulated/0/Pictures/Damascus.jpg'),
+      image: File('/storage/emulated/0/Android/data/com.example.project_111/cache/2268_compressed4846294729807657481.jpg'),
       listProperty: [
         Property(
             idProperty: 2,
@@ -490,11 +485,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+                  originalPath: '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+                  originalPath: '/storage/emulated/0/Download/dalaman_villa_1.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/dalaman_villa_1.jpg'),
             ],
             category: 'Buy'),
         Property(
@@ -515,11 +510,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+                  originalPath: '/storage/emulated/0/Download/2357-5.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+                  originalPath: '/storage/emulated/0/Download/2357-8.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/2357-8.jpg'),
             ],
             category: 'Buy'),
         Property(
@@ -540,11 +535,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+                  originalPath: '/storage/emulated/0/Download/2357-6.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/2357-6.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+                  originalPath: '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg'),
             ],
             category: 'Buy'),
         Property(
@@ -565,11 +560,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+                  originalPath: '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+                  originalPath: '/storage/emulated/0/Download/2357-5.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
             ],
             category: 'Buy'),
       ],
@@ -598,7 +593,7 @@ class Te {
         'hi ayham',
         'hi ayham',
       ],
-      image: File('/storage/emulated/0/Pictures/Damascus.jpg'),
+      image: File('/storage/emulated/0/Pictures/1612315397060567-1.png'),
       listProperty: [
         Property(
             idProperty: 2,
@@ -618,11 +613,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+                  originalPath: '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+                  originalPath: '/storage/emulated/0/Download/dalaman_villa_1.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/dalaman_villa_1.jpg'),
             ],
             category: 'Buy'),
         Property(
@@ -643,11 +638,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Damascus.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Damascus.jpg'),
+                  originalPath: '/storage/emulated/0/Download/2357-5.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Latakia.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Latakia.jpg'),
+                  originalPath: '/storage/emulated/0/Download/2357-8.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/2357-8.jpg'),
             ],
             category: 'Buy'),
         Property(
@@ -668,11 +663,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+                  originalPath: '/storage/emulated/0/Download/2357-6.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/2357-6.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+                  originalPath: '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg'),
             ],
             category: 'Buy'),
         Property(
@@ -693,11 +688,11 @@ class Te {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Homs.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Homs.jpg'),
+                  originalPath: '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Pictures/Hama.jpg',
-                  modifiedPath: '/storage/emulated/0/Pictures/Hama.jpg'),
+                  originalPath: '/storage/emulated/0/Download/2357-5.jpg',
+                  modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
             ],
             category: 'Buy'),
       ],

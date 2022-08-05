@@ -16,6 +16,7 @@ class _MyFavoriteState extends State<MyFavorite> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar:buildAppBar(namePage: 'My Favorite', fun: ()=>Navigator.of(context).pop()),
       body: widget.listProperty!.isEmpty
           ? const Center(

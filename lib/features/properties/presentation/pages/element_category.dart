@@ -32,6 +32,7 @@ class _ElementCategoryState extends State<ElementCategory> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Theme.of(context).backgroundColor,
         appBar: buildAppBar(
           namePage: widget.category,
           fun: () {

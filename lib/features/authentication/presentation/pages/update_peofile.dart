@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../../core/paramaters.dart';
-import '../../../../core/widgets/sizedBox.dart';
 import '../../../../core/widgets/widget_appbar.dart';
 import '../widgets/signin_signup/button_signin_signup_update.dart';
 import '../widgets/signin_signup/textformfield_signin_signup_updateProfile.dart';
@@ -26,7 +25,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
     lastNameController.text=widget.user.lastName!;
     phoneController.text=widget.user.phoneNumber!;
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor:Theme.of(context).backgroundColor,
       appBar:buildAppBar(
           namePage: "Update Profile",
           fun: () => Navigator.of(context).pop(),
@@ -68,7 +67,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       labelText: "First Name",
                       hintText: "Enter your First Name",
                     ),
-                    buildSizedBox(context: context,height:60),
+                    SizedBox(height: 60,),
                     TextForm(
                       controller: lastNameController,
                       prefixIcon: false,
@@ -83,7 +82,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       labelText: "Last Name",
                       hintText: "Enter your Last Name",
                     ),
-                    buildSizedBox(context: context,height:60),
+                    SizedBox(height: 60,),
                     TextForm(
                       controller: phoneController,
                         prefixIcon: false,
@@ -97,16 +96,13 @@ class _UpdateProfileState extends State<UpdateProfile> {
                         keyboardType: TextInputType.phone,
                         labelText: "Phone",
                         hintText: "Enter your phone"),
-                    buildSizedBox(context:context,height:20),
+                    SizedBox(height: 20,),
                     ButtonSigninSignupProfile(
                         context: context,
                         height: 50,
                         width: 2,
                         circle: 50,
                         text: 'Update',
-                        fontWeight: FontWeight.bold,
-                        colorText: Colors.white,
-                        backGroundColor: Colors.green,
                         fun: () {
                           if(_formKey.currentState!.validate()) {
                             _formKey.currentState!.save();

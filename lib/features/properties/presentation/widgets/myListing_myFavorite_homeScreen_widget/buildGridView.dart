@@ -7,7 +7,7 @@ GridView buildGridView(
     required ScrollController controller,
     required List<Property>? listProperty,
     required BuildContext context,
-      bool delete=false,
+      bool delete=true,
     }) {
   return GridView.count(
     controller: controller,

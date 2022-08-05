@@ -13,7 +13,6 @@ GestureDetector buildChatItem({required User ? user,required BuildContext contex
         CircleAvatar(
           radius: 30.0,
           backgroundImage: FileImage(user!.image!),
-          backgroundColor: Colors.transparent,
         ),
         const SizedBox(
           width: 20,
@@ -24,11 +23,12 @@ GestureDetector buildChatItem({required User ? user,required BuildContext contex
             children: [
               Row(
                 children: [
-
-                  Text(
-                    user.firstName!+' ' + user.lastName!,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 16),
+                  Text.rich(TextSpan(children: [
+                    TextSpan(
+                        text:  user.firstName!+' ' + user.lastName!,
+                        style: TextStyle(color: Theme.of(context).primaryColor),
+                    ),
+                  ],),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),

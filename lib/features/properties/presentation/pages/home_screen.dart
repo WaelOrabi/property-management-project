@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:project_111/features/properties/presentation/pages/search_user.dart';
 import '../../../authentication/presentation/pages/profile.dart';
 import 'add_or_update_property.dart';
 import 'all_properties_in_map.dart';
@@ -31,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor:Theme.of(context).backgroundColor,
         key: _key,
         drawer: Drawer(child: Profile(user: Te.user)),
         appBar: buildScrollAppBar(),
@@ -46,11 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
       controller: scrollController,
       elevation: 0,
       toolbarHeight: 70,
-      backgroundColor: Colors.white,
-      centerTitle: true,
-      title: const Text(
+      title:  Text(
         'Home',
-        style: TextStyle(color: Colors.green, fontSize: 25),
+      style:  Theme.of(context).appBarTheme.textTheme!.bodyText1,
       ),
       leading: GestureDetector(
         child: Padding(
@@ -68,6 +67,13 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       ),
       actions: [
+        IconButton(
+            onPressed: () => Navigator.pushNamed(
+                context, SearchUser.routeName),
+            icon: const Icon(
+              Icons.search,
+              color: Colors.green,
+            )),
         IconButton(
             onPressed: () => Navigator.pushReplacementNamed(
                 context, AddOrUpdateProperty.routeName),

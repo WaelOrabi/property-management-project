@@ -21,13 +21,13 @@ class _ConversationsState extends State<Conversations> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: buildScrollAppBar(),
       body: buildBody(),
     );
   }
   Container buildBody() {
     return  Container(
-          color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: SingleChildScrollView(
@@ -55,26 +55,21 @@ class _ConversationsState extends State<Conversations> {
       titleSpacing: 20,
       controller: controllerAppBar,
       elevation: 5.0,
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
       centerTitle: true,
       title: Row(
         children:  [
           CircleAvatar(
             radius: 25.0,
             backgroundImage: FileImage(Te.user.image!),
-            backgroundColor: Colors.transparent,
           ),
           const SizedBox(
             width: 15,
           ),
-          const Text(
+           Text(
             'Conversations',
             textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.green,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
+            style:Theme.of(context).appBarTheme.textTheme!.bodyText1,
           ),
         ],
       ),

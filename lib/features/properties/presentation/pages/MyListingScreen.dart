@@ -19,6 +19,7 @@ class _MyListingScreenState extends State<MyListingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: buildAppBar(namePage: "My Listing", fun: ()=>Navigator.of(context).pop()),
       body: widget.user!.listProperty!.isEmpty
           ? const Center(

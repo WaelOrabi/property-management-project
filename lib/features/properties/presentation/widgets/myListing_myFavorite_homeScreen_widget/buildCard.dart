@@ -43,9 +43,6 @@ class _BuildCardState extends State<BuildCard> {
                   PropertyListingDetails(property: property)));
         },
         child: Card(
-          elevation: 10,
-          shadowColor: Colors.grey[200],
-          color: Colors.grey[200],
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -68,66 +65,7 @@ class _BuildCardState extends State<BuildCard> {
                           left: 8,
                           child: IconButton(
                               onPressed: () {
-                                var ad = AlertDialog(
-                                  title: const Text("Do you want to :"),
-                                  content: SizedBox(
-                                    height: 150,
-                                    child: Column(
-                                      children: [
-                                        const Divider(
-                                          height: 10,
-                                        ),
-                                        Container(
-                                          color: Colors.red,
-                                          child: ListTile(
-                                            leading: const Icon(
-                                              Icons.delete,
-                                              color: Colors.white,
-                                            ),
-                                            title: const Text(
-                                                "Delete this property"),
-                                            onTap: () => AwesomeDialog(
-                                              context: context,
-                                              animType: AnimType.SCALE,
-                                              dialogType: DialogType.QUESTION,
-                                              title: 'ِDelete',
-                                              desc:
-                                                  'Do you want to delete this property?',
-                                              btnOkOnPress: () {
-                                                setState(() {
-                                                  Navigator.of(context).pop();
-                                                });
-                                              },
-                                            )..show(),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 10,
-                                        ),
-                                        Container(
-                                          color: Colors.green,
-                                          child: ListTile(
-                                              leading: const Icon(
-                                                Icons.edit,
-                                                color: Colors.white,
-                                              ),
-                                              title: const Text(
-                                                  "Edit this property"),
-                                              onTap: () =>
-                                                  Navigator.pushReplacement(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              AddOrUpdateProperty(
-                                                                isUpdate: true,
-                                                                property:widget.property,
-                                                                address: widget.property.address,
-                                                              )))),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
+                                var ad = alertDialog(context);
                                 showDialog(
                                     context: context, builder: (_) => ad);
                               },
@@ -147,18 +85,12 @@ class _BuildCardState extends State<BuildCard> {
                       children: [
                         Text(
                           property.price,
-                          style: const TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16),
+                          style: textStyle(context),
                         ),
                         const Spacer(),
                         Text(
                           property.category,
-                          style: const TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16),
+                          style: textStyle(context),
                         ),
                       ],
                     ),
@@ -169,15 +101,11 @@ class _BuildCardState extends State<BuildCard> {
                       children: [
                         Text(
                           property.address.country + ',',
-                          style: const TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16),
+                          style: textStyle(context),
                         ),
                         Text(
                           property.address.city,
-                          style: const TextStyle(
-                              color: Colors.black, fontSize: 16),
+                          style: textStyle(context),
                         ),
                       ],
                     ),
@@ -188,4 +116,65 @@ class _BuildCardState extends State<BuildCard> {
           ),
         ),
       );
+
+  AlertDialog alertDialog(BuildContext context) {
+    return AlertDialog(
+      title: const Text("Do you want to :"),
+      content: SizedBox(
+        height: 150,
+        child: Column(
+          children: [
+            const Divider(
+              height: 10,
+            ),
+            Container(
+              color: Colors.red,
+              child: ListTile(
+                leading: Icon(
+                  Icons.delete,
+                  color: Theme.of(context).iconTheme.color,
+                ),
+                title: const Text("Delete this property"),
+                onTap: () => AwesomeDialog(
+                  context: context,
+                  animType: AnimType.SCALE,
+                  dialogType: DialogType.QUESTION,
+                  title: 'ِDelete',
+                  desc: 'Do you want to delete this property?',
+                  btnOkOnPress: () {
+                    setState(() {
+                      Navigator.of(context).pop();
+                    });
+                  },
+                )..show(),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              color: Colors.green,
+              child: ListTile(
+                  leading: Icon(
+                    Icons.edit,
+                    color: Theme.of(context).iconTheme.color,
+                  ),
+                  title: const Text("Edit this property"),
+                  onTap: () => Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AddOrUpdateProperty(
+                                isUpdate: true,
+                                property: widget.property,
+                                address: widget.property.address,
+                              )))),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  TextStyle textStyle(BuildContext context) =>
+      TextStyle(color: Theme.of(context).colorScheme.secondary, fontSize: 16);
 }

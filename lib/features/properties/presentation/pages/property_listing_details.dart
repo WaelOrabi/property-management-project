@@ -29,6 +29,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: buildAppBar(context),
       body: buildBody(context),
     );
@@ -39,7 +40,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
       titleSpacing: 30,
       controller: controllerAppBar,
       elevation: 0.0,
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
       centerTitle: true,
       leading: IconButton(
           onPressed: () {
@@ -171,7 +172,6 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
           buildText(widget.property.category,
               left: 10,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
               fontSize: 20),
           const SizedBox(
             height: 15,
@@ -179,13 +179,11 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
           buildText('Description',
               left: 10,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
               fontSize: 20),
           buildText(widget.property.description,
               left: 10,
               right: 10,
               fontWeight: FontWeight.normal,
-              color: Colors.grey,
               fontSize: 15,
               maxLines: null),
           const SizedBox(
@@ -196,7 +194,6 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
           buildText('Extra info',
               left: 10,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
               fontSize: 20),
           const SizedBox(
             height: 15,
@@ -284,12 +281,11 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                 child: Row(children: [
                   buildText('message',
                       fontWeight: FontWeight.normal,
-                      color: Colors.black,
                       fontSize: 15),
                   const SizedBox(
                     width: 5,
                   ),
-                  const Icon(Icons.wechat_outlined)
+                   Icon(Icons.wechat_outlined,color: Theme.of(context).iconTheme.color,)
                 ]),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder:(context)=>Chat(user:Te.user,)));
@@ -300,12 +296,11 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                   children: [
                     buildText('comment',
                         fontWeight: FontWeight.normal,
-                        color: Colors.black,
                         fontSize: 15),
                     const SizedBox(
                       width: 5,
                     ),
-                    const Icon(Icons.add_comment_outlined)
+                     Icon(Icons.add_comment_outlined,color: Theme.of(context).iconTheme.color,)
                   ],
                 ),
                 onPressed: () async {
@@ -320,12 +315,11 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                   children: [
                     buildText('like',
                         fontWeight: FontWeight.normal,
-                        color: Colors.black,
                         fontSize: 15),
                     const SizedBox(
                       width: 5,
                     ),
-                    const Icon(Icons.thumb_up_off_alt_outlined)
+                     Icon(Icons.thumb_up_off_alt_outlined,color: Theme.of(context).iconTheme.color)
                   ],
                 ),
                 onPressed: () {},
@@ -347,10 +341,10 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
       child: Row(
         children: [
           buildText(text1,
-              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.bold),
           const Spacer(),
           buildText(text2,
-              fontSize: 15, fontWeight: FontWeight.bold, color: Colors.grey),
+              fontSize: 15, fontWeight: FontWeight.bold, ),
         ],
       ),
     );
@@ -362,7 +356,6 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
       double top = 0.0,
       double bottom = 0.0,
       required FontWeight fontWeight,
-      required Color color,
       required double fontSize,
       int? maxLines = 1}) {
     return Padding(
@@ -371,7 +364,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
       child: Text(
         text,
         style:
-            TextStyle(color: color, fontWeight: fontWeight, fontSize: fontSize),
+            TextStyle(color: Theme.of(context).colorScheme.secondary, fontWeight: fontWeight, fontSize: fontSize),
         maxLines: maxLines,
       ),
     );

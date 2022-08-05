@@ -11,7 +11,6 @@ Container buildDescription(
     }) {
   return Container(
     padding: const EdgeInsets.only(left: 15, top: 10),
-    color: Colors.white,
     width: MediaQuery.of(context).size.width,
     height: 100,
     child: Column(
@@ -33,6 +32,9 @@ Container buildDescription(
             }
             return null;
           },
+          style:  TextStyle(
+              color: Theme.of(context).textTheme.bodyText2!.color),
+          cursorColor: Theme.of(context).primaryColor,
           decoration: InputDecoration(
               border: InputBorder.none,
               focusedBorder: InputBorder.none,
@@ -101,7 +103,7 @@ Row buildRowOfTextFormField(
     children: [
       Text(
         title,
-        style: TextStyle(fontSize: 20, fontWeight: fontWeight),
+        style: TextStyle(fontSize: 20, fontWeight: fontWeight,color: Theme.of(context).textTheme.bodyText2!.color),
       ),
       SizedBox(
         width: MediaQuery.of(context).size.width / widthOfSizeBox,
@@ -114,6 +116,9 @@ Row buildRowOfTextFormField(
             }
             return null;
           },
+          style:  TextStyle(
+              color: Theme.of(context).textTheme.bodyText2!.color),
+          cursorColor: Theme.of(context).primaryColor,
           decoration: InputDecoration(
               border: InputBorder.none,
               focusedBorder: InputBorder.none,

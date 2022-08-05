@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 // ignore: must_be_immutable
 class InputWidget extends StatefulWidget {
+  final List<String> ? message;
  String ?x;
   final TextEditingController controller;
   final bool isEmojiVisible;
@@ -19,6 +20,7 @@ class InputWidget extends StatefulWidget {
     required this.onBlurred,
     this.iscomment = false,
     Key? key,
+    required this.message,
   }) : super(key: key);
 
   @override
@@ -26,6 +28,7 @@ class InputWidget extends StatefulWidget {
 }
 
 class _InputWidgetState extends State<InputWidget> {
+
   final focusNode = FocusNode();
 
   @override
@@ -58,7 +61,7 @@ class _InputWidgetState extends State<InputWidget> {
         icon: Icon(
           widget.isEmojiVisible
               ? Icons.keyboard_rounded
-              : Icons.emoji_emotions_outlined,color: Colors.white,
+              : Icons.emoji_emotions_outlined,color: Theme.of(context).textTheme.bodyText2!.color,
         ),
         onPressed: onClickedEmoji,
       );
@@ -74,10 +77,15 @@ class _InputWidgetState extends State<InputWidget> {
           onChanged: (val){
 
           },
-          style: const TextStyle(fontSize: 16),
-          decoration:  InputDecoration.collapsed(
+      style: TextStyle(
+          color: Theme.of(context).textTheme.bodyText2!.color),
+          decoration:  InputDecoration(
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
             hintText: iscomment?'Add Comment':'Type your message...',
-            hintStyle: const TextStyle(color: Colors.grey),
           ),
         ),
   );
@@ -102,7 +110,14 @@ class _InputWidgetState extends State<InputWidget> {
                    widget.controller.text.isEmpty? Icons.mic:Icons.play_arrow_sharp,
                     color: Colors.black,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      widget.message!.add(widget.controller.text);
+                      widget.controller.clear();
+                    });
+
+
+                  },
                 ),
               ),
       );

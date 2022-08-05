@@ -10,7 +10,7 @@ final User? user;
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey.shade100,
+        backgroundColor:Theme.of(context).backgroundColor,
         appBar: buildAppBar(
             namePage: "Account Details",
             fun: () =>
@@ -57,7 +57,7 @@ final User? user;
       required String textF1,
       required String textF2}) {
     return Container(
-      color: Colors.white,
+      color: Theme.of(context).colorScheme.primary,
       padding: const EdgeInsets.all(16),
       height: 120,
       width: MediaQuery.of(context).size.width,
@@ -73,14 +73,18 @@ final User? user;
     );
   }
 
-  Row buildRow({required String text1, required String text2}) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(text1, style: const TextStyle(fontSize: 15)),
-        Text(text2,
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
-      ],
+   buildRow({required String text1, required String text2}) {
+    return Builder(
+      builder: (context) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(text1, style:  TextStyle(fontSize: 15,color: Theme.of(context).colorScheme.secondary)),
+            Text(text2,
+                style:  TextStyle(fontSize: 15, fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.secondary)),
+          ],
+        );
+      }
     );
   }
 }
