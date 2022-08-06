@@ -24,7 +24,7 @@ final scrollController = ScrollController();
     for(int i=0;i<Te.listProperty1.length;i++){
 if(Te.listProperty1[i].category==widget.category)
   {
-    list.add(Te.listProperty1[i]);
+    list.add(Te.listProperty1[i] );
   }
     }
 

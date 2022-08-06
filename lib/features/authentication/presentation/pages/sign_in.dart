@@ -143,33 +143,6 @@ if(_formKey.currentState!.validate()) {
                     ],
                   ),
                 ),
-
-                const SizedBox(height: 30.0),
-                const Center(
-                  child: Text("Or sign in using ..",
-                      style: TextStyle(color: Colors.grey)),
-                ),
-                const SizedBox(height: 25.0),
-
-                //Icons of facebook and google under the button
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    //google
-                    buildIconFacebookAndGoogle(
-                        height: 40,
-                        width: 40,
-                        linkImage: "assets/images/google.jpg",
-                        fun: () {}),
-                    const SizedBox(width: 30.0),
-                    //facebook
-                    buildIconFacebookAndGoogle(
-                        height: 55,
-                        width: 55,
-                        linkImage: "assets/images/facebook.jpg",
-                        fun: () {}),
-                  ],
-                ),
               ],
             ),
           ),

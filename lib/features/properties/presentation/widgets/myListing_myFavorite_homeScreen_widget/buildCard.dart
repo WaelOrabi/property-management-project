@@ -14,8 +14,7 @@ class BuildCard extends StatefulWidget {
       {Key? key,
       required this.property,
       required this.orientation,
-      required this.delete})
-      : super(key: key);
+      required this.delete}) : super(key: key);
 
   @override
   State<BuildCard> createState() => _BuildCardState();
@@ -43,8 +42,6 @@ class _BuildCardState extends State<BuildCard> {
                   PropertyListingDetails(property: property)));
         },
         child: Container(
-          //elevation: 10,
-         // shadowColor: Colors.grey[200],
           color: Colors.grey[200],
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -162,9 +159,7 @@ class _BuildCardState extends State<BuildCard> {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 8,
-                    ),
+                   const SizedBox(height: 8,),
                     Row(
                       children: [
                         Text(

@@ -250,31 +250,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           colorText: Colors.white,
                           backGroundColor: Colors.green),
                       buildSizedBox(context: context, height: 30),
-                      const Center(
-                        child: Text("Or sign up using ..",
-                            style: TextStyle(color: Colors.grey)),
-                      ),
-                      buildSizedBox(context: context, height: 80),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          buildIconFacebookAndGoogle(
-                            height: 40,
-                            width: 40,
-                            linkImage: "assets/images/google.jpg",
-                            fun: () {},
-                          ),
-                          buildSizedBox(
-                              context: context, width: 40),
-                          buildIconFacebookAndGoogle(
-                            height: 55,
-                            width: 55,
-                            linkImage: "assets/images/facebook.jpg",
-                            fun: () {},
-                          ),
-                        ],
-                      ),
-                      buildSizedBox(context: context, height: 30),
+
                     ],
                   ),
                 ),

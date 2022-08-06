@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/core/paramaters.dart';
-import 'package:project_111/core/widgets/widget_appbar.dart';
-import 'package:project_111/features/properties/presentation/widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
+import '../../../../core/paramaters.dart';
+import '../../../../core/widgets/widget_appbar.dart';
+import '../widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
 
 class MyFavorite extends StatefulWidget {
   const MyFavorite({Key? key,required this.listProperty}) : super(key: key);

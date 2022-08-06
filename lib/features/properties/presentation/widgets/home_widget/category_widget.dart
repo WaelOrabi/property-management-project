@@ -21,7 +21,7 @@ Widget buildCategory({
           ),
           borderRadius: BorderRadius.circular(10)
       ),
-      child: Center(child: Text(nameBtn,style:const TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.white),)),
+      child: Center(child: Text(nameBtn,style:const TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),)),
     ),
     onTap: fun,
   );

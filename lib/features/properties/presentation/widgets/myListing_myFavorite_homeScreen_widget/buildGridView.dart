@@ -12,10 +12,10 @@ GridView buildGridView(
   return GridView.count(
     controller: controller,
     shrinkWrap: true,
-    crossAxisCount: orientation == Orientation.landscape ? 2 : 2,
+    crossAxisCount: orientation == Orientation.landscape ? 3 : 2,
     crossAxisSpacing: 5.0,
     mainAxisSpacing: 5.0,
-    childAspectRatio: orientation == Orientation.landscape ? 1.4 : 0.9,
+    childAspectRatio: orientation == Orientation.landscape ? 0.8 : 0.9,
     children: listProperty!.map((property) {
       return BuildCard(property: property, orientation: orientation,delete:delete);
     }).toList(),

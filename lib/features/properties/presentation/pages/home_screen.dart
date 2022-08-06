@@ -69,8 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       actions: [
         IconButton(
-            onPressed: () => Navigator.pushReplacementNamed(
-                context, AddOrUpdateProperty.routeName),
+            onPressed: () => Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (context)=>AddOrUpdateProperty())),
             icon: const Icon(
               Icons.add,
               color: Colors.green,
