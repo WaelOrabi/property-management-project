@@ -9,8 +9,8 @@ Builder TextForm(
     required IconData icon,
     bool obscureText = false,
       VoidCallback? fun,
-    required bool prefixIcon,
-    required String hintText}) {
+    required bool suffixIcon,
+required String hintText}) {
   return Builder(builder: (context) {
     return TextFormField(
       controller: controller,
@@ -34,12 +34,10 @@ Builder TextForm(
           );
         }),
         // ignore: unnecessary_null_comparison
-        suffixIcon: prefixIcon == true
+        suffixIcon: suffixIcon == true
             ? IconButton(
-                onPressed: () {
-                  obscureText = !obscureText;
-                },
-                icon:obscureText==false ?const Icon(Icons.visibility):const Icon(Icons.visibility_off_outlined))
+                onPressed: fun,
+                icon:obscureText==true ?const Icon(Icons.visibility_off_outlined,color: Colors.grey,): const Icon(Icons.visibility,color: Colors.grey,))
             : null,
         enabledBorder: Theme.of(context).inputDecorationTheme.enabledBorder,
         focusedBorder:Theme.of(context).inputDecorationTheme.focusedBorder,

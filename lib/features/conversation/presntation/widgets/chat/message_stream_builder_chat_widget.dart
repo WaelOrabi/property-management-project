@@ -3,15 +3,16 @@ import '../../../../../core/paramaters.dart';
 import 'message_line_chat_widget.dart';
 class MessageStreamBuilderChat extends StatelessWidget {
   final User  user;
-  const MessageStreamBuilderChat({Key? key,required this.user}) : super(key: key);
+  final bool ? isRead;
+  const MessageStreamBuilderChat({Key? key,required this.user, this.isRead}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
       Iterable<String>messages=user.messages!.reversed;
     List<MessageLineChat> messageWidgets=messages.map((message) {
-      return MessageLineChat(text: message,sender: user.firstName!,isMe: false,);
+      return MessageLineChat(text: message,sender: user.firstName!,isMe: false,isRead: isRead,);
     }).toList();
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height,
       child: Padding(
         padding: const EdgeInsets.only(top: 35),

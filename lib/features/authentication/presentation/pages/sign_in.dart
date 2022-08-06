@@ -15,6 +15,7 @@ class SingIn extends StatefulWidget {
 }
 
 class _SingInState extends State<SingIn> {
+  bool obscureTextPassword=true;
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -59,7 +60,7 @@ class _SingInState extends State<SingIn> {
                     children: [
                       ////Enter Email address
                       TextForm(
-                          prefixIcon: false,
+                          suffixIcon: false,
                           icon: Icons.email,
                           validator: (value) {
                             bool emailValid = RegExp(
@@ -82,8 +83,14 @@ class _SingInState extends State<SingIn> {
 
                       ////Enter the password
                       TextForm(
-                          prefixIcon: true,
+                          suffixIcon: true,
                           icon: Icons.lock,
+                          fun: (){
+                            setState(() {
+                              obscureTextPassword=!obscureTextPassword;
+                            });
+                          },
+                          obscureText: obscureTextPassword,
                           validator: (value) {
                             if (value!.isEmpty) return 'Please enter password';
                             if (!isPasswordCompliant(passwordController.text)) {
@@ -114,7 +121,7 @@ class _SingInState extends State<SingIn> {
 
                 //if you don't have account
                 Container(
-                  margin: const EdgeInsets.fromLTRB(10, 20, 10,0),
+                  margin: const EdgeInsets.fromLTRB(10, 20, 10, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -137,7 +144,6 @@ class _SingInState extends State<SingIn> {
                     ],
                   ),
                 ),
-
 
                 SizedBox(height: MediaQuery.of(context).size.height/20,),
               ],

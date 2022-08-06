@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_111/features/properties/presentation/pages/add_or_update_property.dart';
 import '../../features/conversation/presntation/pages/conversations.dart';
 import '../../features/properties/presentation/pages/home_screen.dart';
 import '../../features/properties/presentation/pages/notification.dart';
@@ -30,7 +31,7 @@ class _NavigationBarHomeState extends State<NavigationBarHome> {
     const HomeScreen(),
    const PageNotification(),
      Conversations(useres: Te.listUser1,),
-    const Search(),
+     AddOrUpdateProperty(),
   ];
 
   @override
@@ -46,7 +47,7 @@ class _NavigationBarHomeState extends State<NavigationBarHome> {
           BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
           BottomNavigationBarItem(icon:Icon(Icons.notifications_none_outlined),label: 'Notifications'),
           BottomNavigationBarItem(icon: Icon(Icons.message),label: 'Message'),
-          BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.add),label: 'Add Property'),
         ],
           currentIndex: _selectedIndex,
           onTap: onTapped,

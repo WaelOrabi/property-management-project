@@ -8,7 +8,8 @@ import '../widgets/chat/input_widget.dart';
 class Chat extends StatefulWidget {
  final User ? user;
   static String routeName = 'chat';
-  const Chat({Key? key, required this.user}) : super(key: key);
+  final bool ? isRead;
+  const Chat({Key? key, required this.user, this.isRead}) : super(key: key);
   @override
   ChatState createState() => ChatState();
 }
@@ -47,7 +48,7 @@ class ChatState extends State<Chat> {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-           SizedBox(height:700,child: MessageStreamBuilderChat(user: widget.user!)),
+           SizedBox(height:700,child: MessageStreamBuilderChat(user: widget.user!,isRead: widget.isRead,)),
           InputWidget(
             message: widget.user!.messages,
             onBlurred: toggleEmojiKeyboard,
@@ -121,26 +122,15 @@ class ChatState extends State<Chat> {
               width: 15,
             ),
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children:  [
-                  Text(
-                    widget.user!.firstName!+widget.user!.lastName!,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      color: Colors.green,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const Text(
-                    'last seen on 03:12 pm',
-                    style: TextStyle(color: Colors.grey, fontSize: 13),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  )
-                ],
+              child: Text(
+                widget.user!.firstName!+widget.user!.lastName!,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  color: Colors.green,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],

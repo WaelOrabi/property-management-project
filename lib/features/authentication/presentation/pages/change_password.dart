@@ -16,6 +16,10 @@ class _ChangePasswordState extends State<ChangePassword> {
   TextEditingController oldPasswordController = TextEditingController();
   TextEditingController newPasswordController = TextEditingController();
   TextEditingController confirmNewPasswordController = TextEditingController();
+  bool obscureTextOldPassword=true;
+  bool obscureTextNewPassword=true;
+  bool obscureTextNewConformPassword=true;
+
   @override
   Widget build(BuildContext context) {
    return Scaffold(
@@ -44,8 +48,14 @@ class _ChangePasswordState extends State<ChangePassword> {
                   children: [
                     TextForm(
                       controller: oldPasswordController,
-                      prefixIcon: false,
+                      suffixIcon: true,
                       icon: Icons.lock,
+                      obscureText:obscureTextOldPassword ,
+                      fun: (){
+                        setState(() {
+                          obscureTextOldPassword=!obscureTextOldPassword;
+                        });
+                      },
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Please Enter your old password";
@@ -55,12 +65,19 @@ class _ChangePasswordState extends State<ChangePassword> {
                       keyboardType: TextInputType.visiblePassword,
                       labelText: "Old Password",
                       hintText: "Enter your old password",
+
                     ),
                     const SizedBox(height: 20,),
                     TextForm(
                       controller: newPasswordController,
-                      prefixIcon: false,
+                      suffixIcon: true,
                       icon: Icons.lock,
+                      fun: (){
+                        setState(() {
+                          obscureTextNewPassword=!obscureTextNewPassword;
+                        });
+                      },
+                      obscureText: obscureTextNewPassword,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Please Enter your new password";
@@ -74,8 +91,14 @@ class _ChangePasswordState extends State<ChangePassword> {
                    const SizedBox(height: 20,),
                     TextForm(
                         controller: confirmNewPasswordController,
-                        prefixIcon: false,
+                        suffixIcon: true,
                         icon: Icons.lock,
+                        fun: (){
+                          setState(() {
+                            obscureTextNewConformPassword=!obscureTextNewConformPassword;
+                          });
+                        },
+                        obscureText: obscureTextNewConformPassword,
                         validator: (value) {
                           if (value!.isEmpty) {
                             return "Please Enter your new password";

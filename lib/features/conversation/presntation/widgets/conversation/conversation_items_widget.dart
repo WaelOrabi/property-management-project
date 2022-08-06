@@ -4,9 +4,11 @@ import '../../../../../core/paramaters.dart';
 import '../../pages/chat.dart';
 
 GestureDetector buildChatItem({required User ? user,required BuildContext context}) {
+  bool isRead=false;
   return GestureDetector(
     onTap: () {
-      Navigator.of(context).push(MaterialPageRoute(builder:(context)=>Chat(user:user!)));
+      print(!isRead);
+      Navigator.of(context).push(MaterialPageRoute(builder:(context)=>Chat(user:user!,isRead: !isRead,)));
     },
     child: Row(
       children: [

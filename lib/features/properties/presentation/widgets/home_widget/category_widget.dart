@@ -38,13 +38,13 @@ Widget buildCategories(BuildContext context, Orientation orientation) {
         buildCategory(
           context: context,
           linkImage: "assets/images/buy.jpg",
-          nameBtn: "Buy",
+          nameBtn: "Sale",
           fun: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) => const ElementCategory(
-                          category: 'Buy',
+                          category: 'Sale',
                         )));
           },
           height: orientation == Orientation.landscape ? 3 : 6,

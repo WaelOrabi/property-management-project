@@ -7,6 +7,7 @@ import 'package:project_111/features/properties/presentation/pages/map_screen.da
 import 'package:project_111/features/authentication/presentation/pages/splash_screen.dart';
 import 'package:project_111/features/properties/presentation/pages/my_favorite.dart';
 import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
+import 'package:project_111/features/properties/presentation/pages/search.dart';
 import '../../features/authentication/presentation/pages/welcome.dart';
 import 'package:project_111/features/authentication/presentation/pages/sign_in.dart';
 import 'package:project_111/core/setting/setting.dart';
@@ -35,6 +36,7 @@ PagesView.routeName: (context) => const PagesView(),
     SignUpScreen.routeName:(context)=>const SignUpScreen(),
     MyListingScreen.routeName:(context)=>const MyListingScreen(),
     MapScreen.routeName:(context)=> MapScreen(),
+    Search.routeName:(context)=>const Search(),
     SplashScreen.routeName:(context)=>const SplashScreen(),
     MyFavorite.routeName:(context)=>const MyFavorite(listProperty: null),
     AddOrUpdateProperty.routeName:(context)=> AddOrUpdateProperty(),

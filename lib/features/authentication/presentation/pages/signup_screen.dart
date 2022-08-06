@@ -33,6 +33,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController passwordConfirmationController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  bool obscureTextPassword=false;
+  bool obscureTextConformPassword=false;
   @override
   void initState() {
     super.initState();
@@ -107,7 +109,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Column(
                     children: [
                       TextForm(
-                        prefixIcon: false,
+                        suffixIcon: false,
                         icon: Icons.edit,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -122,7 +124,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       SizedBox(height: MediaQuery.of(context).size.height/60,),
                       TextForm(
-                        prefixIcon: false,
+                        suffixIcon: false,
                         icon: Icons.edit,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -137,7 +139,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       SizedBox(height: MediaQuery.of(context).size.height/60,),
                       TextForm(
-                          prefixIcon: false,
+                          suffixIcon: false,
                           icon: Icons.email,
                           validator: (value) {
                             bool emailValid = RegExp(
@@ -157,7 +159,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           hintText: "enter email"),
                       SizedBox(height: MediaQuery.of(context).size.height/60,),
                       TextForm(
-                          prefixIcon: false,
+                          suffixIcon: false,
                           icon: Icons.phone,
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -171,8 +173,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           hintText: "Enter your phone"),
                       SizedBox(height: MediaQuery.of(context).size.height/60,),
                       TextForm(
-                          prefixIcon: true,
+                          suffixIcon: true,
                           icon: Icons.lock,
+                          fun: (){
+                            setState(() {
+                              obscureTextPassword=!obscureTextPassword;
+                            });
+                          },
+                          obscureText: obscureTextPassword,
                           validator: (value) {
                             if (value!.isEmpty) return 'Please enter password';
                             if (!isPasswordCompliant(passwordController.text)) {
@@ -186,7 +194,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           hintText: 'Enter your password'),
                       SizedBox(height: MediaQuery.of(context).size.height/60,),
                       TextForm(
-                          prefixIcon: true,
+                          fun: (){
+                            setState(() {
+                              obscureTextConformPassword=!obscureTextConformPassword;
+                            });
+                          },
+                          obscureText: obscureTextConformPassword,
+                          suffixIcon: true,
                           icon: Icons.lock,
                           validator: (value) {
                             if (value!.isEmpty) {
