@@ -16,7 +16,7 @@ import '../../features/properties/presentation/pages/add_or_update_property.dart
 import '../../features/properties/presentation/pages/MyListingScreen.dart';
 Map<String, WidgetBuilder> routes() {
   return {
-  "/":(context)=>const SplashScreen(),
+  "/":(context)=>const Welcome(),
     SearchUser.routeName:(context)=>const SearchUser(),
     Setting.routeName:(context)=>const Setting(),
     PagesView.routeName: (context) => const PagesView(),

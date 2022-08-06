@@ -15,11 +15,15 @@ class Search extends StatefulWidget {
 }
 
 class _SearchState extends State<Search> {
-   double _startValuePrice = 10000000;
-   double _endValuePrice = 1000000000000;
-   double _startValueSpace = 50;
-   double _endValueSpace = 1000;
-   final ScrollController _scrollController = ScrollController();
+  double _startValuePrice = 10000000;
+  double _endValuePrice = 1000000000000;
+  double _startValueRoom = 1;
+  double _endValueRoom = 20;
+  double _startValueStoreys = 1;
+  double _endValueStoreys = 20;
+  double _startValueSpace = 50;
+  double _endValueSpace = 1000;
+  final ScrollController _scrollController = ScrollController();
   TextEditingController roomController = TextEditingController();
   TextEditingController storeyController = TextEditingController();
   List<String> propertyType = [
@@ -90,8 +94,7 @@ class _SearchState extends State<Search> {
                                 ))),
                             color: propertyType[index] == typeProperty
                                 ? Colors.green
-                                :  Theme.of(context).cardTheme.color,
-
+                                : Theme.of(context).cardTheme.color,
                           ),
                         ),
                       ],
@@ -180,38 +183,61 @@ class _SearchState extends State<Search> {
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
-              const SizedBox(
-                height: 15,
-              ),
-              RangeSlider(
+              buildRangeSlider(
                 min: 10000000,
-                activeColor:Colors.green ,
                 max: 1000000000000,
-                divisions: 10,
-                labels: RangeLabels(
-                  _startValuePrice.round().toString(),
-                  _endValuePrice.round().toString(),
-                ),
-                values: RangeValues(_startValuePrice, _endValuePrice),
-                onChanged: (values) {
+                startValue: _startValuePrice,
+                endValue: _endValuePrice,
+                fun: (values) {
                   setState(() {
                     _startValuePrice = values.start;
                     _endValuePrice = values.end;
                   });
                 },
               ),
-              buildRowOfTextFormField(
-                  context: context,
-                  title: "Room",
-                  controller: roomController,
-                  widthOfSizeBox: 2,
-                  fontWeight: FontWeight.bold),
-              buildRowOfTextFormField(
-                  context: context,
-                  title: "Storeys",
-                  controller: storeyController,
-                  widthOfSizeBox: 2,
-                  fontWeight: FontWeight.bold),
+              const SizedBox(
+                height: 15,
+              ),
+              const Text(
+                'Room',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              buildRangeSlider(
+                  min: 1,
+                  max: 20,
+                  startValue: _startValueRoom,
+                  endValue: _endValueRoom,
+                  fun: (values) {
+                    setState(() {
+                      _startValueRoom = values.start;
+                      _endValueRoom = values.end;
+                    });
+                  }),
+              const SizedBox(
+                height: 15,
+              ),
+              const Text(
+                'Storeys',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              buildRangeSlider(
+                min: 1,
+                max: 20,
+                startValue: _startValueStoreys,
+                endValue: _endValueStoreys,
+                fun: (values) {
+                  setState(() {
+                    _startValueStoreys = values.start;
+                    _endValueStoreys = values.end;
+                  });
+                },
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -234,17 +260,12 @@ class _SearchState extends State<Search> {
                   ),
                 ],
               ),
-              RangeSlider(
-                min:50,
-                activeColor:Colors.green ,
+              buildRangeSlider(
+                min: 50,
                 max: 1000,
-                divisions: 10,
-                labels: RangeLabels(
-                  _startValueSpace.round().toString(),
-                  _endValueSpace.round().toString(),
-                ),
-                values: RangeValues(_startValueSpace, _endValueSpace),
-                onChanged: (values) {
+                startValue: _startValueSpace,
+                endValue: _endValueSpace,
+                fun: (values) {
                   setState(() {
                     _startValueSpace = values.start;
                     _endValueSpace = values.end;
@@ -256,25 +277,25 @@ class _SearchState extends State<Search> {
               ),
               Center(
                 child: ButtonSigninSignupProfile(
-                    context: context,
-                    height: 40,
-                    width: orientation == Orientation.landscape ? 3.5 : 2.0,
-                    circle: 50,
-                    text: 'Search',
-                    fun: () {
-                      SearchParameters(
-                          typeProperty: typeProperty,
-                          typeGovernorate: typeGovernorate,
-                          price: [_startValuePrice, _endValuePrice],
-                          room: roomController.text,
-                          space: [_startValueSpace, _endValueSpace],
-                          storey: storeyController.text);
+                  context: context,
+                  height: 40,
+                  width: orientation == Orientation.landscape ? 3.5 : 2.0,
+                  circle: 50,
+                  text: 'Search',
+                  fun: () {
+                    SearchParameters(
+                        typeProperty: typeProperty,
+                        typeGovernorate: typeGovernorate,
+                        price: [_startValuePrice, _endValuePrice],
+                        room: roomController.text,
+                        space: [_startValueSpace, _endValueSpace],
+                        storey: storeyController.text);
 
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ListPropertySearch(
-                              listPropertySearch: Te.listPropertySearch)));
-                    },
-                 ),
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ListPropertySearch(
+                            listPropertySearch: Te.listPropertySearch)));
+                  },
+                ),
               ),
               const SizedBox(
                 height: 30,
@@ -283,6 +304,26 @@ class _SearchState extends State<Search> {
           ),
         ),
       ),
+    );
+  }
+
+  RangeSlider buildRangeSlider(
+      {required double min,
+      required double max,
+      required double startValue,
+      required double endValue,
+      required Function(RangeValues) fun}) {
+    return RangeSlider(
+      min: min,
+      activeColor: Colors.green,
+      max: max,
+      divisions: 10,
+      labels: RangeLabels(
+        startValue.round().toString(),
+        endValue.round().toString(),
+      ),
+      values: RangeValues(startValue, endValue),
+      onChanged: fun,
     );
   }
 }

@@ -54,10 +54,10 @@ class _ConversationsState extends State<Conversations> {
 
   ScrollAppBar buildScrollAppBar() {
     return ScrollAppBar(
+
       titleSpacing: 20,
       controller: controllerAppBar,
-      elevation: 4.0,
-      shadowColor: Theme.of(context).colorScheme.secondary,
+      elevation: 5,
       backgroundColor: Theme
           .of(context)
           .appBarTheme
