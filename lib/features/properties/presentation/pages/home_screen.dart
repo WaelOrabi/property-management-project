@@ -99,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   dropdownPadding: const EdgeInsets.symmetric(vertical: 6),
                   dropdownDecoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
-                    color: Colors.green,
+                    color: Theme.of(context).backgroundColor,
                   ),
                   dropdownElevation: 8,
                   offset: const Offset(0, 8),
@@ -186,7 +186,7 @@ class MenuItems {
       children: [
         Icon(
             item.icon,
-            color: Colors.white,
+            color: Colors.green,
             size: 22
         ),
         const SizedBox(
@@ -195,7 +195,7 @@ class MenuItems {
         Text(
           item.text,
           style: const TextStyle(
-            color: Colors.white,
+            color: Colors.green,
           ),
         ),
       ],
