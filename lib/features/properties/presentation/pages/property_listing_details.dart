@@ -25,7 +25,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
   ScrollController controllerAppBar = ScrollController();
   final TextEditingController messageController = TextEditingController();
   String? comment;
-
+ bool isFavoraite=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -319,7 +319,13 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                     const SizedBox(
                       width: 5,
                     ),
-                     Icon(Icons.thumb_up_off_alt_outlined,color: Theme.of(context).iconTheme.color)
+    IconButton(icon:isFavoraite==false? Icon(Icons.favorite_border,color: Theme.of(context).iconTheme.color):Icon(Icons.favorite,color: Theme.of(context).iconTheme.color),
+    onPressed: (){
+      setState(() {
+        isFavoraite=! isFavoraite;
+      });
+    },
+    ),
                   ],
                 ),
                 onPressed: () {},
