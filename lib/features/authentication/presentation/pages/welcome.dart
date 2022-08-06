@@ -46,6 +46,8 @@ class Welcome extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
                   ButtonSigninSignupProfile(
+                    backGroundColor: Colors.white,
+                    colorText: Colors.green,
                     context: context,
                     text: "Sign Up",
                     fun: () => Navigator.pushReplacementNamed(

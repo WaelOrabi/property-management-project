@@ -8,7 +8,9 @@ Builder TextForm(
     required String labelText,
     required IconData icon,
     bool obscureText = false,
-    required bool prefixIcon,
+    VoidCallback? fun,
+
+    required bool suffixIcon,
     required String hintText}) {
   return Builder(builder: (context) {
     return TextFormField(
@@ -33,12 +35,10 @@ Builder TextForm(
           );
         }),
         // ignore: unnecessary_null_comparison
-        suffixIcon: prefixIcon == true
+        suffixIcon: suffixIcon == true
             ? IconButton(
-                onPressed: () {
-                  obscureText = !obscureText;
-                },
-                icon:obscureText==false ?const Icon(Icons.visibility):const Icon(Icons.visibility_off_outlined))
+                onPressed: fun,
+                icon:obscureText==true ?const Icon(Icons.visibility_off_outlined,color: Colors.grey,): const Icon(Icons.visibility,color: Colors.grey,))
             : null,
         enabledBorder: Theme.of(context).inputDecorationTheme.enabledBorder,
         focusedBorder:Theme.of(context).inputDecorationTheme.focusedBorder,

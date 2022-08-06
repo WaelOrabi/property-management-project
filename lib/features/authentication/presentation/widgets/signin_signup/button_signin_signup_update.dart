@@ -21,7 +21,7 @@ GestureDetector ButtonSigninSignupProfile({
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(circle),
           border:borderColor==null?Border.all() :Border.all(color: borderColor),
-          color: Theme.of(context).primaryColor),
+          color: backGroundColor),
       child: Center(
         child: Text(
           text,

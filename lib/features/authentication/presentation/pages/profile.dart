@@ -55,8 +55,24 @@ class _ProfileState extends State<Profile> {
             '${widget.user!.firstName} ${widget.user!.lastName}',
             style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(
-            height: 30,
+          const SizedBox(height: 10,),
+         if(widget.user!.isAdmin==true || widget.user!.isSuperAdmin==true) Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                   Padding(
+                    padding: const EdgeInsets.only(right: 5),
+                    child: widget.user!.isSuperAdmin==true?const Icon(Icons.stars,color: Colors.blueAccent,):widget.user!.isAdmin==true?const Icon(Icons.star,color: Colors.blueAccent,):const Text(''),
+                  ),
+                  Text(widget.user!.isSuperAdmin==true?'Super Admin':widget.user!.isAdmin==true?'Admin':''),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+
+            ],
           ),
 
           buildListTile(

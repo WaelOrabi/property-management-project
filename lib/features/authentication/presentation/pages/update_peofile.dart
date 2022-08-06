@@ -55,7 +55,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                   children: [
                     TextForm(
                       controller: firstNameController,
-                      prefixIcon: false,
+                      suffixIcon: false,
                       icon: Icons.edit,
                       validator: (value) {
                         if (value!.isEmpty) {
@@ -67,10 +67,10 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       labelText: "First Name",
                       hintText: "Enter your First Name",
                     ),
-                    SizedBox(height: 60,),
+                    SizedBox(height: MediaQuery.of(context).size.height/35,),
                     TextForm(
                       controller: lastNameController,
-                      prefixIcon: false,
+                      suffixIcon: false,
                       icon: Icons.edit,
                       validator: (value) {
                         if (value!.isEmpty) {
@@ -82,10 +82,10 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       labelText: "Last Name",
                       hintText: "Enter your Last Name",
                     ),
-                    SizedBox(height: 60,),
+                    SizedBox(height: MediaQuery.of(context).size.height/35,),
                     TextForm(
                       controller: phoneController,
-                        prefixIcon: false,
+                        suffixIcon: false,
                         icon: Icons.phone,
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -96,7 +96,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                         keyboardType: TextInputType.phone,
                         labelText: "Phone",
                         hintText: "Enter your phone"),
-                    SizedBox(height: 20,),
+                    SizedBox(height: MediaQuery.of(context).size.height/20,),
                     ButtonSigninSignupProfile(
                         context: context,
                         height: 50,
@@ -109,7 +109,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                             Navigator.of(context).pop();
                           }                       }),
                     //button of Update
-
+                    SizedBox(height: MediaQuery.of(context).size.height/20,),
                   ],
                 ),
               ),

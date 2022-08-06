@@ -14,6 +14,7 @@ ThemeData getThemeDataDark() => ThemeData(
       textTheme: TextTheme(
         bodyText1: TextStyle(fontSize:25,color: Colors.green),
       ),
+      elevation: 4.0,
       color: Colors.black,
       centerTitle: true,
     ),

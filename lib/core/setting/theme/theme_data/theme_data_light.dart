@@ -13,7 +13,7 @@ ThemeData getThemeDataLight() => ThemeData(
     backgroundColor: AppColorLight.backGroundColor,
     appBarTheme: const AppBarTheme(
       shadowColor: AppColorLight.secondarySwitch,
-      elevation: 5.0,
+      elevation: 4.0,
       textTheme: TextTheme(
         bodyText1: TextStyle(fontSize:25,color: Colors.green),
       ),
