@@ -5,8 +5,8 @@ import '../../../../tests/tests.dart';
 
 class PageNotification extends StatefulWidget {
   static String routeName = 'PageNotification';
-
-  const PageNotification({Key? key}) : super(key: key);
+  final int ? idProperty;
+  const PageNotification({Key? key, this.idProperty}) : super(key: key);
 
   @override
   State<PageNotification> createState() => _PageNotificationState();
@@ -84,6 +84,11 @@ class _PageNotificationState extends State<PageNotification> {
               }));
             },
             child: ListTile(
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder:(context){
+                  return PropertyListingDetails(property: Te.user.listProperty![widget.idProperty!],);
+                }));
+              },
               leading: CircleAvatar(
                 radius: 35,
                 backgroundImage: FileImage(file),
