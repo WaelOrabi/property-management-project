@@ -1,63 +1,53 @@
 import 'package:flutter/material.dart';
 
 // ignore: non_constant_identifier_names
-TextFormField TextForm(
+Builder TextForm(
     {required FormFieldValidator<String>? validator,
-      required TextEditingController controller,
-      required TextInputType? keyboardType,
-      required String labelText,
-      required IconData icon,
-      double fontSize=15,
-      bool obscureText=false,
-      FontWeight fontWeight=FontWeight.normal,
-      double circle=50,
-      Color colorText=Colors.black,
-      Color colorLineBorder=Colors.grey,
-      required bool prefixIcon,
-      required String hintText}) {
-  return TextFormField(
-    controller: controller,
-    cursorColor: Colors.green,
-    obscureText: obscureText,
-
-    onSaved: (newValue) {
-    controller.text=newValue!;
-    },
-    validator: validator,
-    keyboardType: keyboardType,
-    style:  TextStyle(fontSize:fontSize,fontWeight: fontWeight, color: colorText),
-    decoration: InputDecoration(
-      contentPadding:
-      const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-      labelText: labelText,
-      hintText: hintText,
-      // ignore: unnecessary_null_comparison
-      prefixIcon: Icon(
-        icon,
+    required TextEditingController controller,
+    required TextInputType? keyboardType,
+    required String labelText,
+    required IconData icon,
+    bool obscureText = false,
+      VoidCallback? fun,
+    required bool prefixIcon,
+    required String hintText}) {
+  return Builder(builder: (context) {
+    return TextFormField(
+      controller: controller,
+      cursorColor: Theme.of(context).primaryColor,
+      obscureText: obscureText,
+      onSaved: (newValue) {
+        controller.text = newValue!;
+      },
+      validator: validator,
+      keyboardType: keyboardType,
+      style: TextStyle(
+          color: Theme.of(context).textTheme.bodyText2!.color),
+      decoration: InputDecoration(
+        labelText: labelText,
+        hintText: hintText,
+        // ignore: unnecessary_null_comparison
+        prefixIcon: Builder(builder: (context) {
+          return Icon(
+            icon,
+            color: Theme.of(context).iconTheme.color,
+          );
+        }),
+        // ignore: unnecessary_null_comparison
+        suffixIcon: prefixIcon == true
+            ? IconButton(
+                onPressed: () {
+                  obscureText = !obscureText;
+                },
+                icon:obscureText==false ?const Icon(Icons.visibility):const Icon(Icons.visibility_off_outlined))
+            : null,
+        enabledBorder: Theme.of(context).inputDecorationTheme.enabledBorder,
+        focusedBorder:Theme.of(context).inputDecorationTheme.focusedBorder,
+        errorBorder: Theme.of(context).inputDecorationTheme.errorBorder,
+        focusedErrorBorder: Theme.of(context).inputDecorationTheme.focusedBorder,
       ),
-      // ignore: unnecessary_null_comparison
-      suffixIcon: prefixIcon == true
-          ?  IconButton(onPressed: () { obscureText=!obscureText; }, icon:Icon(Icons.visibility))
-          : null,
-      enabledBorder:  OutlineInputBorder(
-        borderSide: BorderSide(color: colorLineBorder),
-        borderRadius: BorderRadius.circular(circle),
-      ),
-      focusedBorder:  OutlineInputBorder(
-        borderSide: BorderSide(color:colorLineBorder),
-        borderRadius: BorderRadius.circular(circle),
-
-      ),
-      errorBorder:OutlineInputBorder(
-        borderSide: BorderSide(color: colorLineBorder),
-        borderRadius: BorderRadius.circular(circle),
-      ),
-      focusedErrorBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: colorLineBorder),
-        borderRadius: BorderRadius.circular(circle),
-      ),
-    ),
-  );
+    );
+  });
 }
 
 bool isPasswordCompliant(String password, [int minLength = 6]) {
@@ -69,12 +59,9 @@ bool isPasswordCompliant(String password, [int minLength = 6]) {
   bool hasDigits = password.contains(RegExp(r'[0-9]'));
   bool hasLowercase = password.contains(RegExp(r'[a-z]'));
   bool hasSpecialCharacters =
-  password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+      password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
   bool hasMinLength = password.length >= minLength;
 
-  return (hasDigits ||
-      hasUppercase ||
-      hasLowercase ||
-      hasSpecialCharacters) &&
+  return (hasDigits || hasUppercase || hasLowercase || hasSpecialCharacters) &&
       hasMinLength;
 }

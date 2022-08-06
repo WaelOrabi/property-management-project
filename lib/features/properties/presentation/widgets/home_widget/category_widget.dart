@@ -8,28 +8,29 @@ Widget buildCategory({
   required double height,
   required double width,
   required VoidCallback fun,
-
 }) {
   return GestureDetector(
     child: Container(
-      height:MediaQuery.of(context).size.height/height,
-      width:MediaQuery.of(context).size.width/width,
-      decoration:BoxDecoration(
-          image: DecorationImage(image: AssetImage(linkImage),
-            fit: BoxFit.cover,colorFilter:const ColorFilter.mode(Colors.grey,
-                BlendMode.modulate),
+      height: MediaQuery.of(context).size.height / height,
+      width: MediaQuery.of(context).size.width / width,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(linkImage),
+            fit: BoxFit.cover,
+            colorFilter:
+                const ColorFilter.mode(Colors.grey, BlendMode.modulate),
           ),
+
           borderRadius: BorderRadius.circular(10)
       ),
       child: Center(child: Text(nameBtn,style:const TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),)),
+
     ),
     onTap: fun,
   );
 }
 
-
-Widget buildCategories(
-    BuildContext context,Orientation orientation) {
+Widget buildCategories(BuildContext context, Orientation orientation) {
   return SingleChildScrollView(
     scrollDirection: Axis.horizontal,
     child: Row(
@@ -43,11 +44,11 @@ Widget buildCategories(
                 context,
                 MaterialPageRoute(
                     builder: (context) => const ElementCategory(
-                      category: 'Buy',
-                    )));
+                          category: 'Buy',
+                        )));
           },
-          height: orientation==Orientation.landscape?3:6,
-          width: orientation==Orientation.landscape?2.8:2.3,
+          height: orientation == Orientation.landscape ? 3 : 6,
+          width: orientation == Orientation.landscape ? 2.8 : 2.3,
         ),
         const SizedBox(
           width: 6,
@@ -60,12 +61,12 @@ Widget buildCategories(
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) =>const ElementCategory(
-                      category: 'Rent',
-                    )));
+                    builder: (context) => const ElementCategory(
+                          category: 'Rent',
+                        )));
           },
-          height: orientation==Orientation.landscape?3:6,
-          width: orientation==Orientation.landscape?2.8:2.3,
+          height: orientation == Orientation.landscape ? 3 : 6,
+          width: orientation == Orientation.landscape ? 2.8 : 2.3,
         ),
         const SizedBox(
           width: 6,
@@ -78,12 +79,12 @@ Widget buildCategories(
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) =>const ElementCategory(
-                      category: 'Investment',
-                    )));
+                    builder: (context) => const ElementCategory(
+                          category: 'Investment',
+                        )));
           },
-          height: orientation==Orientation.landscape?3:6,
-          width: orientation==Orientation.landscape?2.8:2.3,
+          height: orientation == Orientation.landscape ? 3 : 6,
+          width: orientation == Orientation.landscape ? 2.8 : 2.3,
         ),
       ],
     ),

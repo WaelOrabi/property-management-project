@@ -1,4 +1,4 @@
-import 'package:project_111/features/conversation/domain/entities/message.dart';
+import '../../domain/entities/message.dart';
 
 class MessageModel extends Message {
   MessageModel(

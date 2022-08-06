@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/features/authentication/presentation/pages/sign_in.dart';
-import 'package:project_111/features/authentication/presentation/pages/signup_screen.dart';
-import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
-
+import 'sign_in.dart';
+import 'signup_screen.dart';
+import '../widgets/signin_signup/button_signin_signup_update.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({Key? key}) : super(key: key);
@@ -11,8 +10,8 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.white,
+      backgroundColor: Theme.of(context).backgroundColor,
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Padding(
@@ -24,7 +23,7 @@ class Welcome extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Icon(
-             Icons.location_on,
+                    Icons.location_on,
                     color: Colors.green,
                     size: 150,
                   ),
@@ -34,34 +33,23 @@ class Welcome extends StatelessWidget {
                     style: TextStyle(color: Colors.green, fontSize: 25),
                   ),
                   const SizedBox(height: 30),
-                 const Text(
-                      "This application helps you to choose your property",
-                      style: TextStyle(color: Colors.black, fontSize: 15)),
-                  const SizedBox(height: 30),
-                  ButtonSigninSignupProfile(
-                      context: context,
-                      height: 40,
-                      circle: 50,
-                      text: "Log In",
-                      fontWeight: FontWeight.bold,
-                      colorText: Colors.white,
-                      backGroundColor: Colors.green,
-                      fun: () => Navigator.pushReplacementNamed(
-                          context, SingIn.routeName),
-                  isBorder: Border.all(),
+                  const Text(
+                    "This application helps you to choose your property",
+                    style: TextStyle(color: Colors.grey),
                   ),
                   const SizedBox(height: 30),
                   ButtonSigninSignupProfile(
-                      context: context,
-                      height: 40,
-                      circle: 50,
-                      text: "Sign Up",
-                      fontWeight: FontWeight.bold,
-                      colorText: Colors.green,
-                      backGroundColor: Colors.white,
-                      fun: () => Navigator.pushReplacementNamed(
-                          context, SignUpScreen.routeName),
-                      isBorder:Border.all()
+                    context: context,
+                    text: "Log In",
+                    fun: () => Navigator.pushReplacementNamed(
+                        context, SingIn.routeName),
+                  ),
+                  const SizedBox(height: 30),
+                  ButtonSigninSignupProfile(
+                    context: context,
+                    text: "Sign Up",
+                    fun: () => Navigator.pushReplacementNamed(
+                        context, SignUpScreen.routeName),
                   ),
                 ],
               ),

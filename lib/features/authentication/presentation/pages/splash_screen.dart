@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:project_111/features/authentication/presentation/pages/page_view.dart';
+import 'page_view.dart';
 
 class SplashScreen extends StatefulWidget {
   static String routeName = 'SplashScreen';
@@ -57,6 +57,8 @@ class SplashScreenState extends State<SplashScreen>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset('assets/images/logo_app_property1.png',fit: BoxFit.fitHeight,),
+
+                   const Text("Real State",style: TextStyle(color: Colors.green,fontSize: 30,fontWeight: FontWeight.w900),)
                   ],
                 ),
               ),

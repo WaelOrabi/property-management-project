@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:project_111/features/properties/presentation/pages/property_listing_details.dart';
-import 'package:project_111/tests/tests.dart';
+import 'property_listing_details.dart';
+import '../../../../tests/tests.dart';
 
 class PageNotification extends StatefulWidget {
   static String routeName = 'PageNotification';
@@ -16,6 +16,7 @@ class _PageNotificationState extends State<PageNotification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: buildAppBar(context),
       body: buildBody(),
     );
@@ -23,7 +24,7 @@ class _PageNotificationState extends State<PageNotification> {
 
   Padding buildBody() {
     return Padding(
-      padding: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 30),
       child: ListView.separated(
         itemCount: Te.notificationMessage.length,
         itemBuilder: (BuildContext context, index) {
@@ -36,6 +37,7 @@ class _PageNotificationState extends State<PageNotification> {
                   return Align(
                     alignment: Alignment.bottomCenter,
                     child: Material(
+                      color:Theme.of(context).backgroundColor,
                       child: SizedBox(
                         height: 100,
                         child: InkWell(
@@ -45,25 +47,23 @@ class _PageNotificationState extends State<PageNotification> {
                             });
                             Navigator.of(context).pop();
                             ScaffoldMessenger.of(context)
-                                .showSnackBar(const SnackBar(
-                              content: Text("This notice has been removed"),
+                                .showSnackBar( SnackBar(
+                              backgroundColor: Theme.of(context).colorScheme.secondary,
+                              content: Text("This notice has been removed",style: TextStyle( color:Theme.of(context).colorScheme.primary,)),
                             ));
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(left: 15),
                             child: Row(
-                              children: const [
-                                CircleAvatar(
-                                  child: Icon(Icons.delete_forever),
-                                  backgroundColor: Colors.grey,
-                                ),
-                                SizedBox(
+                              children:  [
+                                Icon(Icons.delete_forever,color: Theme.of(context).iconTheme.color,),
+                                const SizedBox(
                                   width: 30,
                                 ),
                                 Text(
                                   'remove this notice',
                                   style: TextStyle(
-                                      color: Colors.black, fontSize: 20),
+                                      color: Theme.of(context).colorScheme.secondary, fontSize: 20),
                                 )
                               ],
                             ),
@@ -84,19 +84,41 @@ class _PageNotificationState extends State<PageNotification> {
               }));
             },
             child: ListTile(
-              selectedColor: Colors.white,
               leading: CircleAvatar(
                 radius: 35,
                 backgroundImage: FileImage(file),
               ),
-              title: Text(
-                Te.notificationMessage[index].message != null
-                    ? 'commented on your post by ${Te.notificationMessage[index].firstName} ${Te.notificationMessage[index].lastName}'
-                    : '${Te.notificationMessage[index].firstName} ${Te.notificationMessage[index].lastName} mentioned you in a comment',
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(color: Colors.green),
-              ),
+              title: Te.notificationMessage[index].message != null
+                  ? Text.rich(
+                      TextSpan(children: [
+                        TextSpan(
+                            text: "commented on your post by ",
+                            style: TextStyle(
+                                color:
+                                    Theme.of(context).colorScheme.secondary)),
+                        TextSpan(
+                            text:
+                                " ${Te.notificationMessage[index].firstName} ${Te.notificationMessage[index].lastName}",
+                            style: TextStyle(
+                                color: Theme.of(context).primaryColor)),
+                      ]),
+                    )
+                  : Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                              text:
+                                  " ${Te.notificationMessage[index].firstName} ${Te.notificationMessage[index].lastName}",
+                              style: TextStyle(
+                                  color: Theme.of(context).primaryColor)),
+                          TextSpan(
+                              text: "mentioned you in a comment ",
+                              style: TextStyle(
+                                  color:
+                                      Theme.of(context).colorScheme.secondary)),
+                        ],
+                      ),
+                    ),
               subtitle: Text(
                 Te.notificationMessage[index].message ?? '',
                 maxLines: 1,
@@ -106,11 +128,14 @@ class _PageNotificationState extends State<PageNotification> {
           );
         },
         separatorBuilder: (BuildContext context, int index) {
-          return const Divider(
-            endIndent: 20,
-            indent: 25,
-            height: 1,
-            color: Colors.grey,
+          return const SizedBox(
+            height: 30,
+            child: Divider(
+              endIndent: 20,
+              indent: 25,
+              height: 1,
+              color: Colors.grey,
+            ),
           );
         },
       ),
@@ -119,13 +144,8 @@ class _PageNotificationState extends State<PageNotification> {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      elevation: 5.0,
-      backgroundColor: Colors.white,
-      title: const Text(
-        'Notifications',
-        style: TextStyle(color: Colors.green, fontSize: 20),
-      ),
-      centerTitle: true,
+      title: Text('Notifications',
+          style: Theme.of(context).appBarTheme.textTheme!.bodyText1),
     );
   }
 }

@@ -1,13 +1,12 @@
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
-import 'package:project_111/core/widgets/user.dart';
-import 'package:project_111/features/conversation/presntation/widgets/chat/message_stream_builder_chat_widget.dart';
-import 'package:scroll_app_bar/scroll_app_bar.dart';
+import '../../../../core/paramaters.dart';
+import '../widgets/chat/message_stream_builder_chat_widget.dart';
 import '../widgets/chat/input_widget.dart';
 
 class Chat extends StatefulWidget {
- final User? user;
+ final User ? user;
   static String routeName = 'chat';
   const Chat({Key? key, required this.user}) : super(key: key);
   @override
@@ -39,29 +38,28 @@ class ChatState extends State<Chat> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+    backgroundColor: Theme.of(context).backgroundColor,
         appBar: buildAppBar(context),
         body: buildBody(),
       );
 
-  SingleChildScrollView buildBody() {
+   buildBody() {
     return SingleChildScrollView(
-      child: WillPopScope(
-          onWillPop: onBackPress,
-          child: Column(
-            children: <Widget>[
-               MessageStreamBuilderChat(user: widget.user!),
-              InputWidget(
-                onBlurred: toggleEmojiKeyboard,
-                controller: controller,
-                isEmojiVisible: isEmojiVisible,
-                isKeyboardVisible: isKeyboardVisible,
-                onSentMessage: (message) =>
-                    setState(() => messages.insert(0, message)),
-              ),
-              buildlistEmoji(),
-            ],
+      child: Column(
+        children: <Widget>[
+           SizedBox(height:700,child: MessageStreamBuilderChat(user: widget.user!)),
+          InputWidget(
+            message: widget.user!.messages,
+            onBlurred: toggleEmojiKeyboard,
+            controller: controller,
+            isEmojiVisible: isEmojiVisible,
+            isKeyboardVisible: isKeyboardVisible,
+            onSentMessage: (message) =>
+                setState(() => messages.insert(0, message)),
           ),
-        ),
+          buildlistEmoji(),
+        ],
+      ),
     );
   }
 
@@ -103,10 +101,7 @@ class ChatState extends State<Chat> {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-        titleSpacing: 20,
-        elevation: 0.0,
-        backgroundColor: Colors.white,
-        centerTitle: true,
+
         leading: IconButton(
             onPressed: () {
               Navigator.of(context).pop();

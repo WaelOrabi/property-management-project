@@ -61,6 +61,8 @@ dependencies:
   dots_indicator:
   flutter_colorful_tab:
   dropdown_button2:
+  auto_size_text:
+  flutter_offline: ^2.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

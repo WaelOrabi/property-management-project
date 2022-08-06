@@ -110,12 +110,9 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
                     widget.listImagesProperty.addAll(objects!);
                     // print("***************");
                     // print("***************uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-                    // print(widget.listImagesProperty[0].modifiedPath);
-                    // print(widget.listImagesProperty[1].modifiedPath);
-                    // print(widget.listImagesProperty[2].modifiedPath);
-                    // print(widget.listImagesProperty[3].modifiedPath);
-                    // print(widget.listImagesProperty[4].modifiedPath);
-                    //
+                    print(widget.listImagesProperty[0].modifiedPath);
+                    print(widget.listImagesProperty[1].modifiedPath);
+
                     // print("***************");
                     // // print("***************uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
                   });

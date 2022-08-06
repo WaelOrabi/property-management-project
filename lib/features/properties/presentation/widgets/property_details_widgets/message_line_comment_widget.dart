@@ -33,7 +33,7 @@ class MessageLineComment extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               child: Text(
                 text,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 15,
                   color:  Colors.black,
                 ),

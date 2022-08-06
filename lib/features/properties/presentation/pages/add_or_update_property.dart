@@ -1,9 +1,8 @@
 import 'package:advance_image_picker/models/image_object.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:project_111/core/paramaters.dart';
-import 'package:project_111/core/widgets/bottom_navigation_bar.dart';
-import '../../../../core/widgets/address.dart';
+import '../../../../core/paramaters.dart';
+import '../../../../core/widgets/bottom_navigation_bar.dart';
 import '../../../../core/widgets/widget_appbar.dart';
 import '../widgets/add_or_update_property_widget/add_photo_advance_image.dart';
 import '../widgets/add_or_update_property_widget/build_add_or_edit_photos_text.dart';
@@ -11,7 +10,7 @@ import '../widgets/add_or_update_property_widget/function_widjets.dart';
 import '../widgets/add_or_update_property_widget/widget_btn_Add_or_edit.dart';
 import 'map_screen.dart';
 
-
+// ignore: must_be_immutable
 class AddOrUpdateProperty extends StatefulWidget {
   AddOrUpdateProperty({Key? key, this.isUpdate, this.property, this.address})
       : super(key: key);
@@ -59,12 +58,13 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey.shade200,
+        backgroundColor:Theme.of(context).backgroundColor,
         appBar: buildAppBar(
-          namePage: widget.isUpdate == true ? "Update Property" : "Add Property",
+          namePage:
+              widget.isUpdate == true ? "Update Property" : "Add Property",
           fun: () => Navigator.pushReplacementNamed(
               context, NavigationBarHome.routeName),
-          color: Colors.grey.shade200,
+
         ),
         body: _buildBody(context),
       ),
@@ -86,7 +86,6 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
             ),
             const SizedBox(height: 6),
             Container(
-              color: Colors.white,
               padding: const EdgeInsets.only(left: 15, top: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,16 +138,16 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
                     fontWeight: FontWeight.bold,
                   ),
                   rowAddLocation(context),
-                  buildAddOrUpdatePhotosText(isUpdate: widget.isUpdate==true?true:false),
+                  buildAddOrUpdatePhotosText(
+                      isUpdate: widget.isUpdate == true ? true : false),
                   AddPhotoAdvanceImage(
                       listImagesProperty: widget.imagesProperty),
                 ],
               ),
             ),
             const SizedBox(height: 6),
-
             widgetBtnAddOrUpdate(
-              isUpdate: widget.isUpdate==true?true:false,
+              isUpdate: widget.isUpdate == true ? true : false,
               fun: () {
                 Property pro = Property(
                     address: widget.address!,
@@ -161,6 +160,7 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
                     price: priceController.text,
                     image: widget.imagesProperty,
                     category: dropdownValueCategory);
+
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
@@ -174,6 +174,7 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
       ),
     );
   }
+
   Row rowAddLocation(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -197,9 +198,12 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
                     widget.address = val; //you get details from screen2 here
                   });
                 },
+
                 child:  Text(
                 widget.isUpdate==true?"Update location"  :"Add location",
                   style:const TextStyle(color: Colors.black, fontSize: 16),
+
+
                 )))
       ],
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/features/properties/presentation/widgets/property_details_widgets/message_line_comment_widget.dart';
+import 'message_line_comment_widget.dart';
 class MessageStreamBuilderComment extends StatelessWidget {
   const MessageStreamBuilderComment({Key? key}) : super(key: key);
 

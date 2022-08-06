@@ -1,19 +1,18 @@
 
 import 'package:flutter/material.dart';
-import 'package:project_111/core/widgets/user.dart';
-import 'package:project_111/features/conversation/presntation/pages/chat.dart';
+import '../../../../../core/paramaters.dart';
+import '../../pages/chat.dart';
 
 GestureDetector buildChatItem({required User ? user,required BuildContext context}) {
   return GestureDetector(
     onTap: () {
-      Navigator.of(context).push(MaterialPageRoute(builder:(context)=>Chat(user:user)));
+      Navigator.of(context).push(MaterialPageRoute(builder:(context)=>Chat(user:user!)));
     },
     child: Row(
       children: [
         CircleAvatar(
           radius: 30.0,
           backgroundImage: FileImage(user!.image!),
-          backgroundColor: Colors.transparent,
         ),
         const SizedBox(
           width: 20,
@@ -24,11 +23,12 @@ GestureDetector buildChatItem({required User ? user,required BuildContext contex
             children: [
               Row(
                 children: [
-
-                  Text(
-                    user.firstName!+' ' + user.lastName!,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 16),
+                  Text.rich(TextSpan(children: [
+                    TextSpan(
+                        text:  user.firstName!+' ' + user.lastName!,
+                        style: TextStyle(color: Theme.of(context).primaryColor),
+                    ),
+                  ],),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),

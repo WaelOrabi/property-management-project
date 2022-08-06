@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/core/paramaters.dart';
-import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
-import 'package:project_111/features/properties/presentation/pages/list_property_search.dart';
+import '../../../../core/paramaters.dart';
+import '../../../authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
+import 'list_property_search.dart';
 import '../../../../tests/tests.dart';
 import '../widgets/add_or_update_property_widget/function_widjets.dart';
 
@@ -15,11 +15,11 @@ class Search extends StatefulWidget {
 }
 
 class _SearchState extends State<Search> {
-  final double _startValuePrice = 10000000;
-  final double _endValuePrice = 1000000000000;
-  final double _startValueSpace = 50;
-  final double _endValueSpace = 1000;
-  final ScrollController _scrollController = ScrollController();
+   double _startValuePrice = 10000000;
+   double _endValuePrice = 1000000000000;
+   double _startValueSpace = 50;
+   double _endValueSpace = 1000;
+   final ScrollController _scrollController = ScrollController();
   TextEditingController roomController = TextEditingController();
   TextEditingController storeyController = TextEditingController();
   List<String> propertyType = [
@@ -40,6 +40,7 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       body: OrientationBuilder(builder: (context, orientation) {
         return buildBody(context: context, orientation: orientation);
       }),
@@ -89,8 +90,8 @@ class _SearchState extends State<Search> {
                                 ))),
                             color: propertyType[index] == typeProperty
                                 ? Colors.green
-                                : Colors.white,
-                            shadowColor: Colors.grey,
+                                :  Theme.of(context).cardTheme.color,
+
                           ),
                         ),
                       ],
@@ -135,7 +136,7 @@ class _SearchState extends State<Search> {
                         child: Card(
                           color: typeGovernorate == governorate
                               ? Colors.green
-                              : Colors.white,
+                              : Theme.of(context).cardTheme.color,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -163,7 +164,6 @@ class _SearchState extends State<Search> {
                               ),
                             ],
                           ),
-                          shadowColor: Colors.grey,
                         ),
                       );
                     }).toList(),
@@ -183,11 +183,23 @@ class _SearchState extends State<Search> {
               const SizedBox(
                 height: 15,
               ),
-              buildRangeSlider(
-                  min: 10000000,
-                  max: 1000000000000,
-                  startValue: _startValuePrice,
-                  endValue: _endValueSpace),
+              RangeSlider(
+                min: 10000000,
+                activeColor:Colors.green ,
+                max: 1000000000000,
+                divisions: 10,
+                labels: RangeLabels(
+                  _startValuePrice.round().toString(),
+                  _endValuePrice.round().toString(),
+                ),
+                values: RangeValues(_startValuePrice, _endValuePrice),
+                onChanged: (values) {
+                  setState(() {
+                    _startValuePrice = values.start;
+                    _endValuePrice = values.end;
+                  });
+                },
+              ),
               buildRowOfTextFormField(
                   context: context,
                   title: "Room",
@@ -222,11 +234,23 @@ class _SearchState extends State<Search> {
                   ),
                 ],
               ),
-              buildRangeSlider(
-                  min: 50,
-                  max: 1000,
-                  startValue: _startValueSpace,
-                  endValue: _endValueSpace),
+              RangeSlider(
+                min:50,
+                activeColor:Colors.green ,
+                max: 1000,
+                divisions: 10,
+                labels: RangeLabels(
+                  _startValueSpace.round().toString(),
+                  _endValueSpace.round().toString(),
+                ),
+                values: RangeValues(_startValueSpace, _endValueSpace),
+                onChanged: (values) {
+                  setState(() {
+                    _startValueSpace = values.start;
+                    _endValueSpace = values.end;
+                  });
+                },
+              ),
               const SizedBox(
                 height: 30,
               ),
@@ -250,9 +274,7 @@ class _SearchState extends State<Search> {
                           builder: (context) => ListPropertySearch(
                               listPropertySearch: Te.listPropertySearch)));
                     },
-                    fontWeight: FontWeight.bold,
-                    colorText: Colors.white,
-                    backGroundColor: Colors.green),
+                 ),
               ),
               const SizedBox(
                 height: 30,
@@ -261,29 +283,6 @@ class _SearchState extends State<Search> {
           ),
         ),
       ),
-    );
-  }
-
-  RangeSlider buildRangeSlider(
-      {required double min,
-      required double max,
-      required double startValue,
-      required double endValue}) {
-    return RangeSlider(
-      min: 10000000,
-      max: 1000000000000,
-      divisions: 10,
-      labels: RangeLabels(
-        startValue.round().toString(),
-        endValue.round().toString(),
-      ),
-      values: RangeValues(_startValuePrice, _endValuePrice),
-      onChanged: (values) {
-        setState(() {
-          startValue = values.start;
-          endValue = values.end;
-        });
-      },
     );
   }
 }

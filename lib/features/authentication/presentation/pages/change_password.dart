@@ -1,33 +1,27 @@
 import 'package:flutter/material.dart';
-import '../../../../core/paramaters.dart';
 import '../../../../core/widgets/widget_appbar.dart';
 import '../widgets/signin_signup/button_signin_signup_update.dart';
 import '../widgets/signin_signup/textformfield_signin_signup_updateProfile.dart';
-import '../widgets/update_profile/profile_picture.dart';
 
-class UpdateProfile extends StatefulWidget {
-  static String routeName = 'UpdateProfile';
-final User user;
-  const UpdateProfile({Key? key, required this.user}) : super(key: key);
+class ChangePassword extends StatefulWidget {
+  static String routeName = 'ChangePassword';
+  const ChangePassword({Key? key}) : super(key: key);
 
   @override
-  State<UpdateProfile> createState() => _UpdateProfileState();
+  State<ChangePassword> createState() => _ChangePasswordState();
 }
 
-class _UpdateProfileState extends State<UpdateProfile> {
+class _ChangePasswordState extends State<ChangePassword> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController firstNameController = TextEditingController();
-  TextEditingController lastNameController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
+  TextEditingController oldPasswordController = TextEditingController();
+  TextEditingController newPasswordController = TextEditingController();
+  TextEditingController confirmNewPasswordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    firstNameController.text=widget.user.firstName!;
-    lastNameController.text=widget.user.lastName!;
-    phoneController.text=widget.user.phoneNumber!;
-    return Scaffold(
+   return Scaffold(
       backgroundColor:Theme.of(context).backgroundColor,
       appBar:buildAppBar(
-          namePage: "Update Profile",
+          namePage: "Change Password",
           fun: () => Navigator.of(context).pop(),
           color: Colors.white),
       body: _buildBody(context),
@@ -41,12 +35,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(
-              child: Padding(
-                padding:const EdgeInsets.only(top: 20),
-                child: Profile_Picture(image: widget.user.image,),
-              ),
-            ),
+
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
               child: Form(
@@ -54,55 +43,55 @@ class _UpdateProfileState extends State<UpdateProfile> {
                 child: Column(
                   children: [
                     TextForm(
-                      controller: firstNameController,
+                      controller: oldPasswordController,
                       prefixIcon: false,
-                      icon: Icons.edit,
+                      icon: Icons.lock,
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return "Please Enter your first Name";
+                          return "Please Enter your old password";
                         }
                         return null;
                       },
-                      keyboardType: TextInputType.name,
-                      labelText: "First Name",
-                      hintText: "Enter your First Name",
+                      keyboardType: TextInputType.visiblePassword,
+                      labelText: "Old Password",
+                      hintText: "Enter your old password",
                     ),
-                    SizedBox(height: 60,),
+                    const SizedBox(height: 20,),
                     TextForm(
-                      controller: lastNameController,
+                      controller: newPasswordController,
                       prefixIcon: false,
-                      icon: Icons.edit,
+                      icon: Icons.lock,
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return "Please Enter your last name";
+                          return "Please Enter your new password";
                         }
                         return null;
                       },
-                      keyboardType: TextInputType.name,
-                      labelText: "Last Name",
-                      hintText: "Enter your Last Name",
+                      keyboardType: TextInputType.visiblePassword,
+                      labelText: "new password",
+                      hintText: "Enter your new password",
                     ),
-                    SizedBox(height: 60,),
+                   const SizedBox(height: 20,),
                     TextForm(
-                      controller: phoneController,
+                        controller: confirmNewPasswordController,
                         prefixIcon: false,
-                        icon: Icons.phone,
+                        icon: Icons.lock,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return "Please Enter your phone";
+                            return "Please Enter your new password";
                           }
                           return null;
                         },
-                        keyboardType: TextInputType.phone,
-                        labelText: "Phone",
-                        hintText: "Enter your phone"),
-                    SizedBox(height: 20,),
+                        keyboardType: TextInputType.visiblePassword,
+                        labelText: "Confirm new password",
+                        hintText: "Enter your new password"),
+                   const SizedBox(height: 30,),
                     ButtonSigninSignupProfile(
                         context: context,
                         height: 50,
                         width: 2,
                         circle: 50,
-                        text: 'Update',
+                        text: 'Save',
                         fun: () {
                           if(_formKey.currentState!.validate()) {
                             _formKey.currentState!.save();

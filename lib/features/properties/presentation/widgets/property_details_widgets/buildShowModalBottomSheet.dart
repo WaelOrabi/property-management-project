@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_111/features/properties/presentation/widgets/property_details_widgets/message_stream_builder_comment_widget.dart';
+import 'message_stream_builder_comment_widget.dart';
 Future<dynamic> buildShowModalBottomSheet({required BuildContext context,required TextEditingController messageController,required String? comment}) {
   return showModalBottomSheet(
       shape: const RoundedRectangleBorder(
@@ -23,7 +23,7 @@ Future<dynamic> buildShowModalBottomSheet({required BuildContext context,require
                 padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
                 child: Row(
                   children: [
-                    IconButton(onPressed:(){}, icon:Icon(Icons.keyboard)),
+                    IconButton(onPressed:(){}, icon:const Icon(Icons.keyboard)),
                     Expanded(
                         child: TextField(
                           controller: messageController,
