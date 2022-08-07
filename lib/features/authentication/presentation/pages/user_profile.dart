@@ -60,7 +60,7 @@ class UserProfile extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 10,
+            height: 30,
           ),
           if (user.isAdmin == true || user.isSuperAdmin == true)
             Column(
@@ -90,7 +90,7 @@ class UserProfile extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
               ],
             ),

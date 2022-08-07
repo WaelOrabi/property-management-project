@@ -11,7 +11,7 @@ import 'package:project_111/features/properties/presentation/pages/search.dart';
 import '../../features/authentication/presentation/pages/welcome.dart';
 import 'package:project_111/features/authentication/presentation/pages/sign_in.dart';
 import 'package:project_111/core/setting/setting.dart';
-import 'package:project_111/features/properties/presentation/pages/search_user.dart';
+import 'package:project_111/features/authentication/presentation/pages/search_user.dart';
 import '../../features/authentication/presentation/pages/account_details.dart';
 import '../../features/authentication/presentation/pages/page_view.dart';
 import '../../features/authentication/presentation/pages/profile.dart';

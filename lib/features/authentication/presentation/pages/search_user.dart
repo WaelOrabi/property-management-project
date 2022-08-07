@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:advance_image_picker/models/image_object.dart';
 import 'package:flutter/material.dart';
 import 'package:project_111/core/paramaters.dart';
-import 'package:project_111/features/properties/presentation/pages/user_profile.dart';
+import 'package:project_111/features/authentication/presentation/pages/user_profile.dart';
 
 class SearchUser extends StatefulWidget {
   static const routeName = 'SearchUser';
@@ -31,8 +31,7 @@ class _SearchUserState extends State<SearchUser> {
         'hi ayham',
       ],
       sendTime: '02:15',
-      image: File(
-          '/storage/emulated/0/Android/data/com.example.project_111/cache/2268_compressed4846294729807657481.jpg'),
+      image: File('/storage/emulated/0/Download/images (17).jpeg'),
       listProperty: [
         Property(
             idProperty: 2,
@@ -48,100 +47,43 @@ class _SearchUserState extends State<SearchUser> {
             bedRooms: '54',
             storeys: '445',
             dateAdded: '2021-11-11',
-            description: 'description111222',
+            description: 'there is here description',
             price: '56',
             image: [
               ImageObject(
-                  originalPath:
-                      '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg',
-                  modifiedPath:
-                      '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg'),
+                  originalPath: '/storage/emulated/0/Download/images (9).jpeg',
+                  modifiedPath: '/storage/emulated/0/Download/images (9).jpeg'),
               ImageObject(
-                  originalPath:
-                      '/storage/emulated/0/Download/dalaman_villa_1.jpg',
-                  modifiedPath:
-                      '/storage/emulated/0/Download/dalaman_villa_1.jpg'),
+                  originalPath: '/storage/emulated/0/Download/images (8).jpeg',
+                  modifiedPath: '/storage/emulated/0/Download/images (8).jpeg'),
             ],
-            category: 'Buy'),
+            category: 'Rent'),
         Property(
             idProperty: 2,
             address: Address(
               latitude: 33.51689336744682,
               longitude: 36.26502357423305,
               region: 'Al Mouhajrin',
-              city: ' Damascus ',
+              city: ' Homs',
               country: 'Syria',
             ),
-            space: '34',
-            baths: '65',
-            bedRooms: '54',
+            space: '344',
+            baths: '6',
+            bedRooms: '5',
             storeys: '445',
-            dateAdded: '2021-11-11',
+            dateAdded: '2021-12-11',
             description: 'description111222',
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Download/2357-5.jpg',
-                  modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
+                  originalPath: '/storage/emulated/0/Download/images (7).jpeg',
+                  modifiedPath: '/storage/emulated/0/Download/images (7).jpeg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Download/2357-8.jpg',
-                  modifiedPath: '/storage/emulated/0/Download/2357-8.jpg'),
+                  originalPath: '/storage/emulated/0/Download/images (6).jpeg',
+                  modifiedPath: '/storage/emulated/0/Download/images (6).jpeg'),
             ],
-            category: 'Buy'),
-        Property(
-            idProperty: 2,
-            address: Address(
-              latitude: 33.51689336744682,
-              longitude: 36.26502357423305,
-              region: 'Al Mouhajrin',
-              city: ' Damascus ',
-              country: 'Syria',
-            ),
-            space: '34',
-            baths: '65',
-            bedRooms: '54',
-            storeys: '445',
-            dateAdded: '2021-11-11',
-            description: 'description111222',
-            price: '56',
-            image: [
-              ImageObject(
-                  originalPath: '/storage/emulated/0/Download/2357-6.jpg',
-                  modifiedPath: '/storage/emulated/0/Download/2357-6.jpg'),
-              ImageObject(
-                  originalPath:
-                      '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg',
-                  modifiedPath:
-                      '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg'),
-            ],
-            category: 'Buy'),
-        Property(
-            idProperty: 2,
-            address: Address(
-              latitude: 33.51689336744682,
-              longitude: 36.26502357423305,
-              region: 'Al Mouhajrin',
-              city: ' Damascus ',
-              country: 'Syria',
-            ),
-            space: '34',
-            baths: '65',
-            bedRooms: '54',
-            storeys: '445',
-            dateAdded: '2021-11-11',
-            description: 'description111222',
-            price: '56',
-            image: [
-              ImageObject(
-                  originalPath:
-                      '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg',
-                  modifiedPath:
-                      '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg'),
-              ImageObject(
-                  originalPath: '/storage/emulated/0/Download/2357-5.jpg',
-                  modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
-            ],
-            category: 'Buy'),
+            category: 'Sale'),
+
       ],
       address: Address(
         latitude: 33.50426786925087,
@@ -168,7 +110,7 @@ class _SearchUserState extends State<SearchUser> {
         'hi ayham',
         'hi ayham',
       ],
-      image: File('/storage/emulated/0/Pictures/1612315397060567-1.png'),
+      image: File('/storage/emulated/0/Download/images (16).jpeg'),
       listProperty: [
         Property(
             idProperty: 2,
@@ -176,7 +118,7 @@ class _SearchUserState extends State<SearchUser> {
               latitude: 33.51689336744682,
               longitude: 36.26502357423305,
               region: 'Al Mouhajrin',
-              city: ' Damascus ',
+              city: 'Alepo',
               country: 'Syria',
             ),
             space: '34',
@@ -184,28 +126,24 @@ class _SearchUserState extends State<SearchUser> {
             bedRooms: '54',
             storeys: '445',
             dateAdded: '2021-11-11',
-            description: 'description111222',
+            description: 'dsdfdsfescription111222',
             price: '56',
             image: [
               ImageObject(
-                  originalPath:
-                      '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg',
-                  modifiedPath:
-                      '/storage/emulated/0/Download/3120-4b0b24b28d17da4d2c46cb9d562043cc.jpg'),
+                  originalPath: '/storage/emulated/0/Download/images (3).jpeg',
+                  modifiedPath: '/storage/emulated/0/Download/images (3).jpeg'),
               ImageObject(
-                  originalPath:
-                      '/storage/emulated/0/Download/dalaman_villa_1.jpg',
-                  modifiedPath:
-                      '/storage/emulated/0/Download/dalaman_villa_1.jpg'),
+                  originalPath: '/storage/emulated/0/Download/images (2).jpeg',
+                  modifiedPath: '/storage/emulated/0/Download/images (2).jpeg'),
             ],
-            category: 'Buy'),
+            category: 'Sale'),
         Property(
             idProperty: 2,
             address: Address(
               latitude: 33.51689336744682,
               longitude: 36.26502357423305,
               region: 'Al Mouhajrin',
-              city: ' Damascus ',
+              city: ' Hama ',
               country: 'Syria',
             ),
             space: '34',
@@ -217,67 +155,13 @@ class _SearchUserState extends State<SearchUser> {
             price: '56',
             image: [
               ImageObject(
-                  originalPath: '/storage/emulated/0/Download/2357-5.jpg',
-                  modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
+                  originalPath: '/storage/emulated/0/Download/images (5).jpeg',
+                  modifiedPath: '/storage/emulated/0/Download/images (5).jpeg'),
               ImageObject(
-                  originalPath: '/storage/emulated/0/Download/2357-8.jpg',
-                  modifiedPath: '/storage/emulated/0/Download/2357-8.jpg'),
+                  originalPath: '/storage/emulated/0/Download/images (4).jpeg',
+                  modifiedPath: '/storage/emulated/0/Download/images (4).jpeg'),
             ],
-            category: 'Buy'),
-        Property(
-            idProperty: 2,
-            address: Address(
-              latitude: 33.51689336744682,
-              longitude: 36.26502357423305,
-              region: 'Al Mouhajrin',
-              city: ' Damascus ',
-              country: 'Syria',
-            ),
-            space: '34',
-            baths: '65',
-            bedRooms: '54',
-            storeys: '445',
-            dateAdded: '2021-11-11',
-            description: 'description111222',
-            price: '56',
-            image: [
-              ImageObject(
-                  originalPath: '/storage/emulated/0/Download/2357-6.jpg',
-                  modifiedPath: '/storage/emulated/0/Download/2357-6.jpg'),
-              ImageObject(
-                  originalPath:
-                      '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg',
-                  modifiedPath:
-                      '/storage/emulated/0/Download/sarigerme_beach_property_1.jpg'),
-            ],
-            category: 'Buy'),
-        Property(
-            idProperty: 2,
-            address: Address(
-              latitude: 33.51689336744682,
-              longitude: 36.26502357423305,
-              region: 'Al Mouhajrin',
-              city: ' Damascus ',
-              country: 'Syria',
-            ),
-            space: '34',
-            baths: '65',
-            bedRooms: '54',
-            storeys: '445',
-            dateAdded: '2021-11-11',
-            description: 'description111222',
-            price: '56',
-            image: [
-              ImageObject(
-                  originalPath:
-                      '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg',
-                  modifiedPath:
-                      '/storage/emulated/0/Download/dalaman_property_for_sale_1.jpg'),
-              ImageObject(
-                  originalPath: '/storage/emulated/0/Download/2357-5.jpg',
-                  modifiedPath: '/storage/emulated/0/Download/2357-5.jpg'),
-            ],
-            category: 'Buy'),
+            category: 'Sale'),
       ],
       address: Address(
         latitude: 33.556982562518726,

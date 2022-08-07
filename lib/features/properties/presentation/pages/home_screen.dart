@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:project_111/features/properties/presentation/pages/search.dart';
-import 'package:project_111/features/properties/presentation/pages/search_user.dart';
+import 'package:project_111/features/authentication/presentation/pages/search_user.dart';
 import '../../../authentication/presentation/pages/profile.dart';
 import 'add_or_update_property.dart';
 import 'all_properties_in_map.dart';
@@ -178,8 +178,8 @@ class MenuItem {
 class MenuItems {
   static const List<MenuItem> firstItems = [users, properties];
 
-  static const users = MenuItem(text: 'users', icon: Icons.person);
-  static const properties = MenuItem(text: 'properties', icon: Icons.home);
+  static const users = MenuItem(text: 'Users', icon: Icons.person);
+  static const properties = MenuItem(text: 'Properties', icon: Icons.home);
 
   static Widget buildItem(MenuItem item) {
     return Row(
