@@ -57,8 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
       leading: GestureDetector(
         child: Padding(
           padding: const EdgeInsets.only(top: 2, left: 15),
-          child: CircleAvatar(
-            backgroundImage: FileImage(file!),
+          child:file==null?const CircleAvatar(
+            backgroundImage:AssetImage('assets/images/download.png') ,
+            radius: 50,
+          ): CircleAvatar(
+            backgroundImage: FileImage(file),
             radius: 50,
           ),
         ),

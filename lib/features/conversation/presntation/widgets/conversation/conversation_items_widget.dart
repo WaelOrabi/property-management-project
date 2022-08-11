@@ -3,18 +3,21 @@ import 'package:flutter/material.dart';
 import '../../../../../core/paramaters.dart';
 import '../../pages/chat.dart';
 
-GestureDetector buildChatItem({required User ? user,required BuildContext context}) {
+InkWell buildChatItem({required User ? user,required BuildContext context}) {
   bool isRead=false;
-  return GestureDetector(
+  return InkWell(
     onTap: () {
       print(!isRead);
       Navigator.of(context).push(MaterialPageRoute(builder:(context)=>Chat(user:user!,isRead: !isRead,)));
     },
     child: Row(
       children: [
-        CircleAvatar(
+        user!.image==null?const CircleAvatar(
+        backgroundImage:AssetImage('assets/images/download.png'),
+    radius: 30,
+  ):CircleAvatar(
           radius: 30.0,
-          backgroundImage: FileImage(user!.image!),
+          backgroundImage: FileImage(user.image!),
         ),
         const SizedBox(
           width: 20,

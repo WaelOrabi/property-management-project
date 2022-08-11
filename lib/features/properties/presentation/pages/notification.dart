@@ -84,12 +84,10 @@ class _PageNotificationState extends State<PageNotification> {
               }));
             },
             child: ListTile(
-              onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder:(context){
-                  return PropertyListingDetails(property: Te.user.listProperty![widget.idProperty!],);
-                }));
-              },
-              leading: CircleAvatar(
+              leading:file==null?const CircleAvatar(
+                backgroundImage:AssetImage('assets/images/download.png'),
+                radius: 35,
+              ): CircleAvatar(
                 radius: 35,
                 backgroundImage: FileImage(file),
               ),

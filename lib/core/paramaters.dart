@@ -32,7 +32,7 @@ class Property {
 class NotificationParametersMessage {
   final String firstName;
   final String lastName;
-  final File image;
+  final File? image;
   final int idProperty;
   final String? message;
 

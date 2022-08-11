@@ -46,7 +46,11 @@ class _ProfileState extends State<Profile> {
             height: 30,
           ),
           //image_profile
-          Profile_Picture(
+        widget.user!.image==null?
+        const CircleAvatar(
+          backgroundImage: AssetImage('assets/images/download.png'),
+          radius: 50,
+        ):  Profile_Picture(
             image: widget.user!.image,
           ),
           const SizedBox(

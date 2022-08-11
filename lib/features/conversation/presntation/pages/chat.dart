@@ -113,7 +113,11 @@ class ChatState extends State<Chat> {
             )),
         title: Row(
           children: [
-             CircleAvatar(
+            widget.user!.image==null?
+            const CircleAvatar(
+              backgroundImage:AssetImage('assets/images/download.png'),
+              radius: 25,
+            ): CircleAvatar(
               radius: 25.0,
               backgroundImage:FileImage(widget.user!.image!),
               backgroundColor: Colors.transparent,

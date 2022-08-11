@@ -65,6 +65,11 @@ class _ConversationsState extends State<Conversations> {
       centerTitle: true,
       title: Row(
         children: [
+          Te.user.image==null?
+          const CircleAvatar(
+            backgroundImage:AssetImage('assets/images/download.png'),
+            radius: 25,
+          ):
           CircleAvatar(
             radius: 25.0,
             backgroundImage: FileImage(Te.user.image!),

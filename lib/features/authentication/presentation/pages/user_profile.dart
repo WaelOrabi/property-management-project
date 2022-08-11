@@ -39,7 +39,7 @@ class _UserProfileState extends State<UserProfile> {
           )),
       actions: [
         Visibility(
-            visible: Te.user.isAdmin==true?true:false,
+            visible: Te.user.isSuperAdmin==true?true:false,
             child:  IconButton(
                 onPressed: () {
                   var ad = AlertDialog(
@@ -52,7 +52,7 @@ class _UserProfileState extends State<UserProfile> {
                             height: 10,
                           ),
                           Container(
-                            color: Colors.red,
+                            color: Colors.green,
                             child: ListTile(
                               leading:const  Icon(   Icons.star,color: Colors.white,),
                               title:const  Text("Set as admin"),
@@ -61,7 +61,7 @@ class _UserProfileState extends State<UserProfile> {
                                 animType: AnimType.SCALE,
                                 dialogType: DialogType.QUESTION,
                                 title: 'Admin',
-                                desc: 'Do you want to set this user as an admin ?',
+                                desc: Te.user.isAdmin==false?'Do you want to set this user as an admin ?':'Do you want to remove this user from admin?',
                                 btnOkOnPress: () {
                                   setState(() {
                                     Navigator.of(context).pop();
@@ -114,6 +114,10 @@ class _UserProfileState extends State<UserProfile> {
           const SizedBox(
             height: 50,
           ),
+          widget.user.image==null?CircleAvatar(
+            backgroundImage: AssetImage('assets/images/download.png'),
+            radius: 100,
+          ):
           CircleAvatar(
             backgroundImage: FileImage(widget.user.image!, scale: 1),
             radius: 100,
