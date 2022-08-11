@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:project_111/core/paramaters.dart';
 import 'package:project_111/features/properties/presentation/widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
@@ -39,69 +40,100 @@ class _UserProfileState extends State<UserProfile> {
           )),
       actions: [
         Visibility(
-            visible: Te.user.isSuperAdmin==true?true:false,
-            child:  IconButton(
-                onPressed: () {
-                  var ad = AlertDialog(
-                    title:const Text("Do you want to :"),
-                    content: SizedBox(
-                      height: 150,
-                      child: Column(
-                        children: [
-                          const Divider(
-                            height: 10,
-                          ),
-                          Container(
-                            color: Colors.green,
-                            child: ListTile(
-                              leading:const  Icon(   Icons.star,color: Colors.white,),
-                              title:const  Text("Set as admin"),
-                              onTap: () =>AwesomeDialog(
-                                context: context,
-                                animType: AnimType.SCALE,
-                                dialogType: DialogType.QUESTION,
-                                title: 'Admin',
-                                desc: Te.user.isAdmin==false?'Do you want to set this user as an admin ?':'Do you want to remove this user from admin?',
-                                btnOkOnPress: () {
-                                  setState(() {
-                                    Navigator.of(context).pop();
-                                  });
-                                },
-                              )..show(),
-
-
-                            ),
-                          ),
-                          SizedBox(height: 10,),
-                          Container(
-                            color: Colors.orange,
-                            child: ListTile(
-                              leading:const Icon(Icons.block,color: Colors.white,),
-                              title: const Text("Block this user"),
-                              onTap: ()=> AwesomeDialog(
-                                context: context,
-                                animType: AnimType.SCALE,
-                                dialogType: DialogType.WARNING,
-                                title: 'ِBlock',
-                                desc: 'Do you want to block this user?',
-                                btnOkOnPress: () {
-                                  setState(() {
-                                    Navigator.of(context).pop();
-                                  });
-                                },
-                              )..show(),
-                            ),
-                          ),
-                        ],
+            visible: widget.user.isSuperAdmin==true?true:false,
+            child:
+                  DropdownButtonHideUnderline(
+                    child: DropdownButton2(
+                      customButton: const Icon(
+                        Icons.more_vert,
+                        color: Colors.green,
                       ),
+                      customItemsIndexes: const [3],
+                      customItemsHeight: 8,
+                      items: [
+                        ...MenuItems.firstItems.map(
+                              (item) =>
+                              DropdownMenuItem<MenuItem>(
+                                value: item,
+                                child: MenuItems.buildItem(item),
+                              ),
+                        ),
+                        const DropdownMenuItem<Divider>(enabled: false, child: Divider()),
+
+                      ],
+                      onChanged: (value) {
+                        MenuItems.onChanged(context, value as MenuItem);
+                      },
+                      itemHeight: 48,
+                      itemPadding: const EdgeInsets.only(left: 16, right: 16),
+                      dropdownWidth: 160,
+                      dropdownPadding: const EdgeInsets.symmetric(vertical: 6),
+                      dropdownDecoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        color: Theme.of(context).backgroundColor,
+                      ),
+                      dropdownElevation: 8,
+                      offset: const Offset(0, 8),
                     ),
-                  );
-                  showDialog(context: context, builder: (_) => ad);
-                },
-                icon: const Icon(
-                  Icons.more_vert,
-                  color: Colors.green,)
-            )),
+                  ),
+
+                  // var ad = AlertDialog(
+                  //   title:const Text("Do you want to :"),
+                  //   content: SizedBox(
+                  //     height: 150,
+                  //     child: Column(
+                  //       children: [
+                  //         const Divider(
+                  //           height: 10,
+                  //         ),
+                  //         Container(
+                  //           color: Colors.green,
+                  //           child: ListTile(
+                  //             leading:const  Icon(   Icons.star,color: Colors.white,),
+                  //             title:const  Text("Set as admin"),
+                  //             onTap: () =>AwesomeDialog(
+                  //               context: context,
+                  //               animType: AnimType.SCALE,
+                  //               dialogType: DialogType.QUESTION,
+                  //               title: 'Admin',
+                  //               desc: Te.user.isAdmin==false?'Do you want to set this user as an admin ?':'Do you want to remove this user from admin?',
+                  //               btnOkOnPress: () {
+                  //                 setState(() {
+                  //                   Navigator.of(context).pop();
+                  //                 });
+                  //               },
+                  //             )..show(),
+                  //
+                  //
+                  //           ),
+                  //         ),
+                  //         SizedBox(height: 10,),
+                  //         Container(
+                  //           color: Colors.orange,
+                  //           child: ListTile(
+                  //             leading:const Icon(Icons.block,color: Colors.white,),
+                  //             title: const Text("Block this user"),
+                  //             onTap: ()=> AwesomeDialog(
+                  //               context: context,
+                  //               animType: AnimType.SCALE,
+                  //               dialogType: DialogType.WARNING,
+                  //               title: 'ِBlock',
+                  //               desc: 'Do you want to block this user?',
+                  //               btnOkOnPress: () {
+                  //                 setState(() {
+                  //                   Navigator.of(context).pop();
+                  //                 });
+                  //               },
+                  //             )..show(),
+                  //           ),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // );
+                  // showDialog(context: context, builder: (_) => ad);
+
+            ),
       ],
     );
   }
@@ -114,7 +146,8 @@ class _UserProfileState extends State<UserProfile> {
           const SizedBox(
             height: 50,
           ),
-          widget.user.image==null?CircleAvatar(
+          widget.user.image==null?
+          const CircleAvatar(
             backgroundImage: AssetImage('assets/images/download.png'),
             radius: 100,
           ):
@@ -193,5 +226,83 @@ class _UserProfileState extends State<UserProfile> {
         ],
       ),
     );
+  }
+
+
+}
+
+class MenuItem {
+  final String text;
+  final IconData icon;
+
+  const MenuItem({
+    required this.text,
+    required this.icon,
+  });
+}
+
+class MenuItems {
+  static const List<MenuItem> firstItems = [superAdmin, admin,blockUser];
+
+  static const superAdmin = MenuItem(text: 'Super Admin', icon: Icons.stars);
+  static const admin = MenuItem(text: 'Admin', icon: Icons.star);
+  static const blockUser = MenuItem(text: 'Block User', icon: Icons.delete);
+  static Widget buildItem(MenuItem item) {
+    return Row(
+      children: [
+        Icon(
+            item.icon,
+            color: Colors.green,
+            size: 22
+        ),
+        const SizedBox(
+          width: 10,
+        ),
+        Text(
+          item.text,
+          style: const TextStyle(
+            color: Colors.green,
+          ),
+        ),
+      ],
+    );
+  }
+
+  static onChanged(BuildContext context, MenuItem item) {
+    switch (item) {
+      case MenuItems.superAdmin:AwesomeDialog(
+        context: context,
+        animType: AnimType.SCALE,
+        dialogType: DialogType.QUESTION,
+        title: 'Super Admin',
+        desc: Te.user.isSuperAdmin==false?'Do you want to set this user as a super admin ?':'Do you want to remove this user from super admin?',
+        btnOkOnPress: () {
+            Navigator.of(context).pop();
+        },
+      ).show();
+      break;
+      case MenuItems.admin:AwesomeDialog(
+        context: context,
+        animType: AnimType.SCALE,
+        dialogType: DialogType.QUESTION,
+        title: 'Admin',
+        desc: Te.user.isAdmin==false?'Do you want to set this user as an admin ?':'Do you want to remove this user from admin?',
+        btnOkOnPress: () {
+            Navigator.of(context).pop();
+        },
+      ).show();
+      break;
+      case MenuItems.blockUser:AwesomeDialog(
+        context: context,
+        animType: AnimType.SCALE,
+        dialogType: DialogType.QUESTION,
+        title: 'Block',
+        desc:'Do you want to block this user?',
+        btnOkOnPress: () {
+          Navigator.of(context).pop();
+        },
+      ).show();
+      break;
+    }
   }
 }
