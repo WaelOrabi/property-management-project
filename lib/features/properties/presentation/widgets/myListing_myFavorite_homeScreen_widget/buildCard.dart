@@ -14,8 +14,7 @@ class BuildCard extends StatefulWidget {
       {Key? key,
       required this.property,
       required this.orientation,
-      required this.delete})
-      : super(key: key);
+      required this.delete}) : super(key: key);
 
   @override
   State<BuildCard> createState() => _BuildCardState();
@@ -42,8 +41,12 @@ class _BuildCardState extends State<BuildCard> {
               builder: (context) =>
                   PropertyListingDetails(property: property)));
         },
+
+        child: Container(
+          color: Colors.grey[200],
+
         child: Card(
-          child: Column(
+ child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Stack(
@@ -77,7 +80,7 @@ class _BuildCardState extends State<BuildCard> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8, top: 4),
+                padding: const EdgeInsets.only(left: 8, top: 4,right: 6),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -94,10 +97,11 @@ class _BuildCardState extends State<BuildCard> {
                         ),
                       ],
                     ),
+
                     const SizedBox(
                       height: 8,
                     ),
-                    Row(
+ Row(
                       children: [
                         Text(
                           property.address.country + ',',
@@ -115,7 +119,7 @@ class _BuildCardState extends State<BuildCard> {
             ],
           ),
         ),
-      );
+        ));
 
   AlertDialog alertDialog(BuildContext context) {
     return AlertDialog(

@@ -145,9 +145,7 @@ class _SingInState extends State<SingIn> {
                   ),
                 ),
 
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 20,
-                ),
+                SizedBox(height: MediaQuery.of(context).size.height/20,),
               ],
             ),
           ),

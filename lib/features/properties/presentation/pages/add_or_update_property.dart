@@ -35,8 +35,8 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
   final storeysController = TextEditingController();
   final bedRoomController = TextEditingController();
   final bathsController = TextEditingController();
-  String dropdownValueCategory = 'Buy';
-  List<String> categoryItems = ['Rent', 'Buy', 'Investment'];
+  String dropdownValueCategory = 'Sale';
+  List<String> categoryItems = ['Rent', 'Sale', 'Investment'];
 
   @override
   void initState() {
@@ -198,10 +198,14 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
                     widget.address = val; //you get details from screen2 here
                   });
                 },
-                child: Text(
-                  widget.isUpdate == true ? "Update location" : "Add location",
-                  style: const TextStyle(color: Colors.black, fontSize: 16),
-                )))
+
+                child:  Text(
+                widget.isUpdate==true?"Update location"  :"Add location",
+                  style:const TextStyle(color: Colors.black, fontSize: 16),
+
+
+                ))),
+        const SizedBox(height: 20,)
       ],
     );
   }

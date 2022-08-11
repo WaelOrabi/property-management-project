@@ -3,6 +3,7 @@ import 'package:project_111/core/setting/setting.dart';
 import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
 import '../../../../core/widgets/bottom_navigation_bar.dart';
 import '../../../../core/paramaters.dart';
+import '../widgets/profile/profile_widget.dart';
 import 'account_details.dart';
 import '../../../../core/widgets/widget_appbar.dart';
 import 'update_peofile.dart';
@@ -76,6 +77,7 @@ class _ProfileState extends State<Profile> {
           ),
 
           buildListTile(
+            context: context,
               nameList: "My Listing",
               typeIcon: Icons.format_list_bulleted_sharp,
               fun: () => Navigator.push(
@@ -84,6 +86,7 @@ class _ProfileState extends State<Profile> {
                       builder: (context) =>
                           MyListingScreen(user: widget.user)))),
           buildListTile(
+            context: context,
               nameList: "My Favorites",
               typeIcon: Icons.favorite,
               fun: () => Navigator.push(
@@ -93,6 +96,7 @@ class _ProfileState extends State<Profile> {
                             listProperty: Te.user.listProperty,
                           )))),
           buildListTile(
+            context:context ,
               nameList: "Account Details",
               typeIcon: Icons.person,
               fun: () => Navigator.push(
@@ -101,6 +105,7 @@ class _ProfileState extends State<Profile> {
                       builder: (context) =>
                           AccountDetails(user: widget.user)))),
           buildListTile(
+            context: context,
             nameList: "Upgrade Account",
             typeIcon: Icons.edit,
             fun: () => Navigator.push(
@@ -113,6 +118,7 @@ class _ProfileState extends State<Profile> {
 
 
           buildListTile(
+            context: context,
             nameList: "Setting",
             typeIcon: Icons.settings,
             fun: () => Navigator.push(context,
@@ -136,20 +142,5 @@ class _ProfileState extends State<Profile> {
     );
   }
 
-  ListTile buildListTile(
-      {required String nameList,
-      required IconData typeIcon,
-      required VoidCallback fun}) {
-    return ListTile(
-      leading: Icon(
-        typeIcon,
-        color: Theme.of(context).iconTheme.color,
-      ),
-      title: Text(
-        nameList,
-        style: Theme.of(context).textTheme.bodyText1,
-      ),
-      onTap: fun,
-    );
-  }
+
 }

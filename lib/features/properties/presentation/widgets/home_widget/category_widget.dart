@@ -20,13 +20,11 @@ Widget buildCategory({
             colorFilter:
                 const ColorFilter.mode(Colors.grey, BlendMode.modulate),
           ),
-          borderRadius: BorderRadius.circular(10)),
-      child: Center(
-          child: Text(
-        nameBtn,
-        style: const TextStyle(
-            fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
-      )),
+
+          borderRadius: BorderRadius.circular(10)
+      ),
+      child: Center(child: Text(nameBtn,style:const TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),)),
+
     ),
     onTap: fun,
   );
@@ -40,13 +38,13 @@ Widget buildCategories(BuildContext context, Orientation orientation) {
         buildCategory(
           context: context,
           linkImage: "assets/images/buy.jpg",
-          nameBtn: "Buy",
+          nameBtn: "Sale",
           fun: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) => const ElementCategory(
-                          category: 'Buy',
+                          category: 'Sale',
                         )));
           },
           height: orientation == Orientation.landscape ? 3 : 6,

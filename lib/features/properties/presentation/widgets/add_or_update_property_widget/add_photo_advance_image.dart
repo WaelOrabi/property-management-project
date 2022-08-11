@@ -109,10 +109,29 @@ class _AddPhotoAdvanceImageState extends State<AddPhotoAdvanceImage> {
                   setState(() {
                     widget.listImagesProperty.addAll(objects!);
                     // print("***************");
-                    // print("***************uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+                     print("***************uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
                     print(widget.listImagesProperty[0].modifiedPath);
                     print(widget.listImagesProperty[1].modifiedPath);
-
+                    print(widget.listImagesProperty[2].modifiedPath);
+                    print(widget.listImagesProperty[3].modifiedPath);
+                    print(widget.listImagesProperty[4].modifiedPath);
+                    print(widget.listImagesProperty[5].modifiedPath);
+                    print(widget.listImagesProperty[6].modifiedPath);
+                    print(widget.listImagesProperty[7].modifiedPath);
+                    print(widget.listImagesProperty[8].modifiedPath);
+                    print(widget.listImagesProperty[9].modifiedPath);
+                    print(widget.listImagesProperty[10].modifiedPath);
+                    print(widget.listImagesProperty[11].modifiedPath);
+                    print(widget.listImagesProperty[12].modifiedPath);
+                    print(widget.listImagesProperty[13].modifiedPath);
+                    print(widget.listImagesProperty[14].modifiedPath);
+                    print(widget.listImagesProperty[15].modifiedPath);
+                    print(widget.listImagesProperty[16].modifiedPath);
+                    print(widget.listImagesProperty[17].modifiedPath);
+                    print(widget.listImagesProperty[18].modifiedPath);
+                    print(widget.listImagesProperty[19].modifiedPath);
+                    print(widget.listImagesProperty[20].modifiedPath);
+                    print(widget.listImagesProperty[21].modifiedPath);
                     // print("***************");
                     // // print("***************uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
                   });

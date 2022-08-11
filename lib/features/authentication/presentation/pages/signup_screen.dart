@@ -253,6 +253,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           fontWeight: FontWeight.bold,
                           colorText: Colors.white,
                           backGroundColor: Colors.green),
+
+
                       SizedBox(height: MediaQuery.of(context).size.height/20,),
                     ],
                   ),

@@ -57,7 +57,8 @@ class SplashScreenState extends State<SplashScreen>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset('assets/images/logo_app_property1.png',fit: BoxFit.fitHeight,),
-                    const Text('Real State',style: TextStyle(fontSize: 30,color: Colors.green,fontWeight: FontWeight.w900),)
+                   const Text("Real State",style: TextStyle(color: Colors.green,fontSize: 30,fontWeight: FontWeight.w900),)
+
                   ],
                 ),
               ),

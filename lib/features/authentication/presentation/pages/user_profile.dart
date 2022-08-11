@@ -134,7 +134,7 @@ class _UserProfileState extends State<UserProfile> {
             ],
           ),
           const SizedBox(
-            height: 10,
+            height: 30,
           ),
           if (widget.user.isAdmin == true || widget.user.isSuperAdmin == true)
             Column(
@@ -164,7 +164,7 @@ class _UserProfileState extends State<UserProfile> {
                   ],
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
               ],
             ),

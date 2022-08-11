@@ -254,16 +254,14 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
             color: Colors.grey,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               MaterialButton(
                 child: Row(children: [
                   buildText('message',
                       fontWeight: FontWeight.normal,
                       fontSize: 15),
-                  const SizedBox(
-                    width: 5,
-                  ),
+
                    Icon(Icons.wechat_outlined,color: Theme.of(context).iconTheme.color,)
                 ]),
                 onPressed: () {
@@ -276,9 +274,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                     buildText('comment',
                         fontWeight: FontWeight.normal,
                         fontSize: 15),
-                    const SizedBox(
-                      width: 5,
-                    ),
+
                      Icon(Icons.add_comment_outlined,color: Theme.of(context).iconTheme.color,)
                   ],
                 ),
@@ -291,23 +287,19 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
               ),
               MaterialButton(
                 child: Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    buildText('like',
+                    buildText('favorite',
                         fontWeight: FontWeight.normal,
                         fontSize: 15),
-                    const SizedBox(
-                      width: 5,
-                    ),
-    IconButton(icon:isFavoraite==false? Icon(Icons.favorite_border,color: Theme.of(context).iconTheme.color):Icon(Icons.favorite,color: Theme.of(context).iconTheme.color),
-    onPressed: (){
-      setState(() {
-        isFavoraite=! isFavoraite;
-      });
-    },
-    ),
+                         isFavoraite==false? Icon(Icons.favorite_border,color: Theme.of(context).iconTheme.color):Icon(Icons.favorite,color: Theme.of(context).iconTheme.color),
+
                   ],
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    isFavoraite=! isFavoraite;
+                  });},
               ),
             ],
           ),

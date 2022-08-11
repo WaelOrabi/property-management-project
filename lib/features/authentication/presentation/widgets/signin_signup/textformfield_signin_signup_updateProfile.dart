@@ -8,10 +8,9 @@ Builder TextForm(
     required String labelText,
     required IconData icon,
     bool obscureText = false,
-    VoidCallback? fun,
-
+      VoidCallback? fun,
     required bool suffixIcon,
-    required String hintText}) {
+required String hintText}) {
   return Builder(builder: (context) {
     return TextFormField(
       controller: controller,

@@ -146,7 +146,7 @@ class _SearchState extends State<Search> {
                               Container(
                                 width: orientation == Orientation.landscape
                                     ? MediaQuery.of(context).size.width / 3
-                                    : MediaQuery.of(context).size.width / 4.6,
+                                    : MediaQuery.of(context).size.width / 5,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
                                         image: AssetImage(

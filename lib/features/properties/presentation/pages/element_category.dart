@@ -21,6 +21,7 @@ class _ElementCategoryState extends State<ElementCategory> {
   void initState() {
     super.initState();
 
+
     for (int i = 0; i < Te.listProperty1.length; i++) {
       if (Te.listProperty1[i].category == widget.category) {
         list.add(Te.listProperty1[i]);
@@ -61,3 +62,6 @@ class _ElementCategoryState extends State<ElementCategory> {
     );
   }
 }
+
+
+
