@@ -59,7 +59,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
             var ad = AlertDialog(
               title:const Text("Do you want to :"),
               content: SizedBox(
-                height: 150,
+                height: 80,
                 child: Column(
                   children: [
                     const Divider(
@@ -86,28 +86,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
 
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      color: Colors.orange,
-                      child: ListTile(
-                        leading:const Icon(Icons.block,color: Colors.white,),
-                        title: const Text("Block this user"),
-                        onTap: ()=> AwesomeDialog(
-                        context: context,
-                        animType: AnimType.SCALE,
-                        dialogType: DialogType.WARNING,
-                        title: 'ِBlock',
-                        desc: 'Do you want to block this user?',
-                        btnOkOnPress: () {
-                          setState(() {
-                            Navigator.of(context).pop();
-                          });
-                        },
-                      )..show(),
-                      ),
-                    ),
+
                   ],
                 ),
               ),

@@ -30,6 +30,7 @@ class _MyFavoriteState extends State<MyFavorite> {
         child: OrientationBuilder(
             builder: (context, orientation) {
               return buildGridView(
+                delete: false,
                   orientation: orientation,
                   controller: scrollController,
                   listProperty: widget.listProperty, context: context);

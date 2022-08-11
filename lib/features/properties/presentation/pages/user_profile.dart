@@ -1,12 +1,20 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:project_111/core/paramaters.dart';
 import 'package:project_111/features/properties/presentation/widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
+import 'package:project_111/tests/tests.dart';
 
-class UserProfile extends StatelessWidget {
+class UserProfile extends StatefulWidget {
   static const routeName = 'UserProfile';
   final User user;
 
   UserProfile({Key? key, required this.user}) : super(key: key);
+
+  @override
+  State<UserProfile> createState() => _UserProfileState();
+}
+
+class _UserProfileState extends State<UserProfile> {
   ScrollController scrollController = ScrollController();
 
   @override
@@ -29,6 +37,72 @@ class UserProfile extends StatelessWidget {
             Icons.arrow_back_outlined,
             color: Colors.green,
           )),
+      actions: [
+        Visibility(
+            visible: Te.user.isAdmin==true?true:false,
+            child:  IconButton(
+                onPressed: () {
+                  var ad = AlertDialog(
+                    title:const Text("Do you want to :"),
+                    content: SizedBox(
+                      height: 150,
+                      child: Column(
+                        children: [
+                          const Divider(
+                            height: 10,
+                          ),
+                          Container(
+                            color: Colors.red,
+                            child: ListTile(
+                              leading:const  Icon(   Icons.star,color: Colors.white,),
+                              title:const  Text("Set as admin"),
+                              onTap: () =>AwesomeDialog(
+                                context: context,
+                                animType: AnimType.SCALE,
+                                dialogType: DialogType.QUESTION,
+                                title: 'Admin',
+                                desc: 'Do you want to set this user as an admin ?',
+                                btnOkOnPress: () {
+                                  setState(() {
+                                    Navigator.of(context).pop();
+                                  });
+                                },
+                              )..show(),
+
+
+                            ),
+                          ),
+                          SizedBox(height: 10,),
+                          Container(
+                            color: Colors.orange,
+                            child: ListTile(
+                              leading:const Icon(Icons.block,color: Colors.white,),
+                              title: const Text("Block this user"),
+                              onTap: ()=> AwesomeDialog(
+                                context: context,
+                                animType: AnimType.SCALE,
+                                dialogType: DialogType.WARNING,
+                                title: 'ِBlock',
+                                desc: 'Do you want to block this user?',
+                                btnOkOnPress: () {
+                                  setState(() {
+                                    Navigator.of(context).pop();
+                                  });
+                                },
+                              )..show(),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                  showDialog(context: context, builder: (_) => ad);
+                },
+                icon: const Icon(
+                  Icons.more_vert,
+                  color: Colors.green,)
+            )),
+      ],
     );
   }
 
@@ -41,7 +115,7 @@ class UserProfile extends StatelessWidget {
             height: 50,
           ),
           CircleAvatar(
-            backgroundImage: FileImage(user.image!, scale: 1),
+            backgroundImage: FileImage(widget.user.image!, scale: 1),
             radius: 100,
           ),
           const SizedBox(
@@ -51,7 +125,7 @@ class UserProfile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                user.firstName! + ' ' + user.lastName!,
+                widget.user.firstName! + ' ' + widget.user.lastName!,
                 style: TextStyle(
                     color: Theme.of(context).colorScheme.secondary,
                     fontWeight: FontWeight.bold,
@@ -62,7 +136,7 @@ class UserProfile extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          if (user.isAdmin == true || user.isSuperAdmin == true)
+          if (widget.user.isAdmin == true || widget.user.isSuperAdmin == true)
             Column(
               children: [
                 Row(
@@ -70,21 +144,21 @@ class UserProfile extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(right: 5),
-                      child: user.isSuperAdmin == true
+                      child: widget.user.isSuperAdmin == true
                           ? const Icon(
                               Icons.stars,
                               color: Colors.blueAccent,
                             )
-                          : user.isAdmin == true
+                          : widget.user.isAdmin == true
                               ? const Icon(
                                   Icons.star,
                                   color: Colors.blueAccent,
                                 )
                               : const Text(''),
                     ),
-                    Text(user.isSuperAdmin == true
+                    Text(widget.user.isSuperAdmin == true
                         ? 'Super Admin'
-                        : user.isAdmin == true
+                        : widget.user.isAdmin == true
                             ? 'Admin'
                             : ''),
                   ],
@@ -94,7 +168,7 @@ class UserProfile extends StatelessWidget {
                 ),
               ],
             ),
-          user.listProperty!.isEmpty
+          widget.user.listProperty!.isEmpty
               ? const Center(
                   child: Text(
                     "There are not any properties",
@@ -105,9 +179,10 @@ class UserProfile extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: OrientationBuilder(builder: (context, orientation) {
                     return buildGridView(
+                      delete: false,
                         orientation: orientation,
                         controller: scrollController,
-                        listProperty: user.listProperty,
+                        listProperty: widget.user.listProperty,
                         context: context);
                   }),
                 ),

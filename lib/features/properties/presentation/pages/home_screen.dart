@@ -133,6 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
   GridView widgetListProperty(
       {required Orientation orientation, required BuildContext context}) {
     return buildGridView(
+      delete: false,
         orientation: orientation,
         controller: scrollController,
         listProperty: Te.listProperty1,
