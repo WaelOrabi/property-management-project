@@ -13,7 +13,7 @@ class Property {
   final String dateAdded;
   final String description;
   final String price;
-  final List<XFile> image;
+  final List<ImageObject> image;
   final String category;
 
   Property({

@@ -57,7 +57,7 @@ class _BuildCardState extends State<BuildCard> {
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: FileImage(
-                              File(property.image[0].path),
+                              File(property.image[0].modifiedPath),
                             ),
                             fit: BoxFit.fill),
                         //   border: Border.all(color: Colors.blue, width: 10 ),

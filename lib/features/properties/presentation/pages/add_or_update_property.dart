@@ -21,7 +21,7 @@ class AddOrUpdateProperty extends StatefulWidget {
   bool? isUpdate;
 
   late Address? address;
-  List<XFile> imagesProperty = [];
+  List<ImageObject> imagesProperty = [];
   var dataAdded = DateFormat('yyyy-MM-dd hh:mm').format(DateTime.now());
 
   @override

@@ -135,7 +135,7 @@ class _PropertyListingDetailsState extends State<PropertyListingDetails> {
                         image: DecorationImage(
                             image: FileImage(
                               File(
-                                  widget.property.image[index].path),
+                                  widget.property.image[index].modifiedPath),
                             ),
                             fit: BoxFit.fill),
                         //   border: Border.all(color: Colors.blue, width: 10 ),

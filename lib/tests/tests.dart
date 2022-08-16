@@ -45,8 +45,32 @@ class Te {
           description: 'description111222',
           price: '56',
           image: [
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+            ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
+          ],
+          category: 'Sale'),
+      Property(
+          idProperty: 2,
+          address: Address(
+            latitude: 33.51689336744682,
+            longitude: 36.26502357423305,
+            region: 'Al Mouhajrin',
+            city: ' Damascus ',
+            country: 'Syria',
+          ),
+          space: '34',
+          baths: '65',
+          bedRooms: '54',
+          storeys: '445',
+          dateAdded: '2021-11-11',
+          description: 'description111222',
+          price: '56',
+          image: [
+
+
+
+            ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
 
           ],
           category: 'Sale'),
@@ -68,8 +92,9 @@ class Te {
           price: '56',
           image: [
 
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+            ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
+
 
           ],
           category: 'Sale'),
@@ -90,30 +115,10 @@ class Te {
           description: 'description111222',
           price: '56',
           image: [
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
 
-          ],
-          category: 'Sale'),
-      Property(
-          idProperty: 2,
-          address: Address(
-            latitude: 33.51689336744682,
-            longitude: 36.26502357423305,
-            region: 'Al Mouhajrin',
-            city: ' Damascus ',
-            country: 'Syria',
-          ),
-          space: '34',
-          baths: '65',
-          bedRooms: '54',
-          storeys: '445',
-          dateAdded: '2021-11-11',
-          description: 'description111222',
-          price: '56',
-          image: [
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+            ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
 
           ],
           category: 'Sale'),
@@ -137,8 +142,10 @@ class Te {
           price: '56',
            image: [
 
-             XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-             XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+             ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                 modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
+
 
            ],
           category: 'Sale'),
@@ -160,8 +167,10 @@ class Te {
           price: '56',
            image: [
 
-             XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-             XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+             ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                 modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
+
 
            ],
           category: 'Sale'),
@@ -182,8 +191,10 @@ class Te {
           description: 'description111222',
           price: '56',
           image: [
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+
+            ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
 
           ],
           category: 'Sale'),
@@ -204,8 +215,10 @@ class Te {
           description: 'description111222',
           price: '56',
           image: [
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+
+            ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
 
           ],
           category: 'Sale'),
@@ -238,8 +251,10 @@ class Te {
         price: '56',
         image: [
 
-          XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-          XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+          ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+              modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
+
+
           ],
         category: 'Sale'),
     Property(
@@ -260,9 +275,11 @@ class Te {
         price: '56',
         image: [
 
-               XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
 
-               XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+          ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+              modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
+
+
           ],
         category: 'Sale'),
     Property(
@@ -283,9 +300,11 @@ class Te {
         price: '56',
         image: [
 
-               XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
 
-               XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+          ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+              modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
+
+
           ],
         category: 'Sale'),
     Property(
@@ -306,9 +325,11 @@ class Te {
         price: '56',
         image: [
 
-               XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
 
-               XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+
+          ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+              modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
           ],
         category: 'Sale'),
   ];
@@ -331,9 +352,11 @@ class Te {
         price: '56',
         image: [
 
-               XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+          ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+              modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
 
-          XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+
 
         ],
         category: 'Sale'),
@@ -355,9 +378,11 @@ class Te {
         price: '56',
         image: [
 
-               XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
 
-          XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+          ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+              modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
+
+
 
         ],
         category: 'Sale'),
@@ -379,8 +404,10 @@ class Te {
         price: '56',
         image: [
 
-               XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-          XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+
+          ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+              modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
 
           ],
         category: 'Sale'),
@@ -402,9 +429,11 @@ class Te {
         price: '56',
         image: [
 
-               XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
 
-          XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+          ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+              modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
+
 
         ],
         category: 'Sale'),
@@ -446,8 +475,10 @@ class Te {
             price: '56',
             image: [
 
-              XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-              XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+              ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                  modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
+
 
             ],
             category: 'Sale'),
@@ -469,9 +500,11 @@ class Te {
             price: '56',
             image: [
 
-              XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-              XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
 
+
+
+              ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                  modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
             ],
             category: 'Sale'),
         Property(
@@ -492,8 +525,10 @@ class Te {
             price: '56',
           image: [
 
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+
+            ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
 
           ],
             category: 'Sale'),
@@ -514,9 +549,11 @@ class Te {
             description: 'description111222',
             price: '56',
           image: [
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
 
+
+
+            ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
           ],
             category: 'Sale'),
       ],
@@ -564,8 +601,10 @@ class Te {
             description: 'description111222',
             price: '56',
             image: [
-              XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-              XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+              ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                  modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
+
 
           ],
             category: 'Sale'),
@@ -587,9 +626,11 @@ class Te {
             price: '56',
             image: [
 
-               XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
 
-              XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+              ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                  modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
+
+
 
             ],
             category: 'Sale'),
@@ -610,8 +651,10 @@ class Te {
             description: 'description111222',
             price: '56',
           image: [
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
-            XFile('/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg'),
+
+
+            ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
 
           ],
             category: 'Sale'),
@@ -633,9 +676,8 @@ class Te {
             price: '56',
           image: [
 
-               XFile('/data/user/0/com.example.project_111/cache/image_picker2609288966173050782.jpg'),
-
-               XFile('/data/user/0/com.example.project_111/cache/image_picker2609288966173050782.jpg'),
+            ImageObject(originalPath:'/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg' ,
+                modifiedPath: '/data/user/0/com.example.project_111/cache/image_picker4809430930998662570.jpg')
           ],
             category: 'Sale'),
       ],
