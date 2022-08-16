@@ -5,7 +5,7 @@ import '../../../../tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 class Conversations extends StatefulWidget {
   static String routeName = 'Conversation';
-  final List<User>? useres;
+  final List<Users>? useres;
   const Conversations({Key? key,required this.useres}) : super(key: key);
   @override
   State<Conversations> createState() => _ConversationsState();

@@ -7,7 +7,7 @@ import '../widgets/update_profile/profile_picture.dart';
 
 class UpdateProfile extends StatefulWidget {
   static String routeName = 'UpdateProfile';
-final User user;
+  final Users user;
   const UpdateProfile({Key? key, required this.user}) : super(key: key);
 
   @override
@@ -84,7 +84,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height/35,),
                     TextForm(
-                      controller: phoneController,
+                        controller: phoneController,
                         suffixIcon: false,
                         icon: Icons.phone,
                         validator: (value) {

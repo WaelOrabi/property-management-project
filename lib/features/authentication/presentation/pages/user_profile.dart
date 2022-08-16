@@ -7,7 +7,7 @@ import 'package:project_111/tests/tests.dart';
 
 class UserProfile extends StatefulWidget {
   static const routeName = 'UserProfile';
-  final User user;
+  final Users user;
 
   UserProfile({Key? key, required this.user}) : super(key: key);
 
@@ -261,6 +261,7 @@ class MenuItems {
         Text(
           item.text,
           style: const TextStyle(
+            fontSize: 15,
             color: Colors.green,
           ),
         ),
@@ -274,7 +275,7 @@ class MenuItems {
         context: context,
         animType: AnimType.SCALE,
         dialogType: DialogType.QUESTION,
-        title: 'Super Admin',
+        title: 'SuperAdmin',
         desc: Te.user.isSuperAdmin==false?'Do you want to set this user as a super admin ?':'Do you want to remove this user from super admin?',
         btnOkOnPress: () {
             Navigator.of(context).pop();

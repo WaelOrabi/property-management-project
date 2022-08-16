@@ -64,7 +64,7 @@ class _SingInState extends State<SingIn> {
                           icon: Icons.email,
                           validator: (value) {
                             bool emailValid = RegExp(
-                                    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                                 .hasMatch(value!);
                             if (!emailValid) {
                               return "Please re-enter your email";

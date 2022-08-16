@@ -7,7 +7,7 @@ class MyListingScreen extends StatefulWidget {
   static String routeName = 'MyListingScreen';
 
   const MyListingScreen({Key? key, this.user}) : super(key: key);
-  final User? user;
+  final Users? user;
 
   @override
   State<MyListingScreen> createState() => _MyListingScreenState();

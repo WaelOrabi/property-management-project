@@ -6,7 +6,7 @@ import '../widgets/chat/message_stream_builder_chat_widget.dart';
 import '../widgets/chat/input_widget.dart';
 
 class Chat extends StatefulWidget {
- final User ? user;
+ final Users? user;
   static String routeName = 'chat';
   final bool ? isRead;
   const Chat({Key? key, required this.user, this.isRead}) : super(key: key);

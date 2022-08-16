@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'package:advance_image_picker/models/image_object.dart';
+import 'package:image_picker/image_picker.dart';
+
 
 class Property {
   final int? idProperty;
@@ -11,7 +13,7 @@ class Property {
   final String dateAdded;
   final String description;
   final String price;
-  final List<ImageObject> image;
+  final List<XFile> image;
   final String category;
 
   Property({
@@ -77,7 +79,7 @@ class SearchParameters {
       required this.space});
 }
 
-class User {
+class Users {
   int? id;
   String? firstName;
   String? lastName;
@@ -94,7 +96,7 @@ class User {
   List<String>? messages;
   String? sendTime;
 
-  User({
+  Users({
     this.sendTime,
     this.messages,
     this.id,

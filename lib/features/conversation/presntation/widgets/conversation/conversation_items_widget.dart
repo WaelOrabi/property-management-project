@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/paramaters.dart';
 import '../../pages/chat.dart';
 
-InkWell buildChatItem({required User ? user,required BuildContext context}) {
+InkWell buildChatItem({required Users ? user,required BuildContext context}) {
   bool isRead=false;
   return InkWell(
     onTap: () {

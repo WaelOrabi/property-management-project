@@ -1,4 +1,5 @@
 import 'package:advance_image_picker/models/image_object.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../../core/paramaters.dart';
@@ -20,7 +21,7 @@ class AddOrUpdateProperty extends StatefulWidget {
   bool? isUpdate;
 
   late Address? address;
-  List<ImageObject> imagesProperty = [];
+  List<XFile> imagesProperty = [];
   var dataAdded = DateFormat('yyyy-MM-dd hh:mm').format(DateTime.now());
 
   @override

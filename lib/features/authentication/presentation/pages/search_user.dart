@@ -172,7 +172,7 @@ class _SearchUserState extends State<SearchUser> {
   //     ),
   //   ),
   // ];
-  List<User>? searchedForUsers;
+  List<Users>? searchedForUsers;
   final _searchTextController = TextEditingController();
 
   Widget _buildSearchField() {
@@ -197,7 +197,7 @@ class _SearchUserState extends State<SearchUser> {
 
   void addSearchedFOrItemsToSearchedList(String searchedUser) {
     searchedForUsers = Te.listUser1
-        .where((user) => (user.firstName! + user.lastName!)
+        .where((users) => (users.firstName! + users.lastName!)
             .replaceAll(' ', '')
             .contains(searchedUser))
         .toList();

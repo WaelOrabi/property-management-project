@@ -5,7 +5,7 @@ import '../../../../core/widgets/widget_appbar.dart';
 class AccountDetails extends StatelessWidget {
   const AccountDetails({Key? key,this.user}) : super(key: key);
   static String routeName = 'Account Details';
-final User? user;
+final Users? user;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
