@@ -35,18 +35,17 @@ class PropertyRemoteDataSourcesImpl implements PropertyRemoteDataSources {
   @override
   Future<Unit> addProperty(PropertyModel propertyModel) async {
     final body = {
-      "address":propertyModel.address,
-      "baths":propertyModel.baths,
-      'bedRooms':propertyModel.bedRooms,
-      'category':propertyModel.category,
-      'dateAdded':propertyModel.dateAdded,
-      'description':propertyModel.description,
-      'image':propertyModel.image,
-      'price':propertyModel.price,
-      'propertyId':propertyModel.propertyId,
-      'space':propertyModel.space,
-      'storeys':propertyModel.storeys,
-      
+      "address": propertyModel.address,
+      "baths": propertyModel.baths,
+      'bedRooms': propertyModel.bedRooms,
+      'category': propertyModel.category,
+      'dateAdded': propertyModel.dateAdded,
+      'description': propertyModel.description,
+      'image': propertyModel.image,
+      'price': propertyModel.price,
+      'propertyId': propertyModel.propertyId,
+      'space': propertyModel.space,
+      'storeys': propertyModel.storeys,
     };
     final response =
         await client.post(Uri.parse(BASE_URL + "****"), body: body);
@@ -64,9 +63,11 @@ class PropertyRemoteDataSourcesImpl implements PropertyRemoteDataSources {
   }
 
   @override
-  Future<Unit> deleteProperty(int propertyId)async {
-  final response =
-        await client.delete(Uri.parse(BASE_URL + "****"),   headers: {"Content-Type": "application/json"},);
+  Future<Unit> deleteProperty(int propertyId) async {
+    final response = await client.delete(
+      Uri.parse(BASE_URL + "****"),
+      headers: {"Content-Type": "application/json"},
+    );
     if (response.statusCode == 200) {
       return Future.value(unit);
     } else {
@@ -117,20 +118,19 @@ class PropertyRemoteDataSourcesImpl implements PropertyRemoteDataSources {
   }
 
   @override
-  Future<Unit> updatProperty(PropertyModel propertyModel)async {
-     final body = {
-      "address":propertyModel.address,
-      "baths":propertyModel.baths,
-      'bedRooms':propertyModel.bedRooms,
-      'category':propertyModel.category,
-      'dateAdded':propertyModel.dateAdded,
-      'description':propertyModel.description,
-      'image':propertyModel.image,
-      'price':propertyModel.price,
-      'propertyId':propertyModel.propertyId,
-      'space':propertyModel.space,
-      'storeys':propertyModel.storeys,
-      
+  Future<Unit> updatProperty(PropertyModel propertyModel) async {
+    final body = {
+      "address": propertyModel.address,
+      "baths": propertyModel.baths,
+      'bedRooms': propertyModel.bedRooms,
+      'category': propertyModel.category,
+      'dateAdded': propertyModel.dateAdded,
+      'description': propertyModel.description,
+      'image': propertyModel.image,
+      'price': propertyModel.price,
+      'propertyId': propertyModel.propertyId,
+      'space': propertyModel.space,
+      'storeys': propertyModel.storeys,
     };
     final response =
         await client.post(Uri.parse(BASE_URL + "****"), body: body);
