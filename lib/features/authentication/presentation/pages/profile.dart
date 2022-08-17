@@ -1,11 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 import 'package:project_111/core/setting/setting.dart';
 import 'package:project_111/features/authentication/presentation/pages/welcome.dart';
 import 'package:project_111/features/authentication/presentation/widgets/signin_signup/button_signin_signup_update.dart';
 import '../../../../core/widgets/bottom_navigation_bar.dart';
-import '../../../../core/paramaters.dart';
+import '../../domain/entities/user.dart';
 import '../widgets/profile/profile_widget.dart';
 import 'account_details.dart';
 import '../../../../core/widgets/widget_appbar.dart';
@@ -19,7 +18,7 @@ import '../../../properties/presentation/pages/MyListingScreen.dart';
 class Profile extends StatefulWidget {
   Profile({Key? key, this.user}) : super(key: key);
   static String routeName = 'Profile';
-  Users? user;
+  User? user;
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -139,8 +138,6 @@ class _ProfileState extends State<Profile> {
               context: context,
               text: "Logout",
               fun: ()async {
-                await FirebaseAuth.instance.signOut();
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Welcome()));
               },
               width: 1.8,
               circle: 10,

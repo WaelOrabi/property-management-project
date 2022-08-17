@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/paramaters.dart';
+import '../../../domain/entities/property.dart';
 import '../../pages/add_or_update_property.dart';
 import '../../pages/property_listing_details.dart';
 

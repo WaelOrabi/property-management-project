@@ -1,11 +1,12 @@
 import 'dart:io';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/paramaters.dart';
+
 import '../../../../core/widgets/map_widget.dart';
 import '../../../conversation/presntation/pages/chat.dart';
 import '../../../../tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
+import '../../domain/entities/property.dart';
 import '../widgets/property_details_widgets/buildShowModalBottomSheet.dart';
 
 class PropertyListingDetails extends StatefulWidget {

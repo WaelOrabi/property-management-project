@@ -1,13 +1,14 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:project_111/core/paramaters.dart';
 import 'package:project_111/features/properties/presentation/widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
 import 'package:project_111/tests/tests.dart';
 
+import '../../domain/entities/user.dart';
+
 class UserProfile extends StatefulWidget {
   static const routeName = 'UserProfile';
-  final Users user;
+  final User user;
 
   UserProfile({Key? key, required this.user}) : super(key: key);
 

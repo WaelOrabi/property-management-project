@@ -1,35 +1,7 @@
 import 'dart:io';
-import 'package:advance_image_picker/models/image_object.dart';
-import 'package:image_picker/image_picker.dart';
 
-
-class Property {
-  final int? idProperty;
-  final Address address;
-  final String space;
-  final String baths;
-  final String bedRooms;
-  final String storeys;
-  final String dateAdded;
-  final String description;
-  final String price;
-  final List<ImageObject> image;
-  final String category;
-
-  Property({
-    this.idProperty,
-    required this.address,
-    required this.space,
-    required this.baths,
-    required this.bedRooms,
-    required this.storeys,
-    required this.dateAdded,
-    required this.description,
-    required this.price,
-    required this.image,
-    required this.category,
-  });
-}
+import '../features/properties/domain/entities/address.dart';
+import '../features/properties/domain/entities/property.dart';
 
 class NotificationParametersMessage {
   final String firstName;
@@ -44,22 +16,6 @@ class NotificationParametersMessage {
       required this.image,
       required this.idProperty,
       this.message});
-}
-
-class Address {
-  final double latitude;
-  final double longitude;
-  final String region;
-  final String city;
-  final String country;
-
-  Address({
-    required this.latitude,
-    required this.longitude,
-    required this.region,
-    required this.city,
-    required this.country,
-  });
 }
 
 class SearchParameters {
@@ -79,37 +35,3 @@ class SearchParameters {
       required this.space});
 }
 
-class Users {
-  int? id;
-  String? firstName;
-  String? lastName;
-  String? email;
-  String? phoneNumber;
-  String? password;
-  File? image;
-  List<Property>? listProperty;
-  List<Property>? listPropertyFavorite;
-
-  Address? address;
-  bool? isAdmin;
-  bool? isSuperAdmin;
-  List<String>? messages;
-  String? sendTime;
-
-  Users({
-    this.sendTime,
-    this.messages,
-    this.id,
-    this.firstName,
-    this.lastName,
-    this.email,
-    this.phoneNumber,
-    this.password,
-    this.image,
-    this.listProperty,
-    this.listPropertyFavorite,
-    this.address,
-    this.isAdmin,
-    this.isSuperAdmin,
-  });
-}

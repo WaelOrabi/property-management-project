@@ -1,12 +1,12 @@
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
-import '../../../../core/paramaters.dart';
+import '../../../authentication/domain/entities/user.dart';
 import '../widgets/chat/message_stream_builder_chat_widget.dart';
 import '../widgets/chat/input_widget.dart';
 
 class Chat extends StatefulWidget {
- final Users? user;
+ final User? user;
   static String routeName = 'chat';
   final bool ? isRead;
   const Chat({Key? key, required this.user, this.isRead}) : super(key: key);

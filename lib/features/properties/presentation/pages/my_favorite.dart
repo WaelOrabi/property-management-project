@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/paramaters.dart';
 import '../../../../core/widgets/widget_appbar.dart';
+import '../../domain/entities/property.dart';
 import '../widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
 
 class MyFavorite extends StatefulWidget {

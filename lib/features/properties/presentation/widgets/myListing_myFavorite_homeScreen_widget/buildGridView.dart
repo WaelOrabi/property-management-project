@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/paramaters.dart';
+import '../../../domain/entities/property.dart';
 import 'buildCard.dart';
 
 GridView buildGridView(

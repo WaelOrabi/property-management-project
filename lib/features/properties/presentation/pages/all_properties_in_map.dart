@@ -2,7 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import '../../../../core/paramaters.dart';
+
+import '../../domain/entities/property.dart';
 import 'property_listing_details.dart';
 
 // ignore: must_be_immutable
@@ -26,7 +27,7 @@ class _AllPropertiesInMapState extends State<AllPropertiesInMap> {
       list.addAll(
         [
           Marker(
-              markerId: MarkerId('${widget.listProperty[i].idProperty}'),
+              markerId: MarkerId('${widget.listProperty[i].propertyId}'),
               position: LatLng(
                 widget.listProperty[i].address.latitude,
                 widget.listProperty[i].address.longitude,

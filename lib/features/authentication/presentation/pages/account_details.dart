@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../../../core/paramaters.dart';
 import '../../../../core/widgets/widget_appbar.dart';
+import '../../domain/entities/user.dart';
 
 class AccountDetails extends StatelessWidget {
   const AccountDetails({Key? key,this.user}) : super(key: key);
   static String routeName = 'Account Details';
-final Users? user;
+final User? user;
   @override
   Widget build(BuildContext context) {
     return SafeArea(

@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
-import '../../../../../core/paramaters.dart';
+import '../../../../authentication/domain/entities/user.dart';
 import '../../pages/chat.dart';
 
-InkWell buildChatItem({required Users ? user,required BuildContext context}) {
+InkWell buildChatItem({required User ? user,required BuildContext context}) {
   bool isRead=false;
   return InkWell(
     onTap: () {
@@ -38,7 +38,7 @@ InkWell buildChatItem({required Users ? user,required BuildContext context}) {
                     overflow: TextOverflow.ellipsis,
                   ),
                   const Spacer(),
-                  Text(user.sendTime!),
+                  Text("${user.sendTime!}"),
                 ],
               ),
 

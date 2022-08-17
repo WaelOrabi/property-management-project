@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
-import '../../../../core/paramaters.dart';
 import '../../../../core/widgets/location_helper.dart';
+import '../../domain/entities/address.dart';
 
 // ignore: must_be_immutable
 class MapScreen extends StatefulWidget {

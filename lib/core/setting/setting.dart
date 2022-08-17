@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_111/core/widgets/widget_appbar.dart';
 import 'package:project_111/features/authentication/presentation/pages/change_password.dart';
 import 'package:project_111/main.dart';
-import 'package:project_111/main.dart';
-import 'package:project_111/main.dart';
-import 'package:project_111/main.dart';
 
-import '../../features/authentication/presentation/widgets/profile/profile_widget.dart';
 
 class Setting extends StatefulWidget {
   static const routeName = 'Setting';

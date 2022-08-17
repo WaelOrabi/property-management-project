@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import '../../../../core/paramaters.dart';
 import '../../../../core/widgets/widget_appbar.dart';
+import '../../../authentication/domain/entities/user.dart';
 import '../widgets/myListing_myFavorite_homeScreen_widget/buildGridView.dart';
 
 class MyListingScreen extends StatefulWidget {
   static String routeName = 'MyListingScreen';
 
   const MyListingScreen({Key? key, this.user}) : super(key: key);
-  final Users? user;
+  final User? user;
 
   @override
   State<MyListingScreen> createState() => _MyListingScreenState();

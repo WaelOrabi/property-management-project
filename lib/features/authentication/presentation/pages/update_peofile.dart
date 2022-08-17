@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import '../../../../core/paramaters.dart';
 import '../../../../core/widgets/widget_appbar.dart';
+import '../../domain/entities/user.dart';
 import '../widgets/signin_signup/button_signin_signup_update.dart';
 import '../widgets/signin_signup/textformfield_signin_signup_updateProfile.dart';
 import '../widgets/update_profile/profile_picture.dart';
 
 class UpdateProfile extends StatefulWidget {
   static String routeName = 'UpdateProfile';
-  final Users user;
+  final User user;
   const UpdateProfile({Key? key, required this.user}) : super(key: key);
 
   @override

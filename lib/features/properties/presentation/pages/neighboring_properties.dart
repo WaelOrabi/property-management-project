@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import '../../../../core/paramaters.dart';
+import '../../domain/entities/property.dart';
 import '../../../../core/widgets/bottom_navigation_bar.dart';
 import '../../../../core/widgets/widget_appbar.dart';
 

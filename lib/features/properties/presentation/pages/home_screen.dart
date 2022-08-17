@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:project_111/features/properties/presentation/pages/search.dart';
 import 'package:project_111/features/authentication/presentation/pages/search_user.dart';
 import '../../../authentication/presentation/pages/profile.dart';
-import 'add_or_update_property.dart';
+import '../../domain/entities/property.dart';
 import 'all_properties_in_map.dart';
 import '../../../../tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../../../core/paramaters.dart';
+import '../../../authentication/domain/entities/user.dart';
 import '../widgets/conversation/conversation_items_widget.dart';
 import '../../../../tests/tests.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
 class Conversations extends StatefulWidget {
   static String routeName = 'Conversation';
-  final List<Users>? useres;
+  final List<User>? useres;
   const Conversations({Key? key,required this.useres}) : super(key: key);
   @override
   State<Conversations> createState() => _ConversationsState();

@@ -1,10 +1,11 @@
 import 'package:advance_image_picker/models/image_object.dart';
-import 'package:camera/camera.dart';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../../../../core/paramaters.dart';
 import '../../../../core/widgets/bottom_navigation_bar.dart';
 import '../../../../core/widgets/widget_appbar.dart';
+import '../../domain/entities/address.dart';
+import '../../domain/entities/property.dart';
 import '../widgets/add_or_update_property_widget/add_photo_advance_image.dart';
 import '../widgets/add_or_update_property_widget/build_add_or_edit_photos_text.dart';
 import '../widgets/add_or_update_property_widget/function_widjets.dart';
@@ -151,6 +152,7 @@ class _AddOrUpdatePropertyState extends State<AddOrUpdateProperty> {
               isUpdate: widget.isUpdate == true ? true : false,
               fun: () {
                 Property pro = Property(
+                  propertyId: 1,
                     address: widget.address!,
                     space: spaceController.text,
                     baths: bathsController.text,

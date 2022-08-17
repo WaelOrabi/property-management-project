@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/paramaters.dart';
+import '../../../../authentication/domain/entities/user.dart';
 import 'message_line_chat_widget.dart';
 class MessageStreamBuilderChat extends StatelessWidget {
-  final Users  user;
-  final bool ? isRead;
+  final User user;
+  final bool? isRead;
   const MessageStreamBuilderChat({Key? key,required this.user, this.isRead}) : super(key: key);
 
   @override

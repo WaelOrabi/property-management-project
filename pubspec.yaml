@@ -52,9 +52,6 @@ dependencies:
   video_player:
   intl:
   flutter_launcher_icons:
-  firebase_core:
-  firebase_auth:
-  cloud_firestore:
   modal_progress_hud_nsn:
   camera:
   splashscreen:
@@ -62,7 +59,11 @@ dependencies:
   emoji_picker_flutter:
   flutter_keyboard_visibility:
   equatable:
+  internet_connection_checker:
+  get_it:
   dartz:
+  http:
+  shared_preferences:
   dots_indicator:
   flutter_colorful_tab:
   dropdown_button2:
