@@ -10,7 +10,7 @@ class MessageStreamBuilderChat extends StatelessWidget {
   Widget build(BuildContext context) {
       Iterable<String>messages=user.messages!.reversed;
     List<MessageLineChat> messageWidgets=messages.map((message) {
-      return MessageLineChat(text: message,sender: user.firstName!,isMe: false,isRead: isRead,);
+      return MessageLineChat(text: message,sender: user.firstName,isMe: false,isRead: isRead,);
     }).toList();
     return SizedBox(
       height: MediaQuery.of(context).size.height,

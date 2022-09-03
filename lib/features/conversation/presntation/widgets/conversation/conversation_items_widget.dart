@@ -30,7 +30,7 @@ InkWell buildChatItem({required User ? user,required BuildContext context}) {
                 children: [
                   Text.rich(TextSpan(children: [
                     TextSpan(
-                        text:  user.firstName!+' ' + user.lastName!,
+                        text:  user.firstName+' ' + user.lastName,
                         style: TextStyle(color: Theme.of(context).primaryColor),
                     ),
                   ],),

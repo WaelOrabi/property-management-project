@@ -163,7 +163,7 @@ class _UserProfileState extends State<UserProfile> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                widget.user.firstName! + ' ' + widget.user.lastName!,
+                widget.user.firstName + ' ' + widget.user.lastName,
                 style: TextStyle(
                     color: Theme.of(context).colorScheme.secondary,
                     fontWeight: FontWeight.bold,

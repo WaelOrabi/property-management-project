@@ -41,7 +41,7 @@ class _SearchUserState extends State<SearchUser> {
 
   void addSearchedFOrItemsToSearchedList(String searchedUser) {
     searchedForUsers = Te.listUser1
-        .where((users) => (users.firstName! + users.lastName!)
+        .where((users) => (users.firstName + users.lastName)
             .replaceAll(' ', '')
             .contains(searchedUser))
         .toList();

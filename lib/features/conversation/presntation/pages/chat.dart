@@ -127,7 +127,7 @@ class ChatState extends State<Chat> {
             ),
             Expanded(
               child: Text(
-                widget.user!.firstName!+widget.user!.lastName!,
+                widget.user!.firstName+widget.user!.lastName,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(

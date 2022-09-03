@@ -21,9 +21,9 @@ class _UpdateProfileState extends State<UpdateProfile> {
   TextEditingController phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    firstNameController.text=widget.user.firstName!;
-    lastNameController.text=widget.user.lastName!;
-    phoneController.text=widget.user.phoneNumber!;
+    firstNameController.text=widget.user.firstName;
+    lastNameController.text=widget.user.lastName;
+    phoneController.text=widget.user.phoneNumber;
     return Scaffold(
       backgroundColor:Theme.of(context).backgroundColor,
       appBar:buildAppBar(
