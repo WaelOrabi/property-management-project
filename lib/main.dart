@@ -1,14 +1,20 @@
-
 import 'package:flutter/material.dart';
 import 'package:project_111/core/setting/theme/theme_data/theme_data_dark.dart';
 import 'package:project_111/core/setting/theme/theme_data/theme_data_light.dart';
 import 'core/routes/routesApp.dart';
-
-
+import 'package:firebase_core/firebase_core.dart';
 
 Future <void> main() async {
 WidgetsFlutterBinding.ensureInitialized();
-//await Firebase.initializeApp();
+await Firebase.initializeApp(
+  options: FirebaseOptions(
+    apiKey: "XXX",
+    appId: "XXX",
+    messagingSenderId: "XXX",
+    projectId: "XXX",
+  ),
+
+);
   runApp(const MyApp());
 }
 
